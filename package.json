@@ -1,0 +1,19 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "docz dev",
+    "build": "docz build"
+  },
+  "devDependencies": {
+    "docz": "^0.2.6"
+  },
+  "dependencies": {
+    "emotion": "^9.2.3",
+    "polished": "^1.9.2",
+    "prop-types": "^15.6.1",
+    "react-emotion": "^9.2.3"
+  }
+}

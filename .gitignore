@@ -1,0 +1,4 @@
+.vs-code/
+.docz/
+node_modules/
+.yarn-error.log

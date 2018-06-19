@@ -1,0 +1,7 @@
+export default {
+  CARBON: '#59595B',
+  CLEAR_SKY: '#1E90FF',
+  ANTI_FLASH_WHITE: '#EFF2F6',
+  TANGERINE: '#FF7F50',
+  WATERMELON: '#EC584B'
+}
