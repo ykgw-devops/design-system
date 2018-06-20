@@ -2,11 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { css, cx } from 'react-emotion'
-import { base, kind, shape } from './style'
+import { base, kind, outline, pill, disabled } from './style'
 
 const Button = props => {
   return (
-    <button className={cx(base, shape(props), kind(props))}>
+    <button
+      disabled={props.disabled}
+      className={cx(base, kind(props), outline(props), pill(props), disabled(props))}
+    >
       {props.children}
     </button>
   )
@@ -14,7 +17,9 @@ const Button = props => {
 
 Button.propTypes = {
   kind: PropTypes.oneOf(['primary', 'secondary', 'warning', 'danger']),
-  shape: PropTypes.oneOf(['pill'])
+  pill: PropTypes.bool,
+  outline: PropTypes.bool,
+  disabled: PropTypes.bool
 }
 
 export default Button

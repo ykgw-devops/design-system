@@ -1,9 +1,16 @@
 import colors from '../colors'
-import { darken } from 'polished'
+import { darken, tint, lighten } from 'polished'
 import { cx, css } from 'react-emotion'
 
 // TODO probably not a good idea for each component?
 import '../global.jsx'
+
+const color = {
+  'primary': colors.CLEAR_SKY,
+  'secondary': colors.ANTI_FLASH_WHITE,
+  'warning': colors.TANGERINE,
+  'danger': colors.WATERMELON
+}
 
 const base = css`
   box-shadow: 1px 1px 2px 0 rgba(136, 136, 136, 0.50);
@@ -37,7 +44,7 @@ const kinds = {
     color: ${colors.CARBON};
 
     &:hover {
-      background-color: ${darken(0.02, colors.ANTI_FLASH_WHITE)};
+      background-color: ${darken(0.03, colors.ANTI_FLASH_WHITE)};
     }
   `,
 
@@ -58,13 +65,37 @@ const kinds = {
   `
 }
 
-const shapes = {
-  pill: css`
-    border-radius: 20px;
-  `
-}
+const kind = ({ kind = 'primary' }) => css`${kinds[kind]}`
+const pill = ({ pill }) => pill && css`
+  border-radius: 20px;
+`
+const outline = ({ outline, kind = 'primary' }) => outline && css`{
+  border: solid 1px ${color[kind]};
+  background: none;
+  box-shadow: none;
+  color: ${color[kind]};
 
-const kind = props => css`${kinds[props.kind]}`
-const shape = props => css`${shapes[props.shape]}`
+  &[disabled]:hover {
+    background: none;
+  }
 
-export { base, kind, shape }
+  &[disabled] {
+    color: ${lighten(0.15, color[kind])};
+    border-color: ${lighten(0.15, color[kind])};
+  }
+
+  &:hover {
+    background-color: ${tint(0.05, color[kind])};
+  }
+}`
+
+const disabled = ({ kind = 'primary', disabled }) => disabled && css`
+  cursor: default;
+  background-color: ${lighten(0.3, color[kind])};
+
+  &:hover {
+    background: ${lighten(0.3, color[kind])};
+  }
+`
+
+export { base, kind, pill, outline, disabled }
