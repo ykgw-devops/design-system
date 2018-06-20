@@ -67,38 +67,48 @@ const kinds = {
   `
 }
 
-const kind = ({ kind = 'primary' }) => css`${kinds[kind]}`
+const kind = ({ kind }) => css`${kinds[kind]}`
 const pill = ({ pill }) => pill && css`
   border-radius: 20px;
 `
-const outline = ({ kind = 'primary', outline }) => outline && css`{
-  border: solid 1px ${color[kind]};
-  background: none;
-  box-shadow: none;
-  color: ${color[kind]};
+const outline = ({ kind, outline }) => {
+  const COLOR = kind === 'secondary'
+    ? colors.CARBON
+    : color[kind]
 
-  &[disabled]:hover {
+  return outline && css`{
+    border: solid 1px ${COLOR};
     background: none;
-  }
+    box-shadow: none;
+    color: ${COLOR};
 
-  &[disabled] {
-    color: ${lighten(0.15, color[kind])};
-    border-color: ${lighten(0.15, color[kind])};
-  }
+    &[disabled]:hover {
+      background: none;
+    }
 
-  &:hover {
-    background-color: ${tint(0.075, color[kind])};
-  }
-}`
+    &[disabled] {
+      color: ${lighten(0.15, COLOR)};
+      border-color: ${lighten(0.15, COLOR)};
+    }
 
-const disabled = ({ kind = 'primary', disabled }) => disabled && css`
-  cursor: default;
-  background-color: ${lighten(0.3, color[kind])};
-  box-shadow: none;
+    &:hover {
+      background-color: ${tint(0.075, COLOR)};
+    }
+  }`
+}
 
-  &:hover {
-    background: ${lighten(0.3, color[kind])};
-  }
-`
+const disabled = ({ kind, disabled }) => {
+  const COLOR = color[kind]
+
+  return disabled && css`
+    cursor: default;
+    background-color: ${lighten(0.3, COLOR)};
+    box-shadow: none;
+
+    &:hover {
+      background: ${lighten(0.3, COLOR)};
+    }
+  `
+}
 
 export { base, kind, pill, outline, disabled }

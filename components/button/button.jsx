@@ -22,4 +22,8 @@ Button.propTypes = {
   disabled: PropTypes.bool
 }
 
+Button.defaultProps = {
+  kind: 'primary'
+}
+
 export default Button
