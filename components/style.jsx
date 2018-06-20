@@ -13,13 +13,15 @@ const color = {
 }
 
 const base = css`
-  box-shadow: 1px 1px 2px 0 rgba(136, 136, 136, 0.50);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   padding: 10px 20px;
   color: #fff;
   border: none;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.875rem;
+  vertical-align: middle;
+  line-height: 20px;
 
   background-color: ${colors.CLEAR_SKY};
   cursor: pointer;
@@ -85,13 +87,14 @@ const outline = ({ outline, kind = 'primary' }) => outline && css`{
   }
 
   &:hover {
-    background-color: ${tint(0.05, color[kind])};
+    background-color: ${tint(0.075, color[kind])};
   }
 }`
 
 const disabled = ({ kind = 'primary', disabled }) => disabled && css`
   cursor: default;
   background-color: ${lighten(0.3, color[kind])};
+  box-shadow: none;
 
   &:hover {
     background: ${lighten(0.3, color[kind])};
