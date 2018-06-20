@@ -1,9 +1,9 @@
-import colors from '../colors'
+import colors from '../../colors'
 import { darken, tint, lighten } from 'polished'
 import { cx, css } from 'react-emotion'
 
 // TODO probably not a good idea for each component?
-import '../global.jsx'
+import '../../global.jsx'
 
 const color = {
   'primary': colors.CLEAR_SKY,
@@ -71,7 +71,7 @@ const kind = ({ kind = 'primary' }) => css`${kinds[kind]}`
 const pill = ({ pill }) => pill && css`
   border-radius: 20px;
 `
-const outline = ({ outline, kind = 'primary' }) => outline && css`{
+const outline = ({ kind = 'primary', outline }) => outline && css`{
   border: solid 1px ${color[kind]};
   background: none;
   box-shadow: none;
