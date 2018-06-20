@@ -26,8 +26,14 @@ function wrapAnchor (name, href) {
   return <a href={href}>{name}</a>
 }
 
+const sectionType = PropTypes.shape({
+  key: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  href: PropTypes.string
+})
+
 Breadcrumb.propTypes = {
-  sections: PropTypes.Object,
+  sections: PropTypes.arrayOf(sectionType).isRequired,
 }
 
 export default Breadcrumb
