@@ -8,7 +8,7 @@ import '../../global.jsx'
 const sizeMap = {
   small: '0.750rem',
   medium: '0.875rem',
-  large: '1.125rem'
+  large: '1rem'
 }
 
 const color = {
@@ -21,13 +21,12 @@ const color = {
 const base = css`
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  padding: 0.625em 1.25em;
+  padding: 0.750em 1.25em;
   color: #fff;
   border: none;
   font-weight: 400;
   font-size: 0.875rem;
   vertical-align: middle;
-  line-height: 1.25em;
 
   background-color: ${colors.CLEAR_SKY};
   cursor: pointer;
