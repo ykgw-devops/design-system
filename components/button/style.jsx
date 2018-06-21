@@ -5,6 +5,12 @@ import { cx, css } from 'react-emotion'
 // TODO probably not a good idea for each component?
 import '../../global.jsx'
 
+const sizeMap = {
+  small: '0.750rem',
+  medium: '0.875rem',
+  large: '1.125rem'
+}
+
 const color = {
   'primary': colors.CLEAR_SKY,
   'secondary': colors.ANTI_FLASH_WHITE,
@@ -15,13 +21,13 @@ const color = {
 const base = css`
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 0.625em 1.25em;
   color: #fff;
   border: none;
   font-weight: 400;
   font-size: 0.875rem;
   vertical-align: middle;
-  line-height: 20px;
+  line-height: 1.25em;
 
   background-color: ${colors.CLEAR_SKY};
   cursor: pointer;
@@ -112,4 +118,10 @@ const disabled = ({ kind, disabled }) => {
   `
 }
 
-export { base, kind, pill, outline, disabled }
+const size = ({ size }) => {
+  return css`
+    font-size: ${sizeMap[size]}
+  `
+}
+
+export { base, kind, pill, outline, disabled, size }
