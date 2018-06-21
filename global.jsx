@@ -1,4 +1,5 @@
 import { injectGlobal } from 'react-emotion'
+import colors from './colors.jsx'
 
 injectGlobal`
   * {
@@ -16,5 +17,6 @@ injectGlobal`
   body {
     font-family: 'Fira Sans', sans-serif;
     font-size: 15px;
+    color: ${colors.INK};
   }
 `

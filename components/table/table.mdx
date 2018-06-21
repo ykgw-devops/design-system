@@ -1,0 +1,26 @@
+---
+name: Table
+---
+
+import { Playground, PropsTable } from 'docz'
+import Table from './table'
+
+# Table
+
+## Basic usage
+
+<Playground>
+  <Table
+    rows={[
+      { name: 'John', age: 15, gender: 'Male' },
+      { name: 'Amber', age: 40, gender: 'Female' },
+      { name: 'Leslie', age: 25, gender: 'Female' },
+      { name: 'Ben', age: 70, gender: 'Male' },
+    ]}
+  />
+</Playground>
+
+
+## Properties
+
+<PropsTable of={Table}></PropsTable>
