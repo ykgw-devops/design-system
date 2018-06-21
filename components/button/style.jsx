@@ -25,6 +25,7 @@ const base = css`
 
   background-color: ${colors.CLEAR_SKY};
   cursor: pointer;
+  transition: background 80ms ease-in;
 
   &:hover {
     background-color: ${darken(0.05, colors.CLEAR_SKY)};
@@ -92,7 +93,7 @@ const outline = ({ kind, outline }) => {
     }
 
     &:hover {
-      background-color: ${tint(0.075, COLOR)};
+      background-color: ${tint(0.1, COLOR)};
     }
   }`
 }
