@@ -5,8 +5,7 @@ import { cx, css } from 'react-emotion'
 import '../../global.jsx'
 
 const base = css`
-  color: ${colors.CARBON};
-  font-weight: 300;
+  color: ${colors.INK};
   line-height: 1.5rem;
 
   ol {
