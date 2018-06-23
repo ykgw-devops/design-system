@@ -1,6 +1,6 @@
 import colors from '../../colors'
 import { darken, tint, lighten } from 'polished'
-import { cx, css } from 'react-emotion'
+import { css } from 'react-emotion'
 
 // TODO probably not a good idea for each component?
 import '../../global.jsx'
@@ -34,6 +34,12 @@ const base = css`
 
   &:hover {
     background-color: ${darken(0.05, colors.CLEAR_SKY)};
+  }
+
+  i {
+    font-size: 1.5em;
+    line-height: 0.875rem;
+    position: relative;
   }
 `
 
