@@ -1,18 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { css, cx } from 'react-emotion'
+import { cx } from 'react-emotion'
 import { base, kind, outline, pill, disabled, size } from './style'
 
-const Button = props => {
-  return (
-    <button
-      disabled={props.disabled}
-      className={cx(base, kind(props), outline(props), pill(props), disabled(props), size(props))}
-    >
-      {props.children}
-    </button>
-  )
+const Button = props => (
+  <button disabled={props.disabled} className={getStyle(props)}>
+    {props.children}
+  </button>
+)
+
+function getStyle (props) {
+  return cx(base, kind(props), outline(props), pill(props), disabled(props), size(props))
 }
 
 Button.propTypes = {
@@ -25,7 +24,10 @@ Button.propTypes = {
 
 Button.defaultProps = {
   kind: 'primary',
-  size: 'medium'
+  size: 'medium',
+  'pill': false,
+  'outline': false,
+  'disabled': false
 }
 
 export default Button

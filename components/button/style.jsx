@@ -21,7 +21,7 @@ const color = {
 const base = css`
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  padding: 0.750em 1.25em;
+  padding: 0.825em 1.25em;
   color: #fff;
   border: none;
   font-weight: 400;
@@ -90,6 +90,7 @@ const outline = ({ kind, outline }) => {
 
   return outline && css`{
     border: solid 1px ${COLOR};
+    padding: 0.750em 1.25em;
     background: none;
     box-shadow: none;
     color: ${COLOR};
