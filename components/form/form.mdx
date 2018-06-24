@@ -1,0 +1,33 @@
+---
+name: Form
+---
+
+import { Playground, PropsTable } from 'docz'
+import Input from '../input/input'
+import Button from '../button/button'
+import Form from './form'
+
+# Form
+
+## Basic usage
+
+<Playground>
+  <Form style={{ width: 250 }}>
+    <fieldset>
+      <label>Email</label>
+      <Input name='email' placeholder='example@domain.com' type='email' autoComplete='login-email' />
+    </fieldset>
+    <fieldset>
+      <label>Password</label>
+      <Input name='password' placeholder='*****' type='password' autoComplete='login-password' />
+    </fieldset>
+    <div>
+      <Button kind='secondary'>Cancel</Button>
+      <Button>Submit</Button>
+    </div>
+  </Form>
+</Playground>
+
+## Properties
+
+<PropsTable of={Form}></PropsTable>

@@ -1,5 +1,5 @@
 import colors from '../../colors'
-import { cx, css } from 'react-emotion'
+import { css } from 'react-emotion'
 
 // TODO probably not a good idea for each component?
 import '../../global.jsx'
