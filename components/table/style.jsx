@@ -35,7 +35,7 @@ const base = css`
   }
 
   tbody > tr > td {
-    padding: 0.875em 0.875em;
+    padding: 0.825em 0.825em;
     border-bottom: solid 1px ${colors.CONCRETE};
   }
 `
