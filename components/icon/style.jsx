@@ -1,14 +1,6 @@
 import { css } from 'react-emotion'
 
 const base = css`
-  @font-face {
-    font-family: 'Icons';
-    font-style: normal;
-    font-weight: 400;
-
-    src: url(https://fonts.googleapis.com/icon?family=Material+Icons);
-  }
-
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;

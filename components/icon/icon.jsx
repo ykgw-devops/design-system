@@ -5,7 +5,7 @@ import { base } from './style'
 import { cx } from 'emotion'
 
 const Icon = ({ name }) => {
-  return (<i className={cx(base)}>{name}</i>)
+  return (<i className={cx(base, 'material-icons')}>{name}</i>)
 }
 
 Icon.propTypes = {
