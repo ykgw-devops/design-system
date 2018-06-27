@@ -2,7 +2,6 @@ import { css } from 'react-emotion'
 import colors from '../../colors'
 
 const base = css`
-  border: solid 1px ${colors.CONCRETE};
   color: ${colors.CARBON};
   font-size: 0.875rem;
   width: auto;
@@ -12,13 +11,21 @@ const base = css`
   & > a { color: ${colors.CLEAR_SKY}; }
 `
 
+const borderStyle = `solid 1px ${colors.CONCRETE}`
+
 const item = css`
   color: ${colors.CARBON};
   display: inline-block;
   padding: 0.825em 1em;
   line-height: 1em;
 
-  border-right: solid 1px ${colors.CONCRETE};
+  border-top: ${borderStyle};
+  border-bottom: ${borderStyle};
+  border-right: ${borderStyle};
+
+  &:hover {
+    background-color: ${colors.ANTI_FLASH_WHITE};
+  }
 `
 
 const firstItem = css`
@@ -27,6 +34,7 @@ const firstItem = css`
 
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+  border-left: ${borderStyle};
 `
 
 const lastItem = css`
@@ -35,14 +43,15 @@ const lastItem = css`
 
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-
-  border-right: none;
+  border-right: ${borderStyle};
 `
 
 const activeItem = css`
-  background-color: ${colors.CLEAR_SKY};
+  background-color: ${colors.CLEAR_SKY} !important;
   color: ${colors.ANTI_FLASH_WHITE} !important;
   font-weight: 500;
+
+  border-color: ${colors.CLEAR_SKY};
 `
 
 const disabled = css`

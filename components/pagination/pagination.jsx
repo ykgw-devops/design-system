@@ -16,9 +16,9 @@ const Pagination = ({ name, count, activeIndex = 0 }) => {
 }
 
 const item = (index, activeIndex) => {
-  const isActive = (index === activeIndex) && style.activeItem
+  const activeStyle = (index === activeIndex) && style.activeItem
   return (
-    <a href="" key={index} className={cx(style.item, isActive)}>
+    <a href="" key={index} className={cx(style.item, activeStyle)}>
       {index + 1}
     </a>
   )
