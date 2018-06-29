@@ -19,7 +19,7 @@ const color = {
 }
 
 const base = css`
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   padding: 0.825em 1.25em;
   color: #fff;
