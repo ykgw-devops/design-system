@@ -1,5 +1,8 @@
 import { css } from 'react-emotion'
 import colors from '../../colors'
+import { tint } from 'polished'
+
+const lightGrey = tint(0.5, colors.ANTI_FLASH_WHITE)
 
 const base = css`
   color: ${colors.CARBON};
@@ -24,7 +27,7 @@ const item = css`
   border-right: ${borderStyle};
 
   &:hover {
-    background-color: ${colors.ANTI_FLASH_WHITE};
+    background-color: ${lightGrey};
   }
 `
 
@@ -56,7 +59,10 @@ const activeItem = css`
 
 const disabled = css`
   color: ${colors.CARBON} !important;
-  background-color: ${colors.ANTI_FLASH_WHITE};
+  background-color: ${lightGrey};
+
+  cursor: default;
+  user-select: none;
 `
 
 export default { activeItem, base, disabled, item, firstItem, lastItem }
