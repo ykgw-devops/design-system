@@ -1,4 +1,5 @@
 import colors from '../../colors'
+import { fontFamily } from '../../typography'
 import { darken, tint, lighten } from 'polished'
 import { css } from 'react-emotion'
 
@@ -27,6 +28,7 @@ const base = css`
   font-weight: 400;
   font-size: 0.875rem;
   vertical-align: middle;
+  font-family: ${fontFamily};
 
   background-color: ${colors.CLEAR_SKY};
   cursor: pointer;
@@ -34,6 +36,10 @@ const base = css`
 
   &:hover {
     background-color: ${darken(0.05, colors.CLEAR_SKY)};
+  }
+
+  &:focus {
+    outline: none;
   }
 
   i {

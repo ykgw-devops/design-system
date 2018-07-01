@@ -5750,9 +5750,9 @@ pluralize@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmjs.org/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
 
-polished@^1.9.2:
-  version "1.9.2"
-  resolved "https://npm.waylay.io/polished/-/polished-1.9.2/d705cac66f3a3ed1bd38aad863e2c1e269baf6b6.tgz#d705cac66f3a3ed1bd38aad863e2c1e269baf6b6"
+polished@^1.9.3:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-1.9.3.tgz#d61b8a0c4624efe31e2583ff24a358932b6b75e1"
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
@@ -6002,15 +6002,6 @@ react-dom@^16.4.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-dom@^16.4.1:
-  version "16.4.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
-
 react-emotion@^9.1.1, react-emotion@^9.2.1, react-emotion@^9.2.3:
   version "9.2.3"
   resolved "https://npm.waylay.io/react-emotion/-/react-emotion-9.2.3/03c3b9dc9ad282c2d50b8137f3a6f72eee5095f3.tgz#03c3b9dc9ad282c2d50b8137f3a6f72eee5095f3"
@@ -6086,15 +6077,6 @@ react-spinners@^0.3.2:
 react@^16.4.0:
   version "16.4.1"
   resolved "https://npm.waylay.io/react/-/react-16.4.1/de51ba5764b5dbcd1f9079037b862bd26b82fe32.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
-
-react@^16.4.1:
-  version "16.4.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"

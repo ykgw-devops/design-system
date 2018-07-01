@@ -1,3 +1,7 @@
 export { default as Button } from './components/button/button'
 export { default as Colors } from './colors'
+export { default as Form } from './components/form/form'
+export { default as Global } from './global'
+export { default as Input } from './components/input/input'
 export { default as Segment } from './components/segment/segment'
+export { default as Typography } from './typography'

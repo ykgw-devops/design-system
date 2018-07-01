@@ -9,6 +9,7 @@ const base = css`
   border-bottom: solid 1px ${colors.CONCRETE};
   padding: 0.5em 0em;
   -webkit-appearance: none;
+  font-size: 1rem;
 
   line-height: 1.5em;
 
