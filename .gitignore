@@ -2,4 +2,5 @@
 .docz/
 .vs-code/
 .yarn-error.log
+dist/
 node_modules/
