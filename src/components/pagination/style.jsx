@@ -1,8 +1,9 @@
 import { css } from 'react-emotion'
 import colors from '../../colors'
-import { tint } from 'polished'
+import { shade, tint } from 'polished'
 
 const lightGrey = tint(0.5, colors.ANTI_FLASH_WHITE)
+const darkerGrey = shade(0.75, colors.ANTI_FLASH_WHITE)
 
 const base = css`
   color: ${colors.CARBON};
@@ -58,7 +59,7 @@ const activeItem = css`
 `
 
 const disabled = css`
-  color: ${colors.CARBON} !important;
+  color: ${darkerGrey} !important;
   background-color: ${lightGrey};
 
   cursor: default;
