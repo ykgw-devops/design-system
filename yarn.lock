@@ -1105,7 +1105,7 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://npm.waylay.io/ansi-styles/-/ansi-styles-2.2.1/b432dd3358b634cf75e1e4664368240533c1ddbe.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
 
-ansi-styles@^3.2.1:
+ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   version "3.2.1"
   resolved "https://npm.waylay.io/ansi-styles/-/ansi-styles-3.2.1/41fbb20243e50b12be0f04b8dedbf07520ce841d.tgz#41fbb20243e50b12be0f04b8dedbf07520ce841d"
   dependencies:
@@ -3175,7 +3175,7 @@ duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://npm.waylay.io/duplexer3/-/duplexer3-0.1.4/ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
 
-duplexer@^0.1.1:
+duplexer@^0.1.1, duplexer@~0.1.1:
   version "0.1.1"
   resolved "https://npm.waylay.io/duplexer/-/duplexer-0.1.1/ace6ff808c1ce66b57d1ebf97977acb02334cfc1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
 
@@ -3293,7 +3293,7 @@ error-stack-parser@^2.0.0:
   dependencies:
     stackframe "^1.0.4"
 
-es-abstract@^1.5.1, es-abstract@^1.6.1, es-abstract@^1.7.0:
+es-abstract@^1.4.3, es-abstract@^1.5.1, es-abstract@^1.6.1, es-abstract@^1.7.0:
   version "1.12.0"
   resolved "https://npm.waylay.io/es-abstract/-/es-abstract-1.12.0/9dbbdd27c6856f0001421ca18782d786bf8a6165.tgz#9dbbdd27c6856f0001421ca18782d786bf8a6165"
   dependencies:
@@ -3526,6 +3526,18 @@ esutils@^2.0.0, esutils@^2.0.2:
 etag@~1.8.1:
   version "1.8.1"
   resolved "https://npm.waylay.io/etag/-/etag-1.8.1/41ae2eeb65efa62268aebfea83ac7d79299b0887.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
+
+event-stream@~3.3.0:
+  version "3.3.4"
+  resolved "https://npm.waylay.io/event-stream/-/event-stream-3.3.4/4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
+  dependencies:
+    duplexer "~0.1.1"
+    from "~0"
+    map-stream "~0.1.0"
+    pause-stream "0.0.11"
+    split "0.3"
+    stream-combiner "~0.0.4"
+    through "~2.3.1"
 
 events@^1.0.0:
   version "1.1.1"
@@ -3892,6 +3904,10 @@ from2@^2.1.0:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
 
+from@~0:
+  version "0.1.7"
+  resolved "https://npm.waylay.io/from/-/from-0.1.7/83c60afc58b9c56997007ed1a768b3ab303a44fe.tgz#83c60afc58b9c56997007ed1a768b3ab303a44fe"
+
 fs-extra@^0.30.0:
   version "0.30.0"
   resolved "https://npm.waylay.io/fs-extra/-/fs-extra-0.30.0/f233ffcc08d4da7d432daa449776989db1df93f0.tgz#f233ffcc08d4da7d432daa449776989db1df93f0"
@@ -3942,7 +3958,7 @@ fswatcher-child@^1.0.3:
   dependencies:
     chokidar "^2.0.3"
 
-function-bind@^1.1.0, function-bind@^1.1.1:
+function-bind@^1.0.2, function-bind@^1.1.0, function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://npm.waylay.io/function-bind/-/function-bind-1.1.1/a56899d3ea3c9bab874bb9773b7c5ede92f4895d.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
 
@@ -5232,6 +5248,10 @@ map-obj@^2.0.0:
   version "2.0.0"
   resolved "https://npm.waylay.io/map-obj/-/map-obj-2.0.0/a65cd29087a92598b8791257a523e021222ac1f9.tgz#a65cd29087a92598b8791257a523e021222ac1f9"
 
+map-stream@~0.1.0:
+  version "0.1.0"
+  resolved "https://npm.waylay.io/map-stream/-/map-stream-0.1.0/e56aa94c4c8055a16404a0674b78f215f7c8e194.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
+
 map-visit@^1.0.0:
   version "1.0.0"
   resolved "https://npm.waylay.io/map-visit/-/map-visit-1.0.0/ecdca8f13144e660f1b5bd41f12f3479d98dfb8f.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
@@ -5317,6 +5337,10 @@ memory-fs@^0.4.0, memory-fs@~0.4.1:
   dependencies:
     errno "^0.1.3"
     readable-stream "^2.0.1"
+
+memorystream@^0.3.1:
+  version "0.3.1"
+  resolved "https://npm.waylay.io/memorystream/-/memorystream-0.3.1/86d7090b30ce455d63fbae12dda51a47ddcaf9b2.tgz#86d7090b30ce455d63fbae12dda51a47ddcaf9b2"
 
 meow@^5.0.0:
   version "5.0.0"
@@ -5737,6 +5761,20 @@ npm-packlist@^1.1.6:
     ignore-walk "^3.0.1"
     npm-bundled "^1.0.1"
 
+npm-run-all@^4.1.3:
+  version "4.1.3"
+  resolved "https://npm.waylay.io/npm-run-all/-/npm-run-all-4.1.3/49f15b55a66bb4101664ce270cb18e7103f8f185.tgz#49f15b55a66bb4101664ce270cb18e7103f8f185"
+  dependencies:
+    ansi-styles "^3.2.0"
+    chalk "^2.1.0"
+    cross-spawn "^6.0.4"
+    memorystream "^0.3.1"
+    minimatch "^3.0.4"
+    ps-tree "^1.1.0"
+    read-pkg "^3.0.0"
+    shell-quote "^1.6.1"
+    string.prototype.padend "^3.0.0"
+
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://npm.waylay.io/npm-run-path/-/npm-run-path-2.0.2/35a9232dfa35d7067b4cb2ddf2357b1871536c5f.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -6132,6 +6170,12 @@ path-type@^3.0.0:
   resolved "https://npm.waylay.io/path-type/-/path-type-3.0.0/cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f.tgz#cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f"
   dependencies:
     pify "^3.0.0"
+
+pause-stream@0.0.11:
+  version "0.0.11"
+  resolved "https://npm.waylay.io/pause-stream/-/pause-stream-0.0.11/fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
+  dependencies:
+    through "~2.3"
 
 pbkdf2@^3.0.3:
   version "3.0.16"
@@ -6537,6 +6581,12 @@ proxy-addr@~2.0.3:
 prr@~1.0.1:
   version "1.0.1"
   resolved "https://npm.waylay.io/prr/-/prr-1.0.1/d3fc114ba06995a45ec6893f484ceb1d78f5f476.tgz#d3fc114ba06995a45ec6893f484ceb1d78f5f476"
+
+ps-tree@^1.1.0:
+  version "1.1.0"
+  resolved "https://npm.waylay.io/ps-tree/-/ps-tree-1.1.0/b421b24140d6203f1ed3c76996b4427b08e8c014.tgz#b421b24140d6203f1ed3c76996b4427b08e8c014"
+  dependencies:
+    event-stream "~3.3.0"
 
 pseudomap@^1.0.1, pseudomap@^1.0.2:
   version "1.0.2"
@@ -7412,7 +7462,7 @@ shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "https://npm.waylay.io/shebang-regex/-/shebang-regex-1.0.0/da42f49740c0b42db2ca9728571cb190c98efea3.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
 
-shell-quote@1.6.1:
+shell-quote@1.6.1, shell-quote@^1.6.1:
   version "1.6.1"
   resolved "https://npm.waylay.io/shell-quote/-/shell-quote-1.6.1/f4781949cce402697127430ea3b3c5476f481767.tgz#f4781949cce402697127430ea3b3c5476f481767"
   dependencies:
@@ -7551,6 +7601,12 @@ split-string@^3.0.1, split-string@^3.0.2:
   dependencies:
     extend-shallow "^3.0.0"
 
+split@0.3:
+  version "0.3.3"
+  resolved "https://npm.waylay.io/split/-/split-0.3.3/cd0eea5e63a211dfff7eb0f091c4133e2d0dd28f.tgz#cd0eea5e63a211dfff7eb0f091c4133e2d0dd28f"
+  dependencies:
+    through "2"
+
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://npm.waylay.io/sprintf-js/-/sprintf-js-1.0.3/04e6926f662895354f3dd015203633b857297e2c.tgz#04e6926f662895354f3dd015203633b857297e2c"
@@ -7649,6 +7705,12 @@ stream-browserify@^2.0.1:
     inherits "~2.0.1"
     readable-stream "^2.0.2"
 
+stream-combiner@~0.0.4:
+  version "0.0.4"
+  resolved "https://npm.waylay.io/stream-combiner/-/stream-combiner-0.0.4/4d5e433c185261dde623ca3f44c586bcf5c4ad14.tgz#4d5e433c185261dde623ca3f44c586bcf5c4ad14"
+  dependencies:
+    duplexer "~0.1.1"
+
 stream-each@^1.1.0:
   version "1.2.2"
   resolved "https://npm.waylay.io/stream-each/-/stream-each-1.2.2/8e8c463f91da8991778765873fe4d960d8f616bd.tgz#8e8c463f91da8991778765873fe4d960d8f616bd"
@@ -7688,6 +7750,14 @@ string-width@^1.0.1:
   dependencies:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
+
+string.prototype.padend@^3.0.0:
+  version "3.0.0"
+  resolved "https://npm.waylay.io/string.prototype.padend/-/string.prototype.padend-3.0.0/f3aaef7c1719f170c5eab1c32bf780d96e21f2f0.tgz#f3aaef7c1719f170c5eab1c32bf780d96e21f2f0"
+  dependencies:
+    define-properties "^1.1.2"
+    es-abstract "^1.4.3"
+    function-bind "^1.0.2"
 
 string_decoder@^1.0.0, string_decoder@~1.1.1:
   version "1.1.1"
@@ -7869,7 +7939,7 @@ through2@^2.0.0, through2@~2.0.3:
     readable-stream "^2.1.5"
     xtend "~4.0.1"
 
-through@^2.3.6:
+through@2, through@^2.3.6, through@~2.3, through@~2.3.1:
   version "2.3.8"
   resolved "https://npm.waylay.io/through/-/through-2.3.8/0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
