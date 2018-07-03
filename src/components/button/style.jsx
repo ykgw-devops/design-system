@@ -26,7 +26,7 @@ const base = css`
   color: #fff;
   border: none;
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   vertical-align: middle;
   font-family: ${fontFamily};
 
