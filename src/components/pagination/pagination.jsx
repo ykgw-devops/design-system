@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { includes, times } from 'lodash'
 
 import style from './style.jsx'
-import { cx } from 'emotion'
+import { cx } from '../../emotion'
 
 const Pagination = ({ count = 0, activeIndex = 0 }) => {
   const ellipsed = count - 6 > 0

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { omit, upperFirst } from 'lodash'
 
-import { cx } from 'react-emotion'
+import { cx } from '../../emotion'
 import { base } from './style.jsx'
 
 const Table = props => {

@@ -1,4 +1,4 @@
-import { css } from 'emotion'
+import { css } from '../../emotion'
 import colors from '../../colors.jsx'
 import { darken } from 'polished'
 

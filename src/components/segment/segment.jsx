@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { cx } from 'emotion'
+import { cx } from '../../emotion'
 import { base } from './style.jsx'
 
 const Segment = props => {

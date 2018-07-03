@@ -787,6 +787,10 @@
   version "0.6.2"
   resolved "https://npm.waylay.io/@emotion/memoize/-/memoize-0.6.2/138e00b332d519b4e307bded6159e5ba48aba3ae.tgz#138e00b332d519b4e307bded6159e5ba48aba3ae"
 
+"@emotion/stylis@^0.6.10":
+  version "0.6.10"
+  resolved "https://npm.waylay.io/@emotion/stylis/-/stylis-0.6.10/7d321e639ebc8ba23ace5990c20e94dcebb8f3dd.tgz#7d321e639ebc8ba23ace5990c20e94dcebb8f3dd"
+
 "@emotion/stylis@^0.6.5":
   version "0.6.9"
   resolved "https://npm.waylay.io/@emotion/stylis/-/stylis-0.6.9/2145c179cc0fda18e5544bd65e249d3601920997.tgz#2145c179cc0fda18e5544bd65e249d3601920997"
@@ -2610,6 +2614,18 @@ create-emotion@^9.2.1:
     "@emotion/hash" "^0.6.2"
     "@emotion/memoize" "^0.6.1"
     "@emotion/stylis" "^0.6.5"
+    "@emotion/unitless" "^0.6.2"
+    csstype "^2.5.2"
+    stylis "^3.5.0"
+    stylis-rule-sheet "^0.0.10"
+
+create-emotion@^9.2.4:
+  version "9.2.4"
+  resolved "https://npm.waylay.io/create-emotion/-/create-emotion-9.2.4/0a4379f6bf0708c54fe26bfcd6b6bd3592e8cf23.tgz#0a4379f6bf0708c54fe26bfcd6b6bd3592e8cf23"
+  dependencies:
+    "@emotion/hash" "^0.6.2"
+    "@emotion/memoize" "^0.6.1"
+    "@emotion/stylis" "^0.6.10"
     "@emotion/unitless" "^0.6.2"
     csstype "^2.5.2"
     stylis "^3.5.0"

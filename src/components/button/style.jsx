@@ -1,7 +1,7 @@
 import colors from '../../colors'
 import { fontFamily } from '../../typography'
 import { darken, tint, lighten } from 'polished'
-import { css } from 'react-emotion'
+import { css } from '../../emotion'
 
 // TODO probably not a good idea for each component?
 import '../../global.jsx'

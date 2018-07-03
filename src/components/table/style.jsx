@@ -1,5 +1,5 @@
 import colors from '../../colors'
-import { css } from 'react-emotion'
+import { css } from '../../emotion'
 import { tint } from 'polished'
 
 // TODO probably not a good idea for each component?

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { cx } from 'react-emotion'
+import { cx } from '../../emotion'
 import { base, kind, outline, pill, disabled, size } from './style'
 
 const Button = props => (

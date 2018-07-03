@@ -1,4 +1,4 @@
-import { css } from 'emotion'
+import { css } from '../../emotion'
 import colors from '../../colors.jsx'
 
 // TODO probably not a good idea for each component?

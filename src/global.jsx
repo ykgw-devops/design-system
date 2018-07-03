@@ -1,4 +1,4 @@
-import { injectGlobal } from 'react-emotion'
+import { injectGlobal } from './emotion'
 import colors from './colors.jsx'
 
 injectGlobal`
