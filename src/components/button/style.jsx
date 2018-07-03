@@ -8,7 +8,7 @@ import '../../global.jsx'
 
 const sizeMap = {
   small: '0.750rem',
-  medium: '0.875rem',
+  medium: '0.8rem',
   large: '1rem'
 }
 
