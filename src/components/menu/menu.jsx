@@ -12,11 +12,10 @@ const Menu = (props) => (
 const Item = (props) => (
   <li className={cx(item, props.active && activeStyle)}>
     {/* wrap child with an anchor tag when "href" prop is truthy */}
-    {props.children.map((child, i) => {
-      return Boolean(props.href)
-        ? wrapAnchor(child, { href: props.href, key: i })
-        : child
-    })}
+    {props.href
+      ? wrapAnchor(props.children, { href: props.href })
+      : props.children
+    }
   </li>
 )
 
