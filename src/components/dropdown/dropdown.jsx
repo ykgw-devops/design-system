@@ -1,11 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
+import { setDisplayName } from 'recompose'
 import { cx } from '../../emotion'
 import { base, item } from './style'
+import DropdownItem from './dropdown-item'
 
 const Dropdown = ({
   options,
+  placeholder,
+  children,
   ...rest
 }) => (
   <Downshift {...rest}>
@@ -16,11 +20,13 @@ const Dropdown = ({
         closeMenu
       }) => (
         <div className={cx(base)}>
-          <div className={cx(item)} onClick={isOpen ? closeMenu : openMenu}>Dropdown</div>
+          <div className={cx(item)} onClick={isOpen ? closeMenu : openMenu}>{placeholder}</div>
           {
-            isOpen
-              ? options.map(option => <DropdownItem {...option} />)
-              : null
+            isOpen &&
+            (
+              children ||
+              options.map(option => <Dropdown.Item {...option} />)
+            )
           }
         </div>
       )
@@ -28,18 +34,16 @@ const Dropdown = ({
   </Downshift>
 )
 
-const DropdownItem = ({ text, value, children }) => (
-  <div
-    className={cx(item)}
-    data-value={value}>{text || children}</div>
-)
+Dropdown.Item = setDisplayName('Dropdown.Item')(DropdownItem)
 
 Dropdown.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.object)
+  options: PropTypes.arrayOf(PropTypes.object),
+  placeholder: PropTypes.string
 }
 
 Dropdown.defaultProps = {
-  options: []
+  options: [],
+  placeholder: 'foobar'
 }
 
 export default Dropdown

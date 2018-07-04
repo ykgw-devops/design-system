@@ -11,20 +11,6 @@ const base = css`
   border-radius: 4px;
 
   user-select: none;
-
-  // &:after {
-  //   content: '';
-  //   position: relative;
-  //   float: right;
-  //   bottom: 2em;
-  //   right: 0.5em;
-
-  //   width: 0;
-  //   height: 0;
-  //   border-top: 20px solid #333;
-  //   border-left: 20px solid transparent;
-  //   border-right: 20px solid transparent;
-  // }
 `
 
 const item = css`
@@ -40,8 +26,8 @@ const item = css`
     width: 0;
     height: 0;
     border-top: 5px solid #333;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
   }
 
   &:hover {
