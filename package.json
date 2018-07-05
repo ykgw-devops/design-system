@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "create-emotion": "^9.2.4",
+    "downshift": "^2.0.10",
     "emotion": "^9.2.3",
     "polished": "^1.9.3",
     "prop-types": "^15.6.1",

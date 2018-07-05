@@ -1,0 +1,44 @@
+---
+name: Dropdown
+---
+
+import { Playground, PropsTable } from 'docz'
+import Dropdown from './dropdown'
+
+# Dropdown
+
+## Basic usage
+
+<Playground>
+  <Dropdown />
+</Playground>
+
+## Options
+
+<Playground>
+  <Dropdown
+    options={[
+      { text: 'Foo', value: 'foo' },
+      { text: 'Bar', value: 'bar' }
+    ]} />
+  &nbsp;
+  <Dropdown>
+    <Dropdown.Item value='foo'>Foo</Dropdown.Item>
+    <Dropdown.Item value='bar'>Bar</Dropdown.Item>
+  </Dropdown>
+  &nbsp;
+  <Dropdown>
+    <Dropdown.Item text='Foo' value='foo' />
+    <Dropdown.Item text='Bar' value='bar' />
+  </Dropdown>
+</Playground>
+
+## Placeholder
+
+<Playground>
+  <Dropdown placeholder='Placeholder' />
+</Playground>
+
+## Properties
+
+<PropsTable of={Dropdown}></PropsTable>
