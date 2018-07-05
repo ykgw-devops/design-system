@@ -19,17 +19,8 @@ const base = css`
     width: 100%;
   }
 
-  fieldset {
-    border: none;
-    padding: 0;
-  }
-
   &:focus {
     color: red;
-  }
-
-  fieldset {
-    margin: 15px 0;
   }
 
   button {
