@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
 import { cx } from '../../emotion'
-import { base, item } from './style'
+import { base, menuWrapper, item, selectedItem } from './style'
 import DropdownItem from './dropdown-item'
 
 const Dropdown = ({
@@ -20,12 +20,15 @@ const Dropdown = ({
         closeMenu
       }) => (
         <div className={cx(base)}>
-          <div className={cx(item)} onClick={isOpen ? closeMenu : openMenu}>{placeholder}</div>
+          <div className={cx(selectedItem)} onClick={isOpen ? closeMenu : openMenu}>
+            {placeholder}
+          </div>
           {
             isOpen &&
             (
-              children ||
-              options.map(option => <Dropdown.Item {...option} />)
+              <div className={menuWrapper}>
+                {children || options.map(option => <Dropdown.Item {...option} />)}
+              </div>
             )
           }
         </div>
@@ -43,7 +46,7 @@ Dropdown.propTypes = {
 
 Dropdown.defaultProps = {
   options: [],
-  placeholder: 'foobar'
+  placeholder: 'Select Item'
 }
 
 export default Dropdown
