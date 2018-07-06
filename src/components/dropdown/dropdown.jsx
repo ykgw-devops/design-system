@@ -3,37 +3,31 @@ import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
 import { cx } from '../../emotion'
-import { base, menuWrapper, item, selectedItem } from './style'
+import { base, menuWrapper, item, selectedItem as selectedStyle } from './style'
 import DropdownItem from './dropdown-item'
 
-const Dropdown = ({
-  options,
-  placeholder,
-  children,
-  ...rest
-}) => (
+const Dropdown = ({ options, placeholder, ...rest }) => (
   <Downshift {...rest}>
-    {
-      ({
-        isOpen,
-        openMenu,
-        closeMenu
-      }) => (
+    {({ isOpen, toggleMenu, getItemProps, selectedItem }) => {
+      const selectedItemText = selectedItem || placeholder
+
+      return (
         <div className={cx(base)}>
-          <div className={cx(selectedItem)} onClick={isOpen ? closeMenu : openMenu}>
-            {placeholder}
+          {/* selected item */}
+          <div className={cx(selectedStyle)} onClick={toggleMenu}>
+            {selectedItemText}
           </div>
-          {
-            isOpen &&
-            (
-              <div className={menuWrapper}>
-                {children || options.map(option => <Dropdown.Item {...option} />)}
-              </div>
-            )
-          }
+          {/* menu dropdown */}
+          {isOpen && (
+            <div className={menuWrapper}>
+              {options.map(({ text, value }) => (
+                <Dropdown.Item {...getItemProps({ key: value, item: text })} text={text} />
+              ))}
+            </div>
+          )}
         </div>
       )
-    }
+    }}
   </Downshift>
 )
 

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { cx } from '../../emotion'
 import { item } from './style'
 
-const DropdownItem = ({ text, value, children }) => (
-  <div
-    className={cx(item)}
-    data-value={value}>{text || children}</div>
+const DropdownItem = (props) => (
+  <div {...props} className={item}>
+    {props.text || props.children}
+  </div>
 )
 
 DropdownItem.propTypes = {
