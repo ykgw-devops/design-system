@@ -44,12 +44,15 @@ const menuWrapper = css`
   float: left;
 
   min-width: 100%;
+  max-height: 450px;
   margin: .125rem 0 0;
 
   text-align: left;
   list-style: none;
 
   background-color: #FFF;
+
+  overflow-y: scroll;
 
   border: ${border};
   border-radius: 4px;

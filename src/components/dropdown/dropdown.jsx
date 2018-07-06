@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
-import { setDisplayName } from 'recompose'
+import { setDisplayName, withProps } from 'recompose'
 import { cx } from '../../emotion'
 import { base, menuWrapper, item, selectedItem as selectedStyle } from './style'
 import DropdownItem from './dropdown-item'
@@ -10,6 +10,13 @@ const Dropdown = ({ options, placeholder, ...rest }) => (
   <Downshift {...rest}>
     {({ isOpen, toggleMenu, getItemProps, selectedItem }) => {
       const selectedItemText = selectedItem || placeholder
+
+      // transform options props to <Menu.Item>s
+      const optionsToItems = options => (
+        options.map(({ text, value }) => (
+          <Dropdown.Item {...getItemProps({ key: value, item: text })} text={text} />
+        ))
+      )
 
       return (
         <div className={cx(base)}>
@@ -20,9 +27,7 @@ const Dropdown = ({ options, placeholder, ...rest }) => (
           {/* menu dropdown */}
           {isOpen && (
             <div className={menuWrapper}>
-              {options.map(({ text, value }) => (
-                <Dropdown.Item {...getItemProps({ key: value, item: text })} text={text} />
-              ))}
+              {optionsToItems(options)}
             </div>
           )}
         </div>
