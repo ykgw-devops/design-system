@@ -24,9 +24,9 @@ const item = css`
   white-space: nowrap;
   background: none;
   border: none;
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
     background-color: ${colors.ANTI_FLASH_WHITE};
   }
 `

@@ -15,9 +15,10 @@ const Dropdown = ({ options, placeholder, ...rest }) => (
       const optionsToItems = options => (
         options.map(({ text, value }) => {
           const isActive = selectedItem === value
+          const itemProps = getItemProps({ key: value, item: text })
 
           return (
-            <Dropdown.Item {...getItemProps({ key: value, item: text })} text={text} className={isActive ? activeItemStyle : null} />
+            <Dropdown.Item {...itemProps} text={text} className={isActive && activeItemStyle} />
           )
         })
       )
