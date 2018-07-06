@@ -30,11 +30,11 @@ const Dropdown = ({ options, placeholder, ...rest }) => (
             {selectedItemText}
           </div>
           {/* menu dropdown */}
-          {isOpen && (
-            <div className={menuWrapper}>
+          {
+            <div className={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
               {optionsToItems(options)}
             </div>
-          )}
+          }
         </div>
       )
     }}

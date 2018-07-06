@@ -32,7 +32,7 @@ const item = css`
 `
 
 const menuWrapper = css`
-  display: block;
+  display: none;
   position: absolute;
   padding: 0.25em 0;
 
