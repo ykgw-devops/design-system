@@ -2,8 +2,6 @@ import { css } from '../../emotion'
 import colors from '../../colors'
 import { ellipsis } from 'polished'
 
-// TODO probably not a good idea for each component?
-
 const padding = '0.5em 1.25em'
 const border = `1px solid ${colors.CONCRETE}`
 
@@ -82,4 +80,9 @@ const selectedItem = css`
   }
 `
 
-export { base, item, menuWrapper, selectedItem }
+const activeItem = css`
+  color: ${colors.CLEAR_SKY};
+  background: ${colors.ANTI_FLASH_WHITE};
+`
+
+export { base, item, menuWrapper, activeItem, selectedItem }

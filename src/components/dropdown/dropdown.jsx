@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName, withProps } from 'recompose'
 import { cx } from '../../emotion'
-import { base, menuWrapper, item, selectedItem as selectedStyle } from './style'
+import { base, menuWrapper, item, selectedItem as selectedStyle, activeItem as activeItemStyle } from './style'
 import DropdownItem from './dropdown-item'
 
 const Dropdown = ({ options, placeholder, ...rest }) => (
@@ -13,9 +13,13 @@ const Dropdown = ({ options, placeholder, ...rest }) => (
 
       // transform options props to <Menu.Item>s
       const optionsToItems = options => (
-        options.map(({ text, value }) => (
-          <Dropdown.Item {...getItemProps({ key: value, item: text })} text={text} />
-        ))
+        options.map(({ text, value }) => {
+          const isActive = selectedItem === value
+
+          return (
+            <Dropdown.Item {...getItemProps({ key: value, item: text })} text={text} className={isActive ? activeItemStyle : null} />
+          )
+        })
       )
 
       return (

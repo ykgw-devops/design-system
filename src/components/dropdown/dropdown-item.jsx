@@ -4,7 +4,7 @@ import { cx } from '../../emotion'
 import { item } from './style'
 
 const DropdownItem = (props) => (
-  <div {...props} className={item}>
+  <div {...props} className={cx(item, props.className)}>
     {props.text || props.children}
   </div>
 )
