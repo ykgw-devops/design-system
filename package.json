@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "docz dev",
-    "build": "run-p *:build",
-    "docs:build": "docz build && npm run components:build",
-    "components:build": "parcel build src/index.js -o components.js"
+    "clean": "rm -rf .cache .docz dist",
+    "build": "run-p build:*",
+    "build:docs": "docz build",
+    "build:components": "parcel build src/index.js -o components.js"
   },
   "devDependencies": {
     "docz": "^0.2.6",

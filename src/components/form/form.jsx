@@ -1,5 +1,5 @@
 import React from 'react'
-import { base } from './style.jsx'
+import { base } from './style'
 import Field from './field'
 import Input from '../input/input'
 import { setDisplayName } from 'recompose'
@@ -14,8 +14,8 @@ const Form = props => {
 }
 
 const noop = (event) => {
-  event.preventDefault();
-  event.stopPropagation();
+  event.preventDefault()
+  event.stopPropagation()
 }
 
 Form.propTypes = {
