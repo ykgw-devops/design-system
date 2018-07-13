@@ -4,11 +4,14 @@ import PropTypes from 'prop-types'
 import { cx } from '../../emotion'
 import { base, kind, outline, pill, disabled, size } from './style'
 
-const Button = props => (
-  <button disabled={props.disabled} className={getStyle(props)}>
-    {props.children}
-  </button>
-)
+const Button = (props) => {
+  const { disabled, outline, pill, ...rest } = props
+  return (
+    <button disabled={disabled} className={getStyle(props)} {...rest}>
+      {props.children}
+    </button>
+  )
+}
 
 function getStyle (props) {
   return cx(base, kind(props), outline(props), pill(props), disabled(props), size(props))

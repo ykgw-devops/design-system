@@ -3,6 +3,7 @@ name: Dropdown
 ---
 
 import { Playground, PropsTable } from 'docz'
+import Button from '../button/button'
 import Dropdown from './dropdown'
 
 # Dropdown
@@ -10,7 +11,16 @@ import Dropdown from './dropdown'
 ## Basic usage
 
 <Playground>
-  <Dropdown />
+  <Dropdown
+    options={[
+      { text: 'Save…', value: 'bar', onClick: ({ toggleMenu }) => {
+          alert('File saved!');
+          toggleMenu();
+        }
+      },
+    ]}
+    content={<span>▾ File</span>}
+  />
 </Playground>
 
 ## Options
