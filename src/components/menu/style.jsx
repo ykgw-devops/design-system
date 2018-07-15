@@ -1,5 +1,6 @@
 import { css } from '../../emotion'
-import colors from '../../colors.jsx'
+import colors from '../../colors'
+import { resetAnchor } from '../../global'
 
 const base = css`
   display: inline-block;
@@ -8,6 +9,10 @@ const base = css`
 `
 
 const item = css`
+  a {
+    ${resetAnchor};
+  }
+
   font-size: 0.875em;
 
   &, > *  {
@@ -19,9 +24,6 @@ const item = css`
   &:hover {
     color: ${colors.CLEAR_SKY};
   }
-
-  /* reset anchor default color */
-  a { color: inherit; }
 
   i {
     font-size: 1.25em;

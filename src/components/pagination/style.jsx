@@ -1,6 +1,7 @@
 import { css } from '../../emotion'
 import colors from '../../colors'
 import { shade, tint } from 'polished'
+import { resetAnchor } from '../../global'
 
 const lightGrey = tint(0.5, colors.ANTI_FLASH_WHITE)
 const darkerGrey = shade(0.75, colors.ANTI_FLASH_WHITE)
@@ -12,7 +13,10 @@ const base = css`
   display: inline-block;
   border-radius: 4px;
 
-  & > a { color: ${colors.CLEAR_SKY}; }
+  & > a {
+    ${resetAnchor};
+    color: ${colors.CLEAR_SKY};
+  }
 `
 
 const borderStyle = `solid 1px ${colors.CONCRETE}`

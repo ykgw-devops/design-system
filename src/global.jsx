@@ -1,4 +1,4 @@
-import { injectGlobal } from './emotion'
+import { css, injectGlobal } from './emotion'
 import colors from './colors.jsx'
 
 injectGlobal`
@@ -20,3 +20,13 @@ injectGlobal`
     color: ${colors.INK};
   }
 `
+
+/* reset anchor defaults */
+const resetAnchor = css`
+  color: inherit;
+  text-decoration: none;
+`
+
+export {
+  resetAnchor
+}
