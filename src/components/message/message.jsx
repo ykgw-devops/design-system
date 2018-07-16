@@ -1,5 +1,5 @@
 import React from 'react'
-import { cx } from 'emotion'
+import { cx } from '../../emotion'
 import { base, danger, info, warning, title as titleStyle } from './style'
 import match from 'pattycake'
 import PropTypes from 'prop-types'
@@ -15,7 +15,7 @@ const Message = props => {
   )
 
   return (
-    <div className={cx(base(props), kindStyle)}>
+    <div className={cx(base(props), kindStyle)} {...props}>
       <div>
         {title && (
           <div className={titleStyle}>

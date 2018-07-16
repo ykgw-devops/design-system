@@ -1,4 +1,4 @@
-import { css, cx } from 'emotion'
+import { css, cx } from '../../emotion'
 import colors from '../../colors'
 import { tint } from 'polished'
 
