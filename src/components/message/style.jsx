@@ -16,7 +16,7 @@ const base = props => {
   const fontColor = color || colors.INK
 
   return css`
-    background: ${outline ? 'none' : tint(0.25, bgColor)};
+    background: ${outline ? 'none' : tint(0.15, bgColor)};
     display: block;
     border: solid 2px ${bgColor};
     color: ${fontColor};
@@ -26,6 +26,15 @@ const base = props => {
 
     display: flex;
     align-items: center;
+
+    header {
+      font-weight: 600;
+    }
+
+    header, p {
+      display: block;
+    }
+
   `
 }
 
@@ -52,4 +61,9 @@ const warning = css`
   ${withIcon('warning')};
 `
 
-export { base, danger, info, warning }
+const title = css`
+  display: block;
+  font-weight: 600;
+`
+
+export { base, danger, info, warning, title }
