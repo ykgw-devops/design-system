@@ -18,7 +18,7 @@ const base = props => {
   return css`
     background: ${outline ? 'none' : tint(0.15, bgColor)};
     display: block;
-    border: solid 2px ${bgColor};
+    border: solid 1px ${bgColor};
     color: ${fontColor};
 
     padding: 10px 20px;
