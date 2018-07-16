@@ -1,0 +1,36 @@
+---
+name: Message
+---
+
+import { Playground, PropsTable } from 'docz'
+import Message from './message'
+
+# Message
+
+## Basic usage
+
+<Playground>
+  <Message>Hello, world!</Message>
+  <br />
+  <Message kind='info'>Informational message</Message>
+  <br />
+  <Message kind='warning'>Careful!</Message>
+  <br />
+  <Message kind='danger'>Danger, Will Robinson!</Message>
+</Playground>
+
+## Outline
+
+<Playground>
+  <Message outline>Hello, world!</Message>
+  <br />
+  <Message kind='info' outline>Informational message</Message>
+  <br />
+  <Message kind='warning' outline>Careful!</Message>
+  <br />
+  <Message kind='danger' outline>Danger, Will Robinson!</Message>
+</Playground>
+
+## Properties
+
+<PropsTable of={Message}></PropsTable>
