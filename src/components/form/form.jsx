@@ -19,7 +19,7 @@ const noop = (event) => {
 }
 
 Form.propTypes = {
-  onSubmit: PropTypes.function
+  onSubmit: PropTypes.func
 }
 
 Form.defaultProps = {
