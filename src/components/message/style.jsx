@@ -64,6 +64,7 @@ const warning = css`
 const title = css`
   display: block;
   font-weight: 600;
+  margin-bottom: 5px;
 `
 
 export { base, danger, info, warning, title }

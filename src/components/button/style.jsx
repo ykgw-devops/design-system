@@ -29,6 +29,10 @@ const base = css`
   font-size: 0.8rem;
   vertical-align: middle;
   font-family: ${fontFamily};
+  text-decoration: none;
+
+  display: block;
+  text-align: center;
 
   background-color: ${colors.CLEAR_SKY};
   cursor: pointer;

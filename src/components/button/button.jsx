@@ -5,7 +5,14 @@ import { cx } from '../../emotion'
 import { base, kind, outline, pill, disabled, size } from './style'
 
 const Button = (props) => {
-  const { disabled, outline, pill, ...rest } = props
+  const { disabled, outline, pill, href, ...rest } = props
+
+  if (href) return (
+    <a href={disabled ? undefined : href} disabled={disabled} className={getStyle(props)} {...rest}>
+      {props.children}
+    </a>
+  )
+
   return (
     <button disabled={disabled} className={getStyle(props)} {...rest}>
       {props.children}
