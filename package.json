@@ -32,5 +32,8 @@
   "peerDependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.waylay.io/"
   }
 }
