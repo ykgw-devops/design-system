@@ -6,7 +6,7 @@ const style = css`
 `
 
 const Field = (props) => (
-  <div className={style}>
+  <div className={[props.className, style].join(' ')} {...props}>
     {props.children}
   </div>
 )
