@@ -1,0 +1,41 @@
+---
+name: Colors
+---
+
+import { Playground } from 'docz'
+import colors from '../../colors.jsx'
+import Segment from '../segment/segment'
+import { css } from 'emotion'
+
+# Colors
+
+<Playground __code=''>
+  {Object.entries(colors).map(([key, value]) => {
+    const colorCard = css({
+      background: value,
+      width: 200,
+      height: 200,
+      float: 'left',
+      margin: 8,
+      position: 'relative'
+    })
+
+    const title = css({
+      width: '100%',
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      textAlign: 'center',
+      padding: 10,
+      background: 'white'
+    })
+
+    return (
+      <Segment className={colorCard}>
+        <div className={title}>
+          {key}
+        </div>
+      </Segment>
+    )
+  })}
+</Playground>

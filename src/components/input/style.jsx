@@ -13,6 +13,13 @@ const base = css`
 
   line-height: 1.5em;
 
+  /* disable auto-fill styles in Webkit */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    background: transparent !important;
+  }
+
   &:focus {
     border-color: ${colors.CLEAR_SKY};
     box-shadow: none;
