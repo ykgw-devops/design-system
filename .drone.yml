@@ -1,0 +1,21 @@
+pipeline:
+
+  build:
+    image: node:8-alpine
+    environment:
+    commands:
+      - yarn install
+      - yarn run build
+
+  publish-docs:
+    image: plugins/s3-sync
+    acl:
+      "*": public-read
+    bucket: waylay.styles
+    region: eu-central-1
+    source: .docz/dist
+    target: design-system.waylay.io
+    when:
+      event: push
+      branch: master
+      status: success
