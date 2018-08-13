@@ -11,10 +11,10 @@ pipeline:
     image: plugins/s3-sync
     acl:
       "*": public-read
-    bucket: waylay.styles
+    bucket: design-system.waylay.io
     region: eu-central-1
     source: .docz/dist
-    target: design-system.waylay.io
+    target: "."
     when:
       event: push
       branch: master
