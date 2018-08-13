@@ -1,7 +1,7 @@
 pipeline:
 
   build:
-    image: node:8-alpine
+    image: node:8
     environment:
     commands:
       - yarn install
@@ -14,7 +14,6 @@ pipeline:
     bucket: design-system.waylay.io
     region: eu-central-1
     source: .docz/dist
-    target: "."
     when:
       event: push
       branch: master
