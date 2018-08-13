@@ -31,7 +31,7 @@ const base = css`
   font-family: ${fontFamily};
   text-decoration: none;
 
-  display: block;
+  display: inline-block;
   text-align: center;
 
   background-color: ${colors.CLEAR_SKY};
