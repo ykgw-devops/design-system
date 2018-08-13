@@ -7,14 +7,12 @@ pipeline:
       - yarn install
       - yarn run build
 
-  publish-docs:
-    image: plugins/s3-sync
-    acl:
-      "*": public-read
-    bucket: design-system.waylay.io
-    region: eu-central-1
-    source: .docz/dist
+  docker:
+    image: plugins/docker
+    registry: eu.gcr.io
+    repo: eu.gcr.io/quiet-mechanic-140114/${DRONE_REPO_NAME}
+    username: _json_key
+    tag: latest
     when:
-      event: push
       branch: master
-      status: success
+      event: push

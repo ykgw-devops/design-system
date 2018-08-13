@@ -3,16 +3,15 @@ name: Colors
 ---
 
 import { Playground } from 'docz'
-import colors from '../../colors.jsx'
-import Segment from '../segment/segment'
 import { css } from 'emotion'
+import colors from '../../colors'
+import Segment from '../segment/segment'
 
 # Colors
 
 <Playground __code=''>
   {Object.entries(colors).map(([key, value]) => {
     const colorCard = css({
-      background: value,
       width: 200,
       height: 200,
       float: 'left',
@@ -31,7 +30,7 @@ import { css } from 'emotion'
     })
 
     return (
-      <Segment className={colorCard}>
+      <Segment className={colorCard} style={{ backgroundColor: value }}>
         <div className={title}>
           {key}
         </div>

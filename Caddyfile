@@ -1,0 +1,17 @@
+0.0.0.0
+gzip
+log /dev/null
+
+errors stderr
+
+# index rewrite for React-Router and pushState
+rewrite {
+  to {path} {path}/ /index.html
+}
+
+redir 301 {
+  if {>X-Forwarded-Proto} is http
+  /  https://{host}{uri}
+}
+
+timeouts 30s
