@@ -7,11 +7,13 @@ import { base, kind, outline, pill, disabled, size } from './style'
 const Button = (props) => {
   const { disabled, outline, pill, href, className, ...rest } = props
 
-  if (href) return (
-    <a href={disabled ? undefined : href} disabled={disabled} {...rest} className={cx(getStyle(props), className)}>
-      {props.children}
-    </a>
-  )
+  if (href) {
+    return (
+      <a href={disabled ? undefined : href} disabled={disabled} {...rest} className={cx(getStyle(props), className)}>
+        {props.children}
+      </a>
+    )
+  }
 
   return (
     <button disabled={disabled} className={getStyle(props)} {...rest}>

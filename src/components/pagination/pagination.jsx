@@ -5,17 +5,13 @@ import { includes, times } from 'lodash'
 import style from './style.jsx'
 import { cx } from '../../emotion'
 
-const Pagination = ({ count = 0, activeIndex = 0 }) => {
-  const ellipsed = count - 6 > 0
-
-  return (
-    <div className={cx(style.base)}>
-      {previous(activeIndex)}
-      {renderPaginationItems(count, activeIndex)}
-      {next(count, activeIndex)}
-    </div>
-  )
-}
+const Pagination = ({ count = 0, activeIndex = 0 }) => (
+  <div className={cx(style.base)}>
+    {previous(activeIndex)}
+    {renderPaginationItems(count, activeIndex)}
+    {next(count, activeIndex)}
+  </div>
+)
 
 function renderPaginationItems (count, activeIndex) {
   const { visible, ellipsis } = getPaginationType(activeIndex, count)
@@ -62,19 +58,25 @@ function getPaginationType (activeIndex, count) {
 
   const isMoving = !isHead && !isTail
 
-  if (isMoving) return {
-    visible: [0, 1, activeIndex - 1, activeIndex, activeIndex + 1, count - 1, count - 2],
-    ellipsis: [2, count - 3]
+  if (isMoving) {
+    return {
+      visible: [0, 1, activeIndex - 1, activeIndex, activeIndex + 1, count - 1, count - 2],
+      ellipsis: [2, count - 3]
+    }
   }
 
-  if (isHead) return {
-    visible: range(HEAD_TAIL_SIZE).concat(count - 2, count - 1),
-    ellipsis: [HEAD_TAIL_SIZE]
+  if (isHead) {
+    return {
+      visible: range(HEAD_TAIL_SIZE).concat(count - 2, count - 1),
+      ellipsis: [HEAD_TAIL_SIZE]
+    }
   }
 
-  if (isTail) return {
-    visible: range(HEAD_TAIL_SIZE, count - HEAD_TAIL_SIZE).concat(0, 1),
-    ellipsis: [2]
+  if (isTail) {
+    return {
+      visible: range(HEAD_TAIL_SIZE, count - HEAD_TAIL_SIZE).concat(0, 1),
+      ellipsis: [2]
+    }
   }
 }
 
@@ -82,7 +84,7 @@ const previous = activeIndex => {
   const disabled = (activeIndex === 0) && style.disabled
 
   return (
-    <a href="" className={cx(style.firstItem, disabled)}>
+    <a href='' className={cx(style.firstItem, disabled)}>
       Previous
     </a>
   )
@@ -92,7 +94,7 @@ const next = (count, activeIndex) => {
   const disabled = (activeIndex === (count - 1)) && style.disabled
 
   return (
-    <a href="" className={cx(style.lastItem, disabled)}>
+    <a href='' className={cx(style.lastItem, disabled)}>
       Next
     </a>
   )

@@ -2,11 +2,10 @@ import React from 'react'
 import { find } from 'lodash'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
-import { setDisplayName, withProps } from 'recompose'
+import { setDisplayName } from 'recompose'
 import { cx } from '../../emotion'
-import { base, menuWrapper, item, selectedItem as selectedStyle, activeItem as activeItemStyle } from './style'
+import { base, menuWrapper, selectedItem as selectedStyle, activeItem as activeItemStyle } from './style'
 import DropdownItem from './dropdown-item'
-import { PropsTable } from '../../../node_modules/docz';
 
 const Dropdown = ({ options, placeholder, content, ...rest }) => (
   <Downshift {...rest}>
@@ -30,7 +29,7 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
             : itemProps.onClick
 
           return (
-            <Dropdown.Item {...itemProps} text={text} className={isActive && activeItemStyle} onClick={whenClicked}  />
+            <Dropdown.Item {...itemProps} text={text} className={isActive && activeItemStyle} onClick={whenClicked} />
           )
         })
       )
@@ -38,8 +37,8 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
       const renderContent = content
         ? React.cloneElement(content, { onClick: toggleMenu })
         : (<div className={cx(selectedStyle)} onClick={toggleMenu}>
-            {selectedItemText}
-          </div>)
+          {selectedItemText}
+        </div>)
 
       return (
         <div className={cx(base)}>

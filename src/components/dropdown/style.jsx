@@ -1,6 +1,5 @@
 import { css } from '../../emotion'
 import colors from '../../colors'
-import { ellipsis } from 'polished'
 
 const padding = '0.5em 1.25em'
 const border = `1px solid ${colors.CONCRETE}`

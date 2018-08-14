@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { css, cx } from '../../emotion'
 import { base } from './style'
 
 const Breadcrumb = ({ sections = [] }) => {
@@ -33,7 +32,7 @@ const sectionType = PropTypes.shape({
 })
 
 Breadcrumb.propTypes = {
-  sections: PropTypes.arrayOf(sectionType).isRequired,
+  sections: PropTypes.arrayOf(sectionType).isRequired
 }
 
 export default Breadcrumb
