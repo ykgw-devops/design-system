@@ -10,7 +10,8 @@
     "clean": "rm -rf .cache .docz dist",
     "build": "run-p build:*",
     "build:docs": "docz build",
-    "build:components": "parcel build src/index.js -o components.js"
+    "build:components": "parcel build src/index.js -o components.js",
+    "version": "npm run build && git add -A dist/"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
