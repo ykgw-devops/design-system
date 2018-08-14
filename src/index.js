@@ -1,5 +1,6 @@
 export { default as Button } from './components/button/button'
 export { default as colors } from './colors'
+export { default as Dropdown } from './components/dropdown/dropdown'
 export { default as Form } from './components/form/form'
 export { default as Global } from './global'
 export { default as Icon } from './components/icon/icon'
