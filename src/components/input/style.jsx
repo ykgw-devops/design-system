@@ -11,14 +11,8 @@ const base = css`
   -webkit-appearance: none;
   font-size: 1rem;
 
-  line-height: 1.5em;
-
-  /* disable auto-fill styles in Webkit */
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus {
-    background: transparent !important;
-  }
+  line-height: 1em;
+  margin: 5px 0;
 
   &:focus {
     border-color: ${colors.CLEAR_SKY};
