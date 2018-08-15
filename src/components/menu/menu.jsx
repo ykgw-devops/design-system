@@ -4,7 +4,7 @@ import { cx } from '../../emotion'
 import { setDisplayName } from 'recompose'
 
 const Menu = (props) => (
-  <ul className={cx(base)}>
+  <ul className={cx(base, props.className)}>
     {props.children}
   </ul>
 )

@@ -6,6 +6,8 @@ const base = css`
   display: inline-block;
   list-style-type: none;
   line-height: 2.25em;
+
+  padding: 0;
 `
 
 const item = css`
