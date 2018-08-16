@@ -8,7 +8,7 @@ import { base } from './style.jsx'
 const Table = props => {
   if (!props.rows) return null
   return (
-    <table {...omit(props, 'rows')} className={cx(base)}>
+    <table {...omit(props, 'rows')} className={cx(base, props.className)}>
       {parseHead(props.rows)}
       {parseRows(props.rows)}
     </table>
