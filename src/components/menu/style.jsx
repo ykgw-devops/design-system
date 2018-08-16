@@ -16,8 +16,6 @@ const item = css`
     ${resetAnchor};
   }
 
-  font-size: 0.875em;
-
   &, > *  {
     display: flex;
     align-items: center;
@@ -29,8 +27,8 @@ const item = css`
   }
 
   i {
-    font-size: 1.25em;
-    margin-right: 0.5em;
+    font-size: 1.3em;
+    margin-right: 0.7em;
   }
 `
 
