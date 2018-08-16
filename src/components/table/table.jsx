@@ -6,6 +6,7 @@ import { cx } from '../../emotion'
 import { base } from './style.jsx'
 
 const Table = props => {
+  if (!props.rows) return null
   return (
     <table {...omit(props, 'rows')} className={cx(base)}>
       {parseHead(props.rows)}
@@ -18,7 +19,7 @@ const Table = props => {
 // consistent for all items of the "rows" array
 const parseHead = rows => (
   <thead>
-    <tr>{Object.keys(rows[0]).map(Header)}</tr>
+    <tr>{Object.keys(rows[0] || {}).map(Header)}</tr>
   </thead>
 )
 
