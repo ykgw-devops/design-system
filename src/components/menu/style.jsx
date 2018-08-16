@@ -8,6 +8,7 @@ const base = css`
   line-height: 2.25em;
 
   padding: 0;
+  margin: 0;
 `
 
 const item = css`
