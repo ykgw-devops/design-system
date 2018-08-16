@@ -25,6 +25,7 @@
     "create-emotion-server": "^9.2.6",
     "downshift": "^2.0.10",
     "emotion": "^9.2.3",
+    "lodash": "^4.17.10",
     "pattycake": "^3.0.3",
     "polished": "^1.9.3",
     "prop-types": "^15.6.1",
