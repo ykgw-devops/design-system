@@ -1,6 +1,6 @@
 import colors from '../../colors'
 import { css } from '../../emotion'
-import { tint } from 'polished'
+import { tint, darken } from 'polished'
 
 // TODO probably not a good idea for each component?
 import '../../global.jsx'
@@ -12,12 +12,13 @@ const base = css`
   width: 100%;
 
   thead {
-    color: ${colors.CARBON};
+    color: ${colors.INK};
   }
 
   thead > tr > th {
-    font-weight: 300;
+    font-weight: 500;
     padding: 0.875em 0.875em;
+    border-bottom: solid 1px ${darken(0.1, colors.CONCRETE)};
   }
 
   tbody > tr {
