@@ -1,21 +1,23 @@
 import { css } from '../../emotion'
-import colors from '../../colors.jsx'
+import colors from '../../colors'
 import { darken } from 'polished'
 
 const base = css`
   display: inline-block;
 
-  border: none;
   border-bottom: solid 1px ${colors.CONCRETE};
-  padding: 0.5em 0em;
-  -webkit-appearance: none;
   font-size: 1rem;
-
-  line-height: 1em;
   margin: 5px 0;
+`
+
+const input = css`
+  -webkit-appearance: none;
+  border: none;
+  padding: 0.5em 0em;
+  line-height: 1em;
+  color: ${colors.CARBON};
 
   &:focus {
-    border-color: ${colors.CLEAR_SKY};
     box-shadow: none;
     outline: none;
   }
@@ -26,4 +28,19 @@ const base = css`
   }
 `
 
-export { base }
+const adornments = css`
+  font-weight: 200;
+  color: ${darken(0.2, colors.CONCRETE)};
+`
+
+const leftAdornments = css`
+  ${adornments}
+  margin-right: 0.25em;
+`
+
+const rightAdornments = css`
+  ${adornments}
+  margin-left: 0.25em;
+`
+
+export { base, input, leftAdornments, rightAdornments }

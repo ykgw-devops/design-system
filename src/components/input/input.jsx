@@ -1,19 +1,36 @@
 import React from 'react'
 
 import { cx } from '../../emotion'
-import { base } from './style.jsx'
+import { base, input, leftAdornments as leftStyle, rightAdornments as rightStyle } from './style'
 import PropTypes from 'prop-types'
 
 const noop = () => undefined
 
 const Input = props => {
+  const { adornments = [] } = props
+  const leftAdornments = adornments.filter(a => a.position === 'left')
+  const rightAdornments = adornments.filter(a => a.position === 'right')
+
   return (
-    <input {...props} className={cx(base)} />
+    <div className={cx(base, props.className)}>
+      {leftAdornments.length > 0 && (
+        <span className={leftStyle}>
+          {leftAdornments.map(adornment => adornment.content)}
+        </span>
+      )}
+      <input {...props} className={input} />
+      {rightAdornments.length > 0 && (
+        <span className={rightStyle}>
+          {rightAdornments.map(adornment => adornment.content)}
+        </span>
+      )}
+    </div>
   )
 }
 
 Input.propTypes = {
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  adornments: PropTypes.array
 }
 
 Input.defaultProps = {

@@ -6,6 +6,7 @@ import { Playground, PropsTable } from 'docz'
 import Input from './input'
 import Button from '../button/button'
 import Form from '../form/form'
+import Icon from '../icon/icon'
 
 # Text Field
 
@@ -13,6 +14,21 @@ import Form from '../form/form'
 
 <Playground>
   Email: <Input name='email' placeholder='example@domain.com' type='email' />
+</Playground>
+
+## Adornments
+<Playground>
+  <Input adornments={
+    [{ position: 'left', content: <Icon name='filter_list' /> }]
+  } name='filter' placeholder='Filter…' />
+  &nbsp;
+  <Input adornments={
+    [{ position: 'left', content: '$' }]
+  } name='payment' placeholder='Dollars' />
+  &nbsp;
+  <Input adornments={
+    [{ position: 'right', content: <Icon name='search' /> }]
+  } name='search' placeholder='Search' />
 </Playground>
 
 ## Properties
