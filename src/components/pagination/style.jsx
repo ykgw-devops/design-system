@@ -8,7 +8,7 @@ const darkerGrey = shade(0.75, colors.ANTI_FLASH_WHITE)
 
 const base = css`
   color: ${colors.CARBON};
-  font-size: 0.875rem;
+  font-size: 1rem;
   width: auto;
   display: inline-block;
   border-radius: 4px;
