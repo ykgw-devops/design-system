@@ -7,7 +7,7 @@ import { cx } from '../../emotion'
 import { base, menuWrapper, selectedItem as selectedStyle, activeItem as activeItemStyle } from './style'
 import DropdownItem from './dropdown-item'
 
-const Dropdown = ({ options, placeholder, content, ...rest }) => (
+const Dropdown = ({ options, placeholder, content, className, ...rest }) => (
   <Downshift {...rest}>
     {props => {
       const { isOpen, toggleMenu, getItemProps, selectedItem } = props
@@ -41,7 +41,7 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
         </div>)
 
       return (
-        <div className={cx(base)}>
+        <div className={cx(base, className)}>
           {/* selected item */}
           {renderContent}
 
