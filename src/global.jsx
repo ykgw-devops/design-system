@@ -6,21 +6,16 @@ injectGlobal`
     box-sizing: border-box;
   }
 
-  @font-face {
-    font-family: 'Fira Sans';
-    font-style: normal;
-    font-weight: 400;
-
-    src: url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,700&subset=latin-ext');
-  }
+  @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&subset=latin-ext');
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css');
 
   body, html {
+    -webkit-font-smoothing: antialiased;
     font-size: 14px;
   }
 
   body {
     font-family: 'Fira Sans', sans-serif;
-    font-size: 15px;
     color: ${colors.INK};
   }
 `
