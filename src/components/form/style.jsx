@@ -14,7 +14,7 @@ const base = css`
   }
 
   .${Input} {
-    display: block;
+    display: flex;
   }
 
   &:focus {

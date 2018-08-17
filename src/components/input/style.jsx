@@ -3,13 +3,14 @@ import colors from '../../colors'
 import { darken } from 'polished'
 
 const base = css`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 
   border-bottom: solid 1px ${colors.CONCRETE};
   font-size: 1rem;
   margin: 5px 0;
 
-  input { width: 100%; }
+  input { flex: 1; }
 `
 
 const input = css`
