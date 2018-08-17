@@ -28,12 +28,12 @@ const input = css`
 
   &::placeholder {
     color: ${darken(0.1, colors.CONCRETE)};
-    font-weight: 200;
+    font-weight: 300;
   }
 `
 
 const adornments = css`
-  font-weight: 200;
+  font-weight: 300;
   color: ${darken(0.2, colors.CONCRETE)};
 `
 
