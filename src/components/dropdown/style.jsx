@@ -1,5 +1,6 @@
 import { css } from '../../emotion'
 import colors from '../../colors'
+import { resetAnchor } from '../../shared'
 
 const padding = '0.5em 1.25em'
 const border = `1px solid ${colors.CONCRETE}`
@@ -24,6 +25,10 @@ const item = css`
   background: none;
   border: none;
   cursor: pointer;
+
+  a {
+    ${resetAnchor}
+  }
 
   &:hover {
     background-color: ${colors.ANTI_FLASH_WHITE};
