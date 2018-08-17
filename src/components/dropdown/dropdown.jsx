@@ -20,7 +20,7 @@ const Dropdown = ({ options, placeholder, content, className, ...rest }) => (
       // transform options props to <Menu.Item>s
       const optionsToItems = options => (
         options.map(option => {
-          const { text, value, onClick } = option
+          const { text, content, value, onClick } = option
           const isActive = selectedItem === value
           const itemProps = getItemProps({ key: value, item: value })
 
@@ -29,7 +29,7 @@ const Dropdown = ({ options, placeholder, content, className, ...rest }) => (
             : itemProps.onClick
 
           return (
-            <Dropdown.Item {...itemProps} text={text} className={isActive && activeItemStyle} onClick={whenClicked} />
+            <Dropdown.Item {...itemProps} text={text || content} className={isActive && activeItemStyle} onClick={whenClicked} />
           )
         })
       )
