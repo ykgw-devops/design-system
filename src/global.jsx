@@ -1,5 +1,5 @@
 import { injectGlobal } from './emotion'
-import colors from './colors.jsx'
+import colors from './colors'
 
 const global = injectGlobal`
   * {

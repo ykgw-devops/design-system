@@ -14,6 +14,12 @@
   dependencies:
     "@babel/highlight" "7.0.0-beta.55"
 
+"@babel/code-frame@7.0.0-rc.1":
+  version "7.0.0-rc.1"
+  resolved "https://npm.waylay.io/@babel/code-frame/-/code-frame-7.0.0-rc.1/5c2154415d6c09959a71845ef519d11157e95d10.tgz#5c2154415d6c09959a71845ef519d11157e95d10"
+  dependencies:
+    "@babel/highlight" "7.0.0-rc.1"
+
 "@babel/core@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.npmjs.org/@babel/core/-/core-7.0.0-beta.42.tgz#b3a838fddbd19663369a0b4892189fd8d3f82001"
@@ -68,6 +74,16 @@
   resolved "https://npm.waylay.io/@babel/generator/-/generator-7.0.0-beta.55/8ec11152dcc398bae35dd181122704415c383a01.tgz#8ec11152dcc398bae35dd181122704415c383a01"
   dependencies:
     "@babel/types" "7.0.0-beta.55"
+    jsesc "^2.5.1"
+    lodash "^4.17.10"
+    source-map "^0.5.0"
+    trim-right "^1.0.1"
+
+"@babel/generator@7.0.0-rc.1":
+  version "7.0.0-rc.1"
+  resolved "https://npm.waylay.io/@babel/generator/-/generator-7.0.0-rc.1/739c87d70b31aeed802bd6bc9fd51480065c45e8.tgz#739c87d70b31aeed802bd6bc9fd51480065c45e8"
+  dependencies:
+    "@babel/types" "7.0.0-rc.1"
     jsesc "^2.5.1"
     lodash "^4.17.10"
     source-map "^0.5.0"
@@ -132,6 +148,14 @@
     "@babel/template" "7.0.0-beta.55"
     "@babel/types" "7.0.0-beta.55"
 
+"@babel/helper-function-name@7.0.0-rc.1":
+  version "7.0.0-rc.1"
+  resolved "https://npm.waylay.io/@babel/helper-function-name/-/helper-function-name-7.0.0-rc.1/20b2cc836a53c669f297c8d309fc553385c5cdde.tgz#20b2cc836a53c669f297c8d309fc553385c5cdde"
+  dependencies:
+    "@babel/helper-get-function-arity" "7.0.0-rc.1"
+    "@babel/template" "7.0.0-rc.1"
+    "@babel/types" "7.0.0-rc.1"
+
 "@babel/helper-get-function-arity@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.npmjs.org/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.42.tgz#ad072e32f912c033053fc80478169aeadc22191e"
@@ -143,6 +167,12 @@
   resolved "https://npm.waylay.io/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.55/8559ded96ecd3b626f9c1f57494edc4fa3cc6a94.tgz#8559ded96ecd3b626f9c1f57494edc4fa3cc6a94"
   dependencies:
     "@babel/types" "7.0.0-beta.55"
+
+"@babel/helper-get-function-arity@7.0.0-rc.1":
+  version "7.0.0-rc.1"
+  resolved "https://npm.waylay.io/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0-rc.1/60185957f72ed73766ce74c836ac574921743c46.tgz#60185957f72ed73766ce74c836ac574921743c46"
+  dependencies:
+    "@babel/types" "7.0.0-rc.1"
 
 "@babel/helper-hoist-variables@7.0.0-beta.42":
   version "7.0.0-beta.42"
@@ -234,6 +264,12 @@
   dependencies:
     "@babel/types" "7.0.0-beta.55"
 
+"@babel/helper-split-export-declaration@7.0.0-rc.1":
+  version "7.0.0-rc.1"
+  resolved "https://npm.waylay.io/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0-rc.1/b00323834343fd0210f1f46c7a53521ad53efa5e.tgz#b00323834343fd0210f1f46c7a53521ad53efa5e"
+  dependencies:
+    "@babel/types" "7.0.0-rc.1"
+
 "@babel/helper-wrap-function@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.npmjs.org/@babel/helper-wrap-function/-/helper-wrap-function-7.0.0-beta.42.tgz#5ffc6576902aa2a10fe6666e063bd45029c36db3"
@@ -275,6 +311,14 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
+"@babel/highlight@7.0.0-rc.1":
+  version "7.0.0-rc.1"
+  resolved "https://npm.waylay.io/@babel/highlight/-/highlight-7.0.0-rc.1/e0ca4731fa4786f7b9500421d6ff5e5a7753e81e.tgz#e0ca4731fa4786f7b9500421d6ff5e5a7753e81e"
+  dependencies:
+    chalk "^2.0.0"
+    esutils "^2.0.2"
+    js-tokens "^3.0.0"
+
 "@babel/parser@7.0.0-beta.53":
   version "7.0.0-beta.53"
   resolved "https://registry.npmjs.org/@babel/parser/-/parser-7.0.0-beta.53.tgz#1f45eb617bf9463d482b2c04d349d9e4edbf4892"
@@ -282,6 +326,10 @@
 "@babel/parser@7.0.0-beta.55":
   version "7.0.0-beta.55"
   resolved "https://npm.waylay.io/@babel/parser/-/parser-7.0.0-beta.55/0a527efc148c6c8cd85d5ffddacad817a2daeeb2.tgz#0a527efc148c6c8cd85d5ffddacad817a2daeeb2"
+
+"@babel/parser@7.0.0-rc.1", "@babel/parser@^7.0.0-beta.56":
+  version "7.0.0-rc.1"
+  resolved "https://npm.waylay.io/@babel/parser/-/parser-7.0.0-rc.1/d009a9bba8175d7b971e30cd03535b278c44082d.tgz#d009a9bba8175d7b971e30cd03535b278c44082d"
 
 "@babel/plugin-proposal-async-generator-functions@7.0.0-beta.42":
   version "7.0.0-beta.42"
@@ -623,6 +671,13 @@
     "@babel/helper-regex" "7.0.0-beta.42"
     regexpu-core "^4.1.3"
 
+"@babel/polyfill@7.0.0-beta.55":
+  version "7.0.0-beta.55"
+  resolved "https://npm.waylay.io/@babel/polyfill/-/polyfill-7.0.0-beta.55/fc68159a3a32f67d4003298ee69d3412622b5303.tgz#fc68159a3a32f67d4003298ee69d3412622b5303"
+  dependencies:
+    core-js "^2.5.7"
+    regenerator-runtime "^0.11.1"
+
 "@babel/preset-env@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.npmjs.org/@babel/preset-env/-/preset-env-7.0.0-beta.42.tgz#671e688057c010b22a7811b965f7da5d79c472d3"
@@ -723,6 +778,15 @@
     "@babel/types" "7.0.0-beta.55"
     lodash "^4.17.10"
 
+"@babel/template@7.0.0-rc.1":
+  version "7.0.0-rc.1"
+  resolved "https://npm.waylay.io/@babel/template/-/template-7.0.0-rc.1/5f9c0a481c9f22ecdb84697b3c3a34eadeeca23c.tgz#5f9c0a481c9f22ecdb84697b3c3a34eadeeca23c"
+  dependencies:
+    "@babel/code-frame" "7.0.0-rc.1"
+    "@babel/parser" "7.0.0-rc.1"
+    "@babel/types" "7.0.0-rc.1"
+    lodash "^4.17.10"
+
 "@babel/traverse@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.npmjs.org/@babel/traverse/-/traverse-7.0.0-beta.42.tgz#f4bf4d1e33d41baf45205e2d0463591d57326285"
@@ -752,6 +816,20 @@
     globals "^11.1.0"
     lodash "^4.17.10"
 
+"@babel/traverse@^7.0.0-beta.56":
+  version "7.0.0-rc.1"
+  resolved "https://npm.waylay.io/@babel/traverse/-/traverse-7.0.0-rc.1/867b4b45ada2d51ae2d0076f1c1d5880f8557158.tgz#867b4b45ada2d51ae2d0076f1c1d5880f8557158"
+  dependencies:
+    "@babel/code-frame" "7.0.0-rc.1"
+    "@babel/generator" "7.0.0-rc.1"
+    "@babel/helper-function-name" "7.0.0-rc.1"
+    "@babel/helper-split-export-declaration" "7.0.0-rc.1"
+    "@babel/parser" "7.0.0-rc.1"
+    "@babel/types" "7.0.0-rc.1"
+    debug "^3.1.0"
+    globals "^11.1.0"
+    lodash "^4.17.10"
+
 "@babel/types@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.npmjs.org/@babel/types/-/types-7.0.0-beta.42.tgz#1e2118767684880f6963801b272fd2b3348efacc"
@@ -771,6 +849,14 @@
 "@babel/types@7.0.0-beta.55":
   version "7.0.0-beta.55"
   resolved "https://npm.waylay.io/@babel/types/-/types-7.0.0-beta.55/7755c9d2e58315a64f05d8cf3322379be16d9199.tgz#7755c9d2e58315a64f05d8cf3322379be16d9199"
+  dependencies:
+    esutils "^2.0.2"
+    lodash "^4.17.10"
+    to-fast-properties "^2.0.0"
+
+"@babel/types@7.0.0-rc.1":
+  version "7.0.0-rc.1"
+  resolved "https://npm.waylay.io/@babel/types/-/types-7.0.0-rc.1/6abf6d14ddd9fc022617e5b62e6b32f4fa6526ad.tgz#6abf6d14ddd9fc022617e5b62e6b32f4fa6526ad"
   dependencies:
     esutils "^2.0.2"
     lodash "^4.17.10"
@@ -889,6 +975,12 @@
   dependencies:
     escape-string-regexp "^1.0.5"
     lodash.deburr "^4.1.0"
+
+"@vxna/mini-html-webpack-template@^0.1.7":
+  version "0.1.7"
+  resolved "https://npm.waylay.io/@vxna/mini-html-webpack-template/-/mini-html-webpack-template-0.1.7/2a8270e513ee14f395cc17c2ce22ced383c45d22.tgz#2a8270e513ee14f395cc17c2ce22ced383c45d22"
+  dependencies:
+    common-tags "^1.7.2"
 
 "@webassemblyjs/ast@1.5.13":
   version "1.5.13"
@@ -1088,11 +1180,17 @@ acorn-jsx@^3.0.0:
   dependencies:
     acorn "^3.0.4"
 
+acorn-jsx@^4.1.1:
+  version "4.1.1"
+  resolved "https://npm.waylay.io/acorn-jsx/-/acorn-jsx-4.1.1/e8e41e48ea2fe0c896740610ab6a4ffd8add225e.tgz#e8e41e48ea2fe0c896740610ab6a4ffd8add225e"
+  dependencies:
+    acorn "^5.0.3"
+
 acorn@^3.0.4:
   version "3.3.0"
   resolved "https://registry.npmjs.org/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
-acorn@^5.0.0, acorn@^5.0.3, acorn@^5.5.0, acorn@^5.6.2:
+acorn@^5.0.0, acorn@^5.0.3, acorn@^5.4.1, acorn@^5.5.0, acorn@^5.6.2:
   version "5.7.1"
   resolved "https://registry.npmjs.org/acorn/-/acorn-5.7.1.tgz#f095829297706a7c9776958c0afc8930a9b9d9d8"
 
@@ -1819,13 +1917,6 @@ babel-polyfill@^6.23.0, babel-polyfill@^6.26.0:
     core-js "^2.5.0"
     regenerator-runtime "^0.10.5"
 
-babel-polyfill@^7.0.0-beta.3:
-  version "7.0.0-beta.3"
-  resolved "https://registry.npmjs.org/babel-polyfill/-/babel-polyfill-7.0.0-beta.3.tgz#053f0943cdf498910cc037de2ffc7b1f2e36223a"
-  dependencies:
-    core-js "^2.4.0"
-    regenerator-runtime "^0.11.0"
-
 babel-preset-env@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.7.0.tgz#dea79fa4ebeb883cd35dab07e260c1c9c04df77a"
@@ -2147,6 +2238,19 @@ browserslist@^4.0.0:
     electron-to-chromium "^1.3.52"
     node-releases "^1.0.0-alpha.10"
 
+buble@^0.19.3:
+  version "0.19.3"
+  resolved "https://npm.waylay.io/buble/-/buble-0.19.3/01e9412062cff1da6f20342b6ecd72e7bf699d02.tgz#01e9412062cff1da6f20342b6ecd72e7bf699d02"
+  dependencies:
+    acorn "^5.4.1"
+    acorn-dynamic-import "^3.0.0"
+    acorn-jsx "^4.1.1"
+    chalk "^2.3.1"
+    magic-string "^0.22.4"
+    minimist "^1.2.0"
+    os-homedir "^1.0.1"
+    vlq "^1.0.0"
+
 buffer-equal@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/buffer-equal/-/buffer-equal-0.0.1.tgz#91bc74b11ea405bc916bc6aa908faafa5b4aac4b"
@@ -2221,6 +2325,15 @@ cache-content-type@^1.0.0:
   dependencies:
     mime-types "^2.1.18"
     ylru "^1.2.0"
+
+cache-loader@^1.2.2:
+  version "1.2.2"
+  resolved "https://npm.waylay.io/cache-loader/-/cache-loader-1.2.2/6d5c38ded959a09cc5d58190ab5af6f73bd353f5.tgz#6d5c38ded959a09cc5d58190ab5af6f73bd353f5"
+  dependencies:
+    loader-utils "^1.1.0"
+    mkdirp "^0.5.1"
+    neo-async "^2.5.0"
+    schema-utils "^0.4.2"
 
 call-me-maybe@^1.0.1:
   version "1.0.1"
@@ -2413,6 +2526,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.5:
+  version "2.2.6"
+  resolved "https://npm.waylay.io/classnames/-/classnames-2.2.6/43935bffdd291f326dad0a205309b38d00f650ce.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+
 clean-css@4.1.x:
   version "4.1.11"
   resolved "https://registry.npmjs.org/clean-css/-/clean-css-4.1.11.tgz#2ecdf145aba38f54740f26cefd0ff3e03e125d6a"
@@ -2437,9 +2554,9 @@ cli-width@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
 
-clipboard@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/clipboard/-/clipboard-2.0.1.tgz#a12481e1c13d8a50f5f036b0560fe5d16d74e46a"
+clipboard@^1.5.5:
+  version "1.7.1"
+  resolved "https://npm.waylay.io/clipboard/-/clipboard-1.7.1/360d6d6946e99a7a1fef395e42ba92b5e9b5a16b.tgz#360d6d6946e99a7a1fef395e42ba92b5e9b5a16b"
   dependencies:
     good-listener "^1.2.2"
     select "^1.1.2"
@@ -2491,6 +2608,10 @@ coa@~2.0.1:
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
+
+codemirror@^5.18.2, codemirror@^5.39.2:
+  version "5.39.2"
+  resolved "https://npm.waylay.io/codemirror/-/codemirror-5.39.2/778aa13b55ebf280745c309cb1b148e3fc06f698.tgz#778aa13b55ebf280745c309cb1b148e3fc06f698"
 
 collapse-white-space@^1.0.0, collapse-white-space@^1.0.2:
   version "1.0.4"
@@ -2557,12 +2678,6 @@ colors@~1.1.2:
   version "1.1.2"
   resolved "https://registry.npmjs.org/colors/-/colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63"
 
-comma-separated-tokens@^1.0.0:
-  version "1.0.5"
-  resolved "https://npm.waylay.io/comma-separated-tokens/-/comma-separated-tokens-1.0.5/b13793131d9ea2d2431cf5b507ddec258f0ce0db.tgz#b13793131d9ea2d2431cf5b507ddec258f0ce0db"
-  dependencies:
-    trim "0.0.1"
-
 command-exists@^1.2.6:
   version "1.2.7"
   resolved "https://registry.npmjs.org/command-exists/-/command-exists-1.2.7.tgz#16828f0c3ff2b0c58805861ef211b64fc15692a8"
@@ -2579,6 +2694,10 @@ commander@~2.14.1:
   version "2.14.1"
   resolved "https://registry.npmjs.org/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
 
+common-tags@^1.7.2, common-tags@^1.8.0:
+  version "1.8.0"
+  resolved "https://npm.waylay.io/common-tags/-/common-tags-1.8.0/8e3153e542d4a39e9b10554434afaaf98956a937.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
+
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
@@ -2586,6 +2705,14 @@ commondir@^1.0.1:
 component-emitter@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
+
+component-props@1.1.1:
+  version "1.1.1"
+  resolved "https://npm.waylay.io/component-props/-/component-props-1.1.1/f9b7df9b9927b6e6d97c9bd272aa867670f34944.tgz#f9b7df9b9927b6e6d97c9bd272aa867670f34944"
+
+component-xor@0.0.4:
+  version "0.0.4"
+  resolved "https://npm.waylay.io/component-xor/-/component-xor-0.0.4/c55d83ccc1b94cd5089a4e93fa7891c7263e59aa.tgz#c55d83ccc1b94cd5089a4e93fa7891c7263e59aa"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -2707,7 +2834,7 @@ core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.npmjs.org/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
-core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.6:
+core-js@^2.4.0, core-js@^2.4.1, core-js@^2.5.0, core-js@^2.5.6, core-js@^2.5.7:
   version "2.5.7"
   resolved "https://registry.npmjs.org/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
 
@@ -2839,6 +2966,14 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+create-react-class@^15.5.1:
+  version "15.6.3"
+  resolved "https://npm.waylay.io/create-react-class/-/create-react-class-15.6.3/2d73237fb3f970ae6ebe011a9e66f46dbca80036.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
 create-react-context@0.2.1:
   version "0.2.1"
   resolved "https://registry.npmjs.org/create-react-context/-/create-react-context-0.2.1.tgz#425a3d96f4b7690c2fbf20aed5aeae2e2007a959"
@@ -2905,15 +3040,6 @@ css-declaration-sorter@^3.0.0:
 css-select-base-adapter@~0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/css-select-base-adapter/-/css-select-base-adapter-0.1.0.tgz#0102b3d14630df86c3eb9fa9f5456270106cf990"
-
-css-select@^1.1.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/css-select/-/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
-  dependencies:
-    boolbase "~1.0.0"
-    css-what "2.1"
-    domutils "1.5.1"
-    nth-check "~1.0.1"
 
 css-select@~1.3.0-rc0:
   version "1.3.0-rc0"
@@ -3308,26 +3434,29 @@ doctrine@^2.0.0, doctrine@^2.0.2, doctrine@^2.1.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@^0.9.6:
-  version "0.9.6"
-  resolved "https://npm.waylay.io/docz-core/-/docz-core-0.9.6/4b5b6914f500c00f72a03cb8d078e45e31bea304.tgz#4b5b6914f500c00f72a03cb8d078e45e31bea304"
+docz-core@^0.10.3:
+  version "0.10.3"
+  resolved "https://npm.waylay.io/docz-core/-/docz-core-0.10.3/bc28b9c53b87ce82426e9385ef8c56824840eeb3.tgz#bc28b9c53b87ce82426e9385ef8c56824840eeb3"
   dependencies:
     "@babel/core" "7.0.0-beta.55"
     "@babel/plugin-syntax-dynamic-import" "^7.0.0-beta.55"
+    "@babel/polyfill" "7.0.0-beta.55"
     "@babel/preset-typescript" "^7.0.0-beta.55"
     "@babel/runtime" "^7.0.0-beta.55"
     "@mdx-js/loader" "^0.15.0-2"
     "@mdx-js/mdx" "^0.15.0-2"
     "@mdx-js/mdxast" "^0.15.0-2"
     "@sindresorhus/slugify" "^0.3.0"
+    "@vxna/mini-html-webpack-template" "^0.1.7"
     art-template "^4.12.2"
     babel-loader "^8.0.0-beta.4"
     babel-plugin-react-docgen "^2.0.0-rc.1"
-    babel-polyfill "^7.0.0-beta.3"
     babel-preset-react-app "^4.0.0-next.b2fd8db8"
     babylon "^6.18.0"
+    cache-loader "^1.2.2"
     chalk "^2.4.1"
     chokidar "^2.0.4"
+    common-tags "^1.8.0"
     connect-history-api-fallback "^1.5.0"
     cpy "^7.0.1"
     deepmerge "^2.1.1"
@@ -3335,6 +3464,7 @@ docz-core@^0.9.6:
     dotenv "^6.0.0"
     env-dot-prop "^1.0.2"
     express "^4.16.3"
+    fast-deep-equal "^2.0.1"
     fast-glob "^2.2.2"
     file-loader "^1.1.11"
     find-up "^3.0.0"
@@ -3342,21 +3472,22 @@ docz-core@^0.9.6:
     fs-extra "^7.0.0"
     get-pkg-repo "^2.0.0"
     happypack "^5.0.0"
-    html-webpack-plugin "^3.2.0"
+    html-minifier "^3.5.19"
     humanize-string "^1.0.2"
     koa "^2.5.2"
     koa-connect "^2.0.1"
     koa-mount "^3.0.0"
     koa-range "^0.3.0"
     koa-static "^5.0.0"
-    load-cfg "^0.9.4"
+    load-cfg "^0.10.3"
     lodash.get "^4.4.2"
+    mini-html-webpack-plugin "^0.2.3"
     prettier "^1.14.0"
     react-dev-utils "^5.0.1"
     react-docgen-typescript-loader "^2.1.1"
     react-hot-loader "4.3.4"
     rehype-autolink-headings "^2.0.3"
-    rehype-docz "^0.9.4"
+    rehype-docz "^0.10.3"
     rehype-slug "^2.0.1"
     remark-docz "^0.9.4"
     remark-frontmatter "^1.2.0"
@@ -3368,7 +3499,6 @@ docz-core@^0.9.6:
     titleize "^1.0.1"
     to-vfile "^5.0.0"
     uglifyjs-webpack-plugin "^1.2.7"
-    ulid "^2.3.0"
     unified "^7.0.0"
     unist-util-find "^1.0.1"
     unist-util-is "^2.1.2"
@@ -3385,12 +3515,13 @@ docz-core@^0.9.6:
     ws "^6.0.0"
     yargs "^12.0.1"
 
-docz-theme-default@^0.9.6:
-  version "0.9.6"
-  resolved "https://npm.waylay.io/docz-theme-default/-/docz-theme-default-0.9.6/83138b79c1ffacb07beaca60f92637d5a5c62ca6.tgz#83138b79c1ffacb07beaca60f92637d5a5c62ca6"
+docz-theme-default@^0.10.3:
+  version "0.10.3"
+  resolved "https://npm.waylay.io/docz-theme-default/-/docz-theme-default-0.10.3/f94e514c120429a3beab5622cf5504fb74026c00.tgz#f94e514c120429a3beab5622cf5504fb74026c00"
   dependencies:
+    codemirror "^5.39.2"
     copy-text-to-clipboard "^1.0.4"
-    docz "^0.9.6"
+    docz "^0.10.3"
     emotion "^9.2.6"
     emotion-theming "^9.2.6"
     facepaint "^1.2.1"
@@ -3404,17 +3535,18 @@ docz-theme-default@^0.9.6:
     react "^16.4.2"
     react-adopt "^0.6.0"
     react-breakpoints "^3.0.0"
+    react-codemirror "^1.0.0"
     react-dom "^16.4.2"
     react-emotion "^9.2.6"
     react-feather "^1.1.1"
     react-lightweight-tooltip "^1.0.0"
+    react-live "^1.11.0"
     react-powerplug "^1.0.0-rc.1"
-    react-syntax-highlighter "^8.0.1"
     webfontloader "^1.6.28"
 
-docz@^0.9.6:
-  version "0.9.6"
-  resolved "https://npm.waylay.io/docz/-/docz-0.9.6/3ecaa58858e310315aa0151324ba6915a2f482ae.tgz#3ecaa58858e310315aa0151324ba6915a2f482ae"
+docz@^0.10.3:
+  version "0.10.3"
+  resolved "https://npm.waylay.io/docz/-/docz-0.10.3/ab1b251a7db44e86b1cac1b419b9722fdbb44867.tgz#ab1b251a7db44e86b1cac1b419b9722fdbb44867"
   dependencies:
     "@mdx-js/tag" "^0.15.0-2"
     "@sindresorhus/slugify" "^0.3.0"
@@ -3422,8 +3554,8 @@ docz@^0.9.6:
     capitalize "^1.0.0"
     create-react-context "^0.2.2"
     deepmerge "^2.1.1"
-    docz-core "^0.9.6"
-    docz-theme-default "^0.9.6"
+    docz-core "^0.10.3"
+    docz-theme-default "^0.10.3"
     prop-types "^15.6.2"
     react "^16.4.2"
     react-copy-write "^0.7.0"
@@ -3434,11 +3566,12 @@ docz@^0.9.6:
     react-router-hash-link "^1.2.0"
     yargs "^12.0.1"
 
-dom-converter@~0.1:
-  version "0.1.4"
-  resolved "https://registry.npmjs.org/dom-converter/-/dom-converter-0.1.4.tgz#a45ef5727b890c9bffe6d7c876e7b19cb0e17f3b"
+dom-iterator@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.waylay.io/dom-iterator/-/dom-iterator-1.0.0/9c09899846ec41c2d257adc4d6015e4759ef05ad.tgz#9c09899846ec41c2d257adc4d6015e4759ef05ad"
   dependencies:
-    utila "~0.3"
+    component-props "1.1.1"
+    component-xor "0.0.4"
 
 dom-serializer@0:
   version "0.1.0"
@@ -3463,21 +3596,9 @@ domelementtype@~1.1.1:
   version "1.1.3"
   resolved "https://registry.npmjs.org/domelementtype/-/domelementtype-1.1.3.tgz#bd28773e2642881aec51544924299c5cd822185b"
 
-domhandler@2.1:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/domhandler/-/domhandler-2.1.0.tgz#d2646f5e57f6c3bab11cf6cb05d3c0acf7412594"
-  dependencies:
-    domelementtype "1"
-
 domhandler@^2.3.0:
   version "2.4.2"
   resolved "https://registry.npmjs.org/domhandler/-/domhandler-2.4.2.tgz#8805097e933d65e85546f726d60f5eb88b44f803"
-  dependencies:
-    domelementtype "1"
-
-domutils@1.1:
-  version "1.1.6"
-  resolved "https://registry.npmjs.org/domutils/-/domutils-1.1.6.tgz#bddc3de099b9a2efacc51c623f28f416ecc57485"
   dependencies:
     domelementtype "1"
 
@@ -4108,7 +4229,7 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.npmjs.org/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
-fault@^1.0.1, fault@^1.0.2:
+fault@^1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/fault/-/fault-1.0.2.tgz#c3d0fec202f172a3a4d414042ad2bb5e2a3ffbaa"
   dependencies:
@@ -4120,7 +4241,7 @@ faye-websocket@~0.11.0:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.16:
+fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.16, fbjs@^0.8.9:
   version "0.8.17"
   resolved "https://registry.npmjs.org/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   dependencies:
@@ -4634,22 +4755,9 @@ hast-util-is-element@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/hast-util-is-element/-/hast-util-is-element-1.0.1.tgz#c76e8aafbdb6e5c83265bf50324e2f2e024eb12a"
 
-hast-util-parse-selector@^2.2.0:
-  version "2.2.0"
-  resolved "https://npm.waylay.io/hast-util-parse-selector/-/hast-util-parse-selector-2.2.0/2175f18cdd697308fc3431d5c29a9e48dfa4817a.tgz#2175f18cdd697308fc3431d5c29a9e48dfa4817a"
-
 hast-util-to-string@^1.0.0, hast-util-to-string@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/hast-util-to-string/-/hast-util-to-string-1.0.1.tgz#b28055cdca012d3c8fd048757c8483d0de0d002c"
-
-hastscript@^4.0.0:
-  version "4.0.0"
-  resolved "https://npm.waylay.io/hastscript/-/hastscript-4.0.0/653f7f4f7aedb9e6c629af8c13707553f5671c77.tgz#653f7f4f7aedb9e6c629af8c13707553f5671c77"
-  dependencies:
-    comma-separated-tokens "^1.0.0"
-    hast-util-parse-selector "^2.2.0"
-    property-information "^4.0.0"
-    space-separated-tokens "^1.0.0"
 
 he@1.1.x:
   version "1.1.1"
@@ -4658,10 +4766,6 @@ he@1.1.x:
 hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://npm.waylay.io/hex-color-regex/-/hex-color-regex-1.1.0/4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
-
-highlight.js@~9.12.0:
-  version "9.12.0"
-  resolved "https://npm.waylay.io/highlight.js/-/highlight.js-9.12.0/e6d9dbe57cbefe60751f02af336195870c90c01e.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
 
 history@^4.7.2:
   version "4.7.2"
@@ -4726,7 +4830,7 @@ html-entities@^1.2.1:
   version "1.2.1"
   resolved "https://npm.waylay.io/html-entities/-/html-entities-1.2.1/0df29351f0721163515dfb9e5543e5f6eed5162f.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
 
-html-minifier@^3.2.3, html-minifier@^3.4.3:
+html-minifier@^3.4.3, html-minifier@^3.5.19:
   version "3.5.19"
   resolved "https://registry.npmjs.org/html-minifier/-/html-minifier-3.5.19.tgz#ed53c4b7326fe507bc3a1adbcc3bbb56660a2ebd"
   dependencies:
@@ -4747,18 +4851,6 @@ html-tokenize@^2.0.0:
     minimist "~0.0.8"
     readable-stream "~1.0.27-1"
     through2 "~0.4.1"
-
-html-webpack-plugin@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.npmjs.org/html-webpack-plugin/-/html-webpack-plugin-3.2.0.tgz#b01abbd723acaaa7b37b6af4492ebda03d9dd37b"
-  dependencies:
-    html-minifier "^3.2.3"
-    loader-utils "^0.2.16"
-    lodash "^4.17.3"
-    pretty-error "^2.0.2"
-    tapable "^1.0.0"
-    toposort "^1.0.0"
-    util.promisify "1.0.0"
 
 htmlnano@^0.1.9:
   version "0.1.9"
@@ -4781,15 +4873,6 @@ htmlparser2@^3.9.2:
     entities "^1.1.1"
     inherits "^2.0.1"
     readable-stream "^2.0.2"
-
-htmlparser2@~3.3.0:
-  version "3.3.0"
-  resolved "https://registry.npmjs.org/htmlparser2/-/htmlparser2-3.3.0.tgz#cc70d05a59f6542e43f0e685c982e14c924a9efe"
-  dependencies:
-    domelementtype "1"
-    domhandler "2.1"
-    domutils "1.1"
-    readable-stream "1.0"
 
 http-assert@^1.3.0:
   version "1.3.0"
@@ -5567,9 +5650,9 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-load-cfg@^0.9.4:
-  version "0.9.4"
-  resolved "https://npm.waylay.io/load-cfg/-/load-cfg-0.9.4/f3b481074a6b80a1a8a3aef9de2edf327579449a.tgz#f3b481074a6b80a1a8a3aef9de2edf327579449a"
+load-cfg@^0.10.3:
+  version "0.10.3"
+  resolved "https://npm.waylay.io/load-cfg/-/load-cfg-0.10.3/33ad6bb0a824c89c929defe1ba6c912e75ccf7a8.tgz#33ad6bb0a824c89c929defe1ba6c912e75ccf7a8"
   dependencies:
     deepmerge "^2.1.1"
     esm "^3.0.72"
@@ -5615,15 +5698,6 @@ loader-utils@1.1.0, loader-utils@^1.0.2, loader-utils@^1.1.0:
     emojis-list "^2.0.0"
     json5 "^0.5.0"
 
-loader-utils@^0.2.16:
-  version "0.2.17"
-  resolved "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
-  dependencies:
-    big.js "^3.1.3"
-    emojis-list "^2.0.0"
-    json5 "^0.5.0"
-    object-assign "^4.0.1"
-
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -5650,9 +5724,17 @@ lodash.deburr@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/lodash.deburr/-/lodash.deburr-4.1.0.tgz#ddb1bbb3ef07458c0177ba07de14422cb033ff9b"
 
+lodash.flatten@^4.4.0:
+  version "4.4.0"
+  resolved "https://npm.waylay.io/lodash.flatten/-/lodash.flatten-4.4.0/f31c22225a9632d2bbf8e4addbef240aa765a61f.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
+
 lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.npmjs.org/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://npm.waylay.io/lodash.isequal/-/lodash.isequal-4.5.0/415c4478f2bcc30120c22ce10ed3226f7d3e18e0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
 
 lodash.iteratee@^4.5.0:
   version "4.7.0"
@@ -5666,7 +5748,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-"lodash@>=3.5 <5", lodash@^4.17.10, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0:
+"lodash@>=3.5 <5", lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.10"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -5723,13 +5805,6 @@ lower-case@^1.1.1:
 lowercase-keys@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
-
-lowlight@~1.9.1:
-  version "1.9.2"
-  resolved "https://npm.waylay.io/lowlight/-/lowlight-1.9.2/0b9127e3cec2c3021b7795dd81005c709a42fdd1.tgz#0b9127e3cec2c3021b7795dd81005c709a42fdd1"
-  dependencies:
-    fault "^1.0.2"
-    highlight.js "~9.12.0"
 
 lru-cache@^3.2.0:
   version "3.2.0"
@@ -6012,6 +6087,12 @@ min-document@^2.19.0:
   resolved "https://registry.npmjs.org/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
   dependencies:
     dom-walk "^0.1.0"
+
+mini-html-webpack-plugin@^0.2.3:
+  version "0.2.3"
+  resolved "https://npm.waylay.io/mini-html-webpack-plugin/-/mini-html-webpack-plugin-0.2.3/2dfbdc3f35f6ae03864a608808381f8137311ea0.tgz#2dfbdc3f35f6ae03864a608808381f8137311ea0"
+  dependencies:
+    webpack-sources "^1.1.0"
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
@@ -6370,7 +6451,7 @@ npmlog@^4.0.2:
     gauge "~2.7.3"
     set-blocking "~2.0.0"
 
-nth-check@^1.0.1, nth-check@~1.0.1:
+nth-check@^1.0.1:
   version "1.0.1"
   resolved "https://npm.waylay.io/nth-check/-/nth-check-1.0.1/9929acdf628fc2c41098deab82ac580cf149aae4.tgz#9929acdf628fc2c41098deab82ac580cf149aae4"
   dependencies:
@@ -6518,7 +6599,7 @@ os-browserify@^0.3.0:
   version "0.3.0"
   resolved "https://registry.npmjs.org/os-browserify/-/os-browserify-0.3.0.tgz#854373c7f5c2315914fc9bfc6bd8238fdda1ec27"
 
-os-homedir@^1.0.0:
+os-homedir@^1.0.0, os-homedir@^1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
 
@@ -6696,7 +6777,7 @@ parse-asn1@^5.0.0:
     evp_bytestokey "^1.0.0"
     pbkdf2 "^3.0.3"
 
-parse-entities@^1.0.2, parse-entities@^1.1.0, parse-entities@^1.1.2:
+parse-entities@^1.0.2, parse-entities@^1.1.0:
   version "1.1.2"
   resolved "https://registry.npmjs.org/parse-entities/-/parse-entities-1.1.2.tgz#9eaf719b29dc3bd62246b4332009072e01527777"
   dependencies:
@@ -7383,13 +7464,6 @@ prettier@^1.14.0:
   version "1.14.0"
   resolved "https://npm.waylay.io/prettier/-/prettier-1.14.0/847c235522035fd988100f1f43cf20a7d24f9372.tgz#847c235522035fd988100f1f43cf20a7d24f9372"
 
-pretty-error@^2.0.2:
-  version "2.1.1"
-  resolved "https://registry.npmjs.org/pretty-error/-/pretty-error-2.1.1.tgz#5f4f87c8f91e5ae3f3ba87ab4cf5e03b1a17f1a3"
-  dependencies:
-    renderkid "^2.0.1"
-    utila "~0.4"
-
 pretty-time@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/pretty-time/-/pretty-time-1.1.0.tgz#ffb7429afabb8535c346a34e41873adf3d74dd0e"
@@ -7406,11 +7480,11 @@ printj@~1.1.0:
   version "1.1.2"
   resolved "https://npm.waylay.io/printj/-/printj-1.1.2/d90deb2975a8b9f600fb3a1c94e3f4c53c78a222.tgz#d90deb2975a8b9f600fb3a1c94e3f4c53c78a222"
 
-prismjs@^1.8.4, prismjs@~1.15.0:
-  version "1.15.0"
-  resolved "https://npm.waylay.io/prismjs/-/prismjs-1.15.0/8801d332e472091ba8def94976c8877ad60398d9.tgz#8801d332e472091ba8def94976c8877ad60398d9"
+prismjs@1.6:
+  version "1.6.0"
+  resolved "https://npm.waylay.io/prismjs/-/prismjs-1.6.0/118d95fb7a66dba2272e343b345f5236659db365.tgz#118d95fb7a66dba2272e343b345f5236659db365"
   optionalDependencies:
-    clipboard "^2.0.0"
+    clipboard "^1.5.5"
 
 private@^0.1.6, private@^0.1.8, private@~0.1.5:
   version "0.1.8"
@@ -7442,7 +7516,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.6.2, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@15.6.2, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -7456,12 +7530,6 @@ prop-types@^15.6.1:
     fbjs "^0.8.16"
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
-
-property-information@^4.0.0:
-  version "4.1.0"
-  resolved "https://npm.waylay.io/property-information/-/property-information-4.1.0/16f817d8c087f3018b91877c193d730570487bb2.tgz#16f817d8c087f3018b91877c193d730570487bb2"
-  dependencies:
-    xtend "^4.0.1"
 
 proto-list@~1.2.1:
   version "1.2.4"
@@ -7627,6 +7695,17 @@ react-breakpoints@^3.0.0:
     hoist-non-react-statics "2.5.0"
     lodash.debounce "4.0.8"
 
+react-codemirror@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.waylay.io/react-codemirror/-/react-codemirror-1.0.0/91467b53b1f5d80d916a2fd0b4c7adb85a9001ba.tgz#91467b53b1f5d80d916a2fd0b4c7adb85a9001ba"
+  dependencies:
+    classnames "^2.2.5"
+    codemirror "^5.18.2"
+    create-react-class "^15.5.1"
+    lodash.debounce "^4.0.8"
+    lodash.isequal "^4.5.0"
+    prop-types "^15.5.4"
+
 react-copy-write@^0.7.0:
   version "0.7.0"
   resolved "https://npm.waylay.io/react-copy-write/-/react-copy-write-0.7.0/7ce2b61b656aed08ac920a0607d6902a6080f525.tgz#7ce2b61b656aed08ac920a0607d6902a6080f525"
@@ -7739,6 +7818,17 @@ react-lightweight-tooltip@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/react-lightweight-tooltip/-/react-lightweight-tooltip-1.0.0.tgz#1fb96831b88de21a4d73d02148aae3d8d0aea9bc"
 
+react-live@^1.11.0:
+  version "1.11.0"
+  resolved "https://npm.waylay.io/react-live/-/react-live-1.11.0/257b54abb64df250bc40b0572c21acd600ecdd5c.tgz#257b54abb64df250bc40b0572c21acd600ecdd5c"
+  dependencies:
+    buble "^0.19.3"
+    core-js "^2.4.1"
+    dom-iterator "^1.0.0"
+    prismjs "1.6"
+    prop-types "^15.5.8"
+    unescape "^0.2.0"
+
 react-powerplug@^1.0.0-rc.1:
   version "1.0.0-rc.1"
   resolved "https://registry.npmjs.org/react-powerplug/-/react-powerplug-1.0.0-rc.1.tgz#6b3bc57e31684e8bc36baa7a65af602ba0e31145"
@@ -7773,16 +7863,6 @@ react-router@^4.3.1:
     path-to-regexp "^1.7.0"
     prop-types "^15.6.1"
     warning "^4.0.1"
-
-react-syntax-highlighter@^8.0.1:
-  version "8.0.1"
-  resolved "https://npm.waylay.io/react-syntax-highlighter/-/react-syntax-highlighter-8.0.1/88f7833e3a2d3c718799f2e7776266486c82c566.tgz#88f7833e3a2d3c718799f2e7776266486c82c566"
-  dependencies:
-    babel-runtime "^6.18.0"
-    highlight.js "~9.12.0"
-    lowlight "~1.9.1"
-    prismjs "^1.8.4"
-    refractor "^2.4.1"
 
 react@^16.3.2:
   version "16.4.1"
@@ -7859,7 +7939,7 @@ read-pkg@^3.0.0:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@1.0, readable-stream@~1.0.17, readable-stream@~1.0.27-1:
+readable-stream@~1.0.17, readable-stream@~1.0.27-1:
   version "1.0.34"
   resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz#125820e34bc842d2f2aaafafe4c2916ee32c157c"
   dependencies:
@@ -7937,14 +8017,6 @@ reduce-function-call@^1.0.1:
   resolved "https://registry.npmjs.org/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
   dependencies:
     balanced-match "^0.4.2"
-
-refractor@^2.4.1:
-  version "2.6.0"
-  resolved "https://npm.waylay.io/refractor/-/refractor-2.6.0/6b0d88f654c8534eefed3329a35bc7bb74ae0979.tgz#6b0d88f654c8534eefed3329a35bc7bb74ae0979"
-  dependencies:
-    hastscript "^4.0.0"
-    parse-entities "^1.1.2"
-    prismjs "~1.15.0"
 
 regenerate-unicode-properties@^7.0.0:
   version "7.0.0"
@@ -8056,13 +8128,15 @@ rehype-autolink-headings@^2.0.3:
     hast-util-is-element "^1.0.0"
     unist-util-visit "^1.1.0"
 
-rehype-docz@^0.9.4:
-  version "0.9.4"
-  resolved "https://npm.waylay.io/rehype-docz/-/rehype-docz-0.9.4/a66421d98da91d6244f086a1be13dd991b1e3d92.tgz#a66421d98da91d6244f086a1be13dd991b1e3d92"
+rehype-docz@^0.10.3:
+  version "0.10.3"
+  resolved "https://npm.waylay.io/rehype-docz/-/rehype-docz-0.10.3/27839ad6940d4647368dd30f06919e1fbcca8502.tgz#27839ad6940d4647368dd30f06919e1fbcca8502"
   dependencies:
-    babel-traverse "^6.26.0"
-    babylon "^6.18.0"
+    "@babel/parser" "^7.0.0-beta.56"
+    "@babel/traverse" "^7.0.0-beta.56"
     hast-util-to-string "^1.0.1"
+    lodash.flatten "^4.4.0"
+    lodash.get "^4.4.2"
     prettier "^1.14.0"
     signale "^1.2.1"
     strip-indent "^2.0.0"
@@ -8180,16 +8254,6 @@ remove-array-items@^1.0.0:
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.npmjs.org/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
-
-renderkid@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/renderkid/-/renderkid-2.0.1.tgz#898cabfc8bede4b7b91135a3ffd323e58c0db319"
-  dependencies:
-    css-select "^1.1.0"
-    dom-converter "~0.1"
-    htmlparser2 "~3.3.0"
-    strip-ansi "^3.0.0"
-    utila "~0.3"
 
 repeat-element@^1.1.2:
   version "1.1.2"
@@ -8363,6 +8427,13 @@ sax@^1.2.4, sax@~1.2.1, sax@~1.2.4:
 scan-directory@^1.0.0:
   version "1.0.0"
   resolved "https://npm.waylay.io/scan-directory/-/scan-directory-1.0.0/46b6769dbd893d9bd7490ae9dcc43811a38b7fbb.tgz#46b6769dbd893d9bd7490ae9dcc43811a38b7fbb"
+
+schema-utils@^0.4.2:
+  version "0.4.7"
+  resolved "https://npm.waylay.io/schema-utils/-/schema-utils-0.4.7/ba74f597d2be2ea880131746ee17d0a093c68187.tgz#ba74f597d2be2ea880131746ee17d0a093c68187"
+  dependencies:
+    ajv "^6.1.0"
+    ajv-keywords "^3.1.0"
 
 schema-utils@^0.4.3, schema-utils@^0.4.4, schema-utils@^0.4.5:
   version "0.4.5"
@@ -8610,12 +8681,6 @@ source-map@0.6.1, source-map@^0.6.1, source-map@~0.6.1:
 source-map@^0.7.2:
   version "0.7.3"
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
-
-space-separated-tokens@^1.0.0:
-  version "1.1.2"
-  resolved "https://npm.waylay.io/space-separated-tokens/-/space-separated-tokens-1.1.2/e95ab9d19ae841e200808cd96bc7bd0adbbb3412.tgz#e95ab9d19ae841e200808cd96bc7bd0adbbb3412"
-  dependencies:
-    trim "0.0.1"
 
 spdx-correct@^3.0.0:
   version "3.0.0"
@@ -9103,10 +9168,6 @@ tomlify-j0.4@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/tomlify-j0.4/-/tomlify-j0.4-3.0.0.tgz#99414d45268c3a3b8bf38be82145b7bba34b7473"
 
-toposort@^1.0.0:
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/toposort/-/toposort-1.0.7.tgz#2e68442d9f64ec720b8cc89e6443ac6caa950029"
-
 touch@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/touch/-/touch-1.0.0.tgz#449cbe2dbae5a8c8038e30d71fa0ff464947c4de"
@@ -9197,9 +9258,9 @@ uglifyjs-webpack-plugin@^1.2.4, uglifyjs-webpack-plugin@^1.2.7:
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
 
-ulid@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.npmjs.org/ulid/-/ulid-2.3.0.tgz#93063522771a9774121a84d126ecd3eb9804071f"
+unescape@^0.2.0:
+  version "0.2.0"
+  resolved "https://npm.waylay.io/unescape/-/unescape-0.2.0/b78b9b60c86f1629df181bf53eee3bc8d6367ddf.tgz#b78b9b60c86f1629df181bf53eee3bc8d6367ddf"
 
 unherit@^1.0.4:
   version "1.1.1"
@@ -9464,7 +9525,7 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
-util.promisify@1.0.0, util.promisify@^1.0.0, util.promisify@~1.0.0:
+util.promisify@^1.0.0, util.promisify@~1.0.0:
   version "1.0.0"
   resolved "https://npm.waylay.io/util.promisify/-/util.promisify-1.0.0/440f7165a459c9a16dc145eb8e72f35687097030.tgz#440f7165a459c9a16dc145eb8e72f35687097030"
   dependencies:
@@ -9482,14 +9543,6 @@ util@^0.10.3:
   resolved "https://registry.npmjs.org/util/-/util-0.10.4.tgz#3aa0125bfe668a4672de58857d3ace27ecb76901"
   dependencies:
     inherits "2.0.3"
-
-utila@~0.3:
-  version "0.3.3"
-  resolved "https://registry.npmjs.org/utila/-/utila-0.3.3.tgz#d7e8e7d7e309107092b05f8d9688824d633a4226"
-
-utila@~0.4:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
 
 utils-merge@1.0.1:
   version "1.0.1"
@@ -9557,6 +9610,10 @@ vfile@^3.0.0:
 vlq@^0.2.2:
   version "0.2.3"
   resolved "https://registry.npmjs.org/vlq/-/vlq-0.2.3.tgz#8f3e4328cf63b1540c0d67e1b2778386f8975b26"
+
+vlq@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.waylay.io/vlq/-/vlq-1.0.0/8101be90843422954c2b13eb27f2f3122bdcc806.tgz#8101be90843422954c2b13eb27f2f3122bdcc806"
 
 vm-browserify@0.0.4:
   version "0.0.4"
