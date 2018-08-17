@@ -8,10 +8,13 @@ const base = css`
   border-bottom: solid 1px ${colors.CONCRETE};
   font-size: 1rem;
   margin: 5px 0;
+
+  input { width: 100%; }
 `
 
 const input = css`
   -webkit-appearance: none;
+  background: none;
   border: none;
   padding: 0.5em 0em;
   line-height: 1em;

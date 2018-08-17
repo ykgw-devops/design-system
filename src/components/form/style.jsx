@@ -13,8 +13,8 @@ const base = css`
     color: ${colors.CARBON};
   }
 
-  input {
-    width: 100%;
+  .${Input} {
+    display: block;
   }
 
   &:focus {
