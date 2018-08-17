@@ -3,9 +3,6 @@ import { fontFamily } from '../../typography'
 import { darken, tint, lighten } from 'polished'
 import { css } from '../../emotion'
 
-// TODO probably not a good idea for each component?
-import '../../global.jsx'
-
 const sizeMap = {
   tiny: '0.7rem',
   small: '0.85rem',

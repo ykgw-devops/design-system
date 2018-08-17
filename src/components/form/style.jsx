@@ -1,8 +1,6 @@
 import { css } from '../../emotion'
-import colors from '../../colors.jsx'
-
-// TODO probably not a good idea for each component?
-import '../../global.jsx'
+import colors from '../../colors'
+import { base as Input } from '../input/style'
 
 const base = css`
   display: block;

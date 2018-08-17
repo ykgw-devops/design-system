@@ -1,9 +1,6 @@
 import colors from '../../colors'
 import { css } from '../../emotion'
 
-// TODO probably not a good idea for each component?
-import '../../global.jsx'
-
 const base = css`
   background: #FFFFFF;
   border: 1px solid ${colors.CONCRETE};

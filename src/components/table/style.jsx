@@ -2,9 +2,6 @@ import colors from '../../colors'
 import { css } from '../../emotion'
 import { tint, darken } from 'polished'
 
-// TODO probably not a good idea for each component?
-import '../../global.jsx'
-
 const base = css`
   text-align: left;
   border-collapse: separate;
