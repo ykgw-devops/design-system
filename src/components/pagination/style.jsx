@@ -1,7 +1,7 @@
 import { css } from '../../emotion'
 import colors from '../../colors'
 import { shade, tint } from 'polished'
-import { resetAnchor } from '../../global'
+import { resetAnchor } from '../../shared'
 
 const lightGrey = tint(0.5, colors.ANTI_FLASH_WHITE)
 const darkerGrey = shade(0.75, colors.ANTI_FLASH_WHITE)

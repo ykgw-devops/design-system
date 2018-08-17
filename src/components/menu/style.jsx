@@ -1,6 +1,6 @@
 import { css } from '../../emotion'
 import colors from '../../colors'
-import { resetAnchor } from '../../global'
+import { resetAnchor } from '../../shared'
 
 const base = css`
   ul {
