@@ -10,6 +10,8 @@ const base = css`
 
     padding: 0;
     margin: 0;
+
+    li { height: 2.25em; }
   }
 `
 
