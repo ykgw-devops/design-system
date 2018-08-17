@@ -3,12 +3,14 @@ import colors from '../../colors'
 import { resetAnchor } from '../../global'
 
 const base = css`
-  display: inline-block;
-  list-style-type: none;
-  line-height: 2.25em;
+  ul {
+    display: inline-block;
+    list-style-type: none;
+    line-height: 2.25em;
 
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+  }
 `
 
 const item = css`
