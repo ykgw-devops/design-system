@@ -18,7 +18,6 @@ const input = css`
   background: none;
   border: none;
   padding: 0.5em 0em;
-  line-height: 1em;
   color: ${colors.CARBON};
 
   &:focus {
