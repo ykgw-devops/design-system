@@ -1,7 +1,7 @@
 import { css, injectGlobal } from './emotion'
 import colors from './colors.jsx'
 
-injectGlobal`
+const global = css`
   * {
     box-sizing: border-box;
   }
@@ -22,6 +22,10 @@ injectGlobal`
   }
 `
 
+injectGlobal`
+  ${global}
+`
+
 /* reset anchor defaults */
 const resetAnchor = css`
   color: inherit;
@@ -29,5 +33,6 @@ const resetAnchor = css`
 `
 
 export {
+  global,
   resetAnchor
 }
