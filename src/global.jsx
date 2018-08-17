@@ -14,6 +14,10 @@ injectGlobal`
     src: url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,700&subset=latin-ext');
   }
 
+  body, html {
+    font-size: 14px;
+  }
+
   body {
     font-family: 'Fira Sans', sans-serif;
     font-size: 15px;

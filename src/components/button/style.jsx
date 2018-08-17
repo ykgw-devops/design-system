@@ -7,9 +7,10 @@ import { css } from '../../emotion'
 import '../../global.jsx'
 
 const sizeMap = {
-  small: '0.750rem',
-  medium: '0.8rem',
-  large: '1rem'
+  tiny: '0.7rem',
+  small: '0.85rem',
+  medium: '1rem',
+  large: '1.15rem'
 }
 
 const color = {
@@ -26,7 +27,6 @@ const base = css`
   color: #fff;
   border: none;
   font-weight: 400;
-  font-size: 0.8rem;
   vertical-align: middle;
   font-family: ${fontFamily};
   text-decoration: none;
