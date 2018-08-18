@@ -10,6 +10,7 @@ export { default as Pagination } from './components/pagination/pagination'
 export { default as Segment } from './components/segment/segment'
 export { default as Table } from './components/table/table'
 export { default as Typography } from './typography'
+export { default as Label } from './components/label/label'
 
 export { renderStylesToString } from './server'
 export { default as global } from './global'
