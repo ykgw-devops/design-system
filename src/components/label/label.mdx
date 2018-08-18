@@ -1,0 +1,29 @@
+---
+name: Label
+---
+
+import { Playground, PropsTable } from 'docz'
+import Label from './label'
+import Icon from '../icon/icon'
+import '../../global.jsx'
+
+# Label
+
+## Basic usage
+
+<Playground>
+  <Label>Basic Label</Label>
+  <Label outline>Basic Outline</Label>
+  <Label color='red'>Red Label</Label>
+  <Label color='blue'>Blue Label</Label>
+  <Label removable>
+    Removable
+  </Label>
+  <Label color='red' name='Type'>
+    Bug
+  </Label>
+</Playground>
+
+## Properties
+
+<PropsTable of={Label}></PropsTable>

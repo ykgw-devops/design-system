@@ -38,12 +38,18 @@ const adornments = css`
 
 const leftAdornments = css`
   ${adornments}
-  margin-right: 0.25em;
+
+  &, > * {
+    margin-right: 0.25em;
+  }
 `
 
 const rightAdornments = css`
   ${adornments}
-  margin-left: 0.25em;
+
+  > * {
+    margin-left: 0.25em;
+  }
 `
 
 export { base, input, leftAdornments, rightAdornments }

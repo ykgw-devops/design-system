@@ -1,5 +1,5 @@
 ---
-name: Text Field
+name: Input
 ---
 
 import { Playground, PropsTable } from 'docz'
@@ -7,9 +7,11 @@ import Input from './input'
 import Button from '../button/button'
 import Form from '../form/form'
 import Icon from '../icon/icon'
+import Label from '../label/label'
+
 import '../../global.jsx'
 
-# Text Field
+# Input
 
 ## Basic usage
 
@@ -19,14 +21,19 @@ import '../../global.jsx'
 
 ## Adornments
 <Playground>
-  <Input adornments={
-    [{ position: 'left', content: <Icon name='filter_list' /> }]
-  } name='filter' placeholder='Filter…' />
-  &nbsp;
+  <Input adornments={[
+    { position: 'left', content: <Icon name='filter_list' /> },
+    { position: 'left', content: (
+      <Label name='Status' removable>
+        Active
+      </Label>
+    ) }
+  ]} name='filter' placeholder='Filter…' />
+
   <Input adornments={
     [{ position: 'left', content: '$' }]
   } name='payment' placeholder='Dollars' />
-  &nbsp;
+
   <Input adornments={
     [{ position: 'right', content: <Icon name='search' /> }]
   } name='search' placeholder='Search' />

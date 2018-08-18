@@ -2,6 +2,7 @@ import colors from '../../colors'
 import { fontFamily } from '../../typography'
 import { darken, tint, lighten } from 'polished'
 import { css } from '../../emotion'
+import { base as Icon } from '../icon/style'
 
 const sizeMap = {
   tiny: '0.7rem',
@@ -43,10 +44,9 @@ const base = css`
     outline: none;
   }
 
-  i {
+  .${Icon} {
     font-size: 1.5em;
     line-height: 0.875rem;
-    position: relative;
   }
 `
 

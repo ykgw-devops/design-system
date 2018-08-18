@@ -13,7 +13,7 @@ const base = css`
   white-space: nowrap;
   direction: ltr;
 
-  font-size: 24px;
+  font-size: 1em;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
