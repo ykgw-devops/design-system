@@ -1,6 +1,5 @@
 {
   "plugins": [
-    "transform-object-rest-spread",
     ["emotion", { "sourceMap": true, "autoLabel": true }]
   ]
 }
