@@ -14,6 +14,7 @@
     "version": "npm run build && git add -A dist/"
   },
   "devDependencies": {
+    "babel-plugin-emotion": "^9.2.6",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "docz": "^0.10.3",
     "npm-run-all": "^4.1.3",
