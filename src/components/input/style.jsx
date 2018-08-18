@@ -2,6 +2,8 @@ import { css } from '../../emotion'
 import colors from '../../colors'
 import { darken } from 'polished'
 
+import { base as Icon } from '../icon/style'
+
 const base = css`
   display: inline-flex;
   align-items: center;
@@ -11,6 +13,10 @@ const base = css`
   margin: 5px 0;
 
   input { flex: 1; }
+
+  .${Icon} {
+    font-size: 1.25em;
+  }
 `
 
 const input = css`

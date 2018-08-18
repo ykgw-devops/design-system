@@ -6,7 +6,7 @@ import { cx } from '../../emotion'
 
 const Icon = (props) => {
   return (
-    <i {...props} className={cx(base, 'material-icons', props.className)}>
+    <i {...props} className={cx('material-icons', base, props.className)}>
       {props.name}
     </i>
   )
