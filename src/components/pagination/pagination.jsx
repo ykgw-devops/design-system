@@ -1,37 +1,62 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { includes, times } from 'lodash'
 
 import style from './style.jsx'
 import { cx } from '../../emotion'
 
-const noop = (e) => {
-  e && e.preventDefault()
+class Pagination extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      activeIndex: props.activeIndex
+    }
+  }
+
+  nextPage (e) {
+    const { activeIndex } = this.state
+    e.preventDefault()
+
+    const nextIndex = activeIndex + 1
+
+    this.props.onIndexChanged(nextIndex)
+    this.setState({ activeIndex: nextIndex })
+  }
+
+  previousPage (e) {
+    const { activeIndex } = this.state
+    e.preventDefault()
+
+    const nextIndex = activeIndex - 1
+
+    this.props.onIndexChanged(nextIndex)
+    this.setState({ activeIndex: nextIndex })
+  }
+
+  setPage (e, index) {
+    e.preventDefault()
+
+    this.props.onIndexChanged(index)
+    this.setState({ activeIndex: index })
+  }
+
+  render () {
+    const { count } = this.props
+    const { activeIndex } = this.state
+
+    return (
+      <div className={cx(style.base)}>
+        {previous(activeIndex, this.previousPage.bind(this))}
+        {renderPaginationItems(count, activeIndex, this.setPage.bind(this))}
+        {next(count, activeIndex, this.nextPage.bind(this))}
+      </div>
+    )
+  }
 }
 
-const Pagination = ({ count = 0, activeIndex = 0, onIndexChanged }) => {
-  return (
-    <div className={cx(style.base)}>
-      {previous(activeIndex, previousPage)}
-      {renderPaginationItems(count, activeIndex, setPage)}
-      {next(count, activeIndex, nextPage)}
-    </div>
-  )
-
-  function nextPage (e) {
-    e.preventDefault()
-    onIndexChanged(activeIndex + 1)
-  }
-
-  function previousPage (e) {
-    e.preventDefault()
-    onIndexChanged(activeIndex - 1)
-  }
-
-  function setPage (e, index) {
-    e.preventDefault()
-    onIndexChanged(index)
-  }
+const noop = (e) => {
+  e && e.preventDefault()
 }
 
 function renderPaginationItems (count, activeIndex, setPage) {
@@ -68,7 +93,7 @@ const item = setPage => {
     const updateFn = disabled ? noop : setPage
 
     return (
-      <a href='' onClick={e => updateFn(e, key)} key={key} className={cx(style.item, active, disabled)}>
+      <a onClick={e => updateFn(e, key)} key={key} className={cx(style.item, active, disabled)}>
         {options.ellipsis ? '…' : number}
       </a>
     )
@@ -110,7 +135,7 @@ const previous = (activeIndex, previousPage) => {
   const updateFn = disabled ? noop : previousPage
 
   return (
-    <a href='' onClick={updateFn} className={cx(style.firstItem, disabled)}>
+    <a onClick={updateFn} className={cx(style.firstItem, disabled)}>
       Previous
     </a>
   )
@@ -121,7 +146,7 @@ const next = (count, activeIndex, nextPage) => {
   const updateFn = disabled ? noop : nextPage
 
   return (
-    <a href='' onClick={updateFn} className={cx(style.lastItem, disabled)}>
+    <a onClick={updateFn} className={cx(style.lastItem, disabled)}>
       Next
     </a>
   )
