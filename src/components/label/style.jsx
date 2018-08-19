@@ -30,7 +30,8 @@ function getColors (string = 'default') {
 
 const value = css`
   display: inline-block;
-  padding: 0.25em 0.8em;
+  vertical-align: baseline;
+  padding: 0.5em 1em;
   border-radius: 20px;
 `
 
@@ -64,6 +65,7 @@ const base = props => css`
   display: inline-block;
 
   font-size: 1rem;
+  line-height: 1em;
   vertical-align: middle;
 
   border-radius: 20px;
@@ -87,9 +89,11 @@ const close = props => {
 
   return css`
     /* make hitbox a bit bigger for close icon */
-    padding: 3px;
-    margin: -5px;
-    margin-left: 3px;
+    padding: 0.2em;
+    margin-top: -0.2em;
+    margin-bottom: -0.2em;
+    margin-right: -0.6em;
+    margin-left: 0.4em;
 
     border-radius: 100%;
     cursor: pointer;
