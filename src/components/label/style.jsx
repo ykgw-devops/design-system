@@ -97,6 +97,7 @@ const close = props => {
 
     border-radius: 100%;
     cursor: pointer;
+    user-select: none;
 
     background: ${shade(0.9, color)};
 
