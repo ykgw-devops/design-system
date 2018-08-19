@@ -31,6 +31,9 @@ const item = css`
   border-bottom: ${borderStyle};
   border-right: ${borderStyle};
 
+  user-select: none;
+  custor: pointer;
+
   &:hover {
     background-color: ${lightGrey};
   }
@@ -43,6 +46,8 @@ const firstItem = css`
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   border-left: ${borderStyle};
+
+  user-select: none;
 `
 
 const lastItem = css`
@@ -67,7 +72,6 @@ const disabled = css`
   background-color: ${lightGrey};
 
   cursor: default;
-  user-select: none;
 `
 
 export default { activeItem, base, disabled, item, firstItem, lastItem }
