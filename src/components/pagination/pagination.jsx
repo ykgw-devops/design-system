@@ -78,7 +78,7 @@ const item = setPage => {
 function getPaginationType (activeIndex, count) {
   const HEAD_TAIL_SIZE = 6
 
-  const isHead = activeIndex <= HEAD_TAIL_SIZE
+  const isHead = activeIndex < HEAD_TAIL_SIZE
   const isTail = activeIndex >= count - HEAD_TAIL_SIZE
 
   const isMoving = !isHead && !isTail
