@@ -5,24 +5,47 @@ import { includes, times } from 'lodash'
 import style from './style.jsx'
 import { cx } from '../../emotion'
 
-const Pagination = ({ count = 0, activeIndex = 0 }) => (
-  <div className={cx(style.base)}>
-    {previous(activeIndex)}
-    {renderPaginationItems(count, activeIndex)}
-    {next(count, activeIndex)}
-  </div>
-)
+const noop = (e) => {
+  e && e.preventDefault()
+}
 
-function renderPaginationItems (count, activeIndex) {
+const Pagination = ({ count = 0, activeIndex = 0, onIndexChanged }) => {
+  return (
+    <div className={cx(style.base)}>
+      {previous(activeIndex, previousPage)}
+      {renderPaginationItems(count, activeIndex, setPage)}
+      {next(count, activeIndex, nextPage)}
+    </div>
+  )
+
+  function nextPage (e) {
+    e.preventDefault()
+    onIndexChanged(activeIndex + 1)
+  }
+
+  function previousPage (e) {
+    e.preventDefault()
+    onIndexChanged(activeIndex - 1)
+  }
+
+  function setPage (e, index) {
+    e.preventDefault()
+    onIndexChanged(index)
+  }
+}
+
+function renderPaginationItems (count, activeIndex, setPage) {
   const { visible, ellipsis } = getPaginationType(activeIndex, count)
+
+  const itemWithUpdateFn = item(setPage)
 
   return times(count, index => {
     const active = index === activeIndex
 
-    if (count <= 9) return item(index, index + 1, { active })
+    if (count <= 9) return itemWithUpdateFn(index, index + 1, { active })
 
-    if (includes(visible, index)) return item(index, index + 1, { active })
-    if (includes(ellipsis, index)) return item(index, '', { ellipsis: true })
+    if (includes(visible, index)) return itemWithUpdateFn(index, index + 1, { active })
+    if (includes(ellipsis, index)) return itemWithUpdateFn(index, '', { ellipsis: true })
 
     return null
   })
@@ -37,17 +60,19 @@ function range (size, startAt = 0) {
   return [...Array(size).keys()].map(i => i + startAt)
 }
 
-const item = (key, number, options = { active: false, ellipsis: false }) => {
-  const disabled = options.ellipsis && style.disabled
-  const active = options.active && style.activeItem
+const item = setPage => {
+  return (key, number, options = { active: false, ellipsis: false }) => {
+    const disabled = options.ellipsis && style.disabled
+    const active = options.active && style.activeItem
 
-  const href = disabled ? undefined : ''
+    const updateFn = disabled ? noop : setPage
 
-  return (
-    <a href={href} key={key} className={cx(style.item, active, disabled)}>
-      {options.ellipsis ? '…' : number}
-    </a>
-  )
+    return (
+      <a href='' onClick={e => updateFn(e, key)} key={key} className={cx(style.item, active, disabled)}>
+        {options.ellipsis ? '…' : number}
+      </a>
+    )
+  }
 }
 
 function getPaginationType (activeIndex, count) {
@@ -80,21 +105,23 @@ function getPaginationType (activeIndex, count) {
   }
 }
 
-const previous = activeIndex => {
+const previous = (activeIndex, previousPage) => {
   const disabled = (activeIndex === 0) && style.disabled
+  const updateFn = disabled ? noop : previousPage
 
   return (
-    <a href='' className={cx(style.firstItem, disabled)}>
+    <a href='' onClick={updateFn} className={cx(style.firstItem, disabled)}>
       Previous
     </a>
   )
 }
 
-const next = (count, activeIndex) => {
+const next = (count, activeIndex, nextPage) => {
   const disabled = (activeIndex === (count - 1)) && style.disabled
+  const updateFn = disabled ? noop : nextPage
 
   return (
-    <a href='' className={cx(style.lastItem, disabled)}>
+    <a href='' onClick={updateFn} className={cx(style.lastItem, disabled)}>
       Next
     </a>
   )
@@ -102,12 +129,14 @@ const next = (count, activeIndex) => {
 
 Pagination.propTypes = {
   count: PropTypes.number,
-  activeIndex: PropTypes.number
+  activeIndex: PropTypes.number,
+  onIndexChanged: PropTypes.func
 }
 
 Pagination.defaultProps = {
   count: 0,
-  activeIndex: 0
+  activeIndex: 0,
+  onIndexChanged: () => {}
 }
 
 export default Pagination
