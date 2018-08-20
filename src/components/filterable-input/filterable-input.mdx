@@ -1,0 +1,20 @@
+---
+name: Filterable Input
+---
+
+import { Playground, PropsTable } from 'docz'
+import FilterableInput from './filterable-input'
+
+import '../../global.jsx'
+
+# Filterable Input
+
+## Basic usage
+
+<Playground>
+  <FilterableInput initialFilters={[{ key: 'status', value: 'online' }]} name='filter' />
+</Playground>
+
+## Properties
+
+<PropsTable of={FilterableInput} />

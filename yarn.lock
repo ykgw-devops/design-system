@@ -4945,6 +4945,12 @@ immer@^1.2.1:
   version "1.5.0"
   resolved "https://npm.waylay.io/immer/-/immer-1.5.0/1ed9b1b653643fe9276bbc36377613523ea32a39.tgz#1ed9b1b653643fe9276bbc36377613523ea32a39"
 
+immutability-helper@^2.7.1:
+  version "2.7.1"
+  resolved "https://npm.waylay.io/immutability-helper/-/immutability-helper-2.7.1/5636dbb593e3deb5e572766d42249ea06bae7640.tgz#5636dbb593e3deb5e572766d42249ea06bae7640"
+  dependencies:
+    invariant "^2.2.0"
+
 import-lazy@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"

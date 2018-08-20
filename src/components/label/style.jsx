@@ -29,7 +29,6 @@ function getColors (string = 'default') {
 }
 
 const value = css`
-  display: inline-block;
   vertical-align: baseline;
   padding: 0.5em 1em;
   border-radius: 20px;
@@ -39,10 +38,7 @@ const colored = (props) => {
   const { color, font } = getColors(props.color)
 
   return css`
-    background: ${props.outline
-      ? tint(0.2, color)
-      : color
-    };
+    background: ${props.outline ? tint(0.2, color) : color};
     color: ${font};
 
     ${props.outline && `
@@ -62,7 +58,8 @@ const detail = (props = {}) => {
 }
 
 const base = props => css`
-  display: inline-block;
+  display: inline-flex;
+  align-items: middle;
 
   font-size: 1rem;
   line-height: 1em;
@@ -107,4 +104,8 @@ const close = props => {
   `
 }
 
-export { base, close, colored, detail, value }
+const focused = props => props.focused && css`
+  box-shadow: 0 0 3px ${colors.CLEAR_SKY} inset;
+`
+
+export { base, close, colored, detail, focused, value }
