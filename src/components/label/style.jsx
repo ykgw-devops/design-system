@@ -105,7 +105,7 @@ const close = props => {
 }
 
 const focused = props => props.focused && css`
-  box-shadow: 0 0 3px ${colors.CLEAR_SKY} inset;
+  box-shadow: 0 0 4px 0 ${colors.CLEAR_SKY} inset;
 `
 
 export { base, close, colored, detail, focused, value }

@@ -4,7 +4,7 @@ import update from 'immutability-helper'
 import Icon from '../icon/icon'
 import Input from '../input/input'
 import Label from '../label/label'
-import { reject, upperFirst } from 'lodash'
+import { get, reject, upperFirst } from 'lodash'
 
 const KEY_BACKSPACE = 8
 
@@ -26,7 +26,7 @@ class FilterableInput extends Component {
     const hasText = inputLength > 0
     const shouldInteractWithFilter = isBackspace && hasFilters && !hasText
 
-    const focusedFilter = filters[filters.length - 1].focused
+    const focusedFilter = get(filters, `${filters.length - 1}.focused`)
 
     if (shouldInteractWithFilter && focusedFilter) {
       this.removeLastFilter()
@@ -62,10 +62,12 @@ class FilterableInput extends Component {
 
   setFocusLastFilter (focused = false) {
     const { filters } = this.state
+    if (filters.length === 0) return
+
     const lastIndex = filters.length - 1
 
     const newFilters = update(filters, {
-      [lastIndex]: { $merge: { focused: focused } }
+      [lastIndex]: { $merge: { focused } }
     })
 
     this.setState({ filters: newFilters })
