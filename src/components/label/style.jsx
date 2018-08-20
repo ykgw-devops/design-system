@@ -48,12 +48,30 @@ const colored = (props) => {
   `
 }
 
+const focused = props => props.focused && css`
+  color: ${colors.CARBON};
+  border: solid 1px ${colors.CLEAR_SKY};
+  background: white;
+  margin-left: -2px;
+`
+
 const detail = (props = {}) => {
   const { color } = getColors(props.color)
 
   return css`
     ${value}
-    background-color: ${shade(0.85, color)};
+    padding: 0.5em 1em;
+
+    ${props.focused && `
+      color: white;
+    `}
+
+    transition: all ease 0.2s;
+
+    background-color: ${props.focused
+      ? colors.CLEAR_SKY
+      : shade(0.85, color)
+    };
   `
 }
 
@@ -87,8 +105,8 @@ const close = props => {
   return css`
     /* make hitbox a bit bigger for close icon */
     padding: 0.2em;
-    margin-top: -0.2em;
-    margin-bottom: -0.2em;
+    margin-top: -0.3em;
+    margin-bottom: -0.3em;
     margin-right: -0.6em;
     margin-left: 0.4em;
 
@@ -101,11 +119,15 @@ const close = props => {
     &:hover {
       background: ${shade(0.8, color)};
     }
+
+    ${props.focused && `
+      background: ${shade(0.9, colors.CONCRETE)};
+
+      &:hover {
+        background: ${shade(0.8, colors.CONCRETE)};
+      }
+    `}
   `
 }
-
-const focused = props => props.focused && css`
-  box-shadow: 0 0 4px 0 ${colors.CLEAR_SKY} inset;
-`
 
 export { base, close, colored, detail, focused, value }
