@@ -41,7 +41,7 @@ const base = css`
   }
 
   &:focus {
-    outline: none;
+    /* outline: none; why did I disable this? */
   }
 
   .${Icon} {
