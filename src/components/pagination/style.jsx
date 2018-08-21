@@ -32,7 +32,7 @@ const item = css`
   border-right: ${borderStyle};
 
   user-select: none;
-  custor: pointer;
+  cursor: pointer;
 
   &:hover {
     background-color: ${lightGrey};
