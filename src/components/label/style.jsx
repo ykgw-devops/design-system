@@ -30,8 +30,14 @@ function getColors (string = 'default') {
 
 const value = css`
   vertical-align: baseline;
-  padding: 0.6em 1em;
+  padding: 0.55em 1em;
   border-radius: 1em;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  line-height: 1.1em;
 `
 
 const colored = (props) => {
@@ -81,19 +87,21 @@ const detail = (props = {}) => {
 const base = props => css`
   display: inline-flex;
   align-items: baseline;
+  flex-direction: row;
 
   font-size: 1rem;
   line-height: 1em;
   vertical-align: middle;
 
-  border-radius: 20px;
+  border-radius: 2em;
 
   .${Input} & {
-    font-size: 0.8em;
+    font-size: 0.875em;
   }
 
   .${Icon} {
     font-size: 1em;
+    margin-right: 0.2em;
   }
 
   /* hug the value a bit tighter to the name */
