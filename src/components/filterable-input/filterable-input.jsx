@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import update from 'immutability-helper'
+import { get, reject, upperFirst } from 'lodash'
 
 import Icon from '../icon/icon'
 import Input from '../input/input'
 import Label from '../label/label'
-import { get, reject, upperFirst } from 'lodash'
 
 const KEY_BACKSPACE = 8
 

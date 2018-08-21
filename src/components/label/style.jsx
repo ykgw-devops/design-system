@@ -89,7 +89,7 @@ const base = props => css`
   border-radius: 20px;
 
   .${Input} & {
-    font-size: 0.875em;
+    font-size: 0.8em;
   }
 
   .${Icon} {
