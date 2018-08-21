@@ -30,8 +30,8 @@ function getColors (string = 'default') {
 
 const value = css`
   vertical-align: baseline;
-  padding: 0.5em 1em;
-  border-radius: 20px;
+  padding: 0.6em 1em;
+  border-radius: 1em;
 `
 
 const colored = (props) => {
@@ -60,7 +60,6 @@ const detail = (props = {}) => {
 
   return css`
     ${value}
-    padding: 0.5em 1em;
 
     ${props.focused && `
       color: white;
@@ -77,7 +76,7 @@ const detail = (props = {}) => {
 
 const base = props => css`
   display: inline-flex;
-  align-items: middle;
+  align-items: baseline;
 
   font-size: 1rem;
   line-height: 1em;
@@ -113,6 +112,8 @@ const close = props => {
     border-radius: 100%;
     cursor: pointer;
     user-select: none;
+
+    transition: background ease 0.1s;
 
     background: ${shade(0.9, color)};
 
