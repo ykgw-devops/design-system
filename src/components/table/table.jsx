@@ -6,7 +6,16 @@ import { cx } from '../../emotion'
 import { base } from './style.jsx'
 
 const Table = props => {
-  if (!props.rows) return null
+  const { rows } = props
+
+  if (props.children) {
+    debugger
+    return (
+      <table {...omit(props, ['rows', 'headers'])} className={cx(base, props.className)}>
+        {props.children}
+      </table>
+    )
+  }
 
   const headers = parseHeaders(props)
   return (
@@ -54,6 +63,12 @@ const Row = (row, i) => (
 const Column = col => (
   <td>{col.toString()}</td>
 )
+
+Table.HeaderCell = props => React.createElement('th', props)
+Table.Header = props => React.createElement('thead', props)
+Table.Body = props => React.createElement('tbody', props)
+Table.Row = props => React.createElement('tr', props)
+Table.Cell = props => React.createElement('td', props)
 
 Table.propTypes = {
   headers: PropTypes.arrayOf(PropTypes.string),

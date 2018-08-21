@@ -35,6 +35,37 @@ import '../../global.jsx'
   />
 </Playground>
 
+## Custom Table
+
+<Playground>
+  <Table>
+    <Table.Header>
+      <Table.Row>
+        <Table.HeaderCell>
+          Name
+        </Table.HeaderCell>
+        <Table.HeaderCell>
+          E-Mail
+        </Table.HeaderCell>
+      </Table.Row>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>Gilles De Mey</Table.Cell>
+        <Table.Cell>
+          <a href='mailto:gilles@waylay.io'>gilles@waylay.io</a>
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Brent Timmermans</Table.Cell>
+        <Table.Cell>
+          <a href='mailto:brent@waylay.io'>brent@waylay.io</a>
+        </Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+</Playground>
+
 ## Properties
 
 <PropsTable of={Table}></PropsTable>
