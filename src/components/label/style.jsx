@@ -48,29 +48,33 @@ const colored = (props) => {
   `
 }
 
+// focused is the same as blue outline, but with transparent background
 const focused = props => props.focused && css`
-  color: ${colors.CARBON};
-  border: solid 1px ${colors.CLEAR_SKY};
-  background: white;
-  margin-left: -2px;
+  ${colored({ color: 'blue', outline: true })};
+  background: transparent;
 `
 
 const detail = (props = {}) => {
   const { color } = getColors(props.color)
+  let bgColor = shade(0.85, color)
+
+  if (props.focused) {
+    bgColor = colors.CLEAR_SKY
+  }
+
+  if (props.outline) {
+    bgColor = color
+  }
 
   return css`
     ${value}
+    transition: all ease 0.2s;
 
-    ${props.focused && `
+    ${(props.focused || props.outline) && `
       color: white;
     `}
 
-    transition: all ease 0.2s;
-
-    background-color: ${props.focused
-      ? colors.CLEAR_SKY
-      : shade(0.85, color)
-    };
+    background-color: ${bgColor};
   `
 }
 
