@@ -42,7 +42,7 @@ const colored = (props) => {
     color: ${font};
 
     ${props.outline && `
-      border: solid 1px ${color};
+      box-shadow: inset 0 0 0 1px ${color};
       color: ${colors.CARBON};
     `}
   `
