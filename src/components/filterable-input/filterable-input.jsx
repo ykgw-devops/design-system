@@ -37,9 +37,11 @@ class FilterableInput extends Component {
     }
   }
 
-  onChangeHandler ({ target }) {
+  onChangeHandler (event) {
+    const { target } = event
     this.blurLastFilter()
     this.setState({ inputLength: target.value.length })
+    this.props.onChange(event)
   }
 
   addFilter (key, value) {
@@ -95,6 +97,7 @@ class FilterableInput extends Component {
         name={name}
         placeholder='Filter…'
         adornments={adornments}
+        {...this.props}
         onChange={e => this.onChangeHandler(e)}
         onKeyDown={e => this.onKeyDownHandler(e)}
       />
