@@ -13,10 +13,6 @@ const base = css`
   margin: 5px 0;
 
   input { flex: 1; }
-
-  .${Icon} {
-    font-size: 1.25em;
-  }
 `
 
 const input = css`
@@ -40,6 +36,10 @@ const input = css`
 const adornments = css`
   font-weight: 300;
   color: ${darken(0.2, colors.CONCRETE)};
+
+  .${Icon} {
+    font-size: 1.5em;
+  }
 `
 
 const leftAdornments = css`
