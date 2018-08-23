@@ -1,5 +1,6 @@
 import colors from '../../colors'
 import { css } from '../../emotion'
+import { shade } from 'polished'
 
 const base = css`
   color: ${colors.INK};
@@ -22,7 +23,7 @@ const base = css`
     }
 
     :after {
-      color: ${colors.CONCRETE};
+      color: ${shade(0.85, colors.CONCRETE)};
       font-size: 1.2rem;
       content: '›';
       padding: 0 8px;
