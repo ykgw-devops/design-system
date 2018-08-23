@@ -1,4 +1,5 @@
 import { css } from '../../emotion'
+import colors from '../../colors'
 
 const base = css`
   font-size: 1em;
@@ -7,4 +8,8 @@ const base = css`
   user-select: none;
 `
 
-export { base }
+const colored = props => css`
+  color: ${colors.fromString(props.color)};
+`
+
+export { base, colored }
