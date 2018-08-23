@@ -1,5 +1,5 @@
 import React from 'react'
-import { find } from 'lodash-es'
+import { find } from 'lodash'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'

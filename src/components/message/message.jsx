@@ -3,7 +3,7 @@ import { cx } from '../../emotion'
 import { base, danger, info, warning, title as titleStyle } from './style'
 import match from 'pattycake'
 import PropTypes from 'prop-types'
-import { omit } from 'lodash-es'
+import { omit } from 'lodash'
 
 const Message = props => {
   const { children, kind, title } = props

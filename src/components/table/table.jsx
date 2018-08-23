@@ -1,15 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import _, { omit, upperFirst } from 'lodash-es'
+import { chain, omit, upperFirst } from 'lodash'
 
 import { cx } from '../../emotion'
 import { base } from './style.jsx'
 
 const Table = props => {
-  const { rows } = props
-
   if (props.children) {
-    debugger
     return (
       <table {...omit(props, ['rows', 'headers'])} className={cx(base, props.className)}>
         {props.children}
@@ -28,7 +25,7 @@ const Table = props => {
 
 const parseHeaders = ({ headers, rows }) => {
   if (headers) return headers
-  return _(rows)
+  return chain(rows)
     .flatMap(Object.keys)
     .uniq()
     .value()
