@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import update from 'immutability-helper'
-import { get, reject, upperFirst } from 'lodash'
+import { flatMap, get, includes, reject, upperFirst } from 'lodash-es'
 
 import Icon from '../icon/icon'
 import Input from '../input/input'

@@ -3,7 +3,7 @@ import React from 'react'
 import { cx } from '../../emotion'
 import { base, input, leftAdornments as leftStyle, rightAdornments as rightStyle } from './style'
 import PropTypes from 'prop-types'
-import { omit } from 'lodash'
+import { omit } from 'lodash-es'
 
 const noop = () => undefined
 

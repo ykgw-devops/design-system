@@ -10,7 +10,7 @@
     "clean": "rm -rf .cache .docz dist",
     "build": "run-p build:*",
     "build:docs": "docz build",
-    "build:components": "parcel build src/index.js -o components.js",
+    "build:components": "parcel build src/index.js -o components.js --detailed-report",
     "version": "npm run build && git add -A dist/"
   },
   "devDependencies": {
@@ -27,7 +27,7 @@
     "downshift": "^2.0.10",
     "emotion": "^9.2.3",
     "immutability-helper": "^2.7.1",
-    "lodash": "^4.17.10",
+    "lodash-es": "^4.17.10",
     "pattycake": "^3.0.3",
     "polished": "^1.9.3",
     "prop-types": "^15.6.1",

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import _, { omit, upperFirst } from 'lodash'
+import _, { omit, upperFirst } from 'lodash-es'
 
 import { cx } from '../../emotion'
 import { base } from './style.jsx'
