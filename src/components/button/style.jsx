@@ -29,6 +29,7 @@ const base = css`
 
   &:focus {
     /* outline: none; why did I disable this? */
+    /* I disabled this for the clicking state, it's rather annoying */
   }
 
   .${Icon} {

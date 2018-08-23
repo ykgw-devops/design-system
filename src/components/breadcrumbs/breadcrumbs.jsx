@@ -13,22 +13,19 @@ const Breadcrumb = ({ sections = [] }) => {
   )
 }
 
-const BreadCrumbItem = ({ name, href, key }) => {
+const BreadCrumbItem = ({ name, content, key }) => {
+  content = content || name
   return (
-    <li key={key || name}>
-      {href ? wrapAnchor(name, href) : name}
+    <li key={key || content}>
+      {content}
     </li>
   )
 }
 
-function wrapAnchor (name, href) {
-  return <a href={href}>{name}</a>
-}
-
 const sectionType = PropTypes.shape({
-  key: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  href: PropTypes.string
+  key: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  content: PropTypes.element
 })
 
 Breadcrumb.propTypes = {
