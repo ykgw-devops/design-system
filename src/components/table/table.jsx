@@ -6,9 +6,13 @@ import { cx } from '../../emotion'
 import { base } from './style.jsx'
 
 const Table = props => {
+  const tableProps = Object.assign(omit(props, ['rows', 'headers', 'fixed']), {
+    className: cx(base, props.fixed && 'fixed', props.className)
+  })
+
   if (props.children) {
     return (
-      <table {...omit(props, ['rows', 'headers'])} className={cx(base, props.className)}>
+      <table {...tableProps}>
         {props.children}
       </table>
     )
@@ -16,7 +20,7 @@ const Table = props => {
 
   const headers = parseHeaders(props)
   return (
-    <table {...omit(props, ['rows', 'headers'])} className={cx(base, props.className)}>
+    <table {...tableProps}>
       {renderHeaders(headers)}
       {renderRows(props.rows, headers)}
     </table>
@@ -69,11 +73,13 @@ Table.Cell = props => React.createElement('td', props)
 
 Table.propTypes = {
   headers: PropTypes.arrayOf(PropTypes.string),
-  rows: PropTypes.arrayOf(PropTypes.object)
+  rows: PropTypes.arrayOf(PropTypes.object),
+  fixed: PropTypes.bool
 }
 
 Table.defaultProps = {
-  rows: []
+  rows: [],
+  fixed: false
 }
 
 export default Table
