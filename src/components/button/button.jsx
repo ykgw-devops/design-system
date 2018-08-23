@@ -5,30 +5,34 @@ import { cx } from '../../emotion'
 import { base, kind, outline, pill, disabled, size } from './style'
 
 const Button = (props) => {
-  const { disabled, outline, pill, href, className, ...rest } = props
+  return props.href ? asAnchor(props) : asButton(props)
+}
 
-  if (href) {
-    return (
-      <a href={disabled ? undefined : href} disabled={disabled} {...rest} className={cx(getStyle(props), className)}>
-        {props.children}
-      </a>
-    )
-  }
-
+function asButton (props) {
+  const { children, disabled, ...rest } = props
   return (
-    <button disabled={disabled} className={getStyle(props)} {...rest}>
-      {props.children}
+    <button disabled={disabled} className={className(props)} {...rest}>
+      {children}
     </button>
   )
 }
 
-function getStyle (props) {
-  return cx(base, kind(props), outline(props), pill(props), disabled(props), size(props))
+function asAnchor (props) {
+  const { children, disabled, href, ...rest } = props
+  return (
+    <a href={disabled ? undefined : href} disabled={disabled} className={className(props)} {...rest}>
+      {children}
+    </a>
+  )
+}
+
+function className (props) {
+  return cx(base, kind(props), outline(props), pill(props), disabled(props), size(props), props.className)
 }
 
 Button.propTypes = {
   kind: PropTypes.oneOf(['primary', 'secondary', 'warning', 'danger']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['tiny', 'small', 'medium', 'large']),
   pill: PropTypes.bool,
   outline: PropTypes.bool,
   disabled: PropTypes.bool
