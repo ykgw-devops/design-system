@@ -11,42 +11,47 @@ import '../../global'
 # Colors
 
 <div>
-  {Object.entries(colors).map(([key, value]) => {
-    const colorCard = css`
-      width: 200px;
-      height: 250px;
-      margin: 5px;
-      position: relative;
-      display: inline-block;
-    `
+  {Object.entries(colors)
+    .filter(([key, value]) => {
+      debugger
+      return typeof value === 'string'
+    })
+    .map(([key, value]) => {
+      const colorCard = css`
+        width: 200px;
+        height: 250px;
+        margin: 5px;
+        position: relative;
+        display: inline-block;
+      `
 
-    const base = css`
-      width: 100%;
-      position: absolute;
-      left: 0;
-      text-align: center;
-      padding: 10px;
-      background: white;
-      opacity: 0.7;
-    `
+      const base = css`
+        width: 100%;
+        position: absolute;
+        left: 0;
+        text-align: center;
+        padding: 10px;
+        background: white;
+        opacity: 0.7;
+      `
 
-    const title = css`
-      top: 0;
-    `
+      const title = css`
+        top: 0;
+      `
 
-    const hex = css`
-      bottom: 0;
-    `
+      const hex = css`
+        bottom: 0;
+      `
 
-    return (
-      <Segment key={key} className={colorCard} style={{ backgroundColor: value }}>
-        <div className={cx(base, title)}>
-          {key}
-        </div>
-        <div className={cx(base, hex)}>
-          {value}
-        </div>
-      </Segment>
-    )
-  })}
+      return (
+        <Segment key={key} className={colorCard} style={{ backgroundColor: value }}>
+          <div className={cx(base, title)}>
+            {key}
+          </div>
+          <div className={cx(base, hex)}>
+            {value}
+          </div>
+        </Segment>
+      )
+    })}
 </div>

@@ -23,40 +23,38 @@ import '../../global.jsx'
   </Button>
 </Playground>
 
-## Href
+## As link
 
 <Playground>
   <Button href='https://google.com/'>Google</Button>
-
   <Button href='https://google.com/' outline disabled={true}>Won't work</Button>
 </Playground>
 
 ## Kind
 
 <Playground>
+  <Button kind="primary">Primary</Button>
   <Button kind="secondary">Secondary</Button>
-
   <Button kind="warning">Warning</Button>
-
   <Button kind="danger">Danger</Button>
+  <Button kind="success">Success</Button>
 </Playground>
 
 ## Pill
 
 <Playground>
   <Button pill kind="danger">Red Pill</Button>
-
   <Button pill kind="primary">Blue Pill</Button>
 </Playground>
 
 ## Outline
 
 <Playground>
-  <Button outline kind='secondary'>Outline Button</Button>
-
-  <Button pill outline kind="danger">Red Pill</Button>
-
-  <Button outline>Blue Button</Button>
+  <Button kind="primary" outline>Primary</Button>
+  <Button kind="secondary" outline>Secondary</Button>
+  <Button kind="warning" outline>Warning</Button>
+  <Button kind="danger" outline>Danger</Button>
+  <Button kind="success" outline>Success</Button>
 </Playground>
 
 ## Disabled

@@ -6,19 +6,31 @@ const colors = {
   CLEAR_SKY: '#1E90FF',
   TANGERINE: '#FF7F50',
   WATERMELON: '#EC584B',
-  LEAF: '#2ed573'
+  EMERALD: '#2ED573'
 }
 
 const map = {
+  blue: colors.CLEAR_SKY,
+  grey: colors.CONCRETE,
   orange: colors.TANGERINE,
   red: colors.WATERMELON,
-  blue: colors.CLEAR_SKY,
-  green: colors.LEAF
+  green: colors.EMERALD
+}
+
+const semantics = {
+  primary: colors.CLEAR_SKY,
+  secondary: colors.CONCRETE,
+  warning: colors.TANGERINE,
+  danger: colors.WATERMELON,
+  success: colors.EMERALD
 }
 
 const fromString = string => map[string]
 
+const fromSemantics = string => semantics[string]
+
 export default {
   ...colors,
-  fromString
+  fromString,
+  fromSemantics
 }

@@ -1,22 +1,9 @@
 import colors from '../../colors'
 import { fontFamily } from '../../typography'
-import { darken, tint, lighten } from 'polished'
+import sizes from '../../sizes'
+import { darken, tint, lighten, shade } from 'polished'
 import { css } from '../../emotion'
 import { base as Icon } from '../icon/style'
-
-const sizeMap = {
-  tiny: '0.7rem',
-  small: '0.85rem',
-  medium: '1rem',
-  large: '1.15rem'
-}
-
-const color = {
-  'primary': colors.CLEAR_SKY,
-  'secondary': colors.CONCRETE,
-  'warning': colors.TANGERINE,
-  'danger': colors.WATERMELON
-}
 
 const base = css`
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
@@ -50,57 +37,34 @@ const base = css`
   }
 `
 
-const kinds = {
-  primary: css`
-    background-color: ${colors.CLEAR_SKY};
+const kind = ({ kind, outline }) => css`
+  background-color: ${colors.fromSemantics(kind)};
+  color: ${kind === 'secondary' ? colors.CARBON : 'white'};
 
-    &:hover {
-      background-color: ${darken(0.05, colors.CLEAR_SKY)};
-    }
-  `,
-
-  secondary: css`
-    background-color: ${colors.ANTI_FLASH_WHITE};
-    font-weight: 300;
-    color: ${colors.CARBON};
-
-    &:hover {
-      background-color: ${darken(0.03, colors.ANTI_FLASH_WHITE)};
-    }
-  `,
-
-  warning: css`
-    background-color: ${colors.TANGERINE};
-
-    &:hover {
-      background-color: ${darken(0.05, colors.TANGERINE)};
-    }
-  `,
-
-  danger: css`
-    background-color: ${colors.WATERMELON};
-
-    &:hover {
-      background-color: ${darken(0.05, colors.WATERMELON)};
-    }
-  `
-}
-
-const kind = ({ kind }) => css`${kinds[kind]}`
-const pill = ({ pill }) => pill && css`
-  border-radius: 20px;
+  &:hover {
+    background-color: ${darken(0.03, colors.fromSemantics(kind))};
+  }
 `
+
+const pill = ({ pill }) => pill && css`
+  border-radius: 2em;
+`
+
 const outline = ({ kind, outline }) => {
-  const COLOR = kind === 'secondary'
-    ? colors.CONCRETE
-    : color[kind]
+  const COLOR = colors.fromSemantics(kind)
+  const borderColor = kind === 'secondary'
+    ? shade(0.8, COLOR)
+    : COLOR
+  const fontColor = kind === 'secondary'
+    ? colors.CARBON
+    : COLOR
 
   return outline && css`{
-    border: solid 1px ${COLOR};
+    border: solid 1px ${borderColor};
     padding: 0.750em 1.25em;
     background: none;
     box-shadow: none;
-    color: ${kind === 'secondary' ? colors.CARBON : COLOR};
+    color: ${fontColor};
 
     &[disabled]:hover {
       background: none;
@@ -118,7 +82,7 @@ const outline = ({ kind, outline }) => {
 }
 
 const disabled = ({ kind, disabled }) => {
-  const COLOR = color[kind]
+  const COLOR = colors.fromSemantics(kind)
 
   return disabled && css`
     cursor: default;
@@ -133,7 +97,7 @@ const disabled = ({ kind, disabled }) => {
 
 const size = ({ size }) => {
   return css`
-    font-size: ${sizeMap[size]}
+    font-size: ${sizes[size]};
   `
 }
 

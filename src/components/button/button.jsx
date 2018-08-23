@@ -31,7 +31,7 @@ function className (props) {
 }
 
 Button.propTypes = {
-  kind: PropTypes.oneOf(['primary', 'secondary', 'warning', 'danger']),
+  kind: PropTypes.oneOf(['primary', 'secondary', 'warning', 'danger', 'success']),
   size: PropTypes.oneOf(['tiny', 'small', 'medium', 'large']),
   pill: PropTypes.bool,
   outline: PropTypes.bool,
