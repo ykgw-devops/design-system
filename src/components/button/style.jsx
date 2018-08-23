@@ -13,7 +13,7 @@ const sizeMap = {
 
 const color = {
   'primary': colors.CLEAR_SKY,
-  'secondary': colors.ANTI_FLASH_WHITE,
+  'secondary': colors.CONCRETE,
   'warning': colors.TANGERINE,
   'danger': colors.WATERMELON
 }
@@ -92,7 +92,7 @@ const pill = ({ pill }) => pill && css`
 `
 const outline = ({ kind, outline }) => {
   const COLOR = kind === 'secondary'
-    ? colors.CARBON
+    ? colors.CONCRETE
     : color[kind]
 
   return outline && css`{
@@ -100,7 +100,7 @@ const outline = ({ kind, outline }) => {
     padding: 0.750em 1.25em;
     background: none;
     box-shadow: none;
-    color: ${COLOR};
+    color: ${kind === 'secondary' ? colors.CARBON : COLOR};
 
     &[disabled]:hover {
       background: none;
