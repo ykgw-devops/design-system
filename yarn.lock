@@ -1919,7 +1919,7 @@ babel-polyfill@^6.23.0, babel-polyfill@^6.26.0:
 
 babel-preset-env@^1.7.0:
   version "1.7.0"
-  resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.7.0.tgz#dea79fa4ebeb883cd35dab07e260c1c9c04df77a"
+  resolved "https://npm.waylay.io/babel-preset-env/-/babel-preset-env-1.7.0/dea79fa4ebeb883cd35dab07e260c1c9c04df77a.tgz#dea79fa4ebeb883cd35dab07e260c1c9c04df77a"
   dependencies:
     babel-plugin-check-es2015-constants "^6.22.0"
     babel-plugin-syntax-trailing-function-commas "^6.22.0"
@@ -6714,9 +6714,9 @@ param-case@2.1.x:
   dependencies:
     no-case "^2.2.0"
 
-parcel@^1.9.7:
+parcel-bundler@^1.9.7:
   version "1.9.7"
-  resolved "https://npm.waylay.io/parcel/-/parcel-1.9.7/77ca0cdb305d8e9365ded4762ee39ca760b0c219.tgz#77ca0cdb305d8e9365ded4762ee39ca760b0c219"
+  resolved "https://npm.waylay.io/parcel-bundler/-/parcel-bundler-1.9.7/5cd00850dea0254d377005d55ab4bf60429ba2bc.tgz#5cd00850dea0254d377005d55ab4bf60429ba2bc"
   dependencies:
     ansi-to-html "^0.6.4"
     babel-code-frame "^6.26.0"
@@ -6901,10 +6901,6 @@ path-type@^3.0.0:
   resolved "https://registry.npmjs.org/path-type/-/path-type-3.0.0.tgz#cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f"
   dependencies:
     pify "^3.0.0"
-
-pattycake@^3.0.3:
-  version "3.0.3"
-  resolved "https://npm.waylay.io/pattycake/-/pattycake-3.0.3/ee2120c134220826ae2594024f8cf003a663c4b6.tgz#ee2120c134220826ae2594024f8cf003a663c4b6"
 
 pause-stream@0.0.11:
   version "0.0.11"

@@ -1,19 +1,19 @@
 import React from 'react'
 import { cx } from '../../emotion'
 import { base, danger, info, warning, title as titleStyle } from './style'
-import match from 'pattycake'
 import PropTypes from 'prop-types'
 import { omit } from 'lodash'
 
+const kindMap = {
+  'danger': danger,
+  'info': info,
+  'warning': warning,
+  [undefined]: ''
+}
+
 const Message = props => {
   const { children, kind, title } = props
-
-  const kindStyle = match(kind)(
-    'danger', () => danger,
-    'info', () => info,
-    'warning', () => warning,
-    undefined, () => ''
-  )
+  const kindStyle = kindMap[kind]
 
   // since "outline" is already defined as a boolean prop
   const rest = omit(props, 'outline')
