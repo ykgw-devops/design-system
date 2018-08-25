@@ -18,6 +18,10 @@ const colorMap = {
     color: colors.WATERMELON,
     font: '#fff'
   },
+  'green': {
+    color: colors.LEAF,
+    font: '#fff'
+  },
   'default': {
     color: colors.CONCRETE,
     font: colors.CARBON

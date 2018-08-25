@@ -24,7 +24,7 @@ const Label = (props) => (
 )
 
 Label.propTypes = {
-  color: PropTypes.oneOf(['red', 'blue', 'orange', 'default']),
+  color: PropTypes.oneOf(['red', 'blue', 'orange', 'green', 'default']),
   outline: PropTypes.bool,
   removable: PropTypes.bool,
   focused: PropTypes.bool,
