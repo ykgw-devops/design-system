@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import update from 'immutability-helper'
-import { flatMap, get, includes, reject, upperFirst } from 'lodash'
+import { debounce, get, omit, reject, upperFirst } from 'lodash'
 
 import Icon from '../icon/icon'
 import Input from '../input/input'
@@ -13,17 +13,21 @@ class FilterableInput extends Component {
     super(props)
     this.state = {
       filters: [].concat(props.initialFilters),
-      inputLength: 0
+      input: ''
     }
+
+    this.onChangeHandler = debounce(() => {
+      props.onChange(this.state.input)
+    }, 300)
   }
 
   onKeyDownHandler (event) {
     const { keyCode } = event
-    const { filters, inputLength } = this.state
+    const { filters, input } = this.state
 
     const isBackspace = keyCode === KEY_BACKSPACE
     const hasFilters = filters.length > 0
-    const hasText = inputLength > 0
+    const hasText = input.length > 0
     const shouldInteractWithFilter = isBackspace && hasFilters && !hasText
 
     const focusedFilter = get(filters, `${filters.length - 1}.focused`)
@@ -37,11 +41,11 @@ class FilterableInput extends Component {
     }
   }
 
-  onChangeHandler (event) {
+  _onChangeHandler (event) {
     const { target } = event
     this.blurLastFilter()
-    this.setState({ inputLength: target.value.length })
-    this.props.onChange(event)
+    this.setState({ input: target.value })
+    this.onChangeHandler()
   }
 
   addFilter (key, value) {
@@ -92,13 +96,16 @@ class FilterableInput extends Component {
     const adornments = initialAdornments.concat(
       filters.map(f => this.toAdornment(f))
     )
+
+    const rest = omit(this.props, ['initialFilters'])
+
     return (
       <Input
         name={name}
         placeholder='Filter…'
         adornments={adornments}
-        {...this.props}
-        onChange={e => this.onChangeHandler(e)}
+        {...rest}
+        onChange={e => this._onChangeHandler(e)}
         onKeyDown={e => this.onKeyDownHandler(e)}
       />
     )
