@@ -6,7 +6,7 @@ const colors = {
   CLEAR_SKY: '#1E90FF',
   TANGERINE: '#FF7F50',
   WATERMELON: '#EC584B',
-  LEAF: '#2ED573'
+  LEAF: '#00C752'
 }
 
 const map = {
