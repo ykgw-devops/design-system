@@ -12,7 +12,20 @@ import '../../global.jsx'
 ## Basic usage
 
 <Playground>
-  <FilterableInput initialFilters={[{ key: 'status', value: 'online' }]} name='filter' />
+  <FilterableInput
+    name='filter'
+    initialFilters={[{
+      key: 'status',
+      value: 'online'
+    }]}
+    availableFilters={[{
+      key: 'status',
+      values: ['online', 'offline', 'unknown']
+    }, {
+      key: 'type',
+      values: ['lamp', 'alarm', 'other']
+    }]}
+  />
 </Playground>
 
 ## Properties

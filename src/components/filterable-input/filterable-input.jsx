@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import update from 'immutability-helper'
-import { debounce, get, omit, reject, upperFirst } from 'lodash'
+import { debounce, flatMap, includes, get, omit, reject, upperFirst } from 'lodash'
 
 import Icon from '../icon/icon'
 import Input from '../input/input'
@@ -11,14 +11,40 @@ const KEY_BACKSPACE = 8
 class FilterableInput extends Component {
   constructor (props) {
     super(props)
+
     this.state = {
       filters: [].concat(props.initialFilters),
       input: ''
     }
 
+    // debounced onChange handler
     this.onChangeHandler = debounce(() => {
       props.onChange(this.state.input)
     }, 300)
+
+    /**
+     * You cannot add the same filter key twice, so we're filtering the available
+     * filters when we create the component
+     */
+    const availableFilters = this.getAvailableFilters()
+    this.state = Object.assign(this.state, {
+      availableFilters: [].concat(availableFilters)
+    })
+  }
+
+  /**
+   * The actual available filters for dropdown are:
+   * props.availableFilters - props.initialFilters - state.filters
+   */
+  getAvailableFilters () {
+    const { props, state } = this
+
+    const stateFilterKeys = flatMap(state.filters, 'key')
+    const availableFilters = reject(props.availableFilters, filter => {
+      return includes(stateFilterKeys, filter.key)
+    })
+
+    return availableFilters
   }
 
   onKeyDownHandler (event) {
@@ -98,6 +124,7 @@ class FilterableInput extends Component {
     )
 
     const rest = omit(this.props, ['initialFilters'])
+    // const availableFilters = this.getAvailableFilters()
 
     return (
       <Input
