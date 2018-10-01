@@ -11,7 +11,7 @@ const Button = (props) => {
 function asButton (props) {
   const { children, disabled, ...rest } = props
   return (
-    <button disabled={disabled} className={className(props)} {...rest}>
+    <button disabled={disabled} {...rest} className={className(props)}>
       {children}
     </button>
   )
@@ -20,7 +20,7 @@ function asButton (props) {
 function asAnchor (props) {
   const { children, disabled, href, ...rest } = props
   return (
-    <a href={disabled ? undefined : href} disabled={disabled} className={className(props)} {...rest}>
+    <a href={disabled ? undefined : href} disabled={disabled} {...rest} className={className(props)}>
       {children}
     </a>
   )
