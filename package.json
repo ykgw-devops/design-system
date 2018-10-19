@@ -32,8 +32,7 @@
     "polished": "^1.9.3",
     "prop-types": "^15.6.1",
     "react-emotion": "^9.2.6",
-    "recompose": "^0.27.1",
-    "styled-map": "^3.2.0-rc.1"
+    "recompose": "^0.27.1"
   },
   "peerDependencies": {
     "react": "^16.4.1",
