@@ -1,30 +1,30 @@
-import { css } from '../../emotion'
-import colors from '../../colors'
 import { tint, shade } from 'polished'
 
+import { css } from '../../emotion'
+import { clearSky, tangerine, watermelon, leaf, concrete, carbon } from '../../colors'
 import { base as Icon } from '../icon/style'
-import { base as Input } from '../input/style'
+import { base as Input } from '../input/input.styles'
 
 const colorMap = {
   'blue': {
-    color: colors.CLEAR_SKY,
+    color: clearSky,
     font: '#fff'
   },
   'orange': {
-    color: colors.TANGERINE,
+    color: tangerine,
     font: '#fff'
   },
   'red': {
-    color: colors.WATERMELON,
+    color: watermelon,
     font: '#fff'
   },
   'green': {
-    color: colors.LEAF,
+    color: leaf,
     font: '#fff'
   },
   'default': {
-    color: colors.CONCRETE,
-    font: colors.CARBON
+    color: concrete,
+    font: carbon
   }
 }
 
@@ -53,7 +53,7 @@ const colored = (props) => {
 
     ${props.outline && `
       box-shadow: inset 0 0 0 1px ${color};
-      color: ${colors.CARBON};
+      color: ${carbon};
     `}
   `
 }
@@ -69,7 +69,7 @@ const detail = (props = {}) => {
   let bgColor = shade(0.85, color)
 
   if (props.focused) {
-    bgColor = colors.CLEAR_SKY
+    bgColor = clearSky
   }
 
   if (props.outline) {
@@ -138,10 +138,10 @@ const close = props => {
     }
 
     ${props.focused && `
-      background: ${shade(0.9, colors.CONCRETE)};
+      background: ${shade(0.9, concrete)};
 
       &:hover {
-        background: ${shade(0.8, colors.CONCRETE)};
+        background: ${shade(0.8, concrete)};
       }
     `}
   `

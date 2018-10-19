@@ -1,19 +1,19 @@
 import { css } from '../../emotion'
-import colors from '../../colors'
+import { concrete, watermelon, tangerine, clearSky, ink } from '../../colors'
 import { tint } from 'polished'
 
 const COLOR_MAP = {
-  'danger': colors.WATERMELON,
-  'warning': colors.TANGERINE,
-  'info': colors.CLEAR_SKY
+  'danger': watermelon,
+  'warning': tangerine,
+  'info': clearSky
 }
 
 const base = props => {
   const { kind, outline } = props
 
   const color = COLOR_MAP[kind]
-  const bgColor = color || colors.CONCRETE
-  const fontColor = color || colors.INK
+  const bgColor = color || concrete
+  const fontColor = color || ink
 
   return css`
     background: ${outline ? 'none' : tint(0.15, bgColor)};

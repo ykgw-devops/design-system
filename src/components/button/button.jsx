@@ -1,15 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { omitBy, isBoolean } from 'lodash'
 
 import { cx } from '../../emotion'
-import { base, kind, outline, pill, disabled, size } from './style'
+import { base, kind, outline, pill, disabled, size } from './button.styles'
 
 const Button = (props) => {
   return props.href ? asAnchor(props) : asButton(props)
 }
 
 function asButton (props) {
-  const { children, disabled, ...rest } = props
+  const { children, disabled } = props
+
+  const rest = omitBy(props, isBoolean)
   return (
     <button disabled={disabled} {...rest} className={className(props)}>
       {children}
@@ -18,7 +21,9 @@ function asButton (props) {
 }
 
 function asAnchor (props) {
-  const { children, disabled, href, ...rest } = props
+  const { children, disabled, href } = props
+
+  const rest = omitBy(props, isBoolean)
   return (
     <a href={disabled ? undefined : href} disabled={disabled} {...rest} className={className(props)}>
       {children}
@@ -27,7 +32,11 @@ function asAnchor (props) {
 }
 
 function className (props) {
-  return cx(base, kind(props), outline(props), pill(props), disabled(props), size(props), props.className)
+  return cx(base, kind(props), size(props), {
+    [outline(props)]: props.outline,
+    [pill]: props.pill,
+    [disabled(props)]: props.disabled
+  }, props.className)
 }
 
 Button.propTypes = {

@@ -1,14 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { base } from './style'
+import { base, item } from './breadcrumbs.styles'
 
 const Breadcrumb = ({ sections = [] }) => {
   return (
     <nav className={base}>
-      <ol>
-        {sections.map(BreadCrumbItem)}
-      </ol>
+      {sections.map(BreadCrumbItem)}
     </nav>
   )
 }
@@ -16,16 +14,16 @@ const Breadcrumb = ({ sections = [] }) => {
 const BreadCrumbItem = ({ name, content, key }) => {
   content = content || name
   return (
-    <li key={key || content}>
+    <span className={item} key={key || content}>
       {content}
-    </li>
+    </span>
   )
 }
 
 const sectionType = PropTypes.shape({
   key: PropTypes.string.isRequired,
   name: PropTypes.string,
-  content: PropTypes.element
+  content: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
 })
 
 Breadcrumb.propTypes = {

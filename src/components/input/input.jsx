@@ -1,28 +1,27 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { filter, map, omit } from 'lodash'
 
 import { cx } from '../../emotion'
-import { base, input, leftAdornments as leftStyle, rightAdornments as rightStyle } from './style'
-import PropTypes from 'prop-types'
-import { omit } from 'lodash'
-
-const noop = () => undefined
+import { base, input, leftAdornments as leftStyle, rightAdornments as rightStyle } from './input.styles'
 
 const Input = props => {
   const { adornments = [] } = props
-  const leftAdornments = adornments.filter(a => a.position === 'left')
-  const rightAdornments = adornments.filter(a => a.position === 'right')
+
+  const leftAdornments = filter(adornments, { position: 'left' })
+  const rightAdornments = filter(adornments, { position: 'right' })
 
   return (
     <div className={cx(base, props.className)}>
       {leftAdornments.length > 0 && (
         <span className={leftStyle}>
-          {leftAdornments.map(adornment => adornment.content)}
+          {map(leftAdornments, 'content')}
         </span>
       )}
       <input {...omit(props, 'adornments')} className={input} />
       {rightAdornments.length > 0 && (
         <span className={rightStyle}>
-          {rightAdornments.map(adornment => adornment.content)}
+          {map(rightAdornments, 'content')}
         </span>
       )}
     </div>
@@ -35,7 +34,7 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
-  onChange: noop
+  onChange: () => undefined
 }
 
 export default Input

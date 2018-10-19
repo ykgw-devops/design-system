@@ -1,36 +1,43 @@
-const colors = {
-  ANTI_FLASH_WHITE: '#EFF2F6',
-  CONCRETE: '#E8E8E8',
-  CARBON: '#59595B',
-  INK: '#231F20',
-  CLEAR_SKY: '#1E90FF',
-  TANGERINE: '#FF7F50',
-  WATERMELON: '#EC584B',
-  LEAF: '#00C752'
-}
+const antiFlashWhite = '#EFF2F6'
+const concrete = '#E8E8E8'
+const carbon = '#59595B'
+const ink = '#231F20'
+const clearSky = '#1E90FF'
+const tangerine = '#FF7F50'
+const watermelon = '#EC584B'
+const leaf = '#00C752'
 
 const map = {
-  blue: colors.CLEAR_SKY,
-  grey: colors.CONCRETE,
-  orange: colors.TANGERINE,
-  red: colors.WATERMELON,
-  green: colors.LEAF
+  blue: clearSky,
+  grey: concrete,
+  orange: tangerine,
+  red: watermelon,
+  green: leaf
 }
 
 const semantics = {
-  primary: colors.CLEAR_SKY,
-  secondary: colors.CONCRETE,
-  warning: colors.TANGERINE,
-  danger: colors.WATERMELON,
-  success: colors.LEAF
+  primary: clearSky,
+  secondary: concrete,
+  warning: tangerine,
+  danger: watermelon,
+  success: leaf
 }
 
 const fromString = string => map[string]
-
 const fromSemantics = string => semantics[string]
 
 export default {
-  ...colors,
   fromString,
   fromSemantics
+}
+
+export {
+  antiFlashWhite,
+  concrete,
+  carbon,
+  ink,
+  clearSky,
+  tangerine,
+  watermelon,
+  leaf
 }

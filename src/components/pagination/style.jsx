@@ -1,13 +1,13 @@
 import { css } from '../../emotion'
-import colors from '../../colors'
+import { antiFlashWhite, carbon, clearSky, concrete } from '../../colors'
 import { shade, tint } from 'polished'
 import { resetAnchor } from '../../shared'
 
-const lightGrey = tint(0.5, colors.ANTI_FLASH_WHITE)
-const darkerGrey = shade(0.75, colors.ANTI_FLASH_WHITE)
+const lightGrey = tint(0.5, antiFlashWhite)
+const darkerGrey = shade(0.75, antiFlashWhite)
 
 const base = css`
-  color: ${colors.CARBON};
+  color: ${carbon};
   font-size: 1rem;
   width: auto;
   display: inline-block;
@@ -15,14 +15,14 @@ const base = css`
 
   & > a {
     ${resetAnchor};
-    color: ${colors.CLEAR_SKY};
+    color: ${clearSky};
   }
 `
 
-const borderStyle = `solid 1px ${colors.CONCRETE}`
+const borderStyle = `solid 1px ${concrete}`
 
 const item = css`
-  color: ${colors.CARBON};
+  color: ${carbon};
   display: inline-block;
   padding: 0.825em 1em;
   line-height: 1em;
@@ -41,7 +41,7 @@ const item = css`
 
 const firstItem = css`
   ${item};
-  color: ${colors.CARBON};
+  color: ${carbon};
 
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -52,7 +52,7 @@ const firstItem = css`
 
 const lastItem = css`
   ${item};
-  color: ${colors.CARBON};
+  color: ${carbon};
 
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -60,11 +60,11 @@ const lastItem = css`
 `
 
 const activeItem = css`
-  background-color: ${colors.CLEAR_SKY} !important;
-  color: ${colors.ANTI_FLASH_WHITE} !important;
+  background-color: ${clearSky} !important;
+  color: ${antiFlashWhite} !important;
   font-weight: 500;
 
-  border-color: ${colors.CLEAR_SKY};
+  border-color: ${clearSky};
 `
 
 const disabled = css`

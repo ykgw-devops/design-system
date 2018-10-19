@@ -1,4 +1,4 @@
-import colors from '../../colors'
+import { antiFlashWhite, concrete, ink } from '../../colors'
 import { css } from '../../emotion'
 import { tint, darken } from 'polished'
 
@@ -9,18 +9,18 @@ const base = css`
   width: 100%;
 
   thead {
-    color: ${colors.INK};
+    color: ${ink};
   }
 
   thead > tr > th {
     font-weight: 500;
     padding: 0.875em 0.875em;
-    border-bottom: solid 1px ${darken(0.1, colors.CONCRETE)};
+    border-bottom: solid 1px ${darken(0.1, concrete)};
   }
 
   tbody > tr {
     &:hover {
-      background-color: ${tint(0.35, colors.ANTI_FLASH_WHITE)};
+      background-color: ${tint(0.35, antiFlashWhite)};
     }
   }
 
@@ -34,7 +34,7 @@ const base = css`
 
   tbody > tr > td {
     padding: 0.825em 0.825em;
-    border-bottom: solid 1px ${colors.CONCRETE};
+    border-bottom: solid 1px ${concrete};
   }
 
   &.fixed {

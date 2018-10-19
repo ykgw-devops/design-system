@@ -1,6 +1,6 @@
 import { css } from '../../emotion'
 import colors from '../../colors'
-import { base as Input } from '../input/style'
+import { base as Input } from '../input/input.styles'
 
 const base = css`
   display: block;
