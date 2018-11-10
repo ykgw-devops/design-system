@@ -1,0 +1,39 @@
+---
+name: Tree
+---
+
+import { Playground, PropsTable } from 'docz'
+import Tree from './tree'
+
+# Tree
+
+## Basic Usage
+
+<Playground>
+  <Tree items={[
+    { title: 'Building #1', collapsed: false, items: [
+      { title: 'Floor #1', items: [
+        { title: 'Room #1' },
+        { title: 'Room #2' },
+        { title: 'Room #3' }
+      ] },
+      { title: 'Floor #2', items: [
+        { title: 'Room #1' },
+        { title: 'Room #2' },
+        { title: 'Room #3' }
+      ] }
+    ] },
+    { title: 'Building #2', collapsable: true, collapsed: true, items: [
+      { title: 'Floor #1', items: [
+        { title: 'Room #1' },
+        { title: 'Room #2' },
+        { title: 'Room #3' }
+      ] },
+      { title: 'Floor #2', items: [
+        { title: 'Room #1' },
+        { title: 'Room #2' },
+        { title: 'Room #3' }
+      ] }
+    ] }
+  ]} />
+</Playground>
