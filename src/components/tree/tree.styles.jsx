@@ -4,6 +4,8 @@ import { ink, clearSky } from '../../colors'
 const base = css`
   color: ${ink};
   list-style-type: none;
+
+  user-select: none;
 `
 
 const withChildren = css`
