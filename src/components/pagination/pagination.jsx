@@ -1,68 +1,46 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { includes, times } from 'lodash'
 
 import style from './style.jsx'
 import { cx } from '../../emotion'
 
-class Pagination extends Component {
-  constructor (props) {
-    super(props)
+function Pagination (props) {
+  const { initialIndex, count, onIndexChanged } = props
+  const [activeIndex, setActiveIndex] = useState(initialIndex)
 
-    this.state = {
-      activeIndex: props.activeIndex
-    }
+  function nextPage (e) {
+    setIndex(e, activeIndex + 1)
   }
 
-  nextPage (e) {
-    const { activeIndex } = this.state
-    e.preventDefault()
-
-    const nextIndex = activeIndex + 1
-
-    this.props.onIndexChanged(nextIndex)
-    this.setState({ activeIndex: nextIndex })
+  function previousPage (e) {
+    setIndex(e, activeIndex - 1)
   }
 
-  previousPage (e) {
-    const { activeIndex } = this.state
-    e.preventDefault()
+  function setIndex (e, index) {
+    noop(e)
 
-    const nextIndex = activeIndex - 1
-
-    this.props.onIndexChanged(nextIndex)
-    this.setState({ activeIndex: nextIndex })
+    onIndexChanged(index)
+    setActiveIndex(index)
   }
 
-  setPage (e, index) {
-    e.preventDefault()
-
-    this.props.onIndexChanged(index)
-    this.setState({ activeIndex: index })
-  }
-
-  render () {
-    const { count } = this.props
-    const { activeIndex } = this.state
-
-    return (
-      <div className={cx(style.base)}>
-        {previous(activeIndex, this.previousPage.bind(this))}
-        {renderPaginationItems(count, activeIndex, this.setPage.bind(this))}
-        {next(count, activeIndex, this.nextPage.bind(this))}
-      </div>
-    )
-  }
+  return (
+    <div className={cx(style.base)}>
+      {previous(activeIndex, previousPage)}
+      {renderPaginationItems(count, activeIndex, setIndex)}
+      {next(count, activeIndex, nextPage)}
+    </div>
+  )
 }
 
 const noop = (e) => {
   e && e.preventDefault()
 }
 
-function renderPaginationItems (count, activeIndex, setPage) {
+function renderPaginationItems (count, activeIndex, setIndex) {
   const { visible, ellipsis } = getPaginationType(activeIndex, count)
 
-  const itemWithUpdateFn = item(setPage)
+  const itemWithUpdateFn = item(setIndex)
 
   return times(count, index => {
     const active = index === activeIndex
@@ -85,15 +63,15 @@ function range (size, startAt = 0) {
   return [...Array(size).keys()].map(i => i + startAt)
 }
 
-const item = setPage => {
-  return (key, number, options = { active: false, ellipsis: false }) => {
+const item = setIndex => {
+  return (index, number, options = { active: false, ellipsis: false }) => {
     const disabled = options.ellipsis && style.disabled
     const active = options.active && style.activeItem
 
-    const updateFn = disabled ? noop : setPage
+    const updateFn = disabled ? noop : setIndex
 
     return (
-      <a onClick={e => updateFn(e, key)} key={key} className={cx(style.item, active, disabled)}>
+      <a onClick={e => updateFn(e, index)} key={index} className={cx(style.item, active, disabled)}>
         {options.ellipsis ? '…' : number}
       </a>
     )
@@ -154,13 +132,13 @@ const next = (count, activeIndex, nextPage) => {
 
 Pagination.propTypes = {
   count: PropTypes.number,
-  activeIndex: PropTypes.number,
+  initialIndex: PropTypes.number,
   onIndexChanged: PropTypes.func
 }
 
 Pagination.defaultProps = {
   count: 0,
-  activeIndex: 0,
+  initialIndex: 0,
   onIndexChanged: () => {}
 }
 
