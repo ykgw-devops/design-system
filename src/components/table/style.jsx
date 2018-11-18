@@ -7,6 +7,7 @@ const base = css`
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
+  font-size: 1rem;
 
   thead {
     color: ${ink};
