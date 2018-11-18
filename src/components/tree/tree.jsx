@@ -35,9 +35,14 @@ const Tree = (props) => {
           shouldCollapse && collapsed
         )
 
+        // unfortunately react-spring does not allow us to animate the subtree
+        // with hooks (yet)
+        // ref: https://github.com/drcmda/react-spring/issues/302
         return (
           <div className={treeStyle} key={key || title}>
-            <div onClick={subTreeClickHandler}>{title}</div>
+            <div onClick={subTreeClickHandler}>
+              {title}
+            </div>
             {items &&
               <Tree items={items} />
             }
