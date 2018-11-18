@@ -8,23 +8,28 @@ const base = css`
   list-style-type: none;
 
   user-select: none;
+  padding-left: 0;
 `
 
-const withChildren = ({ collapsed }) => css`
-  &:before {
-    color: ${clearSky};
-    font-family: 'Material Icons';
+const withChildren = ({ collapsed }) => {
+  const icon = collapsed
+    ? 'keyboard_arrow_right'
+    : 'keyboard_arrow_down'
 
-    ${collapsed
-    ? `content: 'keyboard_arrow_right';`
-    : `content: 'keyboard_arrow_down';`
+  return css`
+    &:before {
+      float: left;
+      color: ${clearSky};
+
+      font-family: 'Material Icons';
+      font-weight: 600;
+      font-size: 1.2em;
+      line-height: 1.2em;
+
+      content: '${icon}';
+    }
+  `
 }
-
-    float: left;
-
-    padding-right: 0.2em;
-  }
-`
 
 const listItem = css`
   padding: 0.1em 0;
@@ -36,10 +41,14 @@ const collapsed = css`
     overflow: hidden;
   }
 `
+const indented = css`
+  padding-left: 1.2em;
+`
 
 export {
   base,
   collapsed,
   listItem,
+  indented,
   withChildren
 }
