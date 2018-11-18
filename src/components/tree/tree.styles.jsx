@@ -10,11 +10,16 @@ const base = css`
   user-select: none;
 `
 
-const withChildren = css`
+const withChildren = ({ collapsed }) => css`
   &:before {
     color: ${clearSky};
     font-family: 'Material Icons';
-    content: 'keyboard_arrow_down';
+
+    ${collapsed
+    ? `content: 'keyboard_arrow_right';`
+    : `content: 'keyboard_arrow_down';`
+}
+
     float: left;
 
     padding-right: 0.2em;
@@ -25,8 +30,16 @@ const listItem = css`
   padding: 0.1em 0;
 `
 
+const collapsed = css`
+  > ul {
+    height: 0;
+    overflow: hidden;
+  }
+`
+
 export {
   base,
+  collapsed,
   listItem,
   withChildren
 }

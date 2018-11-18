@@ -1,29 +1,47 @@
-import React from 'react'
-import { noop } from 'lodash'
+import React, { useState } from 'react'
+import { isEmpty, noop } from 'lodash'
 
 import { cx } from '../../emotion'
-import { base, listItem, withChildren } from './tree.styles.jsx'
+import { base, collapsed, listItem, withChildren } from './tree.styles.jsx'
 
 const Tree = (props) => {
   const { items = [] } = props
-  if (!items || items.length === 0) return null
+  if (isEmpty(items)) return null
 
-  // simple recursion to render a tree within a tree within a tree within a tree
+  /**
+   *  simple recursion to render a tree
+   *    within a tree
+   *      within a tree
+   *        within a tree
+   */
   return (
     <ul className={cx(base)}>
       {items.map(item => {
         const { title, items = [], key, onClick } = item
         const hasChildren = items.length > 0
+        const [shouldCollapse, setCollapsed] = useState(item.collapsed)
+
+        function toggleCollapse () {
+          setCollapsed(!shouldCollapse)
+        }
+
+        const subTreeClickHandler = hasChildren
+          ? onClick || toggleCollapse
+          : noop
+
+        const treeStyle = cx(
+          listItem,
+          hasChildren && withChildren({ collapsed: shouldCollapse }),
+          shouldCollapse && collapsed
+        )
 
         return (
-          <li className={cx(listItem)} key={key || title}>
-            <div onClick={onClick || noop} className={cx(hasChildren && withChildren)}>
-              {title}
-            </div>
+          <div className={treeStyle} key={key || title}>
+            <div onClick={subTreeClickHandler}>{title}</div>
             {items &&
               <Tree items={items} />
             }
-          </li>
+          </div>
         )
       })}
     </ul>
