@@ -1,8 +1,10 @@
 import { css } from '../../emotion'
-import { ink, clearSky } from '../../colors'
+import { carbon, clearSky } from '../../colors'
 
 const base = css`
-  color: ${ink};
+  font-size: 1rem;
+
+  color: ${carbon};
   list-style-type: none;
 
   user-select: none;
@@ -19,7 +21,12 @@ const withChildren = css`
   }
 `
 
+const listItem = css`
+  padding: 0.1em 0;
+`
+
 export {
   base,
+  listItem,
   withChildren
 }
