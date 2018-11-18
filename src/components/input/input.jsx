@@ -34,7 +34,8 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
-  onChange: () => undefined
+  onChange: () => undefined,
+  adornments: []
 }
 
 export default Input
