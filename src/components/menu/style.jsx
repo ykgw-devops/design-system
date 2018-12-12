@@ -1,5 +1,5 @@
 import { css } from '../../emotion'
-import colors from '../../colors'
+import { clearSky } from '../../colors'
 import { resetAnchor } from '../../shared'
 
 const base = css`
@@ -27,7 +27,7 @@ const item = css`
   }
 
   &:hover {
-    color: ${colors.CLEAR_SKY};
+    color: ${clearSky};
   }
 
   i {
@@ -37,7 +37,7 @@ const item = css`
 `
 
 const active = css`
-  color: ${colors.CLEAR_SKY};
+  color: ${clearSky};
 `
 
 export { base, item, active }
