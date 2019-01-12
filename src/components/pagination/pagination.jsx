@@ -1,9 +1,10 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { includes, times } from 'lodash'
 
-import style from './style.jsx'
-import { cx } from '../../emotion'
+import style from './pagination.styles.jsx'
 
 function Pagination (props) {
   const { initialIndex, count, onIndexChanged } = props
@@ -25,7 +26,7 @@ function Pagination (props) {
   }
 
   return (
-    <div className={cx(style.base)}>
+    <div css={style.base}>
       {previous(activeIndex, previousPage)}
       {renderPaginationItems(count, activeIndex, setIndex)}
       {next(count, activeIndex, nextPage)}
@@ -71,7 +72,7 @@ const item = setIndex => {
     const updateFn = disabled ? noop : setIndex
 
     return (
-      <a onClick={e => updateFn(e, index)} key={index} className={cx(style.item, active, disabled)}>
+      <a onClick={e => updateFn(e, index)} key={index} css={[style.item, active, disabled]}>
         {options.ellipsis ? '…' : number}
       </a>
     )
@@ -113,7 +114,7 @@ const previous = (activeIndex, previousPage) => {
   const updateFn = disabled ? noop : previousPage
 
   return (
-    <a onClick={updateFn} className={cx(style.firstItem, disabled)}>
+    <a onClick={updateFn} css={[style.firstItem, disabled]}>
       Previous
     </a>
   )
@@ -124,7 +125,7 @@ const next = (count, activeIndex, nextPage) => {
   const updateFn = disabled ? noop : nextPage
 
   return (
-    <a onClick={updateFn} className={cx(style.lastItem, disabled)}>
+    <a onClick={updateFn} css={[style.lastItem, disabled]}>
       Next
     </a>
   )

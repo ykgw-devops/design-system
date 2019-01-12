@@ -1,13 +1,16 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
-import { base } from './style'
+import setDisplayName from 'recompose/setDisplayName'
+import PropTypes from 'prop-types'
+
+import { base } from './form.styles.jsx'
 import Field from './field'
 import Input from '../input/input'
-import { setDisplayName } from 'recompose'
-import PropTypes from 'prop-types'
 
 const Form = props => {
   return (
-    <form {...props} className={base}>
+    <form {...props} css={base}>
       {props.children}
     </form>
   )

@@ -1,24 +1,25 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
 import PropTypes from 'prop-types'
 
 import Icon from '../icon/icon'
-import { base, close, colored, detail, focused, value } from './style'
-import { cx } from '../../emotion'
-import  { withProps } from 'recompose'
+import { base, close, colored, detail, focused, value } from './label.styles.jsx'
+import withProps from 'recompose/withProps'
 
 // Icon with larger hitbox and cursor pointer
 const Close = withProps({ name: 'close' })(Icon)
 
 const Label = (props) => (
-  <div className={cx(base(props), colored(props), focused(props), props.className)}>
+  <div css={[base(props), colored(props), focused(props)]}>
     {props.name &&
-      <div className={detail(props)}>
+      <div css={detail(props)}>
         {props.name}
       </div>
     }
-    <div className={value}>
+    <div css={value}>
       {props.children}
-      {props.removable && <Close className={close(props)} onClick={props.onClose} />}
+      {props.removable && <Close css={close(props)} onClick={props.onClose} />}
     </div>
   </div>
 )

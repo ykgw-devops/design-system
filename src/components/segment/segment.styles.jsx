@@ -1,5 +1,5 @@
 import { concrete } from '../../colors'
-import { css } from '../../emotion'
+import { css } from '@emotion/core'
 
 const base = css`
   background: #FFFFFF;

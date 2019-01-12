@@ -1,6 +1,5 @@
-import { css } from '../../emotion'
+import { css } from '@emotion/core'
 import colors from '../../colors'
-import { base as Input } from '../input/input.styles'
 
 const base = css`
   display: block;
@@ -11,10 +10,6 @@ const base = css`
 
   label {
     color: ${colors.CARBON};
-  }
-
-  .${Input} {
-    display: flex;
   }
 
   &:focus {

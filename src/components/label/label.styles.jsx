@@ -1,6 +1,6 @@
 import { tint, shade } from 'polished'
 
-import { css } from '../../emotion'
+import { css } from '@emotion/core'
 import { clearSky, tangerine, watermelon, leaf, concrete, carbon } from '../../colors'
 import { base as Icon } from '../icon/style'
 import { base as Input } from '../input/input.styles'

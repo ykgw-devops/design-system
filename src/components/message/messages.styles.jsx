@@ -1,4 +1,4 @@
-import { css } from '../../emotion'
+import { css } from '@emotion/core'
 import { concrete, watermelon, tangerine, clearSky, ink } from '../../colors'
 import { tint } from 'polished'
 

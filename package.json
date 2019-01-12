@@ -16,7 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
-    "babel-plugin-emotion": "^9.2.6",
+    "babel-plugin-emotion": "^10.0.6",
     "docz": "^0.13.7",
     "docz-theme-default": "^0.13.7",
     "npm-run-all": "^4.1.5",
@@ -24,17 +24,14 @@
     "standard": "^12.0.1"
   },
   "dependencies": {
-    "create-emotion": "^9.2.4",
-    "create-emotion-server": "^9.2.6",
+    "@emotion/core": "^10.0.6",
     "downshift": "^2.0.10",
-    "emotion": "^9.2.3",
     "immutability-helper": "^2.7.1",
     "lodash": "^4.17.10",
     "polished": "^1.9.3",
     "prop-types": "^15.6.1",
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
-    "react-emotion": "^9.2.6",
     "recompose": "^0.27.1"
   },
   "publishConfig": {

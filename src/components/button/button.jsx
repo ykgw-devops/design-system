@@ -1,8 +1,9 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { omitBy, isBoolean } from 'lodash'
 
-import { cx } from '../../emotion'
 import { base, kind, outline, pill, disabled, size } from './button.styles'
 
 const Button = (props) => {
@@ -14,7 +15,7 @@ function asButton (props) {
 
   const rest = omitBy(props, isBoolean)
   return (
-    <button disabled={disabled} {...rest} className={className(props)}>
+    <button disabled={disabled} {...rest} css={getStyle(props)}>
       {children}
     </button>
   )
@@ -25,18 +26,21 @@ function asAnchor (props) {
 
   const rest = omitBy(props, isBoolean)
   return (
-    <a href={disabled ? undefined : href} disabled={disabled} {...rest} className={className(props)}>
+    <a href={disabled ? undefined : href} disabled={disabled} {...rest} css={getStyle(props)}>
       {children}
     </a>
   )
 }
 
-function className (props) {
-  return cx(base, kind(props), size(props), {
-    [outline(props)]: props.outline,
-    [pill]: props.pill,
-    [disabled(props)]: props.disabled
-  }, props.className)
+function getStyle (props) {
+  return [
+    base,
+    kind(props),
+    size(props),
+    props.outline && outline(props),
+    props.pill && pill,
+    props.disabled && disabled(props)
+  ]
 }
 
 Button.propTypes = {

@@ -1,13 +1,15 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import { chain, omit, upperFirst } from 'lodash'
 
-import { cx } from '../../emotion'
-import { base } from './style.jsx'
+import { base, fixed } from './table.styles.jsx'
 
 const Table = props => {
   const tableProps = Object.assign(omit(props, ['rows', 'headers', 'fixed']), {
-    className: cx(base, props.fixed && 'fixed', props.className)
+    css: [base, props.fixed && fixed]
   })
 
   if (props.children) {

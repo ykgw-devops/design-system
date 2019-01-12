@@ -1,4 +1,4 @@
-import { css } from '../../emotion'
+import { css } from '@emotion/core'
 import { clearSky } from '../../colors'
 import { resetAnchor } from '../../shared'
 

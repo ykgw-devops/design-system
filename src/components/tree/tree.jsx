@@ -1,7 +1,8 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React, { useState } from 'react'
 import { isEmpty, noop } from 'lodash'
 
-import { cx } from '../../emotion'
 import { base, collapsed, listItem, indented, withChildren } from './tree.styles.jsx'
 
 const Tree = (props) => {
@@ -15,7 +16,7 @@ const Tree = (props) => {
    *        within a tree
    */
   return (
-    <ul className={cx(base, className)}>
+    <ul className={className} css={[base]}>
       {items.map(item => {
         const { title, items = [], key, onClick } = item
         const hasChildren = items.length > 0
@@ -29,22 +30,22 @@ const Tree = (props) => {
           ? onClick || toggleCollapse
           : noop
 
-        const treeStyle = cx(
+        const treeStyle = [
           listItem,
           hasChildren && withChildren({ collapsed: shouldCollapse }),
           shouldCollapse && collapsed
-        )
+        ]
 
         // unfortunately react-spring does not allow us to animate the subtree
         // with hooks (yet)
         // ref: https://github.com/drcmda/react-spring/issues/302
         return (
-          <div className={treeStyle} key={key || title}>
-            <div className={indented} onClick={onTreeClick}>
+          <div css={treeStyle} key={key || title}>
+            <div css={indented} onClick={onTreeClick}>
               {title}
             </div>
             {items &&
-              <Tree items={items} className={indented} />
+              <Tree items={items} css={indented} />
             }
           </div>
         )

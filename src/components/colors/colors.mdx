@@ -2,11 +2,12 @@
 name: Colors
 ---
 
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import { Playground } from 'docz'
-import { css, cx } from 'emotion'
 import * as colors from '../../colors'
 import Segment from '../segment/segment'
-import '../../global'
+
 import { card, title, hex } from './card.styles.jsx'
 
 # Colors
@@ -18,11 +19,11 @@ import { card, title, hex } from './card.styles.jsx'
     })
     .map(([key, value]) => {
       return (
-        <Segment key={key} className={card} style={{ backgroundColor: value }}>
-          <div className={title(value)}>
+        <Segment key={key} css={card} style={{ backgroundColor: value }}>
+          <div css={title(value)}>
             {key}
           </div>
-          <div className={hex}>
+          <div css={hex}>
             {value}
           </div>
         </Segment>

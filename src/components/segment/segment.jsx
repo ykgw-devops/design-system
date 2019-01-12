@@ -1,11 +1,12 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
 
-import { cx } from '../../emotion'
-import { base } from './style.jsx'
+import { base } from './segment.styles.jsx'
 
 const Segment = props => {
   return (
-    <div {...props} className={cx(base, props.className)}>
+    <div {...props} css={[base, props.className]}>
       {props.children}
     </div>
   )

@@ -1,6 +1,7 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
-import { cx } from '../../emotion'
-import { base, danger, info, warning, title as titleStyle } from './style'
+import { base, danger, info, warning, title as titleStyle } from './messages.styles.jsx'
 import PropTypes from 'prop-types'
 import { omit } from 'lodash'
 
@@ -19,10 +20,10 @@ const Message = props => {
   const rest = omit(props, 'outline')
 
   return (
-    <div className={cx(base(props), kindStyle)} {...rest}>
+    <div css={[base(props), kindStyle]} {...rest}>
       <div>
         {title && (
-          <div className={titleStyle}>
+          <div css={titleStyle}>
             {title}
           </div>
         )}

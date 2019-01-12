@@ -1,10 +1,11 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
-import { base, item, active as activeStyle } from './style.jsx'
-import { cx } from '../../emotion'
-import { setDisplayName } from 'recompose'
+import { base, item, active as activeStyle } from './menu.styles.jsx'
+import setDisplayName from 'recompose/setDisplayName'
 
 const Menu = (props) => (
-  <nav className={cx(base, props.className)}>
+  <nav css={base}>
     <ul>
       {props.children}
     </ul>
@@ -12,7 +13,7 @@ const Menu = (props) => (
 )
 
 const Item = (props) => (
-  <li className={cx(item, props.active && activeStyle, props.className)}>
+  <li css={[item, props.active && activeStyle]}>
     {/* wrap child with an anchor tag when "href" prop is truthy */}
     {props.href
       ? wrapAnchor(props.children, { href: props.href })

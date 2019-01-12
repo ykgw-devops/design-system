@@ -1,6 +1,6 @@
 import { darken } from 'polished'
 
-import { css } from '../../emotion'
+import { css } from '@emotion/core'
 import { carbon, concrete } from '../../colors'
 import { base as Icon } from '../icon/style'
 

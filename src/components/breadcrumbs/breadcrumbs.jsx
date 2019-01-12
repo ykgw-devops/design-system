@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -5,7 +7,7 @@ import { base, item } from './breadcrumbs.styles'
 
 const Breadcrumb = ({ sections = [] }) => {
   return (
-    <nav className={base}>
+    <nav css={base}>
       {sections.map(BreadCrumbItem)}
     </nav>
   )
@@ -14,7 +16,7 @@ const Breadcrumb = ({ sections = [] }) => {
 const BreadCrumbItem = ({ name, content, key }) => {
   content = content || name
   return (
-    <span className={item} key={key || content}>
+    <span css={item} key={key || content}>
       {content}
     </span>
   )

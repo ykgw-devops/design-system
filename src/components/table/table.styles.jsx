@@ -1,5 +1,5 @@
 import { antiFlashWhite, concrete, ink } from '../../colors'
-import { css } from '../../emotion'
+import { css } from '@emotion/core'
 import { tint, darken } from 'polished'
 
 const base = css`
@@ -37,19 +37,19 @@ const base = css`
     padding: 0.825em 0.825em;
     border-bottom: solid 1px ${concrete};
   }
+`
 
-  &.fixed {
-    table-layout:fixed;
-    width: 100%;
+const fixed = css`
+  table-layout:fixed;
+  width: 100%;
 
-    td {
-      max-width: 100%;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow-wrap: normal;
-      overflow: hidden;
-    }
+  td {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    overflow: hidden;
   }
 `
 
-export { base }
+export { base, fixed }

@@ -2,7 +2,7 @@ import { darken, tint, lighten, shade } from 'polished'
 
 import colors, { carbon, clearSky } from '../../colors'
 import { fontFamily } from '../../typography'
-import { css } from '../../emotion'
+import { css } from '@emotion/core'
 import sizes from '../../sizes'
 import { base as Icon } from '../icon/style'
 

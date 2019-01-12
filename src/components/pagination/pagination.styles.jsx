@@ -1,4 +1,4 @@
-import { css } from '../../emotion'
+import { css } from '@emotion/core'
 import { antiFlashWhite, carbon, clearSky, concrete } from '../../colors'
 import { shade, tint } from 'polished'
 import { resetAnchor } from '../../shared'

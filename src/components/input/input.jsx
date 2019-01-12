@@ -1,8 +1,9 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { filter, map, omit } from 'lodash'
 
-import { cx } from '../../emotion'
 import { base, input, leftAdornments as leftStyle, rightAdornments as rightStyle } from './input.styles'
 
 const Input = props => {
@@ -12,15 +13,15 @@ const Input = props => {
   const rightAdornments = filter(adornments, { position: 'right' })
 
   return (
-    <div className={cx(base, props.className)}>
+    <div css={base}>
       {leftAdornments.length > 0 && (
-        <span className={leftStyle}>
+        <span css={leftStyle}>
           {map(leftAdornments, 'content')}
         </span>
       )}
-      <input {...omit(props, 'adornments')} className={input} />
+      <input {...omit(props, 'adornments')} css={input} />
       {rightAdornments.length > 0 && (
-        <span className={rightStyle}>
+        <span css={rightStyle}>
           {map(rightAdornments, 'content')}
         </span>
       )}
