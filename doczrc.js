@@ -1,6 +1,6 @@
 export default {
-  title: 'Waylay | Style Guide',
-  description: 'Simple Waylay style guide',
+  title: 'Waylay | Component Library',
+  description: 'Waylay component library',
   indexHtml: 'index.html',
   hashRouter: true
 }
