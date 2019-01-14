@@ -1,4 +1,5 @@
 import React from 'react'
+import { pick } from 'lodash'
 import { base, item, active as activeStyle } from './style.jsx'
 import { cx } from '../../emotion'
 import { setDisplayName } from 'recompose'
@@ -11,15 +12,18 @@ const Menu = (props) => (
   </nav>
 )
 
-const Item = (props) => (
-  <li className={cx(item, props.active && activeStyle, props.className)}>
-    {/* wrap child with an anchor tag when "href" prop is truthy */}
-    {props.href
-      ? wrapAnchor(props.children, { href: props.href })
-      : props.children
-    }
-  </li>
-)
+const Item = (props) => {
+  const rest = pick(props, ['onClick'])
+  return (
+    <li className={cx(item, props.active && activeStyle, props.className)} {...rest}>
+      {/* wrap child with an anchor tag when "href" prop is truthy */}
+      {props.href
+        ? wrapAnchor(props.children, { href: props.href })
+        : props.children
+      }
+    </li>
+  )
+}
 
 function wrapAnchor (child, props) {
   return <a {...props}>{child}</a>
