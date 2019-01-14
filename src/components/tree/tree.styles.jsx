@@ -36,13 +36,19 @@ const listItem = css`
 `
 
 const collapsed = css`
-  > ul {
-    height: 0;
-    overflow: hidden;
-  }
+  height: 0;
+  overflow: hidden;
 `
 const indented = css`
   padding-left: 1.2em;
+  cursor: pointer;
+
+  /*
+   * WTF chrome... ¯\_(ツ)_/¯
+   * This prevents the tree component from building a piramide with
+   * the top-level items.
+   */
+  padding-top: 1px;
 `
 
 export {
