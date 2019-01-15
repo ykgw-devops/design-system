@@ -10,34 +10,21 @@ const base = css`
 
     padding: 0;
     margin: 0;
-
-    li { height: 2.25em; }
-  }
-`
-
-const item = css`
-  a {
-    ${resetAnchor};
-  }
-
-  &, > *  {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
-  &:hover {
-    color: ${clearSky};
-  }
-
-  i {
-    font-size: 1.3em;
-    margin-right: 0.7em;
   }
 `
 
 const active = css`
   color: ${clearSky};
+`
+
+const item = css`
+  > a {
+    ${resetAnchor};
+  }
+
+  > a:hover {
+    ${active};
+  }
 `
 
 export { base, item, active }
