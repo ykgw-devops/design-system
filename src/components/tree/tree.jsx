@@ -77,8 +77,8 @@ class TreeItem extends Component {
       : indented
 
     return (
-      <div className={treeStyle}>
-        <div className={indented} onClick={(e) => this.onTreeClick(e)}>
+      <div className={treeStyle} onClick={(e) => this.onTreeClick(e)}>
+        <div className={indented}>
           {title}
         </div>
         {items &&
