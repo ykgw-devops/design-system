@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { carbon } from '../../colors'
-import { animated, Spring, config } from 'react-spring'
+import { animated, Spring } from 'react-spring'
+import { easeLinear as easing } from 'd3-ease'
 
 const Loader = (props) => {
-  const { size, color, thickness, className, friction, tension } = props
+  const { size, color, thickness, className } = props
 
   const [reset, setReset] = useState(false)
-
   useEffect(() => {
     if (!reset) { setReset(true) }
-  }, [reset])
+  }, [false])
 
   const [reverse, setReverse] = useState(false)
 
@@ -30,26 +30,25 @@ const Loader = (props) => {
   return (
     <Spring
       native
-      config={config.slow}
+      config={{ duration: 750, easing }}
       from={from}
       to={to}
       reset={reset}
       onRest={() => {
-        setReset(true)
         setReverse(!reverse)
       }}
     >
       {style => {
         return (
-          <animated.svg
+          <svg
             className={className}
             height={size}
             width={size}
             role='img'
             viewBox='0 0 32 32'
-            style={{ transform: style.transform }}
           >
             <animated.circle
+              style={{ transform: style.transform, transformOrigin: '50% 50%' }}
               role='presentation'
               cx={16}
               cy={16}
@@ -60,7 +59,7 @@ const Loader = (props) => {
               strokeDasharray={style.strokeDasharray}
               strokeLinecap='round'
             />
-          </animated.svg>
+          </svg>
         )
       }}
     </Spring>
