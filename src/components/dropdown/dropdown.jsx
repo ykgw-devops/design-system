@@ -1,5 +1,5 @@
 import React from 'react'
-import { find } from 'lodash'
+import { find, omit } from 'lodash'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
@@ -25,7 +25,7 @@ const Dropdown = ({ options, placeholder, content, className, ...rest }) => (
           const itemProps = getItemProps({ key: value, item: value })
 
           const whenClicked = onClick
-            ? () => onClick({ toggleMenu })
+            ? () => onClick({ toggleMenu }, omit(option, ['onClick']))
             : itemProps.onClick
 
           return (
