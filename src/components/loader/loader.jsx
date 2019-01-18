@@ -8,11 +8,11 @@ const Loader = (props) => {
   const { size, color, thickness, className } = props
 
   const [reset, setReset] = useState(false)
+  const [reverse, setReverse] = useState(false)
+
   useEffect(() => {
     if (!reset) { setReset(true) }
   }, [false])
-
-  const [reverse, setReverse] = useState(false)
 
   const radius = (size / 2) - (thickness / 2)
   const circumference = Math.PI * (2 * radius)
@@ -45,13 +45,13 @@ const Loader = (props) => {
             height={size}
             width={size}
             role='img'
-            viewBox='0 0 32 32'
+            viewBox={`0 0 ${size} ${size}`}
           >
             <animated.circle
               style={{ transform: style.transform, transformOrigin: '50% 50%' }}
               role='presentation'
-              cx={16}
-              cy={16}
+              cx='50%'
+              cy='50%'
               r={radius}
               stroke={color}
               fill='none'
@@ -75,7 +75,7 @@ Loader.propTypes = {
 }
 
 Loader.defaultProps = {
-  size: 20,
+  size: 32,
   color: carbon,
   thickness: 4,
   gap: 0.9,
