@@ -1,5 +1,5 @@
 import React from 'react'
-import { pick } from 'lodash'
+import { omit } from 'lodash'
 import { base, item, active as activeStyle } from './list.styles.jsx'
 import { cx } from '../../emotion'
 import { setDisplayName } from 'recompose'
@@ -13,7 +13,7 @@ const List = (props) => (
 )
 
 const Item = (props) => {
-  const rest = pick(props, ['onClick'])
+  const rest = omit(props, ['active', 'className', 'children'])
   return (
     <li className={cx(item, props.active && activeStyle, props.className)} {...rest}>
       {props.children}
