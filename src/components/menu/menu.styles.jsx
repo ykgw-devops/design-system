@@ -1,5 +1,6 @@
 import { css } from '../../emotion'
 import { carbon, concrete, clearSky } from '../../colors'
+import { resetAnchor } from '../../shared'
 
 const base = css`
   display: inline-block;
@@ -23,6 +24,10 @@ const listItem = props => css`
   }
 
   ${props.active && activeListItem}
+
+  a {
+    ${resetAnchor};
+  }
 `
 
 const activeListItem = css`
