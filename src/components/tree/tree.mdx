@@ -7,140 +7,76 @@ import Tree from './tree'
 
 # Tree
 
-## Test
-
-<Playground>
-  <Tree items={[
-  {
-    "id": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@another-building",
-    "title": "another-building",
-    "type": "Building",
-    "items": [
-      {
-        "title": "--- Add floor ---",
-        "type": "ADD_FLOOR",
-        "buildingId": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@another-building"
-      }
-    ]
-  },
-  {
-    "id": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@gebouw",
-    "title": "gebouw",
-    "type": "Building",
-    "items": [
-      {
-        "title": "--- Add floor ---",
-        "type": "ADD_FLOOR",
-        "buildingId": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@gebouw"
-      }
-    ]
-  },
-  {
-    "title": "--- Add building ---",
-    "type": "ADD_BUILDING"
-  }
-]} />
-</Playground>
-
 ## Basic Usage
 
 <Playground>
   <Tree items={[
   {
-    "id": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@another-building",
     "title": "another-building",
-    "type": "Building",
     "items": [
       {
         "title": "some-floor",
-        "type": "FLOOR",
-        "buildingId": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@another-building",
         "items": [
           {
-            "title": "some-device",
-            "type": "DEVICE"
+            "title": "some-device"
           }
         ]
       },
       {
         "title": "--- Add floor ---",
-        "type": "ADD_FLOOR",
-        "buildingId": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@another-building"
       }
     ]
   },
   {
-    "id": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@gebouw",
     "title": "gebouw",
-    "type": "Building",
     "items": [
       {
         "title": "some-floor",
-        "type": "FLOOR",
-        "buildingId": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@gebouw",
         "items": [
           {
-            "title": "some-device",
-            "type": "DEVICE"
+            "title": "some-device"
           }
         ]
       },
       {
-        "title": "--- Add floor ---",
-        "type": "ADD_FLOOR",
-        "buildingId": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@gebouw"
+        "title": "--- Add floor ---"
       }
     ]
   },
   {
-    "id": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@some-building",
     "title": "some-building",
-    "type": "Building",
     "items": [
       {
         "title": "some-floor",
-        "type": "FLOOR",
-        "buildingId": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@some-building",
         "items": [
           {
-            "title": "some-device",
-            "type": "DEVICE"
+            "title": "some-device"
           }
         ]
       },
       {
-        "title": "--- Add floor ---",
-        "type": "ADD_FLOOR",
-        "buildingId": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@some-building"
+        "title": "--- Add floor ---"
       }
     ]
   },
   {
-    "id": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@test-building",
     "title": "test-building",
-    "type": "Building",
     "items": [
       {
         "title": "some-floor",
-        "type": "FLOOR",
-        "buildingId": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@test-building",
         "items": [
           {
-            "title": "some-device",
-            "type": "DEVICE"
+            "title": "some-device"
           }
         ]
       },
       {
-        "title": "--- Add floor ---",
-        "type": "ADD_FLOOR",
-        "buildingId": "33bfe9d7-ef7c-44d3-92ff-f2a08c7e5473@test-building"
+        "title": "--- Add floor ---"
       }
     ]
   },
   {
-    "title": "--- Add building ---",
-    "type": "ADD_BUILDING"
+    "title": "--- Add building ---"
   }
 ]} />
 </Playground>
