@@ -63,7 +63,7 @@ class TreeItem extends Component {
   }
 
   render () {
-    const { title, items = [], onClick } = this.props
+    const { title, content, items = [], onClick } = this.props
     const { collapsed } = this.state
     const hasChildren = this.hasChildren()
 
@@ -79,7 +79,7 @@ class TreeItem extends Component {
     return (
       <div className={treeStyle}>
         <div className={indented} onClick={(e) => this.onTreeClick(e)}>
-          {title}
+          {content || title}
         </div>
         {items &&
           <Tree className={childrenStyle} items={items} onItemClick={onClick} />
