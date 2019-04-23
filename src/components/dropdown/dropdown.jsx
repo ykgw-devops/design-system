@@ -20,9 +20,9 @@ const Dropdown = ({ options, placeholder, content, className, ...rest }) => (
       // transform options props to <Menu.Item>s
       const optionsToItems = options => (
         options.map(option => {
-          const { text, content, value, onClick } = option
+          const { key, text, content, value, onClick } = option
           const isActive = selectedItem === value
-          const itemProps = getItemProps({ key: value, item: value })
+          const itemProps = getItemProps({ key: key || value, item: value })
 
           const whenClicked = onClick
             ? () => onClick({ toggleMenu }, omit(option, ['onClick']))
