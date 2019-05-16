@@ -11,28 +11,9 @@ const base = css`
   padding-left: 0;
 `
 
-const withChildren = ({ collapsed }) => {
-  const icon = collapsed
-    ? 'keyboard_arrow_right'
-    : 'keyboard_arrow_down'
-
-  return css`
-    &:before {
-      float: left;
-      color: ${clearSky};
-
-      font-family: 'Material Icons';
-      font-weight: 600;
-      font-size: 1.2em;
-      line-height: 1.2em;
-
-      content: '${icon}';
-    }
-  `
-}
-
 const listItem = css`
   padding: 0.1em 0;
+  cursor: pointer;
 `
 
 const collapsed = css`
@@ -41,7 +22,6 @@ const collapsed = css`
 `
 const indented = css`
   padding-left: 1.2em;
-  cursor: pointer;
 
   /*
    * WTF chrome... ¯\_(ツ)_/¯
@@ -51,10 +31,21 @@ const indented = css`
   padding-top: 1px;
 `
 
+const icon = css`
+  float: left;
+  color: ${clearSky};
+
+  font-weight: 600;
+  font-size: 1.2em;
+  line-height: 1.2em;
+
+  padding-right: 1px;
+`
+
 export {
   base,
   collapsed,
   listItem,
   indented,
-  withChildren
+  icon
 }

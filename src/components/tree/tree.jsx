@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { isEmpty, isFunction, omit, noop } from 'lodash'
+import { isEmpty, isFunction, omit } from 'lodash'
+
+import Icon from '../icon/icon'
 
 import { cx } from '../../emotion'
-import { base, collapsed as collapsedStyle, listItem, indented, withChildren } from './tree.styles.jsx'
+import { base, collapsed as collapsedStyle, listItem, indented, icon } from './tree.styles.jsx'
 
 const Tree = (props) => {
   const { className, items, onItemClick } = props
@@ -33,20 +35,16 @@ class TreeItem extends Component {
 
     const { collapsed = true } = props
     this.state = { collapsed }
+
+    this.handleExpand = this.handleExpand.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  onTreeClick (e) {
-    const hasChildren = this.hasChildren()
-    hasChildren
-      ? this.toggleCollapse(() => this.reportClick(e))
-      : this.reportClick(e)
+  handleExpand () {
+    this.setState(prevState => ({ collapsed: !prevState.collapsed }))
   }
 
-  toggleCollapse (cb = noop) {
-    this.setState(prevState => ({ collapsed: !prevState.collapsed }), cb)
-  }
-
-  reportClick (e) {
+  handleClick (e) {
     const { onClick } = this.props
     if (isFunction(onClick)) {
       const data = {
@@ -67,18 +65,15 @@ class TreeItem extends Component {
     const { collapsed } = this.state
     const hasChildren = this.hasChildren()
 
-    const treeStyle = cx(
-      listItem,
-      hasChildren && withChildren({ collapsed })
-    )
 
     const childrenStyle = collapsed
       ? cx(collapsedStyle, indented)
       : indented
 
     return (
-      <div className={treeStyle}>
-        <div className={indented} onClick={(e) => this.onTreeClick(e)}>
+      <div className={listItem}>
+        {hasChildren && <TreeIcon collapsed={collapsed} onClick={this.handleExpand} />}
+        <div className={indented} onClick={this.handleClick}>
           {content || title}
         </div>
         {items &&
@@ -87,6 +82,14 @@ class TreeItem extends Component {
       </div>
     )
   }
+}
+
+const TreeIcon = ({ collapsed, onClick }) => {
+  const iconName = collapsed
+    ? 'keyboard_arrow_right'
+    : 'keyboard_arrow_down'
+
+  return <Icon className={icon} name={iconName} onClick={onClick} />
 }
 
 Tree.propTypes = {
