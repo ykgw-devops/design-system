@@ -2,13 +2,9 @@
 name: Colors
 ---
 
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
 import { Playground } from 'docz'
 import * as colors from '../../colors'
-import Segment from '../segment/segment'
-
-import { card, title, hex } from './card.styles.jsx'
+import ColorCard from './colorCard'
 
 # Colors
 
@@ -17,14 +13,7 @@ import { card, title, hex } from './card.styles.jsx'
     .filter(([key, value]) => typeof value === 'string')
     .map(([key, value]) => {
       return (
-        <Segment key={key} css={card} style={{ backgroundColor: value }}>
-          <div css={title(value)}>
-            {key}
-          </div>
-          <div css={hex}>
-            {value}
-          </div>
-        </Segment>
+        <ColorCard key={value} name={key} color={value} />
       )
     })}
 </div>
