@@ -1,32 +1,31 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import React from 'react'
-import { base, item, active as activeStyle } from './menu.styles.jsx'
-import setDisplayName from 'recompose/setDisplayName'
+import { setDisplayName } from 'recompose'
+
+import { base, header, list, listItem } from './menu.styles.jsx'
 
 const Menu = (props) => (
-  <nav css={base}>
-    <ul>
-      {props.children}
-    </ul>
+  <nav className={base}>
+    {props.children}
   </nav>
 )
 
-const Item = (props) => (
-  <li css={[item, props.active && activeStyle]}>
-    {/* wrap child with an anchor tag when "href" prop is truthy */}
-    {props.href
-      ? wrapAnchor(props.children, { href: props.href })
-      : props.children
-    }
-  </li>
+const MenuHeader = (props) => (
+  <header className={header}>{props.children}</header>
 )
 
-function wrapAnchor (child, props) {
-  return <a {...props}>{child}</a>
-}
+const MenuList = (props) => (
+  <nav className={list}>{props.children}</nav>
+)
 
-// we need this so we can have readable component names in the React dev tools
-Menu.Item = setDisplayName('Menu.Item')(Item)
+const ListItem = (props) => (
+  <div css={listItem(props)}>
+    {props.children}
+  </div>
+)
+
+Menu.Header = setDisplayName('Menu.Header')(MenuHeader)
+Menu.List = setDisplayName('Menu.List')(MenuList)
+Menu.Item = setDisplayName('Menu.Item')(ListItem)
 
 export default Menu

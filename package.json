@@ -1,6 +1,6 @@
 {
   "name": "@waylay/react-components",
-  "version": "1.6.2",
+  "version": "1.8.7",
   "main": "dist/components.js",
   "module": "src/index.js",
   "source": "src/index.js",
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.6",
+    "d3-ease": "^1.0.5",
     "downshift": "^2.0.10",
     "immutability-helper": "^2.7.1",
     "lodash": "^4.17.10",
@@ -32,6 +33,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
+    "react-spring": "^8.0.20",
     "recompose": "^0.27.1"
   },
   "publishConfig": {

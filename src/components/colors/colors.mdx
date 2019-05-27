@@ -14,9 +14,7 @@ import { card, title, hex } from './card.styles.jsx'
 
 <div>
   {Object.entries(colors)
-    .filter(([key, value]) => {
-      return typeof value === 'string'
-    })
+    .filter(([key, value]) => typeof value === 'string')
     .map(([key, value]) => {
       return (
         <Segment key={key} css={card} style={{ backgroundColor: value }}>

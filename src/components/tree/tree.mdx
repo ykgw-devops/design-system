@@ -11,31 +11,77 @@ import Tree from './tree'
 
 <Playground>
   <Tree items={[
-    { title: 'Building #1', collapsed: false, items: [
-      { title: 'Floor #1', items: [
-        { title: 'Room #1', items: [
-          { title: 'Thermostat #1' }
-        ] },
-        { title: 'Room #2' },
-        { title: 'Room #3' }
-      ] },
-      { title: 'Floor #2', items: [
-        { title: 'Room #1' },
-        { title: 'Room #2' },
-        { title: 'Room #3' }
-      ] }
-    ] },
-    { title: 'Building #2', collapsed: true, collapsed: true, items: [
-      { title: 'Floor #1', items: [
-        { title: 'Room #1' },
-        { title: 'Room #2' },
-        { title: 'Room #3' }
-      ] },
-      { title: 'Floor #2', items: [
-        { title: 'Room #1' },
-        { title: 'Room #2' },
-        { title: 'Room #3' }
-      ] }
-    ] }
-  ]} />
+  {
+    "title": "another-building",
+    "items": [
+      {
+        "title": "some-floor",
+        "items": [
+          {
+            "title": "some-device"
+          }
+        ]
+      },
+      {
+        "title": "--- Add floor ---",
+      }
+    ]
+  },
+  {
+    "title": "gebouw",
+    "collapsed": false,
+    "items": [
+      {
+        "title": "some-floor",
+        "items": [
+          {
+            "title": "some-device"
+          }
+        ]
+      },
+      {
+        "title": "--- Add floor ---"
+      }
+    ]
+  },
+  {
+    "title": "some-building",
+    "items": [
+      {
+        "title": "some-floor",
+        "items": [
+          {
+            "title": "some-device"
+          }
+        ]
+      },
+      {
+        "title": "--- Add floor ---"
+      }
+    ]
+  },
+  {
+    "title": "test-building",
+    "items": [
+      {
+        "title": "some-floor",
+        "items": [
+          {
+            "title": "some-device"
+          }
+        ]
+      },
+      {
+        "title": "--- Add floor ---"
+      }
+    ]
+  },
+  {
+    "title": "--- Add building ---"
+  }
+]} />
 </Playground>
+
+## Properties
+
+<PropsTable of={Tree}></PropsTable>

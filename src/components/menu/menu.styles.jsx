@@ -1,43 +1,53 @@
+/** @jsx jsx */
 import { css } from '@emotion/core'
-import { clearSky } from '../../colors'
+import { carbon, concrete, clearSky } from '../../colors'
 import { resetAnchor } from '../../shared'
 
 const base = css`
-  ul {
-    display: inline-block;
-    list-style-type: none;
-    line-height: 2.25em;
-
-    padding: 0;
-    margin: 0;
-
-    li { height: 2.25em; }
-  }
+  display: inline-block;
+  font-size: 1em;
 `
 
-const item = css`
+const header = css`
+  color: ${carbon};
+  font-size: 0.75em;
+  text-transform: uppercase;
+  padding: 0.75em 0;
+`
+
+const listItem = props => css`
+  padding: 0.5em 0.75em;
+
+  &:hover {
+    cursor: pointer;
+    border-radius: 0.15em;
+    background: ${concrete};
+  }
+
+  ${props.active && activeListItem}
+
   a {
     ${resetAnchor};
   }
+`
 
-  &, > *  {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
+const activeListItem = css`
+  background: ${clearSky} !important;
+  border-radius: 0.15em;
+  color: white;
+`
 
-  &:hover {
-    color: ${clearSky};
-  }
-
-  i {
-    font-size: 1.3em;
-    margin-right: 0.7em;
+const list = css`
+  > nav {
+    border-left: solid 2px ${concrete};
+    padding: 0 0.75em;
+    margin: 0.5em 0;
   }
 `
 
-const active = css`
-  color: ${clearSky};
-`
-
-export { base, item, active }
+export {
+  base,
+  header,
+  list,
+  listItem
+}

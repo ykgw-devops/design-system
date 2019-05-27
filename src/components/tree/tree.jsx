@@ -1,12 +1,15 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import React, { useState } from 'react'
-import { isEmpty, noop } from 'lodash'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { isEmpty, isFunction, omit } from 'lodash'
 
-import { base, collapsed, listItem, indented, withChildren } from './tree.styles.jsx'
+import Icon from '../icon/icon'
+
+import { base, collapsed as collapsedStyle, listItem, indented, icon } from './tree.styles.jsx'
 
 const Tree = (props) => {
-  const { items = [], className } = props
+  const { className, items, onItemClick } = props
   if (isEmpty(items)) return null
 
   /**
@@ -16,42 +19,87 @@ const Tree = (props) => {
    *        within a tree
    */
   return (
-    <ul className={className} css={[base]}>
-      {items.map(item => {
-        const { title, items = [], key, onClick } = item
-        const hasChildren = items.length > 0
-        const [shouldCollapse, setCollapsed] = useState(item.collapsed)
-
-        function toggleCollapse () {
-          setCollapsed(!shouldCollapse)
-        }
-
-        const onTreeClick = hasChildren
-          ? onClick || toggleCollapse
-          : noop
-
-        const treeStyle = [
-          listItem,
-          hasChildren && withChildren({ collapsed: shouldCollapse }),
-          shouldCollapse && collapsed
-        ]
-
-        // unfortunately react-spring does not allow us to animate the subtree
-        // with hooks (yet)
-        // ref: https://github.com/drcmda/react-spring/issues/302
-        return (
-          <div css={treeStyle} key={key || title}>
-            <div css={indented} onClick={onTreeClick}>
-              {title}
-            </div>
-            {items &&
-              <Tree items={items} css={indented} />
-            }
-          </div>
-        )
-      })}
-    </ul>
+    <div className={className} css={[base]}>
+      {
+        items.map(item => {
+          const key = `tree-item-${item.title}`
+          return <TreeItem key={key} {...item} onClick={onItemClick} />
+        })
+      }
+    </div>
   )
+}
+
+class TreeItem extends Component {
+  constructor (props) {
+    super(props)
+
+    const { collapsed = true } = props
+    this.state = { collapsed }
+
+    this.handleExpand = this.handleExpand.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleExpand () {
+    this.setState(prevState => ({ collapsed: !prevState.collapsed }))
+  }
+
+  handleClick (e) {
+    const { onClick } = this.props
+    if (isFunction(onClick)) {
+      const data = {
+        ...omit(this.props, ['items', 'onClick']),
+        ...this.state
+      }
+      onClick(e, data)
+    }
+  }
+
+  hasChildren () {
+    const { items } = this.props
+    return !isEmpty(items)
+  }
+
+  render () {
+    const { title, content, items = [], onClick } = this.props
+    const { collapsed } = this.state
+    const hasChildren = this.hasChildren()
+
+
+    const childrenStyle = collapsed
+      ? [collapsedStyle, indented]
+      : [indented]
+
+    return (
+      <div className={listItem}>
+        {hasChildren && <TreeIcon collapsed={collapsed} onClick={this.handleExpand} />}
+        <div className={indented} onClick={this.handleClick}>
+          {content || title}
+        </div>
+        {items &&
+          <Tree css={childrenStyle} items={items} onItemClick={onClick} />
+        }
+      </div>
+    )
+  }
+}
+
+const TreeIcon = ({ collapsed, onClick }) => {
+  const iconName = collapsed
+    ? 'keyboard_arrow_right'
+    : 'keyboard_arrow_down'
+
+  return <Icon className={icon} name={iconName} onClick={onClick} />
+}
+
+Tree.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object),
+  onItemClick: PropTypes.func
+}
+
+Tree.defaultProps = {
+  items: []
 }
 
 export default Tree
