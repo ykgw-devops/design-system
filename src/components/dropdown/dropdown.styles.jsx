@@ -6,7 +6,7 @@ const padding = '0.5em 1.25em'
 const border = `1px solid ${concrete}`
 
 const base = css`
-  color: ${antiFlashWhite};
+  color: ${ink};
   display: inline-block;
 
   user-select: none;
