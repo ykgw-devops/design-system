@@ -5,7 +5,7 @@ import { jsx } from '@emotion/core'
 import { setDisplayName } from 'recompose'
 
 const List = (props) => (
-  <div css={[base, props.className]}>
+  <div css={base} className={props.className}>
     <ul>
       {props.children}
     </ul>
@@ -15,7 +15,7 @@ const List = (props) => (
 const Item = (props) => {
   const rest = omit(props, ['active', 'className', 'children'])
   return (
-    <li css={[item, props.active && activeStyle, props.className]} {...rest}>
+    <li css={[item, props.active && activeStyle]} className={props.className} {...rest}>
       {props.children}
     </li>
   )
