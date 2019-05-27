@@ -4,7 +4,6 @@ import colors, { carbon, clearSky } from '../../colors'
 import { fontFamily } from '../../typography'
 import { css } from '@emotion/core'
 import sizes from '../../sizes'
-import { base as Icon } from '../icon/style'
 
 const base = css`
   background-color: ${clearSky};
@@ -29,12 +28,6 @@ const base = css`
   &:focus {
     /* outline: none; why did I disable this? */
     /* I disabled this for the clicking state, it's rather annoying */
-  }
-
-  /* TODO replace with HoC */
-  .${Icon} {
-    font-size: 1.5em;
-    line-height: 0.875rem;
   }
 `
 

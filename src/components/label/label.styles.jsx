@@ -98,20 +98,6 @@ const base = props => css`
   vertical-align: middle;
 
   border-radius: 2em;
-
-  .${Input} & {
-    font-size: 0.875em;
-  }
-
-  .${Icon} {
-    font-size: 1em;
-    margin-right: 0.2em;
-  }
-
-  /* hug the value a bit tighter to the name */
-  .${detail(props)} + .${value} {
-    padding-left: 0.4em;
-  }
 `
 
 const close = props => {
