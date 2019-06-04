@@ -7,6 +7,8 @@ const border = `1px solid ${concrete}`
 
 const base = css`
   color: ${ink};
+
+  position: relative;
   display: inline-block;
 
   user-select: none;

@@ -1,6 +1,7 @@
 export { default as Button } from './components/button/button'
 export { default as Breadcrumb } from './components/breadcrumbs/breadcrumbs'
 export * from './colors'
+export { default as Dropdown } from './components/dropdown/dropdown'
 export { default as Form } from './components/form/form'
 export { default as Icon } from './components/icon/icon'
 export { default as Input } from './components/input/input'
