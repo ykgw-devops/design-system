@@ -1,25 +1,25 @@
-import React from 'react'
-import { cx } from '../../emotion'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import { setDisplayName } from 'recompose'
 
 import { base, header, list, listItem } from './menu.styles.jsx'
 
 const Menu = (props) => (
-  <nav className={base}>
+  <nav css={base}>
     {props.children}
   </nav>
 )
 
 const MenuHeader = (props) => (
-  <header className={header}>{props.children}</header>
+  <header css={header}>{props.children}</header>
 )
 
 const MenuList = (props) => (
-  <nav className={list}>{props.children}</nav>
+  <nav css={list}>{props.children}</nav>
 )
 
 const ListItem = (props) => (
-  <div className={cx(listItem(props))}>
+  <div css={listItem(props)}>
     {props.children}
   </div>
 )

@@ -3,29 +3,17 @@ name: Colors
 ---
 
 import { Playground } from 'docz'
-import { css, cx } from 'emotion'
 import * as colors from '../../colors'
-import Segment from '../segment/segment'
-import '../../global'
-import { card, title, hex } from './card.styles.jsx'
+import ColorCard from './colorCard'
 
 # Colors
 
 <div>
   {Object.entries(colors)
-    .filter(([key, value]) => {
-      return typeof value === 'string'
-    })
+    .filter(([key, value]) => typeof value === 'string')
     .map(([key, value]) => {
       return (
-        <Segment key={key} className={card} style={{ backgroundColor: value }}>
-          <div className={title(value)}>
-            {key}
-          </div>
-          <div className={hex}>
-            {value}
-          </div>
-        </Segment>
+        <ColorCard key={value} name={key} color={value} />
       )
     })}
 </div>

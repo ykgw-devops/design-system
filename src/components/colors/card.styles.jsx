@@ -1,5 +1,5 @@
-import { css } from '../../emotion'
-import { carbon } from '../../colors'
+import { css } from '@emotion/core'
+import { carbon } from '../../colors.jsx'
 
 const card = css`
   display: inline-block;

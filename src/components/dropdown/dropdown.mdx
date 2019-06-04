@@ -2,10 +2,9 @@
 name: Dropdown
 ---
 
-import { Playground, PropsTable } from 'docz'
+import { Playground, Props } from 'docz'
 import Button from '../button/button'
 import Dropdown from './dropdown'
-import '../../global.jsx'
 
 # Dropdown
 
@@ -33,14 +32,14 @@ import '../../global.jsx'
       { text: 'Bar', value: 'bar' }
     ]}
   />
-  &nbsp;
+
   <Dropdown
     options={[
       { text: 'Very Long Item Text That Should Overflow', value: 'very-long' },
       { text: 'Short', value: 'short' }
     ]}
   />
-  &nbsp;
+
   <Dropdown
     options={[
       { text: 'Abkhazia', value: 'Abkhazia' },
@@ -315,4 +314,4 @@ import '../../global.jsx'
 
 ## Properties
 
-<PropsTable of={Dropdown}></PropsTable>
+<Props of={Dropdown}></Props>

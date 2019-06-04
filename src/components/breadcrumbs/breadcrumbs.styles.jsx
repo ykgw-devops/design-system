@@ -1,7 +1,7 @@
 import { shade } from 'polished'
 
-import { css } from '../../emotion'
-import { ink, clearSky, concrete } from '../../colors'
+import { css } from '@emotion/core'
+import { ink, clearSky, concrete } from '../../colors.jsx'
 
 const base = css`
   color: ${ink};

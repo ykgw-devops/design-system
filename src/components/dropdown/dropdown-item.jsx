@@ -1,10 +1,10 @@
-import React from 'react'
+/** @jsx jsx */
 import PropTypes from 'prop-types'
-import { cx } from '../../emotion'
-import { item } from './style'
+import { jsx } from '@emotion/core'
+import { item } from './dropdown.styles.jsx'
 
 const DropdownItem = (props) => (
-  <div {...props} className={cx(item, props.className)}>
+  <div {...props} css={item} className={props.className}>
     {props.text || props.children}
   </div>
 )

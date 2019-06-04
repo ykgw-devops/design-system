@@ -1,4 +1,4 @@
-import { css } from './emotion'
+import { css } from '@emotion/core'
 
 /* reset anchor defaults */
 const resetAnchor = css`

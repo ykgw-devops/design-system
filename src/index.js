@@ -16,6 +16,3 @@ export { default as Typography } from './typography'
 export { default as Tree } from './components/tree/tree'
 export { default as Label } from './components/label/label'
 export { default as FilterableInput } from './components/filterable-input/filterable-input'
-
-export { renderStylesToString } from './server'
-export { default as global } from './global'

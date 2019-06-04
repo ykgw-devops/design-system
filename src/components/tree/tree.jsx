@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 import { isEmpty, isFunction, omit } from 'lodash'
 
 import Icon from '../icon/icon'
-
-import { cx } from '../../emotion'
 import { base, collapsed as collapsedStyle, listItem, indented, icon } from './tree.styles.jsx'
 
 const Tree = (props) => {
-  const { className, items, onItemClick } = props
+  const { items, onItemClick } = props
   if (isEmpty(items)) return null
 
   /**
@@ -18,7 +18,7 @@ const Tree = (props) => {
    *        within a tree
    */
   return (
-    <div className={cx(base, className)}>
+    <div css={base} className={props.className}>
       {
         items.map(item => {
           const key = `tree-item-${item.title}`
@@ -65,19 +65,18 @@ class TreeItem extends Component {
     const { collapsed } = this.state
     const hasChildren = this.hasChildren()
 
-
     const childrenStyle = collapsed
-      ? cx(collapsedStyle, indented)
+      ? [collapsedStyle, indented]
       : indented
 
     return (
-      <div className={listItem}>
+      <div css={listItem}>
         {hasChildren && <TreeIcon collapsed={collapsed} onClick={this.handleExpand} />}
-        <div className={indented} onClick={this.handleClick}>
+        <div css={indented} onClick={this.handleClick}>
           {content || title}
         </div>
         {items &&
-          <Tree className={childrenStyle} items={items} onItemClick={onClick} />
+          <Tree css={childrenStyle} items={items} onItemClick={onClick} />
         }
       </div>
     )
@@ -89,7 +88,7 @@ const TreeIcon = ({ collapsed, onClick }) => {
     ? 'keyboard_arrow_right'
     : 'keyboard_arrow_down'
 
-  return <Icon className={icon} name={iconName} onClick={onClick} />
+  return <Icon css={icon} name={iconName} onClick={onClick} />
 }
 
 Tree.propTypes = {

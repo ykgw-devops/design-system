@@ -1,4 +1,4 @@
-import { css } from '../../emotion'
+import { css } from '@emotion/core'
 import { carbon, clearSky } from '../../colors'
 
 const base = css`

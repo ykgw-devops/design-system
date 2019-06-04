@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { carbon } from '../../colors'
-import { animated, Spring } from 'react-spring'
+import { animated, Spring } from 'react-spring/renderprops'
 import { easeLinear as easing } from 'd3-ease'
 
 const Loader = (props) => {

@@ -1,12 +1,11 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
-import { css } from '../../emotion'
 
-const style = css`
-  margin: 10px 0;
-`
+import { base } from './field.styles'
 
 const Field = (props) => (
-  <div className={[props.className, style].join(' ')} {...props}>
+  <div css={base} {...props}>
     {props.children}
   </div>
 )

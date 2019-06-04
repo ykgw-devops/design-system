@@ -1,13 +1,14 @@
+/** @jsx jsx */
 import React from 'react'
 import { find, omit } from 'lodash'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
-import { cx } from '../../emotion'
-import { base, menuWrapper, selectedItem as selectedStyle, activeItem as activeItemStyle } from './style'
+import { jsx } from '@emotion/core'
+import { base, menuWrapper, selectedItem as selectedStyle, activeItem as activeItemStyle } from './dropdown.styles.jsx'
 import DropdownItem from './dropdown-item'
 
-const Dropdown = ({ options, placeholder, content, className, ...rest }) => (
+const Dropdown = ({ options, placeholder, content, ...rest }) => (
   <Downshift {...rest}>
     {props => {
       const { isOpen, toggleMenu, getItemProps, selectedItem } = props
@@ -29,28 +30,30 @@ const Dropdown = ({ options, placeholder, content, className, ...rest }) => (
             : itemProps.onClick
 
           return (
-            <Dropdown.Item {...itemProps} text={text || content} className={isActive && activeItemStyle} onClick={whenClicked} />
+            <Dropdown.Item {...itemProps} text={text || content} css={isActive && activeItemStyle} onClick={whenClicked} />
           )
         })
       )
 
       const renderContent = content
         ? React.cloneElement(content, { onClick: toggleMenu })
-        : (<div className={cx(selectedStyle)} onClick={toggleMenu}>
+        : (<div css={selectedStyle} onClick={toggleMenu}>
           {selectedItemText}
         </div>)
 
       return (
-        <div className={cx(base, className)}>
-          {/* selected item */}
-          {renderContent}
+        <div>
+          <div css={base}>
+            {/* selected item */}
+            {renderContent}
 
-          {/* menu dropdown */}
-          {
-            <div className={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
-              {optionsToItems(options)}
-            </div>
-          }
+            {/* menu dropdown */}
+            {
+              <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
+                {optionsToItems(options)}
+              </div>
+            }
+          </div>
         </div>
       )
     }}
