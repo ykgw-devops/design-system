@@ -11,7 +11,7 @@ import withProps from 'recompose/withProps'
 const Close = withProps({ name: 'close' })(Icon)
 
 const Label = (props) => (
-  <div css={[base(props), colored(props), focused(props)]}>
+  <div css={[base(props), colored(props), focused(props)]} className={props.className}>
     {props.name &&
       <div css={detail(props)}>
         {props.name}
