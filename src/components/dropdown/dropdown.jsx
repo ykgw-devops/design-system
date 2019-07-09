@@ -19,14 +19,14 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
         : placeholder
 
       // transform options props to <Menu.Item>s
-      const optionsToItems = options => (
+      const optionsToItems = (options, group) => (
         options.map(option => {
           const { key, text, content, value, onClick } = option
           const isActive = selectedItem === value
           const itemProps = getItemProps({ key: key || value, item: value })
 
           const whenClicked = onClick
-            ? () => onClick({ toggleMenu }, omit(option, ['onClick']))
+            ? () => onClick({ toggleMenu }, omit(option, ['onClick']), group)
             : itemProps.onClick
 
           return (
@@ -39,7 +39,7 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
         map(options, (optiongroup, key) => (
           <React.Fragment key={key}>
             {<span css={groupedStyle}>{key}</span>}
-            {optionsToItems(optiongroup)}
+            {optionsToItems(optiongroup, key)}
           </React.Fragment>
         ))
       )
