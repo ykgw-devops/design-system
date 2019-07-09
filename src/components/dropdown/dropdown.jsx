@@ -39,7 +39,7 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
         const groups = groupBy(options, 'group')
         return (
           map(groups, (group, key) => (
-            <React.Fragment>
+            <React.Fragment key={key}>
               {key && key !== 'undefined' && <span css={groupedStyle}>{key}</span>}
               {optionsToItems(group)}
             </React.Fragment>
