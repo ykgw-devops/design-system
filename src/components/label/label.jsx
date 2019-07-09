@@ -14,11 +14,11 @@ const Label = (props) => (
   <div css={[base(props), colored(props), focused(props)]} className={props.className}>
     {props.name &&
       <div css={detail(props)}>
-        {props.name}drfghjk,njhubgyvftcdrxesxdrcftvgybhunij,
+        {props.name}
       </div>
     }
     <div css={value}>
-      {props.children}dzertyuiol:mpexrfctft(g(h§uh§u))
+      {props.children}
       {props.removable && <Close css={close(props)} onClick={props.onClose} />}
     </div>
   </div>
