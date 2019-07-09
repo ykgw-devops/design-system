@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { find, omit, groupBy, map } from 'lodash'
+import { find, omit, map } from 'lodash'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
@@ -35,17 +35,14 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
         })
       )
 
-      const optionsToGroups = (options) => {
-        const groups = groupBy(options, 'group')
-        return (
-          map(groups, (group, key) => (
-            <React.Fragment key={key}>
-              {key && key !== 'undefined' && <span css={groupedStyle}>{key}</span>}
-              {optionsToItems(group)}
-            </React.Fragment>
-          ))
-        )
-      }
+      const optionsToGroups = (options) => (
+        map(options, (optiongroup, key) => (
+          <React.Fragment key={key}>
+            {<span css={groupedStyle}>{key}</span>}
+            {optionsToItems(optiongroup)}
+          </React.Fragment>
+        ))
+      )
 
       const renderContent = content
         ? React.cloneElement(content, { onClick: toggleMenu })
@@ -62,7 +59,11 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
             {/* menu dropdown */}
             {
               <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
-                {optionsToGroups(options)}
+                {
+                  Array.isArray(options)
+                    ? optionsToItems(options)
+                    : optionsToGroups(options)
+                }
               </div>
             }
           </div>
@@ -75,7 +76,10 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
 Dropdown.Item = setDisplayName('Dropdown.Item')(DropdownItem)
 
 Dropdown.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.object),
+  options: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.object),
+    PropTypes.objectOf(PropTypes.arrayOf(PropTypes.object))
+  ]),
   placeholder: PropTypes.string
 }
 

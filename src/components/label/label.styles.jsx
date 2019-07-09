@@ -28,7 +28,7 @@ const colorMap = {
   }
 }
 
-function getColors(string = 'default') {
+function getColors (string = 'default') {
   return colorMap[string]
 }
 
