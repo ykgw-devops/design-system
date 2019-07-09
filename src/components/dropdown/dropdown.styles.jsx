@@ -89,4 +89,9 @@ const activeItem = css`
   background: ${antiFlashWhite};
 `
 
-export { base, item, menuWrapper, activeItem, selectedItem }
+const grouped = css`
+  font-size: 1.2em;
+  margin-left: 5px;
+`
+
+export { base, item, menuWrapper, activeItem, selectedItem, grouped }

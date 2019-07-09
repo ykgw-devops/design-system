@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import React from 'react'
-import { find, omit } from 'lodash'
+import { find, omit, groupBy, map } from 'lodash'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
 import { jsx } from '@emotion/core'
-import { base, menuWrapper, selectedItem as selectedStyle, activeItem as activeItemStyle } from './dropdown.styles.jsx'
+import { base, menuWrapper, selectedItem as selectedStyle, activeItem as activeItemStyle, grouped as groupedStyle } from './dropdown.styles.jsx'
 import DropdownItem from './dropdown-item'
 
 const Dropdown = ({ options, placeholder, content, ...rest }) => (
@@ -35,6 +35,18 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
         })
       )
 
+      const optionsToGroups = (options) => {
+        const groups = groupBy(options, 'group')
+        return (
+          map(groups, (group, key) => (
+            <React.Fragment>
+              {key && key !== 'undefined' && <span css={groupedStyle}>{key}</span>}
+              {optionsToItems(group)}
+            </React.Fragment>
+          ))
+        )
+      }
+
       const renderContent = content
         ? React.cloneElement(content, { onClick: toggleMenu })
         : (<div css={selectedStyle} onClick={toggleMenu}>
@@ -50,7 +62,7 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
             {/* menu dropdown */}
             {
               <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
-                {optionsToItems(options)}
+                {optionsToGroups(options)}
               </div>
             }
           </div>

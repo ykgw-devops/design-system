@@ -28,7 +28,7 @@ const colorMap = {
   }
 }
 
-function getColors (string = 'default') {
+function getColors(string = 'default') {
   return colorMap[string]
 }
 
@@ -109,7 +109,7 @@ const close = props => {
     margin-top: -0.3em;
     margin-bottom: -0.3em;
     margin-right: -0.6em;
-    margin-left: 0.4em;
+    margin-left: 0.4em;;
 
     border-radius: 100%;
     cursor: pointer;
