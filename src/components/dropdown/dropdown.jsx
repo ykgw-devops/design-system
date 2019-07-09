@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { find, omit, map } from 'lodash'
+import { find, omit, map, groupBy } from 'lodash'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
@@ -18,59 +18,78 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
         ? findItem.text
         : placeholder
 
-      // transform options props to <Menu.Item>s
-      const optionsToItems = (options, group) => (
-        options.map(option => {
-          const { key, text, content, value, onClick } = option
-          const isActive = selectedItem === value
-          const itemProps = getItemProps({ key: key || value, item: value })
-
-          const whenClicked = onClick
-            ? () => onClick({ toggleMenu }, omit(option, ['onClick']), group)
-            : itemProps.onClick
-
-          return (
-            <Dropdown.Item {...itemProps} text={text || content} css={isActive && activeItemStyle} onClick={whenClicked} />
-          )
-        })
-      )
-
-      const optionsToGroups = (options) => (
-        map(options, (optiongroup, key) => (
-          <React.Fragment key={key}>
-            {<span css={groupedStyle}>{key}</span>}
-            {optionsToItems(optiongroup, key)}
-          </React.Fragment>
-        ))
-      )
-
-      const renderContent = content
-        ? React.cloneElement(content, { onClick: toggleMenu })
-        : (<div css={selectedStyle} onClick={toggleMenu}>
-          {selectedItemText}
-        </div>)
-
       return (
         <div>
           <div css={base}>
-            {/* selected item */}
-            {renderContent}
-
-            {/* menu dropdown */}
-            {
-              <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
-                {
-                  Array.isArray(options)
-                    ? optionsToItems(options)
-                    : optionsToGroups(options)
-                }
-              </div>
-            }
+            <SelectedItem
+              content={content}
+              selectedItemText={selectedItemText}
+              toggleMenu={toggleMenu}
+            />
+            <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
+              <OptionGroups
+                options={options}
+                getItemProps={getItemProps}
+                selectedItem={selectedItem}
+                toggleMenu={toggleMenu}
+              />
+            </div>
           </div>
         </div>
       )
     }}
   </Downshift>
+)
+
+const SelectedItem = ({ content, selectedItemText, toggleMenu }) => {
+  return content
+    ? React.cloneElement(content, { onClick: toggleMenu })
+    : (
+      <div css={selectedStyle} onClick={toggleMenu}>
+        {selectedItemText}
+      </div>
+    )
+}
+
+const OptionGroups = ({ options, getItemProps, selectedItem, toggleMenu }) => {
+  const groupedOptions = groupBy(options, 'group')
+
+  return map(groupedOptions, (optiongroup, groupname) => (
+    <React.Fragment key={`optiongroup_${groupname}`}>
+      {groupname !== '' && <span css={groupedStyle}>{groupname}</span>}
+      {
+        <OptionItems
+          options={optiongroup}
+          getItemProps={getItemProps}
+          selectedItem={selectedItem}
+          toggleMenu={toggleMenu}
+          groupname={groupname}
+        />
+      }
+    </React.Fragment>
+  ))
+}
+
+const OptionItems = ({ options, groupname, getItemProps, selectedItem, toggleMenu }) => (
+  options.map(option => {
+    const { key, text, content, value, onClick } = option
+
+    const isActive = selectedItem === value
+    const itemProps = getItemProps({ key: key || value, item: value })
+
+    const whenClicked = onClick
+      ? () => onClick({ toggleMenu }, omit(option, ['onClick']), groupname)
+      : itemProps.onClick
+
+    return (
+      <Dropdown.Item
+        {...itemProps}
+        text={text || content}
+        css={isActive && activeItemStyle}
+        onClick={whenClicked}
+      />
+    )
+  })
 )
 
 Dropdown.Item = setDisplayName('Dropdown.Item')(DropdownItem)
