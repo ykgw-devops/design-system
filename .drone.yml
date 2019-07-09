@@ -1,18 +1,20 @@
-pipeline:
+kind: pipeline
+name: Build
 
-  build:
-    image: node:8
-    environment:
+steps:
+  - name: Build sources
+    image: node:10
     commands:
-      - yarn install
-      - yarn run build
+      - yarn install --offline --non-interactive --frozen-lockfile
+      - yarn build
 
-  docker:
+  - name: Docker image
     image: plugins/docker
-    registry: eu.gcr.io
-    repo: eu.gcr.io/quiet-mechanic-140114/${DRONE_REPO_NAME}
-    username: _json_key
-    tag: latest
-    when:
-      branch: master
-      event: push
+    settings:
+      registry: eu.gcr.io
+      repo: eu.gcr.io/quiet-mechanic-140114/${DRONE_REPO_NAME}
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      auto_tag: true
