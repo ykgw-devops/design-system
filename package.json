@@ -1,6 +1,6 @@
 {
   "name": "@waylay/react-components",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "main": "dist/components.js",
   "module": "src/index.js",
   "source": "src/index.js",
