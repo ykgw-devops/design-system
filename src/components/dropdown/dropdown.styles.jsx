@@ -16,7 +16,7 @@ const base = css`
 
 const item = css`
   display: block;
-  width: 100%;
+  min-width: 100%;
   padding: ${padding};
 
   color: ${ink};
@@ -95,10 +95,13 @@ const grouped = css`
   min-width: 100%;
   white-space: nowrap;
 
-  background-color: #EFEFEF;
+  font-weight: bold;
+  padding: ${padding};
 
-  font-size: 1.2em;
-  padding: 5px;
+  text-indent: -10px;
+
+  box-shadow: 0px -2px 2px -1px grey;
+  text-decoration: underline;
 `
 
 export { base, item, menuWrapper, activeItem, selectedItem, grouped }
