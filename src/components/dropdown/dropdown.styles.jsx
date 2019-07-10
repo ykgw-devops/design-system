@@ -99,9 +99,12 @@ const grouped = css`
   padding: ${padding};
 
   text-indent: -10px;
+  //border-top: 1px solid lightgrey;
+  //border-bottom: 1px solid lightgrey;
 
-  box-shadow: 0px -2px 2px -1px grey;
-  text-decoration: underline;
+  box-shadow: 0px 3px 2px -2px lightgrey,
+              0px -3px 2px -2px lightgrey;
+
 `
 
 export { base, item, menuWrapper, activeItem, selectedItem, grouped }
