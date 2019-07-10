@@ -56,7 +56,10 @@ const OptionGroups = ({ options, getItemProps, selectedItem, toggleMenu }) => {
 
   return map(groupedOptions, (optiongroup, groupname) => (
     <React.Fragment key={`optiongroup_${groupname}`}>
-      {groupname !== 'undefined' && <span css={groupedStyle}>{groupname}</span>}
+      {
+        groupname !== 'undefined' &&
+        <span css={groupedStyle}>{groupname}</span>
+      }
       {
         <OptionItems
           options={optiongroup}

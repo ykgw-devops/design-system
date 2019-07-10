@@ -47,6 +47,7 @@ const menuWrapper = css`
 
   min-width: 100%;
   max-height: 450px;
+
   margin: .125rem 0 0;
 
   text-align: left;
@@ -90,8 +91,14 @@ const activeItem = css`
 `
 
 const grouped = css`
+  display: block;
+  min-width: 100%;
+  white-space: nowrap;
+
+  background-color: #EFEFEF;
+
   font-size: 1.2em;
-  margin-left: 5px;
+  padding: 5px;
 `
 
 export { base, item, menuWrapper, activeItem, selectedItem, grouped }
