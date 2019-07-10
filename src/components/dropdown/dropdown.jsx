@@ -95,10 +95,7 @@ const OptionItems = ({ options, groupname, getItemProps, selectedItem, toggleMen
 Dropdown.Item = setDisplayName('Dropdown.Item')(DropdownItem)
 
 Dropdown.propTypes = {
-  options: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.object),
-    PropTypes.objectOf(PropTypes.arrayOf(PropTypes.object))
-  ]),
+  options: PropTypes.arrayOf(PropTypes.object),
   placeholder: PropTypes.string
 }
 
