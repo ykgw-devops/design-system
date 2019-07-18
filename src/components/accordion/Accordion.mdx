@@ -42,8 +42,8 @@ import { map } from 'lodash'
 <Playground>
   <Accordion
     removable
-    onDelete={(index, newArray) => alert(`Index ${index}: ${newArray.length}`)}
-    onClick={(index, newArray) => alert(`Index ${index}: ${newArray.length}`)}
+    onDelete={(index, newArray) => alert(`onDelete: Index ${index} - length array: ${newArray.length}`)}
+    onClick={(index, newArray) => alert(`onClick: Index ${index} - length array: ${newArray.length}`)}
     items={[
       { title: 'test #1', children: 'test #1 - content'},
       { title: 'test #2', children: 'test #2 - content', active: true},
@@ -71,10 +71,10 @@ import { map } from 'lodash'
 ## Basic usage
 <Playground>
   <Accordion removable kind='styled'>
-    <Accordion.Item title="test #1" active={false} index={0} onClick={alert} onDelete={alert}>
+    <Accordion.Item title="test #1" active={false} index={0} onClick={index => alert('onClick index: ' + index)} onDelete={index => alert('onDelete index: ' + index)}>
       <p>Test #1</p>
     </Accordion.Item>
-    <Accordion.Item title="test #2" active index={1} onClick={alert} onDelete={alert}>
+    <Accordion.Item title="test #2" active index={1} onClick={index => alert('onClick index: ' + index)} onDelete={index => alert('onDelete index: ' + index)}>
       <p>Test #2</p>
     </Accordion.Item>
   </Accordion>

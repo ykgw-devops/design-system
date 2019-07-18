@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { jsx } from '@emotion/core'
 import { setDisplayName } from 'recompose'
 import PropTypes from 'prop-types'
-import { map, isEmpty } from 'lodash'
+import { map, isEmpty, get, reject, omit } from 'lodash'
 
 import Icon from '../icon/Icon'
 import { base, size, kind } from './Accordion.styles'
@@ -15,19 +15,23 @@ const Accordion = ({ removable, items: accordionItems, onDelete, onClick, exclus
   const [items, setItems] = useState(accordionItems || [])
 
   const handleDelete = index => {
-    if (index < 0 || items.length <= index) return
-    const tempItems = [...items]
-    tempItems.splice(index, 1)
-    setItems(tempItems)
-    onDelete(index, tempItems)
+    const indexExists = get(items, index)
+    if(!indexExists) return
+    const newItems = reject(items, (item, itemIndex) => itemIndex === index)
+    setItems(newItems)
+    onDelete(index, newItems)
   }
 
   const handleClick = (index, closed) => {
-    let tempItems = [...items]
-    if (!exclusive) tempItems = map(tempItems, ({ active, ...rest }) => ({ ...rest }))
-    !closed ? delete tempItems[index].active : tempItems[index].active = true
-    setItems(tempItems)
-    onClick(index, tempItems)
+    const newItems = map(items, (item, itemIndex) => {
+      const isClickedItem = itemIndex === index
+      if (exclusive) return isClickedItem ? { ...item, active: closed } : item
+      if (isClickedItem && closed) return { ...item, active: true }
+      return omit(item, ['active'])
+    })
+
+    setItems(newItems)
+    onClick(index, newItems)
   }
 
   return (
