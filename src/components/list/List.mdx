@@ -1,0 +1,46 @@
+---
+name: List
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import Icon from '../icon/Icon'
+import List from './List'
+
+# List
+
+## Basic usage
+
+<Playground>
+  <List>
+    <List.Item>
+      <Icon name='notifications' /> Alarms
+    </List.Item>
+    <List.Item>
+      <Icon name='widgets' /> Resources
+    </List.Item>
+    <List.Item>
+      <Icon name='category' /> Resource Types
+    </List.Item>
+     <List.Item>
+      <Icon name='wb_incandescent' /> Actuators
+    </List.Item>
+     <List.Item>
+      <a href=''>
+        <Icon name='wifi_tethering' /> Sensors
+      </a>
+    </List.Item>
+     <List.Item active={true}>
+      <Icon name='done_all' /> Tasks
+    </List.Item>
+     <List.Item>
+      <Icon name='layers' /> Templates
+    </List.Item>
+     <List.Item>
+      <Icon name='reorder' /> Logs
+    </List.Item>
+     <List.Item>
+      <Icon name='code' /> Webscripts
+    </List.Item>
+  </List>
+</Playground>

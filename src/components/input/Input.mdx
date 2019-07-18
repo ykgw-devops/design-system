@@ -1,0 +1,38 @@
+---
+name: Input
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import Input from './Input'
+import Button from '../button/Button'
+import Form from '../form/Form'
+import Icon from '../icon/Icon'
+import Label from '../label/Label'
+
+# Input
+
+## Basic usage
+
+<Playground>
+  Email: <Input name='email' placeholder='example@domain.com' type='email' />
+</Playground>
+
+## Adornments
+<Playground>
+  <Input adornments={[
+    { position: 'left', content: <Icon name='filter_list' /> }
+  ]} name='filter' placeholder='Filter…' />
+
+  <Input adornments={
+    [{ position: 'left', content: '$' }]
+  } name='payment' placeholder='Dollars' />
+
+  <Input adornments={
+    [{ position: 'right', content: <Icon name='search' /> }]
+  } name='search' placeholder='Search' />
+</Playground>
+
+## Properties
+
+<Props of={Input}></Props>
