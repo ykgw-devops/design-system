@@ -1,0 +1,34 @@
+---
+name: Filterable Input
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import FilterableInput from './FilterableInput'
+
+
+
+# Filterable Input
+
+## Basic usage
+
+<Playground>
+  <FilterableInput
+    name='filter'
+    initialFilters={[{
+      key: 'status',
+      value: 'online'
+    }]}
+    availableFilters={[{
+      key: 'status',
+      values: ['online', 'offline', 'unknown']
+    }, {
+      key: 'type',
+      values: ['lamp', 'alarm', 'other']
+    }]}
+  />
+</Playground>
+
+## Properties
+
+<Props of={FilterableInput} />

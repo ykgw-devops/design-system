@@ -1,0 +1,20 @@
+---
+name: Colors
+menu: Design
+---
+
+import { Playground } from 'docz'
+import * as colors from '../../Colors'
+import ColorCard from './ColorCard'
+
+# Colors
+
+<div>
+  {Object.entries(colors)
+    .filter(([key, value]) => typeof value === 'string')
+    .map(([key, value]) => {
+      return (
+        <ColorCard key={value} name={key} color={value} />
+      )
+    })}
+</div>

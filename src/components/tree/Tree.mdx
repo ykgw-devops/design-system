@@ -1,0 +1,88 @@
+---
+name: Tree
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import Tree from './Tree'
+
+# Tree
+
+## Basic Usage
+
+<Playground>
+  <Tree items={[
+  {
+    "title": "another-building",
+    "items": [
+      {
+        "title": "some-floor",
+        "items": [
+          {
+            "title": "some-device"
+          }
+        ]
+      },
+      {
+        "title": "--- Add floor ---",
+      }
+    ]
+  },
+  {
+    "title": "gebouw",
+    "collapsed": false,
+    "items": [
+      {
+        "title": "some-floor",
+        "items": [
+          {
+            "title": "some-device"
+          }
+        ]
+      },
+      {
+        "title": "--- Add floor ---"
+      }
+    ]
+  },
+  {
+    "title": "some-building",
+    "items": [
+      {
+        "title": "some-floor",
+        "items": [
+          {
+            "title": "some-device"
+          }
+        ]
+      },
+      {
+        "title": "--- Add floor ---"
+      }
+    ]
+  },
+  {
+    "title": "test-building",
+    "items": [
+      {
+        "title": "some-floor",
+        "items": [
+          {
+            "title": "some-device"
+          }
+        ]
+      },
+      {
+        "title": "--- Add floor ---"
+      }
+    ]
+  },
+  {
+    "title": "--- Add building ---"
+  }
+]} />
+</Playground>
+
+## Properties
+
+<Props of={Tree}></Props>

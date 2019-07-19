@@ -1,0 +1,82 @@
+---
+name: Button
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import Button from './Button'
+import Icon from '../icon/Icon'
+
+# Button
+
+## Basic usage
+
+<Playground>
+  <Button>Primary</Button>
+
+  <Button>
+    <Icon name='add_shopping_cart' /> Add to cart
+  </Button>
+
+  <Button outline kind='danger'>
+    <Icon name='stop' /> Stop recording
+  </Button>
+</Playground>
+
+## As link
+
+<Playground>
+  <Button href='https://google.com/'>Google</Button>
+  <Button href='https://google.com/' outline disabled={true}>Won't work</Button>
+</Playground>
+
+## Kind
+
+<Playground>
+  <Button kind="primary">Primary</Button>
+  <Button kind="secondary">Secondary</Button>
+  <Button kind="warning">Warning</Button>
+  <Button kind="danger">Danger</Button>
+  <Button kind="success">Success</Button>
+</Playground>
+
+## Pill
+
+<Playground>
+  <Button pill kind="danger">Red Pill</Button>
+  <Button pill kind="primary">Blue Pill</Button>
+</Playground>
+
+## Outline
+
+<Playground>
+  <Button kind="primary" outline>Primary</Button>
+  <Button kind="secondary" outline>Secondary</Button>
+  <Button kind="warning" outline>Warning</Button>
+  <Button kind="danger" outline>Danger</Button>
+  <Button kind="success" outline>Success</Button>
+</Playground>
+
+## Disabled
+
+<Playground>
+  <Button disabled>Disabled</Button>
+
+  <Button pill outline kind="warning" disabled>Disabled Warning Button</Button>
+</Playground>
+
+## Size
+
+<Playground>
+  <Button size='tiny'>Tiny</Button>
+
+  <Button size='small'>Small</Button>
+
+  <Button size='medium'>Medium</Button>
+
+  <Button size='large'>Large</Button>
+</Playground>
+
+## Properties
+
+<Props of={Button}></Props>

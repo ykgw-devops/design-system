@@ -1,0 +1,24 @@
+---
+name: Breadcrumbs
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import Breadcrumbs from './Breadcrumbs'
+
+# Breadcrumbs
+
+## Basic usage
+
+<Playground>
+  <Breadcrumbs sections={[
+    { content: <a href='/'>Home</a>, key: 'home' },
+    { content: <a href='/'>Components</a>, key: 'components' },
+    { content: 'Breadcrumbs', key: 'breadcrumbs' }
+  ]} />
+</Playground>
+
+
+## Properties
+
+<Props of={Breadcrumbs}></Props>
