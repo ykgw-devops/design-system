@@ -40,6 +40,12 @@ class TreeItem extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
+  componentDidUpdate ({ collapsed }) {
+    if (collapsed && !this.props.collapsed) {
+      this.setState({ collapsed: false })
+    }
+  }
+
   handleExpand () {
     this.setState(prevState => ({ collapsed: !prevState.collapsed }))
   }
