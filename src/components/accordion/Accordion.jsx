@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { map, isEmpty, get, reject, omit } from 'lodash'
 
 import Icon from '../icon/Icon'
-import { base, size, kind } from './Accordion.styles'
+import { base, size, kind, title as titleStyle, content } from './Accordion.styles'
 import withProps from 'recompose/withProps'
 
 const Close = withProps({ name: 'close' })(Icon)
@@ -51,14 +51,16 @@ const AccordionItem = ({ removable, onDelete, title, children, active, index, on
   }
 
   return (
-    <details open={active} index={index} onClick={e => e.preventDefault()} >
+    <details open={active} index={index} onClick={e => e.preventDefault()}>
       <summary>
-        <div className='flex'>
-          <div className='title' onClick={() => handleOpen(index)}>{title}</div>
-          {removable && <Close onClick={() => onDelete(index)} />}
+        <div css={titleStyle} onClick={() => handleOpen(index)}>
+          {title}
         </div>
+        {removable && <Close onClick={() => onDelete(index)} />}
       </summary>
-      {children}
+      <div css={content}>
+        {children}
+      </div>
     </details>
   )
 }
