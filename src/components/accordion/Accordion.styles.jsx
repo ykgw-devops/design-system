@@ -23,6 +23,7 @@ const base = css`
 
   summary {
     padding: 0.5em;
+    cursor: pointer;
     display: flex;
     align-items: center;
 
@@ -47,13 +48,12 @@ const base = css`
 
   & i {
     cursor: pointer;
-    margin-right: 10px;
+    padding: 0.25em;
   }
 `
 
 const title = css`
   display: inline-block;
-  cursor: pointer;
   flex: 1;
   color: ${ink};
   padding-left: 0.25em;

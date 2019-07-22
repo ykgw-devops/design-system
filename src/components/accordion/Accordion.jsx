@@ -14,12 +14,16 @@ const Close = withProps({ name: 'close' })(Icon)
 const Accordion = ({ removable, items: accordionItems, onDelete, onClick, exclusive, children, ...rest }) => {
   const [items, setItems] = useState(accordionItems || [])
 
-  const handleDelete = index => {
+  const handleDelete = (index, event) => {
     const indexExists = get(items, index)
     if(!indexExists) return
+
     const newItems = reject(items, (item, itemIndex) => itemIndex === index)
     setItems(newItems)
     onDelete(index, newItems)
+
+    // stop the event from bubbling up and opening the summary
+    event.stopPropagation()
   }
 
   const handleClick = (index, closed) => {
@@ -51,12 +55,15 @@ const AccordionItem = ({ removable, onDelete, title, children, active, index, on
   }
 
   return (
-    <details open={active} index={index} onClick={e => e.preventDefault()}>
+    <details open={active} index={index} onClick={e => {
+      e.preventDefault()
+      handleOpen(index)
+    }}>
       <summary>
-        <div css={titleStyle} onClick={() => handleOpen(index)}>
+        <div css={titleStyle}>
           {title}
         </div>
-        {removable && <Close onClick={() => onDelete(index)} />}
+        {removable && <Close onClick={(event) => onDelete(index, event)} />}
       </summary>
       <div css={content}>
         {children}
