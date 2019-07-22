@@ -49,17 +49,16 @@ const Accordion = ({ removable, items: accordionItems, onDelete, onClick, exclus
 }
 
 const AccordionItem = ({ removable, onDelete, title, children, active, index, onClick }) => {
-  const handleOpen = index => {
+  const handleOpen = (index, event) => {
+    event.preventDefault()
+
     const closed = !active
     onClick(index, closed)
   }
 
   return (
-    <details open={active} index={index} onClick={e => {
-      e.preventDefault()
-      handleOpen(index)
-    }}>
-      <summary>
+    <details open={active} index={index}>
+      <summary onClick={e => handleOpen(index, e)}>
         <div css={titleStyle}>
           {title}
         </div>
