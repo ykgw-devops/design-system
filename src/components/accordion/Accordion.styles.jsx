@@ -16,7 +16,7 @@ const base = css`
   details {
     &[open] {
       summary:before {
-        content: 'keyboard_arrow_down';
+        content: 'arrow_drop_down';
       }
     }
   }
@@ -31,7 +31,7 @@ const base = css`
       color: ${carbon};
       line-height: 1em;
       font-family: 'Material Icons';
-      content: 'keyboard_arrow_right';
+      content: 'arrow_right';
       display: block;
     }
 
