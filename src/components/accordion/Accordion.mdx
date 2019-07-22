@@ -42,7 +42,7 @@ import { map } from 'lodash'
 <Playground>
   <Accordion
     removable
-    onDelete={(index, newArray) => alert(`onDelete: Index ${index} - length array: ${newArray.length}`)}
+    onDelete={(index, object) => alert(`onDelete: Index ${index} - Object.title: ${object.title}`)}
     onClick={(index, newArray) => alert(`onClick: Index ${index} - length array: ${newArray.length}`)}
     items={[
       { title: 'test #1', children: 'test #1 - content'},

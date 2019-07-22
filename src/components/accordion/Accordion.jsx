@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 import { jsx } from '@emotion/core'
 import { setDisplayName } from 'recompose'
 import PropTypes from 'prop-types'
@@ -11,22 +11,33 @@ import withProps from 'recompose/withProps'
 
 const Close = withProps({ name: 'close' })(Icon)
 
-const Accordion = ({ removable, items: accordionItems, onDelete, onClick, exclusive, children, ...rest }) => {
-  const [items, setItems] = useState(accordionItems || [])
+class Accordion extends Component {
+  constructor(props) {
+    super(props)
 
-  const handleDelete = (index, event) => {
+    this.state = {
+      items: []
+    }
+  }
+
+  static getDerivedStateFromProps (props, state) {
+    return { ...state, items: props.items }
+  }
+
+  handleDelete(index, event) {
+    const { onDelete } = this.props
+    const { items } = this.state
     const indexExists = get(items, index)
-    if(!indexExists) return
+    if (!indexExists) return
 
-    const newItems = reject(items, (item, itemIndex) => itemIndex === index)
-    setItems(newItems)
-    onDelete(index, newItems)
-
+    onDelete(index, items[index])
     // stop the event from bubbling up and opening the summary
     event.stopPropagation()
   }
 
-  const handleClick = (index, closed) => {
+  handleClick(index, closed) {
+    const { onClick, exclusive } = this.props
+    const { items } = this.state
     const newItems = map(items, (item, itemIndex) => {
       const isClickedItem = itemIndex === index
       if (exclusive) return isClickedItem ? { ...item, active: closed } : item
@@ -34,18 +45,22 @@ const Accordion = ({ removable, items: accordionItems, onDelete, onClick, exclus
       return omit(item, ['active'])
     })
 
-    setItems(newItems)
+    this.setState({ items: newItems })
     onClick(index, newItems)
   }
 
-  return (
-    <div css={getStyle(rest)}>
-      {isEmpty(items)
-        ? React.Children.map(children, child => ({ ...child, props: { ...child.props, removable } }))
-        : map(items, (item, index) => (<AccordionItem key={index} {...item} index={index} removable={removable} onDelete={handleDelete} onClick={handleClick} />))
-      }
-    </div>
-  )
+  render() {
+    const { items } = this.state
+    const { children, removable } = this.props
+    return (
+      <div css={getStyle(this.props)}>
+        {isEmpty(items)
+          ? React.Children.map(children, child => ({ ...child, props: { ...child.props, removable } }))
+          : map(items, (item, index) => (<AccordionItem key={index} {...item} index={index} removable={removable} onDelete={this.handleDelete.bind(this)} onClick={this.handleClick.bind(this)} />))
+        }
+      </div>
+    )
+  }
 }
 
 const AccordionItem = ({ removable, onDelete, title, children, active, index, onClick }) => {
