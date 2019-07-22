@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core'
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { isEmpty, isFunction, omit } from 'lodash'
+import { isEmpty, isFunction, omit, isNil } from 'lodash'
 
 import Icon from '../icon/Icon'
 import { base, collapsed as collapsedStyle, listItem, indented, icon } from './Tree.styles.jsx'
@@ -40,10 +40,15 @@ class TreeItem extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  componentDidUpdate ({ collapsed }) {
-    if (collapsed && !this.props.collapsed) {
-      this.setState({ collapsed: false })
-    }
+  static getDerivedStateFromProps (props, state) {
+    const { collapsed: propCollapsed } = props
+    const { collapsed: stateCollapsed } = state
+
+    if (isNil(propCollapsed)) return { collapsed: stateCollapsed }
+
+    if (propCollapsed !== stateCollapsed) return { collapsed: propCollapsed }
+
+    return null
   }
 
   handleExpand () {
