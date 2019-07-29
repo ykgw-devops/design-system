@@ -2,6 +2,7 @@ import { css } from '@emotion/core'
 import { carbon, clearSky } from '../../Colors'
 
 const base = css`
+  word-break: break-all;
   font-size: 1rem;
 
   color: ${carbon};

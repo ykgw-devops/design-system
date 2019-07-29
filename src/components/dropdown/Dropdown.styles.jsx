@@ -10,18 +10,25 @@ const base = css`
 
   position: relative;
   display: inline-block;
-
+  white-space: nowrap;
+  width: 100%;
   user-select: none;
+`
+
+const ellipsifyText = css`
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 `
 
 const item = css`
   display: block;
-  min-width: 100%;
   padding: ${padding};
+
+  ${ellipsifyText}
 
   color: ${ink};
 
-  white-space: nowrap;
   background: none;
   border: none;
   cursor: pointer;
@@ -40,12 +47,13 @@ const menuWrapper = css`
   position: absolute;
   padding: 0.25em 0;
 
+  width: 100%;
+
   left: 0;
 
   z-index: 1000;
   float: left;
 
-  min-width: 100%;
   max-height: 450px;
 
   margin: .125rem 0 0;
@@ -60,12 +68,17 @@ const menuWrapper = css`
   border: ${border};
   border-radius: 4px;
 `
-
 const selectedItem = css`
   ${item};
 
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
   border: ${border};
   border-radius: 4px;
+
+  ${ellipsifyText}
 
   /* dropdown triangular icon */
   &:after {
@@ -85,6 +98,11 @@ const selectedItem = css`
   }
 `
 
+const selected = css`
+  width: 90%;
+  ${ellipsifyText}
+`
+
 const activeItem = css`
   color: ${clearSky};
   background: ${antiFlashWhite};
@@ -92,8 +110,8 @@ const activeItem = css`
 
 const grouped = css`
   display: block;
-  min-width: 100%;
-  white-space: nowrap;
+
+  ${ellipsifyText}
 
   font-weight: bold;
   padding: ${padding};
@@ -107,4 +125,4 @@ const grouped = css`
 
 `
 
-export { base, item, menuWrapper, activeItem, selectedItem, grouped }
+export { base, item, menuWrapper, activeItem, selectedItem, grouped, selected }

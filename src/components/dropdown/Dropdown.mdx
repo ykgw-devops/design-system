@@ -12,25 +12,32 @@ import Dropdown from './Dropdown'
 ## Basic usage
 
 <Playground>
-  <Dropdown
-    options={[
-      { text: 'Save…', value: 'bar', onClick: ({ toggleMenu }) => {
-          alert('File saved!');
-          toggleMenu();
-        }
-      },
-    ]}
-    content={<span>▾ File</span>}
-  />
+  <div style={{ width: '90%'}}>
+    <Dropdown
+      options={[
+        {
+          text: 'Save…',
+          value: 'bar',
+          onClick: ({ toggleMenu }) => {
+            alert('File saved!');
+            toggleMenu();
+          }
+        },
+      ]}
+      content={<span>▾ File</span>}
+    />
+  </div>
 </Playground>
 
 ## Options
 
 <Playground>
+  <div style={{ width: '90%'}}>
   <Dropdown
     options={[
       { text: 'Foo', value: 'foo' },
-      { text: 'Bar', value: 'bar' }
+      { text: 'Bar', value: 'bar' },
+      { text: 'Thisisaveryveryveryveryveryveryveryveryverylongtext', value: 'foobar' }
     ]}
   />
 
@@ -305,39 +312,48 @@ import Dropdown from './Dropdown'
       { text: 'Zimbabwe', value: 'Zimbabwe' }
     ]}
   />
+  </div>
 </Playground>
 
 ## Placeholder
 
 <Playground>
+  <div style={{ width: '90%'}}>
   <Dropdown placeholder='Placeholder' />
+  </div>
 </Playground>
 
 ## Grouped
 
 <Playground>
-  <Dropdown
-    options={[
-      { text: 'Uzbekistan', value: 'Uzbekistan', group: 'Africa' },
-      { text: 'Vanuatu', value: 'Vanuatu', group: 'Africa' },
-      { text: 'Vatican City', value: 'Vatican City', group: 'Africa' },
-      { text: 'Venezuela', value: 'Venezuela', group: 'Africa' },
-      { text: 'Vietnam', value: 'Vietnam', group: 'Africa' },
-      { text: 'Wallis and Futuna', value: 'Wallis and Futuna', group: 'Africa' },
-      { text: 'Yemen', value: 'Yemen', group: 'Africa' },
-      { text: 'Zambia', value: 'Zambia', group: 'Africa' },
-      { text: 'Zimbabwe', value: 'Zimbabwe', group: 'Africa' },
-      { text: 'Uzbekistan', value: 'Uzbekistan', group: 'Europe' },
-      { text: 'Vanuatu', value: 'Vanuatu', group: 'Europe' },
-      { text: 'Vatican City', value: 'Vatican City', group: 'Europe' },
-      { text: 'Venezuela', value: 'Venezuela', group: 'Europe' },
-      { text: 'Vietnam', value: 'Vietnam', group: 'Europe' },
-      { text: 'Wallis and Futuna', value: 'Wallis and Futuna', group: 'Europe' },
-      { text: 'Yemen', value: 'Yemen', group: 'Europe' },
-      { text: 'Zambia', value: 'Zambia', group: 'Europe' },
-      { text: 'Zimbabwe', value: 'Zimbabwe', group: 'Antarctic all the way over the water' }
-    ]}
-  />
+  <div style={{ width: '90%'}}>
+    <Dropdown
+      options={[
+        { text: 'Uzbekistan', value: 'Uzbekistan', group: 'Africa' },
+        { text: 'Vanuatu', value: 'Vanuatu', group: 'Africa' },
+        { text: 'Vatican City', value: 'Vatican City', group: 'Africa' },
+        { text: 'Venezuela', value: 'Venezuela', group: 'Africa' },
+        { text: 'Vietnam', value: 'Vietnam', group: 'Africa' },
+        { text: 'Wallis and Futuna', value: 'Wallis and Futuna', group: 'Africa' },
+        { text: 'Yemen', value: 'Yemen', group: 'Africa' },
+        { text: 'Zambia', value: 'Zambia', group: 'Africa' },
+        { text: 'Zimbabwe', value: 'Zimbabwe', group: 'Africa' },
+        { text: 'Uzbekistan', value: 'Uzbekistan', group: 'Europe' },
+        { text: 'Vanuatu', value: 'Vanuatu', group: 'Europe' },
+        { text: 'Vatican City', value: 'Vatican City', group: 'Europe' },
+        { text: 'Venezuela', value: 'Venezuela', group: 'Europe' },
+        { text: 'Vietnam', value: 'Vietnam', group: 'Europe' },
+        { text: 'Wallis and Futuna', value: 'Wallis and Futuna', group: 'Europe' },
+        { text: 'Yemen', value: 'Yemen', group: 'Europe' },
+        { text: 'Zambia', value: 'Zambia', group: 'Europe' },
+        {
+          text: 'AveryveryveryveryveryveryveryBigCountry',
+          value: 'AveryveryveryveryveryveryveryBigCountry',
+          group: 'thisaveryveryveryveryveryveryveryhugegroup'
+        }
+      ]}
+    />
+  </div>
 </Playground>
 
 ## Properties

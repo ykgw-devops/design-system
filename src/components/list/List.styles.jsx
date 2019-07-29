@@ -18,6 +18,9 @@ const active = css`
 `
 
 const item = css`
+  word-wrap: break-word;
+  word-break: break-all;
+
   > a {
     ${resetAnchor};
   }

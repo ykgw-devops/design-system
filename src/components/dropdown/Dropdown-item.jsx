@@ -4,7 +4,7 @@ import { jsx } from '@emotion/core'
 import { item } from './Dropdown.styles.jsx'
 
 const DropdownItem = (props) => (
-  <div {...props} css={item} className={props.className}>
+  <div {...props} css={item} className={props.className} title={props.text}>
     {props.text || props.children}
   </div>
 )

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
 import { jsx } from '@emotion/core'
-import { base, menuWrapper, selectedItem as selectedStyle, activeItem as activeItemStyle, grouped as groupedStyle } from './Dropdown.styles.jsx'
+import { base, menuWrapper, selectedItem as selectedItemStyle, activeItem as activeItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
 import DropdownItem from './Dropdown-item'
 
 const Dropdown = ({ options, placeholder, content, ...rest }) => (
@@ -45,8 +45,8 @@ const SelectedItem = ({ content, selectedItemText, toggleMenu }) => {
   return content
     ? React.cloneElement(content, { onClick: toggleMenu })
     : (
-      <div css={selectedStyle} onClick={toggleMenu}>
-        {selectedItemText}
+      <div css={selectedItemStyle} onClick={toggleMenu}>
+        <div css={selectedStyle}>{selectedItemText}</div>
       </div>
     )
 }
