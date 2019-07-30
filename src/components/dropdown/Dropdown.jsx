@@ -80,7 +80,7 @@ const OptionItems = ({ options, groupname, getItemProps, selectedItem, toggleMen
     const isActive = selectedItem === value
     const itemProps = getItemProps({ key: key || value, item: value, disabled })
 
-    const whenClicked = onClick
+    const whenClicked = !disabled && onClick
       ? () => onClick({ toggleMenu }, omit(option, ['onClick']), groupname)
       : itemProps.onClick
 
