@@ -75,10 +75,10 @@ const OptionGroups = ({ options, getItemProps, selectedItem, toggleMenu }) => {
 
 const OptionItems = ({ options, groupname, getItemProps, selectedItem, toggleMenu }) => (
   options.map(option => {
-    const { key, text, content, value, onClick } = option
+    const { key, text, content, value, onClick, disabled } = option
 
     const isActive = selectedItem === value
-    const itemProps = getItemProps({ key: key || value, item: value })
+    const itemProps = getItemProps({ key: key || value, item: value, disabled })
 
     const whenClicked = onClick
       ? () => onClick({ toggleMenu }, omit(option, ['onClick']), groupname)
