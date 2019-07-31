@@ -125,4 +125,14 @@ const grouped = css`
 
 `
 
-export { base, item, menuWrapper, activeItem, selectedItem, grouped, selected }
+const disabled = css`
+    cursor: default;
+    user-select: none;
+    opacity: 0.50;
+
+    &:hover {
+      background: inherit;
+    }
+`
+
+export { base, item, menuWrapper, activeItem, selectedItem, grouped, selected, disabled }

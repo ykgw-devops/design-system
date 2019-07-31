@@ -356,6 +356,22 @@ import Dropdown from './Dropdown'
   </div>
 </Playground>
 
+## Disabled items
+
+<Playground>
+  <div style={{ width: '90%'}}>
+    <Dropdown
+      options={[
+        { text: 'Uzbekistan', value: 'Uzbekistan' },
+        { text: 'Vanuatu', value: 'Vanuatu', disabled: true },
+        { text: 'Vatican City', value: 'Vatican City' },
+        { text: 'Venezuela', value: 'Venezuela' },
+        { text: 'Vietnam', value: 'Vietnam' },
+      ]}
+    />
+  </div>
+</Playground>
+
 ## Properties
 
 <Props of={Dropdown}></Props>
