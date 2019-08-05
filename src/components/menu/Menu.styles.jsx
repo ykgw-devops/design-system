@@ -16,7 +16,7 @@ const header = css`
 `
 
 const listItem = props => css`
-  padding: 0.5em 0.75em;
+  padding: 0.35em 0.75em;
 
   &:hover {
     cursor: pointer;
@@ -28,12 +28,13 @@ const listItem = props => css`
 
   a {
     ${resetAnchor};
+    display: block;
   }
 `
 
 const activeListItem = css`
   background: ${clearSky} !important;
-  border-radius: 0.15em;
+  border-radius: 0.2em;
   color: white;
 `
 
