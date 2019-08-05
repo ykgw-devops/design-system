@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import { antiFlashWhite, carbon, clearSky, concrete } from '../../Colors'
 import { shade, tint } from 'polished'
-import { resetAnchor } from '../../shared'
+import { resetAnchor } from '../../Shared'
 
 const lightGrey = tint(0.5, antiFlashWhite)
 const darkerGrey = shade(0.75, antiFlashWhite)

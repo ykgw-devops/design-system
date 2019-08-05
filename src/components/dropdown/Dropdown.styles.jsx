@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import { tint, shade } from 'polished'
 import { antiFlashWhite, carbon, concrete, clearSky, ink } from '../../Colors'
-import { resetAnchor, ellipsifyText } from '../../shared'
+import { resetAnchor, ellipsifyText } from '../../Shared'
 
 const padding = '0.5em 1.25em'
 const border = `1px solid ${concrete}`

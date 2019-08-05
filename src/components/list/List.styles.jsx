@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 import { clearSky } from '../../Colors'
-import { resetAnchor } from '../../shared'
+import { resetAnchor } from '../../Shared'
 
 const base = css`
   ul {

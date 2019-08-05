@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css } from '@emotion/core'
 import { carbon, concrete, clearSky } from '../../Colors'
-import { resetAnchor } from '../../shared'
+import { resetAnchor } from '../../Shared'
 
 const base = css`
   display: inline-block;
