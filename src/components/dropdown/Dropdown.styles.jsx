@@ -1,9 +1,13 @@
 import { css } from '@emotion/core'
-import { antiFlashWhite, concrete, clearSky, ink } from '../../Colors'
-import { resetAnchor } from '../../shared'
+import { tint, shade } from 'polished'
+import { antiFlashWhite, carbon, concrete, clearSky, ink } from '../../Colors'
+import { resetAnchor, ellipsifyText } from '../../shared'
 
 const padding = '0.5em 1.25em'
 const border = `1px solid ${concrete}`
+
+const lightGrey = tint(0.5, antiFlashWhite)
+const darkerGrey = shade(0.75, antiFlashWhite)
 
 const base = css`
   color: ${ink};
@@ -13,12 +17,6 @@ const base = css`
   white-space: nowrap;
   width: 100%;
   user-select: none;
-`
-
-const ellipsifyText = css`
-  white-space: nowrap;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
 `
 
 const item = css`
@@ -45,7 +43,6 @@ const item = css`
 const menuWrapper = css`
   display: none;
   position: absolute;
-  padding: 0.25em 0;
 
   width: 100%;
 
@@ -110,19 +107,16 @@ const activeItem = css`
 
 const grouped = css`
   display: block;
+  color: ${carbon};
 
   ${ellipsifyText}
 
-  font-weight: bold;
   padding: ${padding};
 
+  background: ${lightGrey};
   text-indent: -10px;
-  //border-top: 1px solid lightgrey;
-  //border-bottom: 1px solid lightgrey;
-
-  box-shadow: 0px 3px 2px -2px lightgrey,
-              0px -3px 2px -2px lightgrey;
-
+  border-top: 1px solid ${concrete};
+  border-bottom: 1px solid ${concrete};
 `
 
 const disabled = css`

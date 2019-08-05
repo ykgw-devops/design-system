@@ -6,6 +6,13 @@ const resetAnchor = css`
   text-decoration: none;
 `
 
+const ellipsifyText = css`
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+`
+
 export {
+  ellipsifyText,
   resetAnchor
 }
