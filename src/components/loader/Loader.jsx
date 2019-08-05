@@ -1,68 +1,41 @@
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
-import { carbon } from '../../Colors'
-import { animated, Spring } from 'react-spring/renderprops'
-import { easeLinear as easing } from 'd3-ease'
+import { clearSky } from '../../Colors'
+import { rotation } from './Loader.styles'
 
 const Loader = (props) => {
-  const { size, color, thickness, className } = props
-
-  const [reset, setReset] = useState(false)
-  const [reverse, setReverse] = useState(false)
-
-  useEffect(() => {
-    if (!reset) { setReset(true) }
-  }, [false])
+  const { size, color, duration, thickness, className, gap } = props
 
   const radius = (size / 2) - (thickness / 2)
   const circumference = Math.PI * (2 * radius)
 
-  const from = {
-    transform: 'rotate(0deg)',
-    strokeDasharray: `${(reverse ? 0.8 : 0.2) * circumference}, ${circumference}`
-  }
-
-  const to = {
-    transform: 'rotate(360deg)',
-    strokeDasharray: `${(reverse ? 0.2 : 0.8) * circumference}, ${circumference}`
-  }
+  const strokeDasharray = `${gap * circumference}, ${circumference}`
 
   return (
-    <Spring
-      native
-      config={{ duration: 750, easing }}
-      from={from}
-      to={to}
-      reset={reset}
-      onRest={() => {
-        setReverse(!reverse)
-      }}
+    <svg
+      className={className}
+      height={size}
+      width={size}
+      role='img'
+      viewBox={`0 0 ${size} ${size}`}
     >
-      {style => {
-        return (
-          <svg
-            className={className}
-            height={size}
-            width={size}
-            role='img'
-            viewBox={`0 0 ${size} ${size}`}
-          >
-            <animated.circle
-              style={{ transform: style.transform, transformOrigin: '50% 50%' }}
-              role='presentation'
-              cx='50%'
-              cy='50%'
-              r={radius}
-              stroke={color}
-              fill='none'
-              strokeWidth={thickness}
-              strokeDasharray={style.strokeDasharray}
-              strokeLinecap='round'
-            />
-          </svg>
-        )
-      }}
-    </Spring>
+      <circle
+        css={css`
+          animation: ${rotation} ${duration}ms linear infinite;
+          transform-origin: 50% 50%;
+        `}
+        role='presentation'
+        cx='50%'
+        cy='50%'
+        r={radius}
+        stroke={color}
+        fill='none'
+        strokeWidth={thickness}
+        strokeDasharray={strokeDasharray}
+        strokeLinecap='round'
+      />
+    </svg>
   )
 }
 
@@ -76,12 +49,10 @@ Loader.propTypes = {
 
 Loader.defaultProps = {
   size: 32,
-  color: carbon,
-  thickness: 4,
-  gap: 0.9,
-  speed: 1200,
-  friction: 15,
-  tension: 100
+  color: clearSky,
+  thickness: 3,
+  gap: 0.6,
+  duration: 600
 }
 
 export default Loader
