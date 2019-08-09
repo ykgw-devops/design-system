@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
 import { jsx } from '@emotion/core'
-import { base, menuWrapper, selectedItem as selectedItemStyle, activeItem as activeItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
+import { base, menuWrapper, selectedItem as selectedItemStyle, activeItem as activeItemStyle, grouped as groupedStyle, selected as selectedStyle, groupWrapper } from './Dropdown.styles.jsx'
 import DropdownItem from './Dropdown-item'
 
 const Dropdown = ({ options, placeholder, content, ...rest }) => (
@@ -60,14 +60,15 @@ const OptionGroups = ({ options, getItemProps, selectedItem, toggleMenu }) => {
         groupname !== 'undefined' &&
         <span css={groupedStyle}>{groupname}</span>
       }
-      {
-        <OptionItems
-          options={optiongroup}
-          getItemProps={getItemProps}
-          selectedItem={selectedItem}
-          toggleMenu={toggleMenu}
-          groupname={groupname}
-        />
+      {<div css={groupWrapper}>
+          <OptionItems
+            options={optiongroup}
+            getItemProps={getItemProps}
+            selectedItem={selectedItem}
+            toggleMenu={toggleMenu}
+            groupname={groupname}
+          />
+        </div>
       }
     </React.Fragment>
   ))

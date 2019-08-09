@@ -3,11 +3,10 @@ import { tint, shade } from 'polished'
 import { antiFlashWhite, carbon, concrete, clearSky, ink } from '../../Colors'
 import { resetAnchor, ellipsifyText } from '../../Shared'
 
-const padding = '0.5em 1.25em'
+const contentPadding = '0.5em 0.5em'
 const border = `1px solid ${concrete}`
 
 const lightGrey = tint(0.5, antiFlashWhite)
-const darkerGrey = shade(0.75, antiFlashWhite)
 
 const base = css`
   color: ${ink};
@@ -15,13 +14,15 @@ const base = css`
   position: relative;
   display: inline-block;
   white-space: nowrap;
-  width: 100%;
   user-select: none;
 `
 
 const item = css`
   display: block;
-  padding: ${padding};
+  padding: ${contentPadding};
+  margin: 0.25em 0.5em;
+
+  border-radius: 0.2em;
 
   ${ellipsifyText}
 
@@ -36,15 +37,13 @@ const item = css`
   }
 
   &:hover {
-    background-color: ${antiFlashWhite};
+    background-color: ${lightGrey};
   }
 `
 
 const menuWrapper = css`
   display: none;
   position: absolute;
-
-  width: 100%;
 
   left: 0;
 
@@ -67,6 +66,7 @@ const menuWrapper = css`
 `
 const selectedItem = css`
   ${item};
+  margin: 0;
 
   display: flex;
   justify-content: space-between;
@@ -100,33 +100,38 @@ const selected = css`
   ${ellipsifyText}
 `
 
+const activeBgColor = tint(0.1, clearSky)
 const activeItem = css`
   color: ${clearSky};
-  background: ${antiFlashWhite};
+  background: ${activeBgColor};
+
+  &:hover {
+    background: ${activeBgColor};
+  }
 `
 
 const grouped = css`
-  display: block;
-  color: ${carbon};
-
-  ${ellipsifyText}
-
-  padding: ${padding};
+  ${item};
+  margin: 0;
+  padding: 0.75em 0.5em;
+  text-indent: 0.25em;
 
   background: ${lightGrey};
-  text-indent: -10px;
-  border-top: 1px solid ${concrete};
-  border-bottom: 1px solid ${concrete};
+  color: ${carbon};
+
+  &:hover {
+    background: ${lightGrey};
+  }
 `
 
 const disabled = css`
-    cursor: default;
-    user-select: none;
-    opacity: 0.50;
+  cursor: default;
+  user-select: none;
+  opacity: 0.50;
 
-    &:hover {
-      background: inherit;
-    }
+  &:hover {
+    background: inherit;
+  }
 `
 
 export { base, item, menuWrapper, activeItem, selectedItem, grouped, selected, disabled }
