@@ -1,22 +1,19 @@
 /** @jsx jsx */
 import React from 'react'
-import { find, omit, map, groupBy } from 'lodash'
+import { map, groupBy } from 'lodash'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
 import { jsx } from '@emotion/core'
-import { base, menuWrapper, selectedItem as selectedItemStyle, activeItem as activeItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
+import { base, menuWrapper, selectedItem as selectedItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
 import DropdownItem from './Dropdown-item'
 
 const Dropdown = ({ options, placeholder, content, ...rest }) => (
-  <Downshift {...rest}>
+  <Downshift itemToString={itemToString} {...rest}>
     {props => {
       const { isOpen, toggleMenu, getItemProps, selectedItem } = props
-
-      const findItem = find(options, { value: selectedItem })
-      const selectedItemText = findItem
-        ? findItem.text
-        : placeholder
+      const selectedItemText = selectedItem ? selectedItem.text : placeholder
+      const groupedOptions = groupBy(options, 'group')
 
       return (
         <div>
@@ -27,12 +24,16 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
               toggleMenu={toggleMenu}
             />
             <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
-              <OptionGroups
-                options={options}
-                getItemProps={getItemProps}
-                selectedItem={selectedItem}
-                toggleMenu={toggleMenu}
-              />
+              {map(groupedOptions, (options, name) => (
+                <Group
+                  key={`optiongroup_${name}`}
+                  options={options}
+                  name={name}
+                  getItemProps={getItemProps}
+                  selectedItem={selectedItem}
+                  toggleMenu={toggleMenu}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -51,50 +52,59 @@ const SelectedItem = ({ content, selectedItemText, toggleMenu }) => {
     )
 }
 
-const OptionGroups = ({ options, getItemProps, selectedItem, toggleMenu }) => {
-  const groupedOptions = groupBy(options, 'group')
-
-  return map(groupedOptions, (optiongroup, groupname) => (
-    <React.Fragment key={`optiongroup_${groupname}`}>
+const Group = ({ options, name, getItemProps, selectedItem, toggleMenu }) => {
+  return (
+    <React.Fragment>
       {
-        groupname !== 'undefined' &&
-        <span css={groupedStyle}>{groupname}</span>
+        name !== 'undefined' &&
+        <span css={groupedStyle}>{name}</span>
       }
       {<div>
-        <OptionItems
-          options={optiongroup}
-          getItemProps={getItemProps}
-          selectedItem={selectedItem}
-          toggleMenu={toggleMenu}
-          groupname={groupname}
-        />
+        {options.map(option => {
+          const isActive = selectedItem
+            ? itemToString(selectedItem) === itemToString(option)
+            : false
+
+          return (
+            <Option
+              key={itemToString(option)}
+              active={isActive}
+              option={option}
+              getItemProps={getItemProps}
+              selectedItem={selectedItem}
+              toggleMenu={toggleMenu}
+            />
+          )
+        })}
       </div>
       }
     </React.Fragment>
-  ))
+  )
 }
 
-const OptionItems = ({ options, groupname, getItemProps, selectedItem, toggleMenu }) => (
-  options.map(option => {
-    const { key, text, content, value, onClick, disabled } = option
+const Option = ({ option, active, getItemProps, selectedItem, toggleMenu }) => {
+  const { key, text, content, value, group, onClick, disabled } = option
 
-    const isActive = selectedItem === value
-    const itemProps = getItemProps({ key: key || value, item: value, disabled })
+  const uniqueKey = key || value
+  const itemProps = getItemProps({ key: uniqueKey, item: option, disabled })
 
-    const whenClicked = !disabled && onClick
-      ? () => onClick({ toggleMenu }, omit(option, ['onClick']), groupname)
-      : itemProps.onClick
+  const whenClicked = !disabled && onClick
+    ? () => onClick({ toggleMenu }, selectedItem, group)
+    : itemProps.onClick
 
-    return (
-      <Dropdown.Item
-        {...itemProps}
-        text={text || content}
-        css={isActive && activeItemStyle}
-        onClick={whenClicked}
-      />
-    )
-  })
-)
+  return (
+    <Dropdown.Item
+      {...itemProps}
+      text={text || content}
+      active={active}
+      onClick={whenClicked}
+    />
+  )
+}
+
+function itemToString (selectedItem) {
+  return selectedItem && `${selectedItem.group}-${selectedItem.value}`
+}
 
 Dropdown.Item = setDisplayName('Dropdown.Item')(DropdownItem)
 
