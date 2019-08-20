@@ -57,7 +57,7 @@ const outline = ({ kind }) => {
 
   return css`{
     border: solid 1px ${borderColor};
-    padding: 0.750em 1.25em;
+    padding: 0.760em 1.25em;
     background: none;
     box-shadow: none;
     color: ${fontColor};

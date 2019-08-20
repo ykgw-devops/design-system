@@ -1,7 +1,10 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import PropTypes from 'prop-types'
+import { setDisplayName } from 'recompose'
 import { omitBy, isBoolean } from 'lodash'
+
+import Group from './Group'
 
 import { base, kind, outline, pill, disabled, size } from './Button.styles'
 
@@ -41,6 +44,8 @@ function getStyle (props) {
     props.disabled && disabled(props)
   ]
 }
+
+Button.Group = setDisplayName('Button.Group')(Group)
 
 Button.propTypes = {
   kind: PropTypes.oneOf(['primary', 'secondary', 'warning', 'danger', 'success']),
