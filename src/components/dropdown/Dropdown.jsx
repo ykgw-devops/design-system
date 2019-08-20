@@ -8,7 +8,7 @@ import { jsx } from '@emotion/core'
 import { base, menuWrapper, selectedItem as selectedItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
 import DropdownItem from './Dropdown-item'
 
-const Dropdown = ({ options, placeholder, content, ...rest }) => (
+const Dropdown = ({ options, placeholder, content, style, ...rest }) => (
   <Downshift itemToString={itemToString} {...rest}>
     {props => {
       const { isOpen, toggleMenu, getItemProps, selectedItem } = props
@@ -17,7 +17,7 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
 
       return (
         <div>
-          <div css={base}>
+          <div css={base} style={{ ...style }}>
             <SelectedItem
               content={content}
               selectedItemText={selectedItemText}
@@ -85,7 +85,7 @@ const Group = ({ options, name, getItemProps, selectedItem, toggleMenu }) => {
 const Option = ({ option, active, getItemProps, selectedItem, toggleMenu }) => {
   const { key, text, content, value, group, onClick, disabled } = option
 
-  const uniqueKey = key || value
+  const uniqueKey = `select_option_${key || value || text}_group_${group}`
   const itemProps = getItemProps({ key: uniqueKey, item: option, disabled })
 
   const whenClicked = !disabled && onClick
@@ -102,8 +102,10 @@ const Option = ({ option, active, getItemProps, selectedItem, toggleMenu }) => {
   )
 }
 
-function itemToString (selectedItem) {
-  return selectedItem && `${selectedItem.group}-${selectedItem.value}`
+function itemToString (item) {
+  if (!item) return ''
+  const { group, value, text } = item
+  return `${group}-${value || text}`
 }
 
 Dropdown.Item = setDisplayName('Dropdown.Item')(DropdownItem)

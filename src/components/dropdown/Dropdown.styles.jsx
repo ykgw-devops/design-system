@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { tint, shade } from 'polished'
+import { tint } from 'polished'
 import { antiFlashWhite, carbon, concrete, clearSky, ink } from '../../Colors'
 import { resetAnchor, ellipsifyText } from '../../Shared'
 
@@ -115,6 +115,7 @@ const grouped = css`
   margin: 0;
   padding: 0.75em 0.5em;
   text-indent: 0.25em;
+  cursor: inherit;
 
   background: ${lightGrey};
   color: ${carbon};
