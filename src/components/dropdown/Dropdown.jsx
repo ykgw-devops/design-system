@@ -8,7 +8,7 @@ import { jsx } from '@emotion/core'
 import { base, menuWrapper, selectedItem as selectedItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
 import DropdownItem from './Dropdown-item'
 
-const Dropdown = ({ options, placeholder, content, style, ...rest }) => (
+const Dropdown = ({ options, placeholder, content, ...rest }) => (
   <Downshift itemToString={itemToString} {...rest}>
     {props => {
       const { isOpen, toggleMenu, getItemProps, selectedItem } = props
@@ -16,25 +16,23 @@ const Dropdown = ({ options, placeholder, content, style, ...rest }) => (
       const groupedOptions = groupBy(options, 'group')
 
       return (
-        <div>
-          <div css={base} style={{ ...style }}>
-            <SelectedItem
-              content={content}
-              selectedItemText={selectedItemText}
-              toggleMenu={toggleMenu}
-            />
-            <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
-              {map(groupedOptions, (options, name) => (
-                <Group
-                  key={`optiongroup_${name}`}
-                  options={options}
-                  name={name}
-                  getItemProps={getItemProps}
-                  selectedItem={selectedItem}
-                  toggleMenu={toggleMenu}
-                />
-              ))}
-            </div>
+        <div css={base} {...rest}>
+          <SelectedItem
+            content={content}
+            selectedItemText={selectedItemText}
+            toggleMenu={toggleMenu}
+          />
+          <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
+            {map(groupedOptions, (options, name) => (
+              <Group
+                key={`optiongroup_${name}`}
+                options={options}
+                name={name}
+                getItemProps={getItemProps}
+                selectedItem={selectedItem}
+                toggleMenu={toggleMenu}
+              />
+            ))}
           </div>
         </div>
       )
