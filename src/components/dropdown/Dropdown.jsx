@@ -8,7 +8,7 @@ import { jsx } from '@emotion/core'
 import { base, fluid, compact, menuWrapper, selectedItem as selectedItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
 import DropdownItem from './Dropdown-item'
 
-const Dropdown = ({ options, placeholder, content, ...rest }) => (
+const Dropdown = ({ options, placeholder, content, compact, fluid, ...rest }) => (
   <Downshift itemToString={itemToString}>
     {props => {
       const { isOpen, toggleMenu, getItemProps, selectedItem } = props
@@ -16,7 +16,7 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
 
       return (
         <div {...rest}>
-          <div css={getStyle(rest)}>
+          <div css={getStyle({ compact, fluid })}>
             <SelectedItem
               placeholder={placeholder}
               content={content}
