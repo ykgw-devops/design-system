@@ -12,15 +12,15 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
   <Downshift itemToString={itemToString}>
     {props => {
       const { isOpen, toggleMenu, getItemProps, selectedItem } = props
-      const selectedItemText = selectedItem ? selectedItem.text : placeholder
       const groupedOptions = groupBy(options, 'group')
 
       return (
         <div {...rest}>
           <div css={getStyle(rest)}>
             <SelectedItem
+              placeholder={placeholder}
               content={content}
-              selectedItemText={selectedItemText}
+              text={selectedItem && selectedItem.text}
               toggleMenu={toggleMenu}
             />
             <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
@@ -42,12 +42,12 @@ const Dropdown = ({ options, placeholder, content, ...rest }) => (
   </Downshift>
 )
 
-const SelectedItem = ({ content, selectedItemText, toggleMenu }) => {
+const SelectedItem = ({ content, text, placeholder, toggleMenu }) => {
   return content
     ? React.cloneElement(content, { onClick: toggleMenu })
     : (
       <div css={selectedItemStyle} onClick={toggleMenu}>
-        <div css={selectedStyle}>{selectedItemText}</div>
+        <div css={selectedStyle(text)}>{text || placeholder}</div>
       </div>
     )
 }

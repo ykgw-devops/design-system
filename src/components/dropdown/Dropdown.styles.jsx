@@ -95,7 +95,7 @@ const selectedItem = css`
     float: right;
 
     top: 0.6em;
-    right: -0.2em; /* TODO: find a better way to fix this? */
+    right: 0.4em;
 
     width: 0;
     height: 0;
@@ -106,8 +106,10 @@ const selectedItem = css`
   }
 `
 
-const selected = css`
-  ${ellipsifyText}
+const selected = content => css`
+  ${ellipsifyText};
+
+  color: ${content ? 'inherit' : concrete};
 `
 
 const activeBgColor = tint(0.1, clearSky)
