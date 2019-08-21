@@ -11,10 +11,21 @@ const lightGrey = tint(0.5, antiFlashWhite)
 const base = css`
   color: ${ink};
 
+  min-width: 14em;
+
   position: relative;
   display: inline-block;
   white-space: nowrap;
   user-select: none;
+`
+
+const compact = css`
+  min-width: auto;
+`
+
+const fluid = css`
+  min-width: auto;
+  width: 100%;
 `
 
 const item = css`
@@ -96,7 +107,6 @@ const selectedItem = css`
 `
 
 const selected = css`
-  width: 90%;
   ${ellipsifyText}
 `
 
@@ -135,4 +145,4 @@ const disabled = css`
   }
 `
 
-export { base, item, menuWrapper, activeItem, selectedItem, grouped, selected, disabled }
+export { base, compact, fluid, item, menuWrapper, activeItem, selectedItem, grouped, selected, disabled }

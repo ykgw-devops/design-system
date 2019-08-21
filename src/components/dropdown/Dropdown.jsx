@@ -5,34 +5,36 @@ import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
 import { jsx } from '@emotion/core'
-import { base, menuWrapper, selectedItem as selectedItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
+import { base, fluid, compact, menuWrapper, selectedItem as selectedItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
 import DropdownItem from './Dropdown-item'
 
 const Dropdown = ({ options, placeholder, content, ...rest }) => (
-  <Downshift itemToString={itemToString} {...rest}>
+  <Downshift itemToString={itemToString}>
     {props => {
       const { isOpen, toggleMenu, getItemProps, selectedItem } = props
       const selectedItemText = selectedItem ? selectedItem.text : placeholder
       const groupedOptions = groupBy(options, 'group')
 
       return (
-        <div css={base} {...rest}>
-          <SelectedItem
-            content={content}
-            selectedItemText={selectedItemText}
-            toggleMenu={toggleMenu}
-          />
-          <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
-            {map(groupedOptions, (options, name) => (
-              <Group
-                key={`optiongroup_${name}`}
-                options={options}
-                name={name}
-                getItemProps={getItemProps}
-                selectedItem={selectedItem}
-                toggleMenu={toggleMenu}
-              />
-            ))}
+        <div {...rest}>
+          <div css={getStyle(rest)}>
+            <SelectedItem
+              content={content}
+              selectedItemText={selectedItemText}
+              toggleMenu={toggleMenu}
+            />
+            <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
+              {map(groupedOptions, (options, name) => (
+                <Group
+                  key={`optiongroup_${name}`}
+                  options={options}
+                  name={name}
+                  getItemProps={getItemProps}
+                  selectedItem={selectedItem}
+                  toggleMenu={toggleMenu}
+                />
+              ))}
+            </div>
           </div>
         </div>
       )
@@ -87,7 +89,7 @@ const Option = ({ option, active, getItemProps, selectedItem, toggleMenu }) => {
   const itemProps = getItemProps({ key: uniqueKey, item: option, disabled })
 
   const whenClicked = !disabled && onClick
-    ? () => onClick({ toggleMenu }, selectedItem, group)
+    ? () => onClick({ toggleMenu }, option, group)
     : itemProps.onClick
 
   return (
@@ -106,11 +108,21 @@ function itemToString (item) {
   return `${group}-${value || text}`
 }
 
+function getStyle (props) {
+  return [
+    base,
+    props.compact && compact,
+    props.fluid && fluid
+  ]
+}
+
 Dropdown.Item = setDisplayName('Dropdown.Item')(DropdownItem)
 
 Dropdown.propTypes = {
   options: PropTypes.arrayOf(PropTypes.object),
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  compact: PropTypes.bool,
+  fluid: PropTypes.bool
 }
 
 Dropdown.defaultProps = {

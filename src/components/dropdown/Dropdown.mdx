@@ -315,6 +315,36 @@ import Dropdown from './Dropdown'
   </div>
 </Playground>
 
+## Compact
+
+A compact dropdown has no minimum width
+
+<Playground>
+  <Dropdown
+    compact
+    options={[
+      { text: 'Foo', value: 'foo' },
+      { text: 'Bar', value: 'bar' },
+      { text: 'Thisisaveryveryveryveryveryveryveryveryverylongtext', value: 'foobar' }
+    ]}
+  />
+</Playground>
+
+## Fluid
+
+A dropdown can take the full width of its parent
+
+<Playground>
+  <Dropdown
+    fluid
+    options={[
+      { text: 'Foo', value: 'foo' },
+      { text: 'Bar', value: 'bar' },
+      { text: 'Thisisaveryveryveryveryveryveryveryveryverylongtext', value: 'foobar' }
+    ]}
+  />
+</Playground>
+
 ## Placeholder
 
 <Playground>
