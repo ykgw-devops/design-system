@@ -83,9 +83,9 @@ const Group = ({ options, name, getItemProps, selectedItem, toggleMenu }) => {
 }
 
 const Option = ({ option, active, getItemProps, selectedItem, toggleMenu }) => {
-  const { key, text, content, value, group, onClick, disabled } = option
+  const { key, text, content, group, onClick, disabled } = option
 
-  const uniqueKey = `select_option_${key || value || text}_group_${group}`
+  const uniqueKey = `select_option_${key || text}_group_${group}`
   const itemProps = getItemProps({ key: uniqueKey, item: option, disabled })
 
   const whenClicked = !disabled && onClick
@@ -104,8 +104,8 @@ const Option = ({ option, active, getItemProps, selectedItem, toggleMenu }) => {
 
 function itemToString (item) {
   if (!item) return ''
-  const { group, value, text } = item
-  return `${group}-${value || text}`
+  const { group, text } = item
+  return `${group}-${text}`
 }
 
 function getStyle (props) {
