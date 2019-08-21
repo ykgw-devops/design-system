@@ -8,10 +8,10 @@ import { jsx } from '@emotion/core'
 import { base, fluid, compact, menuWrapper, selectedItem as selectedItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
 import DropdownItem from './Dropdown-item'
 
-const Dropdown = ({ options, placeholder, content, compact, fluid, ...rest }) => (
+const Dropdown = ({ options, placeholder, content, compact, fluid, selectedItem = {}, ...rest }) => (
   <Downshift itemToString={itemToString}>
     {props => {
-      const { isOpen, toggleMenu, getItemProps, selectedItem } = props
+      const { isOpen, toggleMenu, getItemProps } = props
       const groupedOptions = groupBy(options, 'group')
 
       return (
@@ -121,6 +121,7 @@ Dropdown.Item = setDisplayName('Dropdown.Item')(DropdownItem)
 Dropdown.propTypes = {
   options: PropTypes.arrayOf(PropTypes.object),
   placeholder: PropTypes.string,
+  selectedItem: PropTypes.object,
   compact: PropTypes.bool,
   fluid: PropTypes.bool
 }
