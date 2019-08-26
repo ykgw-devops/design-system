@@ -3,7 +3,7 @@ import { tint } from 'polished'
 import { antiFlashWhite, carbon, concrete, clearSky, ink } from '../../Colors'
 import { resetAnchor, ellipsifyText } from '../../Shared'
 
-const contentPadding = '0.5em 0.5em'
+const contentPadding = '0.25em 0.5em'
 const border = `1px solid ${concrete}`
 
 const lightGrey = tint(0.5, antiFlashWhite)
@@ -31,8 +31,6 @@ const fluid = css`
 const item = css`
   display: block;
   padding: ${contentPadding};
-  margin: 0.25em 0.5em;
-
   border-radius: 0.2em;
 
   ${ellipsifyText}
@@ -55,15 +53,12 @@ const item = css`
 const menuWrapper = css`
   display: none;
   position: absolute;
+  padding: 0.35em;
 
   left: 0;
-
   z-index: 1000;
-  float: left;
 
   max-height: 450px;
-
-  margin: .125rem 0 0;
 
   text-align: left;
   list-style: none;
