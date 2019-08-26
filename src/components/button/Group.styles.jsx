@@ -1,13 +1,16 @@
 import { css } from '@emotion/core'
 
-const base = css`
+const base = props => css`
   display: flex;
 
   button, a {
     border-radius: 0;
-    flex-grow: 1;
+    flex: 0 0 auto;
 
-    // Overwrite form button margin
+    ${props.fluid && css`flex: 1 0 auto;`}
+    ${props.equalWidth && css`flex: 1;`}
+
+    /* Overwrite from button margin */
     margin: 0;
 
     overflow: hidden;
@@ -15,12 +18,12 @@ const base = css`
     white-space: nowrap;
   }
 
-  button:first-child, a:first-child {
+  button:first-of-type, a:first-of-type {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
   }
 
-  button:last-child, a:last-child {
+  button:last-of-type, a:last-of-type {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
   }

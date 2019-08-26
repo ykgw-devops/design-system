@@ -5,6 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz'
 import Button from './Button'
+import Group from './Group'
 import Icon from '../icon/Icon'
 
 # Button
@@ -77,12 +78,15 @@ import Icon from '../icon/Icon'
   <Button size='large'>Large</Button>
 </Playground>
 
-## Group
+## Properties
+
+<Props of={Button}></Props>
+
+# Group
 
 <Playground>
   Base:
   <Button.Group>
-
     <Button>
       <Icon name='filter_1' /> Option #1
     </Button>
@@ -94,8 +98,8 @@ import Icon from '../icon/Icon'
 
   <br />
 
-  Limited width:
-  <Button.Group style={{ maxWidth: 400 }}>
+  Compact width:
+  <Button.Group compact>
     <Button>Number #1</Button>
     <Button kind='danger'>Number #2</Button>
     <Button kind='success'>Number #3</Button>
@@ -103,14 +107,23 @@ import Icon from '../icon/Icon'
 
   <br />
 
-  Ellipsify long text:
-  <Button.Group>
-    <Button>Someverylonglonglongtext</Button>
-    <Button kind='danger'>Someverylonglonglongtext</Button>
-    <Button kind='success'>Someverylonglonglongtext</Button>
+  Fluid:
+  <Button.Group fluid>
+    <Button>Text</Button>
+    <Button kind='danger'>Text</Button>
+    <Button kind='success'>How much wood would a woodchuck chuck if a woodchuck could chuck wood?</Button>
+  </Button.Group>
+
+  <br />
+
+  Equal width:
+  <Button.Group equalWidth>
+    <Button>Number #1</Button>
+    <Button kind='danger'>Number #2</Button>
+    <Button kind='success'>How much wood would a woodchuck chuck if a woodchuck could chuck wood?</Button>
   </Button.Group>
 </Playground>
 
 ## Properties
 
-<Props of={Button}></Props>
+<Props of={Group}></Props>
