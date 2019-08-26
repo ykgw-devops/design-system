@@ -41,8 +41,10 @@ const child = css`
 `
 
 // this is the value item, after the named item
-const value = css`
+// if it is a named label we should apply some negative margin
+const value = props => css`
   ${child};
+  ${props.name && `margin-left: -0.5em;`}
 `
 
 // this is the detaild child for named labels

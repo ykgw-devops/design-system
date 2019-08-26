@@ -17,7 +17,7 @@ const Label = (props) => (
         {props.name}
       </div>
     }
-    <div css={value}>
+    <div css={value(props)}>
       {props.children}
       {props.removable && <Close css={close(props)} onClick={props.onClose} />}
     </div>
