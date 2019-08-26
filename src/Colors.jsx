@@ -5,7 +5,7 @@ const ink = '#231F20'
 const clearSky = '#1E90FF'
 const tangerine = '#FF7F50'
 const watermelon = '#EC584B'
-const leaf = '#00C752'
+const leaf = '#20bf6b'
 
 const map = {
   blue: clearSky,
