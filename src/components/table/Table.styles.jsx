@@ -48,7 +48,7 @@ const fixed = css`
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow-wrap: normal;
-    overflow: hidden;
+    overflow: visible;
   }
 `
 

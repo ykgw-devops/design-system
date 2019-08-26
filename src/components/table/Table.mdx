@@ -5,6 +5,9 @@ menu: Components
 
 import { Playground, Props } from 'docz'
 import Table from './Table'
+import Button from '../Button/Button'
+import Dropdown from '../Dropdown/Dropdown'
+import Icon from '../Icon/Icon'
 
 
 # Table
@@ -39,9 +42,10 @@ import Table from './Table'
 ## Custom Table
 
 <Playground>
-  <Table>
+  <Table fixed>
     <Table.Header>
       <Table.Row>
+        <Table.HeaderCell style={{ width: 10 }} />
         <Table.HeaderCell>
           Name
         </Table.HeaderCell>
@@ -52,12 +56,18 @@ import Table from './Table'
     </Table.Header>
     <Table.Body>
       <Table.Row>
+        <Table.Cell>
+          <Dropdown options={[{ text: 'Details' }]} content={<Icon name='more_vert' />} />
+        </Table.Cell>
         <Table.Cell>Gilles De Mey</Table.Cell>
         <Table.Cell>
           <a href='mailto:gilles@waylay.io'>gilles@waylay.io</a>
         </Table.Cell>
       </Table.Row>
       <Table.Row>
+        <Table.Cell>
+          <Dropdown options={[{ text: 'Details' }]} content={<Icon name='more_vert' />} />
+        </Table.Cell>
         <Table.Cell>Brent Timmermans</Table.Cell>
         <Table.Cell>
           <a href='mailto:brent@waylay.io'>brent@waylay.io</a>
