@@ -37,8 +37,8 @@ const adornments = css`
   font-weight: 300;
   color: ${darken(0.2, concrete)};
 
-  /* TODO use HoC */
-  .${Icon} {
+  /* an icon in the input */
+  .i {
     font-size: 1.5em;
   }
 `
