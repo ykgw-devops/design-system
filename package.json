@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.15",
     "d3-ease": "^1.0.5",
     "downshift": "^3.2.10",
     "immutability-helper": "^2.7.1",

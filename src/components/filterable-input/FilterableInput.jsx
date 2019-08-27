@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import update from 'immutability-helper'
 import { debounce, flatMap, includes, get, omit, reject, upperFirst } from 'lodash'
+import styled from '@emotion/styled'
 
 import Icon from '../icon/Icon'
 import Input from '../input/Input'
 import Label from '../label/Label'
 
 const KEY_BACKSPACE = 8
+
+const SmallerLabel = styled(Label)`
+  font-size: 0.7em;
+`
 
 class FilterableInput extends Component {
   constructor (props) {
@@ -123,8 +128,7 @@ class FilterableInput extends Component {
       filters.map(f => this.toAdornment(f))
     )
 
-    const rest = omit(this.props, ['initialFilters'])
-    // const availableFilters = this.getAvailableFilters()
+    const rest = omit(this.props, ['initialFilters', 'availableFilters'])
 
     return (
       <Input
@@ -146,9 +150,9 @@ class FilterableInput extends Component {
     return {
       position: 'left',
       content: (
-        <Label onClose={closeFn} focused={focused} key={labelKey} name={upperFirst(key)} removable>
+        <SmallerLabel onClose={closeFn} focused={focused} key={labelKey} name={upperFirst(key)} removable>
           {upperFirst(value)}
-        </Label>
+        </SmallerLabel>
       )
     }
   }
