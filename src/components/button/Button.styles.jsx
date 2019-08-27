@@ -15,7 +15,7 @@ const base = css`
   display: inline-block;
   font-family: ${fontFamily};
   font-weight: 400;
-  padding: 0.825em 1.25em;
+  padding: 0.825em 1.2em;
   text-align: center;
   text-decoration: none;
   transition: background 80ms ease-in;
