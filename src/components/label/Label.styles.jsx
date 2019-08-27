@@ -111,8 +111,7 @@ const close = props => {
   return css`
     /* make hitbox a bit bigger for close icon */
     padding: 0.2em;
-    height: 1em;
-    width: 1em;
+    font-size: 0.85em;
 
     margin-left: 0.5em;
     margin-right: -0.25em;
