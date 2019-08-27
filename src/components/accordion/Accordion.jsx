@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { jsx } from '@emotion/core'
 import { setDisplayName } from 'recompose'
 import PropTypes from 'prop-types'
-import { map, isEmpty, get, reject, omit } from 'lodash'
+import { map, isEmpty, get, omit } from 'lodash'
 
 import Icon from '../icon/Icon'
 import { base, size, kind, title as titleStyle, content } from './Accordion.styles'
@@ -12,7 +12,7 @@ import withProps from 'recompose/withProps'
 const Close = withProps({ name: 'close' })(Icon)
 
 class Accordion extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -24,7 +24,7 @@ class Accordion extends Component {
     return { ...state, items: props.items }
   }
 
-  handleDelete(index, event) {
+  handleDelete (index, event) {
     const { onDelete } = this.props
     const { items } = this.state
     const indexExists = get(items, index)
@@ -35,9 +35,10 @@ class Accordion extends Component {
     event.stopPropagation()
   }
 
-  handleClick(index, closed) {
+  handleClick (index, closed) {
     const { onClick, exclusive } = this.props
     const { items } = this.state
+
     const newItems = map(items, (item, itemIndex) => {
       const isClickedItem = itemIndex === index
       if (exclusive) return isClickedItem ? { ...item, active: closed } : item
@@ -49,9 +50,10 @@ class Accordion extends Component {
     onClick(index, newItems)
   }
 
-  render() {
+  render () {
     const { items } = this.state
     const { children, removable } = this.props
+
     return (
       <div css={getStyle(this.props)}>
         {isEmpty(items)
