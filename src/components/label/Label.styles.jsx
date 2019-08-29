@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 import { clearSky, tangerine, watermelon, leaf, concrete, carbon } from '../../Colors'
 import { base as Icon } from '../icon/Style'
 import { base as Input } from '../input/Input.styles'
+import sizes from '../../sizes'
 
 const colorMap = {
   'blue': {
@@ -137,4 +138,6 @@ const close = props => {
   `
 }
 
-export { base, close, colored, detail, focused, value }
+const size = ({ size }) => css`font-size: ${sizes.fromString(size)};`
+
+export { base, close, colored, detail, focused, value, size }
