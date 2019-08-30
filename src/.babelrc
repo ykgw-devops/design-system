@@ -1,5 +1,7 @@
 {
   "plugins": [
+    // necessary to resolve https://github.com/emotion-js/emotion/issues/1132
+    "transform-inline-environment-variables",
     "emotion"
   ]
 }
