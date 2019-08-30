@@ -120,15 +120,16 @@ const activeItem = css`
 const grouped = css`
   ${item};
   margin: 0;
-  padding: 0.75em 0.5em;
+  padding: 0.5em 0.4em;
   text-indent: 0.25em;
   cursor: inherit;
 
-  background: ${lightGrey};
-  color: ${carbon};
+  font-size: 0.9em;
+  font-weight: 600;
+  color: ${tint(0.8, carbon)};
 
   &:hover {
-    background: ${lightGrey};
+    background: none;
   }
 `
 
