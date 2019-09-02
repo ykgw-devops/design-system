@@ -2,13 +2,13 @@
   "name": "@waylay/react-components",
   "version": "2.3.2",
   "main": "dist/components.js",
-  "module": "src/index.js",
   "source": "src/index.js",
   "license": "MIT",
   "scripts": {
     "dev": "docz dev",
     "clean": "rm -rf .cache .docz dist",
     "build": "run-p build:*",
+    "watch": "parcel watch src/index.js -o components.js --no-minify",
     "build:docs": "docz build",
     "build:components": "parcel build src/index.js -o components.js --detailed-report",
     "version": "npm run build && git add -A dist/"
@@ -21,7 +21,7 @@
     "docz": "^1.2.0",
     "docz-theme-default": "^1.2.0",
     "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.11.0",
+    "parcel-bundler": "^1.12.3",
     "standard": "^12.0.1"
   },
   "dependencies": {
@@ -41,5 +41,9 @@
   "publishConfig": {
     "registry": "https://npm.waylay.io/"
   },
-  "browserslist": ">= 0.25%"
+  "browserslist": [
+    ">0.25%",
+    "not ie 11",
+    "not op_mini all"
+  ]
 }
