@@ -9,6 +9,7 @@
     "dev:components": "webpack --config webpack.dev.js --watch",
     "clean": "rm -rf .cache .docz dist",
     "lint": "standard | snazzy",
+    "test": "yarn run lint",
     "build": "run-p build:*",
     "watch": "parcel watch src/index.js -o components.js --no-minify",
     "build:docs": "docz build",

@@ -16,7 +16,7 @@ function asButton (props) {
 
   const rest = omitBy(props, isBoolean)
   const styles = getStyle(props)
-  debugger
+
   return (
     <button disabled={disabled} {...rest} css={styles}>
       {children}
