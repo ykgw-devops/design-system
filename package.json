@@ -11,7 +11,6 @@
     "lint": "standard | snazzy",
     "test": "yarn run lint",
     "build": "run-p build:*",
-    "watch": "parcel watch src/index.js -o components.js --no-minify",
     "build:docs": "docz build",
     "build:components": "webpack --config webpack.prod.js",
     "version": "npm run build && git add -A dist/"
