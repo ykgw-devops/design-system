@@ -2,28 +2,26 @@ import { tint, shade } from 'polished'
 
 import { css } from '@emotion/core'
 import { clearSky, tangerine, watermelon, leaf, concrete, carbon } from '../../Colors'
-import { base as Icon } from '../icon/Style'
-import { base as Input } from '../input/Input.styles'
 import sizes from '../../sizes'
 
 const colorMap = {
-  'blue': {
+  blue: {
     color: clearSky,
     font: '#fff'
   },
-  'orange': {
+  orange: {
     color: tangerine,
     font: '#fff'
   },
-  'red': {
+  red: {
     color: watermelon,
     font: '#fff'
   },
-  'green': {
+  green: {
     color: leaf,
     font: '#fff'
   },
-  'default': {
+  default: {
     color: concrete,
     font: carbon
   }
@@ -45,7 +43,7 @@ const child = css`
 // if it is a named label we should apply some negative margin
 const value = props => css`
   ${child};
-  ${props.name && `margin-left: -0.5em;`}
+  ${props.name && 'margin-left: -0.5em;'}
 `
 
 // this is the detaild child for named labels

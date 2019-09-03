@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+
 import { card, title, hex } from './Card.styles.jsx'
 import Segment from '../segment/Segment'
 

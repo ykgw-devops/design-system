@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 import { isEmpty, isFunction, omit, isNil } from 'lodash'
@@ -87,8 +86,7 @@ class TreeItem extends Component {
           {content || title}
         </div>
         {items &&
-          <Tree css={childrenStyle} items={items} onItemClick={onClick} />
-        }
+          <Tree css={childrenStyle} items={items} onItemClick={onClick} />}
       </div>
     )
   }

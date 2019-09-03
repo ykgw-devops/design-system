@@ -1,6 +1,6 @@
-/** @jsx jsx */
+
 import PropTypes from 'prop-types'
-import { jsx } from '@emotion/core'
+
 import { item, disabled, activeItem } from './Dropdown.styles.jsx'
 
 const DropdownItem = (props) => {

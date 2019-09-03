@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+
 import PropTypes from 'prop-types'
 import { setDisplayName } from 'recompose'
 import { omitBy, isBoolean } from 'lodash'
@@ -16,8 +15,10 @@ function asButton (props) {
   const { children, disabled } = props
 
   const rest = omitBy(props, isBoolean)
+  const styles = getStyle(props)
+  debugger
   return (
-    <button disabled={disabled} {...rest} css={getStyle(props)}>
+    <button disabled={disabled} {...rest} css={styles}>
       {children}
     </button>
   )

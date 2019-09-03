@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+
 import setDisplayName from 'recompose/setDisplayName'
 import PropTypes from 'prop-types'
 

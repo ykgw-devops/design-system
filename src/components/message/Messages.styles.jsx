@@ -3,9 +3,9 @@ import { concrete, watermelon, tangerine, clearSky, ink } from '../../Colors'
 import { tint } from 'polished'
 
 const COLOR_MAP = {
-  'danger': watermelon,
-  'warning': tangerine,
-  'info': clearSky
+  danger: watermelon,
+  warning: tangerine,
+  info: clearSky
 }
 
 const base = props => {

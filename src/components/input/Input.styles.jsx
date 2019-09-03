@@ -2,7 +2,6 @@ import { darken } from 'polished'
 
 import { css } from '@emotion/core'
 import { carbon, concrete } from '../../Colors'
-import { base as Icon } from '../icon/Style'
 
 const base = css`
   display: inline-flex;

@@ -1,7 +1,7 @@
-/** @jsx jsx */
+
 import { omit } from 'lodash'
 import { base, item, active as activeStyle } from './List.styles.jsx'
-import { jsx } from '@emotion/core'
+
 import { setDisplayName } from 'recompose'
 
 const List = (props) => (

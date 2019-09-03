@@ -1,10 +1,10 @@
-/** @jsx jsx */
+
 import React from 'react'
 import { map, groupBy } from 'lodash'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
-import { jsx } from '@emotion/core'
+
 import { base, fluid, compact, menuWrapper, selectedItem as selectedItemStyle, grouped as groupedStyle, selected as selectedStyle } from './Dropdown.styles.jsx'
 import DropdownItem from './Dropdown-item'
 
@@ -54,31 +54,32 @@ const SelectedItem = ({ content, text, placeholder, toggleMenu }) => {
 
 const Group = ({ options, name, getItemProps, selectedItem, toggleMenu }) => {
   return (
-    <React.Fragment>
+    <>
       {
         name !== 'undefined' &&
-        <span css={groupedStyle}>{name}</span>
+          <span css={groupedStyle}>{name}</span>
       }
-      {<div>
-        {options.map(option => {
-          const isActive = selectedItem
-            ? itemToString(selectedItem) === itemToString(option)
-            : false
+      {
+        <div>
+          {options.map(option => {
+            const isActive = selectedItem
+              ? itemToString(selectedItem) === itemToString(option)
+              : false
 
-          return (
-            <Option
-              key={itemToString(option)}
-              active={isActive}
-              option={option}
-              getItemProps={getItemProps}
-              selectedItem={selectedItem}
-              toggleMenu={toggleMenu}
-            />
-          )
-        })}
-      </div>
+            return (
+              <Option
+                key={itemToString(option)}
+                active={isActive}
+                option={option}
+                getItemProps={getItemProps}
+                selectedItem={selectedItem}
+                toggleMenu={toggleMenu}
+              />
+            )
+          })}
+        </div>
       }
-    </React.Fragment>
+    </>
   )
 }
 

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+
 import { base } from './Segment.styles.jsx'
 
 const Segment = props => {

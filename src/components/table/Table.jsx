@@ -1,9 +1,7 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { chain, omit, upperFirst } from 'lodash'
+import { flatMap, uniq, omit, upperFirst } from 'lodash'
 
 import { base, fixed } from './Table.styles.jsx'
 
@@ -31,10 +29,7 @@ const Table = props => {
 
 const parseHeaders = ({ headers, rows }) => {
   if (headers) return headers
-  return chain(rows)
-    .flatMap(Object.keys)
-    .uniq()
-    .value()
+  return uniq(flatMap(rows, Object.keys))
 }
 
 const renderHeaders = (headers = []) => (

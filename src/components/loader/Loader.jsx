@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/core'
 import PropTypes from 'prop-types'
 import { clearSky } from '../../Colors'
 import { rotation } from './Loader.styles'

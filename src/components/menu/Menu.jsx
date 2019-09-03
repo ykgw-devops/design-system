@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+
 import { setDisplayName } from 'recompose'
 
 import { base, header, list, listItem } from './Menu.styles.jsx'

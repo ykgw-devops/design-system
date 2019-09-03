@@ -1,4 +1,4 @@
-/** @jsx jsx */
+
 import { css } from '@emotion/core'
 import { carbon, concrete, clearSky } from '../../Colors'
 import { resetAnchor } from '../../Shared'

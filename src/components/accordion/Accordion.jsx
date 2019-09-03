@@ -1,6 +1,6 @@
-/** @jsx jsx */
+
 import React, { Component } from 'react'
-import { jsx } from '@emotion/core'
+
 import { setDisplayName } from 'recompose'
 import PropTypes from 'prop-types'
 import { map, isEmpty, get, omit } from 'lodash'
@@ -58,8 +58,7 @@ class Accordion extends Component {
       <div css={getStyle(this.props)}>
         {isEmpty(items)
           ? React.Children.map(children, child => ({ ...child, props: { ...child.props, removable } }))
-          : map(items, (item, index) => (<AccordionItem key={index} {...item} index={index} removable={removable} onDelete={this.handleDelete.bind(this)} onClick={this.handleClick.bind(this)} />))
-        }
+          : map(items, (item, index) => (<AccordionItem key={index} {...item} index={index} removable={removable} onDelete={this.handleDelete.bind(this)} onClick={this.handleClick.bind(this)} />))}
       </div>
     )
   }

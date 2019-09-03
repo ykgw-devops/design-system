@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -15,8 +14,7 @@ const Label = (props) => (
     {props.name &&
       <div css={detail(props)}>
         {props.name}
-      </div>
-    }
+      </div>}
     <div css={value(props)}>
       {props.children}
       {props.removable && <Close css={close(props)} onClick={props.onClose} />}
