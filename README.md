@@ -1,7 +1,28 @@
 # Design System
 
-Trying out some stuff for a Waylay [design system](https://airbnb.design/building-a-visual-language/).
+The Waylay [design system](https://airbnb.design/building-a-visual-language/).
 
-## Run
+## Usage
+
+`yarn add react react-dom @waylay/react-components`
+
+## Run documentation
 
 `yarn run dev`
+
+## Development
+
+You can link this package to any other React project by running
+
+```bash
+# create dev build with sourcemaps
+yarn run dev:components
+# make this package linkable
+yarn link
+# cd to <you-project> folder
+cd <my-project> && yarn link @waylay/react-components
+```
+
+## Production
+
+`yarn run build:components`
