@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import { base, danger, info, warning, title as titleStyle } from './Messages.styles.jsx'
 import PropTypes from 'prop-types'
 import { omit } from 'lodash'

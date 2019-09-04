@@ -1,5 +1,5 @@
-import React from 'react'
-
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import { base } from './Field.styles'
 
 const Field = (props) => (

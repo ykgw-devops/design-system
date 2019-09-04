@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React, { Component } from 'react'
-
 import { setDisplayName } from 'recompose'
 import PropTypes from 'prop-types'
 import { map, isEmpty, get, omit } from 'lodash'

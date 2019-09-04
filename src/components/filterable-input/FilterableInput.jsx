@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+import { Component } from 'react'
 import update from 'immutability-helper'
 import { debounce, flatMap, includes, get, omit, reject, upperFirst } from 'lodash'
 import styled from '@emotion/styled'

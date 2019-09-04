@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { includes, times } from 'lodash'
 

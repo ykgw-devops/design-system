@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 import { isEmpty, isFunction, omit, isNil } from 'lodash'
 

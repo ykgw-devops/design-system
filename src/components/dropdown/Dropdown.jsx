@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
 import { map, groupBy } from 'lodash'
 import PropTypes from 'prop-types'

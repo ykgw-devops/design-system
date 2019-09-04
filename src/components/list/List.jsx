@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import { omit } from 'lodash'
 import { base, item, active as activeStyle } from './List.styles.jsx'
 
