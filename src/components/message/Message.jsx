@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { base, danger, info, warning, title as titleStyle } from './Messages.styles.jsx'
 import PropTypes from 'prop-types'

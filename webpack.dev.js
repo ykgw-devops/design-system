@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   entry: './src/index.js',
   mode: 'development',
-  devtool: 'eval-source-map', // not good for production though
+  devtool: 'source-map', // not good for production though
   output: {
     filename: 'components.js',
     path: path.resolve(__dirname, 'dist'),

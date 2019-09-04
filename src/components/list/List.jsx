@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { omit } from 'lodash'
 import { base, item, active as activeStyle } from './List.styles.jsx'
 

@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { base } from './Segment.styles.jsx'
 
 const Segment = props => {

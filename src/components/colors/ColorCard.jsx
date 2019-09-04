@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { card, title, hex } from './Card.styles.jsx'
 import Segment from '../segment/Segment'
 
