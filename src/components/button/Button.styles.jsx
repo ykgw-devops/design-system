@@ -47,7 +47,7 @@ const outline = ({ kind }) => {
   const COLOR = colors.fromSemantics(kind)
 
   const borderColor = kind === 'secondary'
-    ? shade(0.8, COLOR)
+    ? shade(0.2, COLOR)
     : COLOR
 
   const fontColor = kind === 'secondary'

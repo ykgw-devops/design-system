@@ -49,7 +49,7 @@ const value = props => css`
 // this is the detaild child for named labels
 const detail = (props = {}) => {
   const { color } = getColors(props.color)
-  let bgColor = shade(0.85, color)
+  let bgColor = shade(0.25, color)
 
   if (props.focused) {
     bgColor = clearSky
@@ -76,12 +76,12 @@ const colored = (props) => {
   const { color, font } = getColors(props.color)
 
   return css`
-    background: ${props.outline ? tint(0.2, color) : color};
+    background: ${props.outline ? tint(0.8, color) : color};
     color: ${font};
 
     ${props.outline && `
       box-shadow: inset 0 0 0 1px ${color};
-      color: ${shade(0.8, color)};
+      color: ${shade(0.1, color)};
     `}
   `
 }
@@ -117,20 +117,21 @@ const close = props => {
     border-radius: 100%;
     cursor: pointer;
     user-select: none;
+    color: ${carbon};
 
     transition: background ease 0.1s;
 
-    background: ${shade(0.9, color)};
+    background: ${shade(0.1, color)};
 
     &:hover {
-      background: ${shade(0.8, color)};
+      background: ${shade(0.2, color)};
     }
 
     ${props.focused && `
-      background: ${shade(0.9, concrete)};
+      background: ${shade(0.1, concrete)};
 
       &:hover {
-        background: ${shade(0.8, concrete)};
+        background: ${shade(0.2, concrete)};
       }
     `}
   `

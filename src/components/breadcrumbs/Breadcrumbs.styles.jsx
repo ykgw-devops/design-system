@@ -21,7 +21,7 @@ const item = css`
   }
 
   :after {
-    color: ${shade(0.85, concrete)};
+    color: ${shade(0.15, concrete)};
     font-size: 1.2rem;
     content: '›';
     padding: 0 8px;

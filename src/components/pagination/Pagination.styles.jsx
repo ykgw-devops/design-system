@@ -4,7 +4,7 @@ import { shade, tint } from 'polished'
 import { resetAnchor } from '../../Shared'
 
 const lightGrey = tint(0.5, antiFlashWhite)
-const darkerGrey = shade(0.75, antiFlashWhite)
+const darkerGrey = shade(0.25, antiFlashWhite)
 
 const base = css`
   color: ${carbon};
