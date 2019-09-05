@@ -1,4 +1,4 @@
-import { darken, tint, lighten, shade } from 'polished'
+import { darken, tint, lighten, shade, math } from 'polished'
 
 import colors, { carbon, clearSky } from '../../Colors'
 import { fontFamily } from '../../Typography'
@@ -12,10 +12,9 @@ const base = css`
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
   cursor: pointer;
-  display: inline-block;
   font-family: ${fontFamily};
   font-weight: 400;
-  padding: 0.825em 1.2em;
+  padding: 0.75em 1.2em;
   text-align: center;
   text-decoration: none;
   transition: background 80ms ease-in;
@@ -57,7 +56,6 @@ const outline = ({ kind }) => {
 
   return css`{
     border: solid 1px ${borderColor};
-    padding: 0.760em 1.25em;
     background: none;
     box-shadow: none;
     color: ${fontColor};
@@ -93,7 +91,7 @@ const disabled = ({ kind }) => {
 
 const size = ({ size }) => {
   return css`
-    font-size: ${sizes[size]};
+    font-size: ${math(sizes[size] + '* 0.9')};
   `
 }
 
