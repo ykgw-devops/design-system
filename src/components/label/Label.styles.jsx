@@ -81,7 +81,7 @@ const colored = (props) => {
 
     ${props.outline && `
       box-shadow: inset 0 0 0 1px ${color};
-      color: ${carbon};
+      color: ${shade(0.8, color)};
     `}
   `
 }
