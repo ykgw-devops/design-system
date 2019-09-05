@@ -70,7 +70,7 @@ const outline = ({ kind }) => {
     }
 
     &:hover {
-      background-color: ${tint(0.1, COLOR)};
+      background-color: ${tint(0.8, COLOR)};
     }
   }`
 }
