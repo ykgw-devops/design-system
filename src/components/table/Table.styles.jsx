@@ -25,10 +25,6 @@ const base = css`
     }
   }
 
-  tbody tr:first-child > td {
-    padding-top: 15px;
-  }
-
   tbody tr:last-child > td {
     border-bottom: none;
   }
