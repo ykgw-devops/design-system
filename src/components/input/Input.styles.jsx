@@ -6,7 +6,6 @@ import { carbon, concrete } from '../../Colors'
 const base = css`
   display: inline-flex;
   align-items: center;
-
   border-bottom: solid 1px ${concrete};
   font-size: 1rem;
   margin: 5px 0;
@@ -58,4 +57,8 @@ const rightAdornments = css`
   }
 `
 
-export { base, input, leftAdornments, rightAdornments }
+const fluidStyle = css`
+  width: 100%;
+`
+
+export { base, input, leftAdornments, rightAdornments, fluidStyle }
