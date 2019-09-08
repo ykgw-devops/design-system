@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import { setDisplayName } from 'recompose'
 
 import { base, header, list, listItem } from './Menu.styles.jsx'
@@ -18,11 +19,7 @@ const MenuList = (props) => (
   <nav css={list}>{props.children}</nav>
 )
 
-const ListItem = (props) => (
-  <div css={listItem(props)}>
-    {props.children}
-  </div>
-)
+const ListItem = styled.div(listItem)
 
 Menu.Header = setDisplayName('Menu.Header')(MenuHeader)
 Menu.List = setDisplayName('Menu.List')(MenuList)

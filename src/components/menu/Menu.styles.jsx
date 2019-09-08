@@ -17,6 +17,7 @@ const header = css`
 
 const listItem = props => css`
   padding: 0.35em 0.75em;
+  display: block;
 
   &:hover {
     cursor: pointer;
@@ -25,11 +26,6 @@ const listItem = props => css`
   }
 
   ${props.active && activeListItem}
-
-  a {
-    ${resetAnchor};
-    display: block;
-  }
 `
 
 const activeListItem = css`
