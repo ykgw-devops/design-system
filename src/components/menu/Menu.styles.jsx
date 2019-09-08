@@ -18,6 +18,7 @@ const header = css`
 const listItem = props => css`
   padding: 0.35em 0.75em;
   display: block;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
