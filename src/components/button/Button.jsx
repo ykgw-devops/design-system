@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import { setDisplayName } from 'recompose'
@@ -8,22 +7,14 @@ import Group from './Group'
 
 import { base, kind, outline, pill, disabled, size } from './Button.styles'
 
-const Button = (props) => {
-  const Button = styled.button([
-    base,
-    kind(props),
-    size(props),
-    props.outline && outline(props),
-    props.pill && pill,
-    props.disabled && disabled(props)
-  ])
-
-  return (
-    <Button {...props}>
-      {props.children}
-    </Button>
-  )
-}
+const Button = styled.button(props => ([
+  base,
+  kind(props),
+  size(props),
+  props.outline && outline(props),
+  props.pill && pill,
+  props.disabled && disabled(props)
+]))
 
 Button.Group = setDisplayName('Button.Group')(Group)
 
