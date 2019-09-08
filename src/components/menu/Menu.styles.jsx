@@ -18,7 +18,9 @@ const header = css`
 const listItem = props => css`
   padding: 0.35em 0.75em;
   display: block;
-  text-decoration: none;
+
+  /* Menu Item can be rendered as an <a> tag */
+  ${resetAnchor};
 
   &:hover {
     cursor: pointer;
@@ -26,7 +28,11 @@ const listItem = props => css`
     background: ${concrete};
   }
 
-  ${props.active && activeListItem}
+  /* Compatibility with React-Router active className */
+  &.active {
+    ${activeListItem};
+  }
+  ${props.active && activeListItem};
 `
 
 const activeListItem = css`
