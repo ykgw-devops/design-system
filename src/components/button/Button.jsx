@@ -1,50 +1,28 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import { setDisplayName } from 'recompose'
-import { omitBy, isBoolean } from 'lodash'
 
 import Group from './Group'
 
 import { base, kind, outline, pill, disabled, size } from './Button.styles'
 
 const Button = (props) => {
-  return props.href ? asAnchor(props) : asButton(props)
-}
-
-function asButton (props) {
-  const { children, disabled } = props
-
-  const rest = omitBy(props, isBoolean)
-  const styles = getStyle(props)
-
-  return (
-    <button disabled={disabled} {...rest} css={styles}>
-      {children}
-    </button>
-  )
-}
-
-function asAnchor (props) {
-  const { children, disabled, href } = props
-
-  const rest = omitBy(props, isBoolean)
-  return (
-    <a href={disabled ? undefined : href} disabled={disabled} {...rest} css={getStyle(props)}>
-      {children}
-    </a>
-  )
-}
-
-function getStyle (props) {
-  return [
+  const Button = styled.button([
     base,
     kind(props),
     size(props),
     props.outline && outline(props),
     props.pill && pill,
     props.disabled && disabled(props)
-  ]
+  ])
+
+  return (
+    <Button {...props}>
+      {props.children}
+    </Button>
+  )
 }
 
 Button.Group = setDisplayName('Button.Group')(Group)
