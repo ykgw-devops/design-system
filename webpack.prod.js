@@ -4,7 +4,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
   entry: './src/index.js',
   mode: 'production',
-  devtool: 'source-map', // not good for production though
   output: {
     filename: 'components.js',
     path: path.resolve(__dirname, 'dist'),
