@@ -1,19 +1,29 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-import { base, colored } from './Style'
+import { base, colored, circular, filled } from './Style'
 
 const Icon = (props) => {
+  const I = styled.i([
+    base,
+    colored(props),
+    props.circular && circular(props),
+    (props.circular && props.filled) && filled(props)
+  ])
+
   return (
-    <i {...props} css={[base, colored(props)]} className={`material-icons ${props.className}`}>
+    <I className='material-icons'>
       {props.name}
-    </i>
+    </I>
   )
 }
 
 Icon.propTypes = {
-  name: PropTypes.string
+  name: PropTypes.string,
+  circular: PropTypes.bool,
+  filled: PropTypes.bool
 }
 
 export default Icon

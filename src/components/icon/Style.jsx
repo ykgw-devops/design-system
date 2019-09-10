@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import colors from '../../Colors'
+import colors, { carbon } from '../../Colors'
 
 const base = css`
   font-size: 1em;
@@ -8,8 +8,27 @@ const base = css`
   user-select: none;
 `
 
+function colorFromString (color) {
+  return colors.fromString(color) || color
+}
+
 const colored = props => css`
-  color: ${colors.fromString(props.color)};
+  color: ${colorFromString(props.color)};
 `
 
-export { base, colored }
+const circular = props => css`
+  border: solid 1px ${colorFromString(props.color)};
+  border-radius: 100%;
+
+  padding: 0.25em;
+`
+
+const filled = props => {
+  const color = colorFromString(props.color || carbon)
+  return css`
+    color: white;
+    background: ${color};
+  `
+}
+
+export { base, colored, circular, filled }

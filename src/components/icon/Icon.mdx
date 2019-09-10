@@ -5,7 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz'
 import Icon from './Icon'
-
+import { concrete } from '../../Colors'
 
 # Icon
 
@@ -15,10 +15,29 @@ please refer to their documentation on [Using the icons in HTML](https://google.
 ## Basic usage
 
 <Playground>
+  <Icon name='star' color={concrete} />
   <Icon name='star' />
   <Icon name='block' color='red' />
   <Icon name='done' color='green' />
   <Icon name='help_outline' color='blue' />
+</Playground>
+
+## Circular
+<Playground>
+  <Icon circular name='star' color={concrete} />
+  <Icon circular name='star' />
+  <Icon circular name='block' color='red' />
+  <Icon circular name='done' color='green' />
+  <Icon circular name='help_outline' color='blue' />
+</Playground>
+
+## Circular & Filled
+<Playground>
+  <Icon filled circular name='star' color={concrete} />
+  <Icon filled circular name='star' />
+  <Icon filled circular name='block' color='red' />
+  <Icon filled circular name='done' color='green' />
+  <Icon filled circular name='help_outline' color='blue' />
 </Playground>
 
 ## Properties
