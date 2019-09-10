@@ -1,4 +1,4 @@
-import { darken, tint, lighten, shade, math } from 'polished'
+import { darken, tint, math } from 'polished'
 
 import colors, { carbon, clearSky } from '../../Colors'
 import { fontFamily } from '../../Typography'
@@ -8,8 +8,7 @@ import sizes from '../../sizes'
 const base = css`
   background-color: ${clearSky};
   border-radius: 4px;
-  border: none;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+  border: solid 1px ${darken(0.05, clearSky)};
   color: #fff;
   cursor: pointer;
   font-family: ${fontFamily};
@@ -30,61 +29,59 @@ const base = css`
   }
 `
 
-const kind = ({ kind, outline }) => css`
-  background-color: ${colors.fromSemantics(kind)};
-  color: ${kind === 'secondary' ? carbon : 'white'};
+const kind = ({ kind, outline }) => {
+  const color = colors.fromSemantics(kind)
 
-  &:hover {
-    background-color: ${darken(0.03, colors.fromSemantics(kind))};
-  }
-`
+  return css`
+    background-color: ${color};
+    color: ${kind === 'secondary' ? carbon : 'white'};
+    border-color:${darken(0.05, color)};
+
+    &:hover {
+      background-color: ${darken(0.05, color)};
+    }
+  `
+}
 
 const pill = css`
   border-radius: 2em;
 `
 
 const outline = ({ kind }) => {
-  const COLOR = colors.fromSemantics(kind)
-
-  const borderColor = kind === 'secondary'
-    ? shade(0.2, COLOR)
-    : COLOR
-
-  const fontColor = kind === 'secondary'
+  const color = kind === 'secondary'
     ? carbon
-    : COLOR
+    : colors.fromSemantics(kind)
 
   return css`{
-    border: solid 1px ${borderColor};
+    border: solid 1px ${tint(0.3, color)};
     background: none;
     box-shadow: none;
-    color: ${fontColor};
+    color: ${color};
 
     &[disabled]:hover {
       background: none;
     }
 
-    &[disabled] {
-      color: ${lighten(0.15, COLOR)};
-      border-color: ${lighten(0.15, COLOR)};
-    }
-
     &:hover {
-      background-color: ${tint(0.8, COLOR)};
+      background-color: ${tint(0.8, color)};
     }
   }`
 }
 
 const disabled = ({ kind }) => {
   const color = colors.fromSemantics(kind)
+  const bgColor = tint(0.9, color)
+  const fontColor = tint(0.5, color)
 
   return css`
-    background-color: ${lighten(0.3, color)};
-    box-shadow: none;
+    color: ${fontColor};
+    border-color: ${fontColor};
+
+    background-color: ${bgColor};
     cursor: default;
 
     &:hover {
-      background: ${lighten(0.3, color)};
+      background: ${bgColor};
     }
   `
 }
