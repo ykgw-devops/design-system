@@ -46,7 +46,7 @@ const EntryContent = styled.div`
     border: 2px solid white;
     border-radius: 6px;
     left: -0.5em;
-    top: 1.5em;
+    top: 1em;
   }
 `
 

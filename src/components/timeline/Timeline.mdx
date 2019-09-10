@@ -6,10 +6,11 @@ menu: Components
 import { Playground, Props } from 'docz'
 import Timeline from './Timeline'
 import Label from '../label/Label'
+import Icon from '../icon/Icon'
 
 # Segment
 
-## Basic usage
+## Basic Usage
 
 <Playground>
   <Timeline>
@@ -40,15 +41,45 @@ import Label from '../label/Label'
     </Timeline.EntryGroup>
     <Timeline.Header>
       <Label>Yesterday</Label>
-      <Timeline.EntryGroup>
-        <Timeline.Entry>
-          <Timeline.Title>
-            <Label focused color='blue' outline name='🔆 Weekend'>
-              Did nothing
-            </Label>
-          </Timeline.Title>
-        </Timeline.Entry>
-      </Timeline.EntryGroup>
+    </Timeline.Header>
+    <Timeline.EntryGroup>
+      <Timeline.Entry>
+        <Timeline.Title>
+          <Label focused color='blue' outline name='🔆 Weekend'>
+            Did nothing
+          </Label>
+        </Timeline.Title>
+      </Timeline.Entry>
+    </Timeline.EntryGroup>
+  </Timeline>
+</Playground>
+
+## Git Commit Log
+
+<Playground>
+  <Timeline>
+    <Timeline.Header>
+      <Icon name='code' circular filled /> <strong>Lorenzovds</strong> added 6 commits 18 days ago
+    </Timeline.Header>
+    <Timeline.EntryGroup>
+      <Timeline.Entry>
+        <Timeline.Title>
+          <code>chore: cleanup validation a bit</code>
+        </Timeline.Title>
+      </Timeline.Entry>
+      <Timeline.Entry>
+        <Timeline.Title>
+          <code>fix: fix mongo storage and cyclic dependency</code>
+        </Timeline.Title>
+      </Timeline.Entry>
+      <Timeline.Entry>
+        <Timeline.Title>
+          <code>fix: fix wrong error log and data reporting parsing</code>
+        </Timeline.Title>
+      </Timeline.Entry>
+    </Timeline.EntryGroup>
+    <Timeline.Header>
+      <Icon name='remove_red_eye' circular filled /> <strong>Lorenzovds</strong> requested a review from <strong>gillesdemey</strong> 3 hours ago
     </Timeline.Header>
   </Timeline>
 </Playground>
