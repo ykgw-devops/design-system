@@ -13,7 +13,13 @@ import { concrete } from '../../Colors'
 
 const Timeline = styled.div``
 
-const Header = styled.div``
+const Header = styled.div`
+  margin-left: 0.25em;
+
+  > span {
+    vertical-align: middle;
+  }
+`
 
 const Entry = (props) => (
   <EntryRow>
@@ -51,6 +57,7 @@ const EntryContent = styled.div`
 `
 
 const Title = styled.div``
+
 const Description = styled.div`
   margin-top: 0.5em;
   padding: 0.5em 1em;
