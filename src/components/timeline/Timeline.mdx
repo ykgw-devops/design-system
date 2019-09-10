@@ -16,35 +16,39 @@ import Label from '../label/Label'
     <Timeline.Header>
       <Label>Today</Label>
     </Timeline.Header>
-    <Timeline.Entry>
-      <Timeline.Title>
-        <Label focused color='blue' outline name='08:15'>
-          Wake up
-        </Label>
-      </Timeline.Title>
-      <Timeline.Description>
-        <div>This is my morning routine, I wake up and have a ☕️.</div>
-      </Timeline.Description>
-    </Timeline.Entry>
-    <Timeline.Entry>
-      <Timeline.Title>
-        <Label focused color='blue' outline name='09:15'>
-          Start work
-        </Label>
-      </Timeline.Title>
-      <Timeline.Description>
-        <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Waylay&t=&z=17&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
-      </Timeline.Description>
-    </Timeline.Entry>
-    <Timeline.Header>
-      <Label>Yesterday</Label>
+    <Timeline.EntryGroup>
       <Timeline.Entry>
         <Timeline.Title>
-          <Label focused color='blue' outline name='🔆 Weekend'>
-            Did nothing
+          <Label focused color='blue' outline name='08:15'>
+            Wake up
           </Label>
         </Timeline.Title>
+        <Timeline.Description>
+          <div>This is my morning routine, I wake up and have a ☕️.</div>
+        </Timeline.Description>
       </Timeline.Entry>
+      <Timeline.Entry>
+        <Timeline.Title>
+          <Label focused color='blue' outline name='09:15'>
+            Start work
+          </Label>
+        </Timeline.Title>
+        <Timeline.Description>
+          <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Waylay&t=&z=17&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
+        </Timeline.Description>
+      </Timeline.Entry>
+    </Timeline.EntryGroup>
+    <Timeline.Header>
+      <Label>Yesterday</Label>
+      <Timeline.EntryGroup>
+        <Timeline.Entry>
+          <Timeline.Title>
+            <Label focused color='blue' outline name='🔆 Weekend'>
+              Did nothing
+            </Label>
+          </Timeline.Title>
+        </Timeline.Entry>
+      </Timeline.EntryGroup>
     </Timeline.Header>
   </Timeline>
 </Playground>

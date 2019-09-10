@@ -30,13 +30,9 @@ const EntryRow = styled.div`
 
 const EntryContent = styled.div`
   border-left: solid 1px ${concrete};
-  padding: 1em;
+  padding: 0.5em 1em;
   margin-left: 1em;
   position: relative;
-
-  &:first-of-type {
-    padding-top: 1em;
-  }
 
   &:before {
     position: absolute;
@@ -62,7 +58,12 @@ const Description = styled.div`
   border: solid 1px ${concrete};
 `
 
+const EntryGroup = styled.div`
+  margin: 0.5em 0;
+`
+
 Timeline.Header = Header
+Timeline.EntryGroup = EntryGroup
 Timeline.Entry = Entry
 Timeline.Title = Title
 Timeline.Description = Description
