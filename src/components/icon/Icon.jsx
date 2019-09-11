@@ -14,7 +14,7 @@ const Icon = (props) => {
   ])
 
   return (
-    <I className='material-icons'>
+    <I className={`material-icons ${props.className}`}>
       {props.name}
     </I>
   )
