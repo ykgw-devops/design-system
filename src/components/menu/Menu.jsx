@@ -1,24 +1,12 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 import { setDisplayName } from 'recompose'
 
 import { base, header, list, listItem } from './Menu.styles.jsx'
 
-const Menu = (props) => (
-  <nav css={base}>
-    {props.children}
-  </nav>
-)
-
-const MenuHeader = (props) => (
-  <header css={header}>{props.children}</header>
-)
-
-const MenuList = (props) => (
-  <nav css={list}>{props.children}</nav>
-)
-
+const Menu = styled.nav(base)
+const MenuHeader = styled.header(header)
+const MenuList = styled.nav(list)
 const ListItem = styled.div(listItem)
 
 Menu.Header = setDisplayName('Menu.Header')(MenuHeader)

@@ -22,6 +22,10 @@ const listItem = props => css`
   /* Menu Item can be rendered as an <a> tag */
   ${resetAnchor};
 
+  span {
+    vertical-align: middle;
+  }
+
   &:hover {
     cursor: pointer;
     border-radius: 0.15em;
