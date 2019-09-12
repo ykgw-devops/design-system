@@ -16,7 +16,7 @@ const base = props => {
   const fontColor = color || ink
 
   return css`
-    background: ${outline ? 'none' : tint(0.15, bgColor)};
+    background: ${outline ? 'none' : tint(0.85, bgColor)};
     display: block;
     border: solid 1px ${bgColor};
     color: ${fontColor};
