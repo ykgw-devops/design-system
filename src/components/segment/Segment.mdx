@@ -5,7 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz'
 import Segment from './Segment'
-
+import Label from '../label/Label'
 
 # Segment
 
@@ -22,4 +22,23 @@ import Segment from './Segment'
       Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </p>
   </Segment>
+</Playground>
+
+## With header and footer
+
+<Playground>
+  <Segment.Group>
+    <Segment.Header>
+      <strong>Brent-T</strong> commented 2 hours ago • edited
+    </Segment.Header>
+    <Segment>
+      <p>Donec ullamcorper nulla non metus auctor fringilla.</p>
+      <p>Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum.</p>
+    </Segment>
+    <Segment.Footer>
+      <Label outline color='blue'>
+        👍 1
+      </Label>
+    </Segment.Footer>
+  </Segment.Group>
 </Playground>

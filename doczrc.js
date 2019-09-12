@@ -3,5 +3,14 @@ export default {
   title: 'Waylay | Component Library',
   description: 'Waylay component library',
   indexHtml: 'index.html',
-  hashRouter: true
+  hashRouter: true,
+  modifyBabelRc: babelrc => {
+    return {
+      ...babelrc,
+      presets: [
+        ...babelrc.presets,
+        require.resolve('@emotion/babel-preset-css-prop')
+      ]
+    }
+  }
 }
