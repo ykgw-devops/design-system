@@ -20,6 +20,10 @@ const input = css`
   padding: 0.5em 0em;
   color: ${carbon};
 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   &:focus {
     box-shadow: none;
     outline: none;

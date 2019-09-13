@@ -5,12 +5,12 @@ import { filter, map } from 'lodash'
 
 import { base, input, fluidStyle, leftAdornments as leftStyle, rightAdornments as rightStyle } from './Input.styles'
 
-const Input = ({ adornments = [], fluid = false, ...rest }) => {
+const Input = ({ adornments = [], fluid = false, className, ...rest }) => {
   const leftAdornments = filter(adornments, { position: 'left' })
   const rightAdornments = filter(adornments, { position: 'right' })
 
   return (
-    <div css={[base, fluid && fluidStyle]}>
+    <div css={[base, fluid && fluidStyle]} className={className}>
       {getAdornments(leftAdornments, leftStyle)}
       <input {...rest} css={input} />
       {getAdornments(rightAdornments, rightStyle)}
