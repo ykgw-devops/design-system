@@ -5,10 +5,22 @@ import { isNil } from 'lodash'
 
 import { concrete } from '../../Colors'
 
-const Segment = styled.section`
+const firstItem = css`
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: none;
+`
+
+const lastItem = css`
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top: none;
+`
+
+const Segment = styled.div`
   background: #FFFFFF;
   border: 1px solid ${concrete};
-  box-shadow: 0 7px 12px 0 rgba(149,149,149,0.20);
+  box-shadow: rgba(37, 11, 54, 0.04) 0px 2px 0px;
   border-radius: 4px;
 
   padding: ${props => isNil(props.padding) ? '1em' : props.padding};
@@ -23,37 +35,6 @@ const Segment = styled.section`
   }
 `
 
-const firstItem = css`
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom: none;
-`
-
-const lastItem = css`
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-top: none;
-`
-
-const Group = styled.div`
-  background: #FFFFFF;
-  box-shadow: 0 7px 12px 0 rgba(149,149,149,0.20);
-  border-radius: 4px;
-
-  > ${Segment} {
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  > ${Segment}:first-of-type {
-    ${firstItem};
-  }
-
-  > ${Segment}:last-of-type {
-    ${lastItem};
-  }
-`
-
 const Header = styled(Segment)`
   ${firstItem};
   background: ${tint(0.6, concrete)};
@@ -62,6 +43,25 @@ const Header = styled(Segment)`
 const Footer = styled(Segment)`
   ${lastItem};
   padding: 0.5em;
+`
+
+const Group = styled.div`
+  background: #FFFFFF;
+  box-shadow: rgba(37, 11, 54, 0.04) 0px 2px 0px;
+  border-radius: 4px;
+
+  > div {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  > div:first-of-type {
+    ${firstItem};
+  }
+
+  > div:last-of-type {
+    ${lastItem};
+  }
 `
 
 Segment.Header = Header
