@@ -13,7 +13,7 @@ const base = css`
   cursor: pointer;
   font-family: ${fontFamily};
   font-weight: 400;
-  padding: 0.75em 1.2em;
+  padding: 0.6em 1em;
   text-align: center;
   text-decoration: none;
   transition: background 80ms ease-in;
@@ -88,7 +88,7 @@ const disabled = ({ kind }) => {
 
 const size = ({ size }) => {
   return css`
-    font-size: ${math(sizes[size] + '* 0.9')};
+    font-size: ${math(sizes[size] + ' * 0.9rem')};
   `
 }
 
