@@ -1,17 +1,18 @@
 import { css } from '@emotion/core'
-import { carbon } from '../../Colors.jsx'
+import { readableColor } from 'polished'
+import colors from '../../Colors'
 
 const card = css`
   display: inline-block;
-  height: 250px;
   margin: 5px;
+  padding: 0;
   position: relative;
-  width: 200px;
+  width: 250px;
 `
 
 const base = css`
   background: white;
-  color: ${carbon};
+  color: black;
   left: 0;
   padding: 10px;
   position: absolute;
@@ -21,16 +22,20 @@ const base = css`
 
 const title = color => css`
   ${base};
-  top: 0;
 `
 
-const hex = css`
-  ${base};
-  bottom: 0;
-`
+const colorStrip = (name, weight) => {
+  const hexColor = colors.withWeight(name, weight)
+  return css`
+    border: none;
+    height: 32px;
+    background: ${hexColor};
+    color: ${readableColor(hexColor)};
+  `
+}
 
 export {
   card,
   title,
-  hex
+  colorStrip
 }

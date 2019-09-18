@@ -1,4 +1,4 @@
-import { darken, tint, math } from 'polished'
+import { math, shade } from 'polished'
 
 import colors, { carbon, clearSky } from '../../Colors'
 import { fontFamily } from '../../Typography'
@@ -8,7 +8,7 @@ import sizes from '../../sizes'
 const base = css`
   background-color: ${clearSky};
   border-radius: 4px;
-  border: solid 1px ${darken(0.05, clearSky)};
+  border: solid 1px ${shade(0.1, clearSky)};
   color: #fff;
   cursor: pointer;
   font-family: ${fontFamily};
@@ -20,7 +20,7 @@ const base = css`
   vertical-align: middle;
 
   &:hover {
-    background-color: ${darken(0.05, clearSky)};
+    background-color: ${shade(0.1, clearSky)};
   }
 
   &:focus {
@@ -35,10 +35,10 @@ const kind = ({ kind, outline }) => {
   return css`
     background-color: ${color};
     color: ${kind === 'secondary' ? carbon : 'white'};
-    border-color:${darken(0.05, color)};
+    border-color: ${shade(0.1, color)};
 
     &:hover {
-      background-color: ${darken(0.05, color)};
+      background-color: ${shade(0.1, color)};
     }
   `
 }
@@ -53,7 +53,7 @@ const outline = ({ kind }) => {
     : colors.fromSemantics(kind)
 
   return css`{
-    border: solid 1px ${tint(0.3, color)};
+    border: solid 1px ${colors.withWeight(color, 400)};
     background: none;
     box-shadow: none;
     color: ${color};
@@ -63,19 +63,20 @@ const outline = ({ kind }) => {
     }
 
     &:hover {
-      background-color: ${tint(0.8, color)};
+      background-color: ${colors.withWeight(color, 100)};
     }
   }`
 }
 
 const disabled = ({ kind }) => {
   const color = colors.fromSemantics(kind)
-  const bgColor = tint(0.9, color)
-  const fontColor = tint(0.5, color)
+  const bgColor = colors.withWeight(color, 100)
+  const fontColor = colors.withWeight(color, 200)
+  const borderColor = colors.withWeight(color, 300)
 
   return css`
     color: ${fontColor};
-    border-color: ${fontColor};
+    border-color: ${borderColor};
 
     background-color: ${bgColor};
     cursor: default;

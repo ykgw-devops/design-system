@@ -13,8 +13,6 @@ import ColorCard from './ColorCard'
   {Object.entries(colors)
     .filter(([key, value]) => typeof value === 'string')
     .map(([key, value]) => {
-      return (
-        <ColorCard key={value} name={key} color={value} />
-      )
+      return <ColorCard key={value} name={key} color={value} />
     })}
 </div>

@@ -1,7 +1,7 @@
 import { shade } from 'polished'
 
 import { css } from '@emotion/core'
-import { ink, clearSky, concrete } from '../../Colors.jsx'
+import colors, { ink, clearSky, concrete } from '../../Colors.jsx'
 
 const base = css`
   color: ${ink};
@@ -21,7 +21,7 @@ const item = css`
   }
 
   :after {
-    color: ${shade(0.15, concrete)};
+    color: ${colors.withWeight(concrete, 600)};
     font-size: 1.2rem;
     content: '›';
     padding: 0 8px;

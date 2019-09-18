@@ -1,7 +1,5 @@
-import { darken } from 'polished'
-
 import { css } from '@emotion/core'
-import { carbon, concrete } from '../../Colors'
+import colors, { carbon, concrete } from '../../Colors'
 
 const base = css`
   display: inline-flex;
@@ -30,14 +28,14 @@ const input = css`
   }
 
   &::placeholder {
-    color: ${darken(0.1, concrete)};
+    color: ${colors.withWeight(carbon, 300)};
     font-weight: 300;
   }
 `
 
 const adornments = css`
   font-weight: 300;
-  color: ${darken(0.2, concrete)};
+  color: ${colors.withWeight(carbon, 500)};
 
   /* an icon in the input */
   .i {

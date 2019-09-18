@@ -1,15 +1,14 @@
 import { css } from '@emotion/core'
-import { tint } from 'polished'
-import { antiFlashWhite, carbon, concrete, clearSky, ink } from '../../Colors'
+import colors, { carbon, concrete, clearSky } from '../../Colors'
 import { resetAnchor, ellipsifyText } from '../../Shared'
 
 const contentPadding = '0.25em 0.5em'
 const border = `1px solid ${concrete}`
 
-const lightGrey = tint(0.5, antiFlashWhite)
+const lightGrey = colors.withWeight(concrete, 300)
 
 const base = css`
-  color: ${ink};
+  color: black;
 
   min-width: 14em;
 
@@ -35,7 +34,7 @@ const item = css`
 
   ${ellipsifyText}
 
-  color: ${ink};
+  color: black;
 
   background: none;
   border: none;
@@ -107,7 +106,7 @@ const selected = content => css`
   color: ${content ? 'inherit' : concrete};
 `
 
-const activeBgColor = tint(0.1, clearSky)
+const activeBgColor = colors.withWeight(clearSky, 200)
 const activeItem = css`
   color: ${clearSky};
   background: ${activeBgColor};
@@ -126,7 +125,7 @@ const grouped = css`
 
   font-size: 0.9em;
   font-weight: 600;
-  color: ${tint(0.8, carbon)};
+  color: ${colors.withWeight(carbon, 600)};
 
   &:hover {
     background: none;

@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import colors from '../../Colors'
+import { carbon } from '../../Colors'
 
 const base = css`
   display: block;
@@ -9,7 +9,7 @@ const base = css`
   }
 
   label {
-    color: ${colors.CARBON};
+    color: ${carbon};
   }
 
   &:focus {

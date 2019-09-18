@@ -1,13 +1,14 @@
-const antiFlashWhite = '#EFF2F6'
+import { tint, shade } from 'polished'
+
 const concrete = '#E8E8E8'
 const carbon = '#59595B'
-const ink = '#231F20'
 const clearSky = '#1E90FF'
 const tangerine = '#FF7F50'
 const watermelon = '#EC584B'
-const leaf = '#20bf6b'
+const leaf = '#48BB78'
+const lemon = '#ECC94B'
 
-const map = {
+const stringMap = {
   blue: clearSky,
   grey: concrete,
   orange: tangerine,
@@ -15,7 +16,7 @@ const map = {
   green: leaf
 }
 
-const semantics = {
+const semanticsMap = {
   primary: clearSky,
   secondary: concrete,
   warning: tangerine,
@@ -23,21 +24,51 @@ const semantics = {
   success: leaf
 }
 
-const fromString = string => map[string]
-const fromSemantics = string => semantics[string]
+const nameMap = {
+  concrete,
+  carbon,
+  clearSky,
+  tangerine,
+  watermelon,
+  leaf,
+  lemon
+}
+
+const weightMap = {
+  100: (color) => tint(0.8, color),
+  200: (color) => tint(0.6, color),
+  300: (color) => tint(0.4, color),
+  400: (color) => tint(0.2, color),
+  500: (color) => color,
+  600: (color) => shade(0.2, color),
+  700: (color) => shade(0.4, color),
+  800: (color) => shade(0.6, color),
+  900: (color) => shade(0.8, color)
+}
+
+const fromString = string => stringMap[string]
+function fromName (string) {
+  return nameMap[string]
+}
+const fromSemantics = string => semanticsMap[string]
+
+function withWeight (color, weight = 500) {
+  return weightMap[weight](color)
+}
 
 export default {
+  withWeight,
+  fromName,
   fromString,
   fromSemantics
 }
 
 export {
-  antiFlashWhite,
   concrete,
   carbon,
-  ink,
   clearSky,
   tangerine,
   watermelon,
-  leaf
+  leaf,
+  lemon
 }

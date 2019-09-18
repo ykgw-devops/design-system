@@ -1,6 +1,5 @@
-import { antiFlashWhite, concrete, ink } from '../../Colors'
+import colors, { carbon, concrete } from '../../Colors'
 import { css } from '@emotion/core'
-import { tint, darken } from 'polished'
 
 const base = css`
   text-align: left;
@@ -9,19 +8,15 @@ const base = css`
   width: 100%;
   font-size: 1rem;
 
-  thead {
-    color: ${ink};
-  }
-
   thead > tr > th {
     font-weight: 500;
     padding: 0.875em 0.875em;
-    border-bottom: solid 1px ${darken(0.1, concrete)};
+    border-bottom: solid 1px ${colors.withWeight(carbon, 200)};
   }
 
   tbody > tr {
     &:hover {
-      background-color: ${tint(0.35, antiFlashWhite)};
+      background-color: ${colors.withWeight(concrete, 100)};
     }
   }
 

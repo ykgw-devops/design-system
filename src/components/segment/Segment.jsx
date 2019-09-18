@@ -1,9 +1,7 @@
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import { tint } from 'polished'
 import { isNil } from 'lodash'
-
-import { concrete } from '../../Colors'
+import colors, { concrete } from '../../Colors'
 
 const firstItem = css`
   border-top-left-radius: 4px;
@@ -18,7 +16,7 @@ const lastItem = css`
 `
 
 const Segment = styled.div`
-  background: #FFFFFF;
+  background: white;
   border: 1px solid ${concrete};
   box-shadow: rgba(37, 11, 54, 0.04) 0px 2px 0px;
   border-radius: 4px;
@@ -37,7 +35,7 @@ const Segment = styled.div`
 
 const Header = styled(Segment)`
   ${firstItem};
-  background: ${tint(0.6, concrete)};
+  background: ${colors.withWeight(concrete, 200)};
 `
 
 const Footer = styled(Segment)`

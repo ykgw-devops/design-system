@@ -1,10 +1,9 @@
 import { css } from '@emotion/core'
-import { antiFlashWhite, carbon, clearSky, concrete } from '../../Colors'
-import { shade, tint } from 'polished'
+import colors, { carbon, clearSky, concrete } from '../../Colors'
 import { resetAnchor } from '../../Shared'
 
-const lightGrey = tint(0.5, antiFlashWhite)
-const darkerGrey = shade(0.25, antiFlashWhite)
+const lightGrey = colors.withWeight(concrete, 100)
+const darkerGrey = colors.withWeight(carbon, 200)
 
 const base = css`
   color: ${carbon};
@@ -61,7 +60,7 @@ const lastItem = css`
 
 const activeItem = css`
   background-color: ${clearSky} !important;
-  color: ${antiFlashWhite} !important;
+  color: ${colors.withWeight(concrete, 200)} !important;
   font-weight: 500;
 
   border-color: ${clearSky};

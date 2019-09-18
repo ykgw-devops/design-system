@@ -1,13 +1,13 @@
 import { fontFamily } from '../../Typography'
 import { css } from '@emotion/core'
 import sizes from '../../sizes'
-import { carbon, concrete, ink } from '../../Colors'
+import { carbon, concrete } from '../../Colors'
 
 const borderStyle = `solid 1px ${concrete}`
 
 const base = css`
   font-family: ${fontFamily};
-  color: ${ink};
+  color: black;
 
   p {
     margin: 0px;
@@ -55,7 +55,7 @@ const base = css`
 const title = css`
   display: inline-block;
   flex: 1;
-  color: ${ink};
+  color: black;
   padding-left: 0.25em;
 `
 
