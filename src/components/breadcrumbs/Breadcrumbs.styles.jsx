@@ -1,10 +1,7 @@
-import { shade } from 'polished'
-
 import { css } from '@emotion/core'
-import colors, { ink, clearSky, concrete } from '../../Colors.jsx'
+import colors, { clearSky, concrete } from '../../Colors.jsx'
 
 const base = css`
-  color: ${ink};
   line-height: 1.5rem;
 `
 
