@@ -47,14 +47,9 @@ const weightMap = {
 }
 
 const fromString = string => stringMap[string]
-function fromName (string) {
-  return nameMap[string]
-}
+const fromName = string => nameMap[string]
 const fromSemantics = string => semanticsMap[string]
-
-function withWeight (color, weight = 500) {
-  return weightMap[weight](color)
-}
+const withWeight = (color, weight = 500) => weightMap[weight](color)
 
 export default {
   withWeight,
