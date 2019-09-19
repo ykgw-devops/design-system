@@ -64,12 +64,12 @@ export default {
 }
 
 export {
+  watermelon,
+  tangerine,
+  lemon,
+  leaf,
+  clearSky,
   amethyst,
   concrete,
-  carbon,
-  clearSky,
-  tangerine,
-  watermelon,
-  leaf,
-  lemon
+  carbon
 }
