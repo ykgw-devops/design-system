@@ -52,7 +52,7 @@ const outline = ({ kind }) => {
     ? carbon
     : colors.fromSemantics(kind)
 
-  return css`{
+  return css`
     border: solid 1px ${colors.withWeight(color, 400)};
     background: none;
     box-shadow: none;
@@ -65,7 +65,7 @@ const outline = ({ kind }) => {
     &:hover {
       background-color: ${colors.withWeight(color, 100)};
     }
-  }`
+  `
 }
 
 const disabled = ({ kind }) => {

@@ -7,14 +7,15 @@ import Group from './Group'
 
 import { base, kind, outline, pill, disabled, size } from './Button.styles'
 
-const Button = styled.button(props => ([
-  base,
-  kind(props),
-  size(props),
-  props.outline && outline(props),
-  props.pill && pill,
-  props.disabled && disabled(props)
-]))
+const Button = styled.button`
+  ${base};
+  ${props => kind(props)};
+  ${props => size(props)};
+  ${props => kind(props)};
+  ${props => props.outline && outline(props)};
+  ${props => props.pill && pill};
+  ${props => props.disabled && disabled(props)};
+`
 
 Button.Group = setDisplayName('Button.Group')(Group)
 
