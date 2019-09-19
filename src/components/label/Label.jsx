@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
 import Icon from '../icon/Icon'
@@ -10,8 +11,15 @@ import withProps from 'recompose/withProps'
 // Icon with larger hitbox and cursor pointer
 const Close = withProps({ name: 'close' })(Icon)
 
+const Container = styled.div`
+  ${props => base(props)};
+  ${props => colored(props)};
+  ${props => focused(props)};
+  ${props => size(props)};
+`
+
 const Label = (props) => (
-  <div css={[base(props), colored(props), focused(props), size(props)]} className={props.className}>
+  <Container {...props}>
     {props.name &&
       <div css={detail(props)}>
         {props.name}
@@ -20,7 +28,7 @@ const Label = (props) => (
       {props.children}
       {props.removable && <Close css={close(props)} onClick={props.onClose} />}
     </div>
-  </div>
+  </Container>
 )
 
 Label.propTypes = {
