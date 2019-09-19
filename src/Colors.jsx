@@ -7,31 +7,36 @@ const tangerine = '#FF7F50'
 const watermelon = '#EC584B'
 const leaf = '#48BB78'
 const lemon = '#ECC94B'
+const amethyst = '#9F7AEA'
 
-const stringMap = {
+export const stringMap = {
   blue: clearSky,
   grey: concrete,
   orange: tangerine,
   red: watermelon,
-  green: leaf
+  green: leaf,
+  yellow: lemon,
+  purple: amethyst
 }
 
-const semanticsMap = {
+export const semanticsMap = {
   primary: clearSky,
   secondary: concrete,
   warning: tangerine,
+  note: lemon,
   danger: watermelon,
   success: leaf
 }
 
-const nameMap = {
+export const nameMap = {
   concrete,
   carbon,
   clearSky,
   tangerine,
   watermelon,
   leaf,
-  lemon
+  lemon,
+  amethyst
 }
 
 const weightMap = {
@@ -59,6 +64,7 @@ export default {
 }
 
 export {
+  amethyst,
   concrete,
   carbon,
   clearSky,

@@ -1,34 +1,25 @@
 import { tint, shade } from 'polished'
 
 import { css } from '@emotion/core'
-import { clearSky, tangerine, watermelon, leaf, concrete, carbon } from '../../Colors'
+import colors, { clearSky, concrete, carbon } from '../../Colors'
 import sizes from '../../sizes'
 
 const colorMap = {
-  blue: {
-    color: clearSky,
-    font: '#fff'
-  },
-  orange: {
-    color: tangerine,
-    font: '#fff'
-  },
-  red: {
-    color: watermelon,
-    font: '#fff'
-  },
-  green: {
-    color: leaf,
-    font: '#fff'
-  },
   default: {
     color: concrete,
     font: carbon
   }
 }
 
-function getColors (string = 'default') {
-  return colorMap[string]
+function getColors (string) {
+  if (!colorMap[string]) {
+    return {
+      color: colors.fromString(string),
+      font: 'white'
+    }
+  } else {
+    return colorMap[string || 'default']
+  }
 }
 
 const child = css`
@@ -120,11 +111,11 @@ const close = props => {
     border-radius: 100%;
     cursor: pointer;
     user-select: none;
-    color: ${carbon};
+    color: white;
 
     transition: background ease 0.1s;
 
-    background: ${shade(0.1, color)};
+    background: ${props.outline ? color : shade(0.3, color)};
 
     &:hover {
       background: ${shade(0.2, color)};
