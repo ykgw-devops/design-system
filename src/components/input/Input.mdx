@@ -18,18 +18,41 @@ import Label from '../label/Label'
   Email: <Input name='email' placeholder='example@domain.com' type='email' />
 </Playground>
 
+## Group
+
+<Playground>
+  <Input.Group>
+    <Input name='email' placeholder='example@domain.com' type='email' />
+    <Button outline kind='secondary'>Filter <Icon name='tune' /></Button>
+    <Button kind='secondary'>More actions</Button>
+  </Input.Group>
+  <span style={{ margin: '0 5px' }}></span>
+  <Button kind='primary'>Apply</Button>
+</Playground>
+
 ## Adornments
 <Playground>
-  <Input adornments={[
-    { position: 'left', content: <Icon name='filter_list' /> }
-  ]} name='filter' placeholder='Filter…' />
+  <Input.Group>
+    <Input.Adornment>
+      <Icon name='filter_list' />
+    </Input.Adornment>
+    <Input name='filter' placeholder='Filter…' />
+  </Input.Group>
 
-  <Input adornments={
-    [{ position: 'left', content: '$' }]
-  } name='payment' placeholder='Dollars' />
+  <Input.Group>
+    <Input.Adornment>$</Input.Adornment>
+    <Input name='payment' placeholder='Dollars' />
+  </Input.Group>
 
   <Input adornments={
     [{ position: 'right', content: <Icon name='search' /> }]
+  } name='search' placeholder='Search' />
+
+  <Input adornments={
+    [{
+      position: 'right',
+      content: <Button kind='secondary' outline>Filter <Icon name='tune' /></Button>
+    }]
   } name='search' placeholder='Search' />
 </Playground>
 

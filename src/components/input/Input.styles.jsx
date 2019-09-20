@@ -1,12 +1,10 @@
 import { css } from '@emotion/core'
-import colors, { carbon, concrete } from '../../Colors'
+import colors, { carbon } from '../../Colors'
 
 const base = css`
   display: inline-flex;
   align-items: center;
-  border-bottom: solid 1px ${concrete};
-  font-size: 1rem;
-  margin: 5px 0;
+  padding: 0 0.5em;
 
   input { flex: 1; }
 `
@@ -15,8 +13,8 @@ const input = css`
   -webkit-appearance: none;
   background: none;
   border: none;
-  padding: 0.5em 0em;
   color: ${carbon};
+  padding: 0 0.25em;
 
   white-space: nowrap;
   overflow: hidden;
@@ -33,34 +31,8 @@ const input = css`
   }
 `
 
-const adornments = css`
-  font-weight: 300;
-  color: ${colors.withWeight(carbon, 500)};
-
-  /* an icon in the input */
-  .i {
-    font-size: 1.5em;
-  }
-`
-
-const leftAdornments = css`
-  ${adornments}
-
-  &, > * {
-    margin-right: 0.25em;
-  }
-`
-
-const rightAdornments = css`
-  ${adornments}
-
-  > * {
-    margin-left: 0.25em;
-  }
-`
-
 const fluidStyle = css`
   width: 100%;
 `
 
-export { base, input, leftAdornments, rightAdornments, fluidStyle }
+export { base, input, fluidStyle }
