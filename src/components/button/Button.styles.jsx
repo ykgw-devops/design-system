@@ -29,7 +29,7 @@ const base = css`
   }
 `
 
-const kind = ({ kind, outline }) => {
+const kind = ({ kind = 'primary', outline }) => {
   const color = colors.fromSemantics(kind)
 
   return css`
