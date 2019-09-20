@@ -6,7 +6,7 @@ import Button from '../button/Button'
 
 const Group = styled.div`
   background: ${colors.withWeight(concrete, 200)};
-  border-radius: 4px;
+  border-radius: 2em;
   padding: 0.5em;
   border: solid 1px ${concrete};
 `
@@ -14,6 +14,7 @@ const Group = styled.div`
 const Item = styled(Button)`
   display: inline-block;
   border: none;
+  border-radius: 2em;
   background: none;
   color: ${carbon};
 
