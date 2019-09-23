@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import colors, { concrete } from '../../Colors'
-
-import Button from '../button/Button'
+import { linearGradient } from 'polished'
 
 const borderColor = colors.withWeight(concrete, 500)
 
@@ -27,19 +26,19 @@ const Group = styled.div`
     margin: 0;
   }
 
-  input + ${Button}, ${Button} + ${Button} {
+  input + button, button + button {
     border-left: none;
   }
 
-  ${Button} + input {
+  button + input {
     border-left: none;
   }
 
-  ${Button} {
+  button {
     border-radius: 0;
+    background: ${colors.withWeight(concrete, 200)};
 
     color: inherit;
-    background: ${colors.withWeight(concrete, 200)};
     border: solid 1px ${colors.withWeight(concrete, 500)};
 
     &:hover {

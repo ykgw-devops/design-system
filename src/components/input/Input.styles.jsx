@@ -35,10 +35,11 @@ export const fluid = css`
 `
 
 export const adornments = props => css`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+
   padding-left: 0.7em;
   padding-right: 0.7em;
-  line-height: 2.4rem;
 
   background: ${colors.withWeight(concrete, 200)};
   border: solid 1px ${colors.withWeight(concrete, 500)};
