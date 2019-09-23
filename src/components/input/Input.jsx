@@ -1,32 +1,19 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
 import Group from './Group'
-import { base, input, fluidStyle } from './Input.styles'
+import { input, fluid as fluidStyle, basic as basicStyle, adornments } from './Input.styles'
 
-const Container = styled.div`
-  ${base};
-  ${props => (
-    props.fluid && fluidStyle
-  )};
+const Input = styled.input`
+  ${input};
+  ${props => props.fluid && fluidStyle};
+  ${props => props.basic && basicStyle};
 `
 
-const Input = ({ adornments = [], fluid = false, ...rest }) => {
-  return (
-    <Container {...rest}>
-      <input {...rest} css={input} />
-    </Container>
-  )
-}
+const Adornment = styled.span(adornments)
 
+Input.Adornment = Adornment
 Input.Group = Group
-
-Input.Adornment = styled.div`
-  display: inline-block;
-  padding: 0.25em 0.5em;
-`
 
 Input.propTypes = {
   onChange: PropTypes.func,
