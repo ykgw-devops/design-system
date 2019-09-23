@@ -1,45 +1,35 @@
 import styled from '@emotion/styled'
-import { triangle } from 'polished'
-import { concrete, ink } from '../../Colors'
-import { Manager, Reference, Popper } from 'react-popper'
+import Tippy from '@tippy.js/react'
+import { withProps } from 'recompose'
+import { concrete } from '../../Colors'
 
-const Popup = styled.div`
-  background: white;
-  color: ${ink};
-  padding: 0.5em 1em;
-  border: solid 1px ${concrete};
-  border-radius: 4px;
+const ContentPopupStyle = styled(Tippy)`
+  background: none;
+  color: inherit;
+
+  padding: 0.75rem 1rem;
+  background: #FFFFFF;
+  border: 1px solid ${concrete};
   box-shadow: 0 7px 12px 0 rgba(149,149,149,0.20);
+  border-radius: 0.333333rem;
+  text-align: left;
+  font-size: 1rem;
 `
 
-const Arrow = styled.div`
-  ${triangle({
-    pointingDirection: 'bottom',
-    width: '15px',
-    height: '10px',
-    foregroundColor: 'white'
-  })};
+const TooltipStyle = styled(Tippy)`
+  padding: 0.6rem 0.75rem;
 `
 
-const Example = () => (
-  <Manager>
-    <Reference>
-      {({ ref }) => (
-        <button type='button' ref={ref}>
-          Reference element
-        </button>
-      )}
-    </Reference>
-    <Popper placement='top' modifiers={{ arrow: { enabled: false } }}>
-      {({ ref, style, placement, arrowProps }) => (
-        <div ref={ref} style={style} data-placement={placement}>
-          <Popup>
-            This is the popper element
-          </Popup>
-        </div>
-      )}
-    </Popper>
-  </Manager>
-)
+export const Popup = withProps(props => ({
+  arrow: false,
+  distance: 2,
+  trigger: 'click',
+  placement: 'bottom-start',
+  animateFill: false,
+  interactive: true,
+  duration: [0, 0]
+}))(ContentPopupStyle)
 
-export default Example
+export const Tooltip = withProps(props => ({
+  arrow: true
+}))(TooltipStyle)
