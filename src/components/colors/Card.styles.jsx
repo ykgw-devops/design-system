@@ -28,7 +28,7 @@ const colorStrip = (name, weight) => {
   const hexColor = colors.withWeight(name, weight)
   return css`
     border: none;
-    height: 32px;
+    padding: 1em;
     background: ${hexColor};
     color: ${readableColor(hexColor)};
   `
