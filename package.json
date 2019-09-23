@@ -35,6 +35,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
+    "@tippy.js/react": "^2.2.3",
     "downshift": "^3.2.10",
     "immutability-helper": "^2.7.1",
     "lodash": "^4.17.10",

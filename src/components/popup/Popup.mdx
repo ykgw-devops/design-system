@@ -1,0 +1,51 @@
+---
+name: Popup
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import { Popup, Tooltip } from './Popup'
+import Button from '../button/Button'
+import Icon from '../icon/Icon'
+import Input from '../input/Input'
+import Label from '../label/Label'
+
+# Popup & Tooltip
+
+## Popup
+
+<Playground>
+  <Popup content={
+    <div>This is the popper element 🎉!</div>
+  }>
+    <Button kind='primary'>Click me!</Button>
+  </Popup>
+
+  <Popup content={
+    <>
+      <div>Show all tickets that are</div>
+      <Button.Group>
+        <Button size='small'>Open</Button>
+        <Button outline size='small'>Closed</Button>
+      </Button.Group>
+      <Popup content={
+        <div>This is the popper element 🎉!</div>
+      }>
+        <span>
+          <Label>Select a customer</Label>
+        </span>
+      </Popup>
+    </>
+  }>
+    <Button kind='secondary'>Filter <Icon name='tune' /></Button>
+  </Popup>
+
+</Playground>
+
+## Tooltip
+
+<Playground>
+  <Tooltip placement='right' content='This is the popper element 🎉!'>
+    <Button kind='primary'>Hover me!</Button>
+  </Tooltip>
+</Playground>

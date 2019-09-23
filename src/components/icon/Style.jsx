@@ -25,9 +25,11 @@ const circular = props => css`
 
 const filled = props => {
   const color = colorFromString(props.color || carbon)
+
   return css`
     border: none;
     color: white;
+    border-color: ${color};
     background: ${color};
   `
 }
