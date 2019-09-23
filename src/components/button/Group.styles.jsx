@@ -6,6 +6,7 @@ const base = props => css`
   button, a {
     border-radius: 0;
     flex: 0 0 auto;
+    display: inline-block;
 
     ${props.fluid && css`flex: 1 0 auto;`}
     ${props.equalWidth && css`flex: 1;`}

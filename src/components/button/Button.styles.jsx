@@ -6,6 +6,12 @@ import { css } from '@emotion/core'
 import sizes from '../../sizes'
 
 const base = css`
+  display: inline-flex;
+  align-items: center;
+
+  white-space: pre;
+  text-align: center;
+
   background-color: ${clearSky};
 
   border-radius: 0.333333rem;
@@ -73,7 +79,7 @@ const outline = ({ kind }) => {
   `
 }
 
-const disabled = ({ kind }) => {
+const disabled = ({ kind, outline }) => {
   const color = colors.fromSemantics(kind)
   const bgColor = colors.withWeight(color, 100)
   const fontColor = colors.withWeight(color, 200)
@@ -82,12 +88,12 @@ const disabled = ({ kind }) => {
   return css`
     color: ${fontColor};
     border-color: ${borderColor};
+    background: ${outline ? 'none' : bgColor};
 
-    background-color: ${bgColor};
     cursor: default;
 
     &:hover {
-      background: ${bgColor};
+      background: ${outline ? 'none' : bgColor};
     }
   `
 }
