@@ -44,11 +44,11 @@ export const adornments = props => css`
   background: ${colors.withWeight(concrete, 200)};
   border: solid 1px ${colors.withWeight(concrete, 500)};
 
-  ${props => props.left && (
+  ${props.left && (
     'border-right: 0;'
   )};
 
-  ${props => props.right && (
+  ${props.right && (
     'border-left: 0;'
   )};
 `

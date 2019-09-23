@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import colors, { concrete } from '../../Colors'
-import { linearGradient } from 'polished'
 
 const borderColor = colors.withWeight(concrete, 500)
 
