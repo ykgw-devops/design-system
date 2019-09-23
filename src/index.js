@@ -20,3 +20,4 @@ export { default as FilterableInput } from './components/filterable-input/Filter
 export { default as Accordion } from './components/accordion/Accordion'
 export { default as Timeline } from './components/timeline/Timeline'
 export { default as Tabs } from './components/tabs/Tabs'
+export * from './components/popup/Popup'

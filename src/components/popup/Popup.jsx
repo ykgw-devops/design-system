@@ -1,6 +1,7 @@
-import styled from '@emotion/styled'
 import Tippy from '@tippy.js/react'
+import styled from '@emotion/styled'
 import { withProps } from 'recompose'
+
 import { concrete } from '../../Colors'
 
 const ContentPopupStyle = styled(Tippy)`
@@ -20,7 +21,7 @@ const TooltipStyle = styled(Tippy)`
   padding: 0.6rem 0.75rem;
 `
 
-export const Popup = withProps(props => ({
+const Popup = withProps(props => ({
   arrow: false,
   distance: 2,
   trigger: 'click',
@@ -30,6 +31,11 @@ export const Popup = withProps(props => ({
   duration: [0, 0]
 }))(ContentPopupStyle)
 
-export const Tooltip = withProps(props => ({
+const Tooltip = withProps(props => ({
   arrow: true
 }))(TooltipStyle)
+
+export {
+  Popup,
+  Tooltip
+}
