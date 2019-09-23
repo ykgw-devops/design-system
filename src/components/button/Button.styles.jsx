@@ -7,15 +7,20 @@ import sizes from '../../sizes'
 
 const base = css`
   background-color: ${clearSky};
-  border-radius: 4px;
+
+  border-radius: 0.333333rem;
   border: solid 1px ${shade(0.1, clearSky)};
+
   color: #fff;
   cursor: pointer;
+
   font-family: ${fontFamily};
   font-weight: 400;
-  padding: 0.6em 1em;
+
+  padding: 0.65em 1em;
   text-align: center;
   text-decoration: none;
+
   transition: background 80ms ease-in;
   vertical-align: middle;
 

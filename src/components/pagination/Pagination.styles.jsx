@@ -10,7 +10,7 @@ const base = css`
   font-size: 1rem;
   width: auto;
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 0.333333rem;
 
   & > a {
     ${resetAnchor};

@@ -64,7 +64,7 @@ const content = css`
 `
 
 const styled = `
-  border-radius: 4px;
+  border-radius: 0.333333rem;
   border: ${borderStyle};
 
   & details {

@@ -61,7 +61,7 @@ const Title = styled.div``
 const Description = styled.div`
   margin-top: 0.5em;
   padding: 0.5em 1em;
-  border-radius: 4px;
+  border-radius: 0.333333rem;
   border: solid 1px ${concrete};
 `
 

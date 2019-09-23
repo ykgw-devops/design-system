@@ -19,7 +19,7 @@ const Segment = styled.div`
   background: white;
   border: 1px solid ${concrete};
   box-shadow: rgba(37, 11, 54, 0.04) 0px 2px 0px;
-  border-radius: 4px;
+  border-radius: 0.333333rem;
 
   padding: ${props => isNil(props.padding) ? '1em' : props.padding};
 
@@ -46,7 +46,7 @@ const Footer = styled(Segment)`
 const Group = styled.div`
   background: #FFFFFF;
   box-shadow: rgba(37, 11, 54, 0.04) 0px 2px 0px;
-  border-radius: 4px;
+  border-radius: 0.333333rem;
 
   > div {
     border-radius: 0;

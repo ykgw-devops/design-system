@@ -67,7 +67,7 @@ const menuWrapper = css`
   overflow-y: scroll;
 
   border: ${border};
-  border-radius: 4px;
+  border-radius: 0.333333rem;
 `
 const selectedItem = css`
   ${item};
@@ -78,7 +78,7 @@ const selectedItem = css`
   width: 100%;
 
   border: ${border};
-  border-radius: 4px;
+  border-radius: 0.333333rem;
 
   ${ellipsifyText}
 
