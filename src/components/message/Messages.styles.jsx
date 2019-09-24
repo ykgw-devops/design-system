@@ -15,13 +15,16 @@ const base = props => {
   const fontColor = color || 'black'
 
   return css`
+    font-size: 1rem;
+    line-height: 1rem;
+
     background: ${outline ? 'none' : colors.withWeight(color, 100)};
     display: block;
     border: solid 1px ${bgColor};
     color: ${fontColor};
 
-    padding: 10px 20px;
-    border-radius: 0.25em;
+    padding: 0.65em 1em;
+    border-radius: 0.333333rem;
 
     display: flex;
     align-items: center;

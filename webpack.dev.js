@@ -10,7 +10,10 @@ module.exports = {
     libraryTarget: 'umd'
   },
   plugins: [],
-  externals: [],
+  externals: [
+    'react',
+    'react-dom'
+  ],
   resolve: {
     extensions: ['.js', '.jsx']
   },
