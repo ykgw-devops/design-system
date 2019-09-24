@@ -16,6 +16,10 @@ export default ({ children }) => (
         font-size: 14px !important;
         line-height: 1.5em !important;
       }
+
+      button, input, optgroup, select, textarea {
+        line-height: 1em;
+      }
     `}
     />
     {children}
