@@ -16,6 +16,7 @@ const lastItem = css`
 `
 
 const Segment = styled.div`
+  font-size: 1rem;
   background: white;
   border: 1px solid ${concrete};
   box-shadow: rgba(37, 11, 54, 0.04) 0px 2px 0px;
@@ -34,8 +35,12 @@ const Segment = styled.div`
 `
 
 const Header = styled(Segment)`
-  ${firstItem};
   background: ${colors.withWeight(concrete, 200)};
+  padding: 0.65em 1em;
+
+  white-space: pre;
+  display: flex;
+  align-items: center;
 `
 
 const Footer = styled(Segment)`
@@ -44,6 +49,7 @@ const Footer = styled(Segment)`
 `
 
 const Group = styled.div`
+  font-size: 1rem;
   background: #FFFFFF;
   box-shadow: rgba(37, 11, 54, 0.04) 0px 2px 0px;
   border-radius: 0.333333rem;
@@ -59,6 +65,11 @@ const Group = styled.div`
 
   > div:last-of-type {
     ${lastItem};
+  }
+
+  /* allow multiple headers in a segment group */
+  ${Segment} + ${Header} {
+    border-top: none;
   }
 `
 

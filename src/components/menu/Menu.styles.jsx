@@ -5,7 +5,7 @@ import { resetAnchor } from '../../Shared'
 
 const base = css`
   display: inline-block;
-  font-size: 1em;
+  font-size: 1rem;
 `
 
 const header = css`

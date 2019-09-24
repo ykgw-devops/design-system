@@ -1,28 +1,26 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-import { omit } from 'lodash'
-import { base, item, active as activeStyle } from './List.styles.jsx'
-
+import React from 'react'
+import styled from '@emotion/styled'
 import { setDisplayName } from 'recompose'
 
+import { base, item, active as activeStyle, interactive } from './List.styles.jsx'
+
+const ListContainer = styled.div`
+  ${base};
+  ${props => props.interactive && interactive};
+`
+
 const List = (props) => (
-  <div css={base} className={props.className}>
+  <ListContainer {...props}>
     <ul>
       {props.children}
     </ul>
-  </div>
+  </ListContainer>
 )
 
-const Item = (props) => {
-  const rest = omit(props, ['active', 'className', 'children'])
-  return (
-    <li css={[item, props.active && activeStyle]} className={props.className} {...rest}>
-      {props.children}
-    </li>
-  )
-}
+const Item = styled.li(props => (
+  [item, props.active && activeStyle]
+))
 
-// we need this so we can have readable component names in the React dev tools
 List.Item = setDisplayName('List.Item')(Item)
 
 export default List

@@ -6,7 +6,11 @@ menu: Components
 import { Playground, Props } from 'docz'
 import FilterableInput from './FilterableInput'
 
-
+import Button from '../button/Button'
+import Icon from '../icon/Icon'
+import List from '../list/List'
+import Input from '../input/Input'
+import Segment from '../segment/Segment'
 
 # Filterable Input
 
@@ -14,18 +18,37 @@ import FilterableInput from './FilterableInput'
 
 <Playground>
   <FilterableInput
-    name='filter'
-    initialFilters={[{
-      key: 'status',
-      value: 'online'
-    }]}
-    availableFilters={[{
-      key: 'status',
-      values: ['online', 'offline', 'unknown']
-    }, {
-      key: 'type',
-      values: ['lamp', 'alarm', 'other']
-    }]}
+    popup={({ addFilter, resetFilter, setFilter }) => (
+      <Segment.Group>
+        <Segment.Header>
+          <Icon name='filter_list' /> Filter results
+        </Segment.Header>
+        <List as={Segment} padding={0} interactive>
+          <List.Item onClick={() => addFilter('id')} >ID</List.Item>
+          <List.Item onClick={() => addFilter('name')}>Name</List.Item>
+          <List.Item onClick={() => addFilter('tag')}>Tag</List.Item>
+        </List>
+        <Segment.Header>
+          <Icon name='history' /> Recent searches
+        </Segment.Header>
+        <List as={Segment} padding={0} interactive>
+          <List.Item onClick={() => { setFilter('customer:gilles')}}>
+            <code>"customer:gilles"</code>
+          </List.Item>
+          <List.Item onClick={() => { setFilter('hvac tags:housekeeper,sigfox')}}>
+            <code>"hvac tags:housekeeper,sigfox"</code>
+          </List.Item>
+        </List>
+        <Segment.Footer>
+          <Button onClick={() => setFilter('')}>
+            <Icon name='clear' /> Clear filter
+          </Button>
+        </Segment.Footer>
+      </Segment.Group>
+    )}
+    input={(props) => (
+      <Input {...props} name='filter' placeholder='Filter...' />
+    )}
   />
 </Playground>
 

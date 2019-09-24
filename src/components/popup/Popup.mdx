@@ -9,6 +9,8 @@ import Button from '../button/Button'
 import Icon from '../icon/Icon'
 import Input from '../input/Input'
 import Label from '../label/Label'
+import List from '../list/List'
+import Segment from '../segment/Segment'
 
 # Popup & Tooltip
 
@@ -22,20 +24,23 @@ import Label from '../label/Label'
   </Popup>
 
   <Popup content={
-    <>
-      <div>Show all tickets that are</div>
-      <Button.Group>
-        <Button size='small'>Open</Button>
-        <Button outline size='small'>Closed</Button>
-      </Button.Group>
-      <Popup content={
-        <div>This is the popper element 🎉!</div>
-      }>
-        <span>
-          <Label>Select a customer</Label>
-        </span>
-      </Popup>
-    </>
+    <Segment.Group>
+      <Segment.Header>
+        <Icon name='filter_list' /> Filter results
+      </Segment.Header>
+      <List as={Segment} padding={0} interactive>
+        <List.Item>ID</List.Item>
+        <List.Item>Name</List.Item>
+        <List.Item>Tag</List.Item>
+      </List>
+      <Segment.Header>
+        <Icon name='history' /> Recent searches
+      </Segment.Header>
+      <List as={Segment} padding={0} interactive>
+        <List.Item><code>"tags:housekeeper"</code></List.Item>
+        <List.Item><code>"hvac tags:sigfox"</code></List.Item>
+      </List>
+    </Segment.Group>
   }>
     <Button kind='secondary'>Filter <Icon name='tune' /></Button>
   </Popup>

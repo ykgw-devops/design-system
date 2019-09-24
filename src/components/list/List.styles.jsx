@@ -1,15 +1,22 @@
 import { css } from '@emotion/core'
-import { clearSky } from '../../Colors'
+import colors, { concrete, clearSky } from '../../Colors'
 import { resetAnchor } from '../../Shared'
 
 const base = css`
+  font-size: 1rem;
+
   ul {
     display: inline-block;
     list-style-type: none;
-    line-height: 2.25em;
+    line-height: 1em;
 
     padding: 0;
     margin: 0;
+  }
+
+  li {
+    padding: 0.65em 1em;
+    cursor: pointer;
   }
 `
 
@@ -30,4 +37,17 @@ const item = css`
   }
 `
 
-export { base, item, active }
+const interactive = css`
+  display: flex;
+  flex-direction: column;
+
+  li {
+    display: block;
+  }
+
+  li:hover {
+    background: ${colors.withWeight(concrete, 100)};
+  }
+`
+
+export { base, item, active, interactive }
