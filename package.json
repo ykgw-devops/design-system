@@ -25,7 +25,8 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-lodash": "^3.3.4",
     "clean-webpack-plugin": "^3.0.0",
-    "docz": "^2.0.0-rc.41",
+    "docz": "^1.3.2",
+    "docz-theme-default": "^1.2.0",
     "npm-run-all": "^4.1.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -44,7 +45,8 @@
     "lodash": "^4.17.10",
     "polished": "^3.4.1",
     "prop-types": "^15.6.1",
-    "recompose": "^0.27.1"
+    "recompose": "^0.27.1",
+    "search-string": "^3.1.0"
   },
   "publishConfig": {
     "registry": "https://npm.waylay.io/"
