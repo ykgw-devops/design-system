@@ -8,59 +8,55 @@ const TightPopup = styled(Popup)`
   padding: 0;
 `
 
-const FilterableInput = (props) => {
+const FilterableInput = ({ initialValue = '', onChange, input, popup }) => {
   const inputElem = useRef(null)
-  const [filterTooltip, setFilterTooltip] = useState(null)
+  const [tooptip, setTooltip] = useState(null)
+  const [filter, setFilter] = useState(initialValue)
 
   const onTooltipCreated = (popup) => {
-    setFilterTooltip(popup)
+    setTooltip(popup)
   }
 
-  const [filter, setFilter] = useState('')
-
-  const onChange = (value) => {
+  const onChangeHandler = (value) => {
     setFilter(value)
-    typeof props.onChange === 'function' && props.onChange(value)
+    if (typeof onChange === 'function') {
+      onChange(value)
+    }
   }
-
-  const onChangeHandler = e => onChange(e.target.value)
 
   const addFilter = (value) => {
     const search = searchString.parse(filter)
     search.addEntry(value, true)
 
-    onChange(search.toString())
+    onChangeHandler(search.toString())
 
     inputElem.current.focus()
-    filterTooltip.hide()
+    tooptip.hide()
   }
 
-  const updateFilter = (value) => {
-    onChange(value)
+  const updateInput = (value) => {
     inputElem.current.blur()
-    filterTooltip.hide()
+    tooptip.hide()
+    onChangeHandler(value)
   }
 
-  const popupContent = props.popup({
+  const popupContent = popup({
     addFilter,
-    setFilter: updateFilter,
-    resetFilter: v => updateFilter('')
+    setFilter: updateInput,
+    resetFilter: v => updateInput('')
   })
-  const inputElement = props.input({
+
+  const inputElement = input({
     ref: inputElem,
     value: filter,
-    onChange: onChangeHandler
+    onChange: e => onChangeHandler(e.target.value)
   })
 
   return (
-    <TightPopup onCreate={onTooltipCreated} content={popupContent}>
+    <TightPopup a11y={false} trigger='focus' triggerTarget={inputElem.current} onCreate={onTooltipCreated} content={popupContent}>
       {inputElement}
     </TightPopup>
   )
-}
-
-FilterableInput.defaultProps = {
-  initialFilters: []
 }
 
 export default FilterableInput
