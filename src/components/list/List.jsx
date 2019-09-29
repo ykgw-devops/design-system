@@ -11,13 +11,11 @@ const ListContainer = styled.div`
 
 const List = (props) => (
   <ListContainer {...props}>
-    <ul>
-      {props.children}
-    </ul>
+    {props.children}
   </ListContainer>
 )
 
-const Item = styled.li(props => (
+const Item = styled.div(props => (
   [item, props.active && activeStyle]
 ))
 
