@@ -45,6 +45,19 @@ import Segment from '../segment/Segment'
     <Button kind='secondary'>Filter <Icon name='tune' /></Button>
   </Popup>
 
+  <Popup content={
+      <List as={Segment} padding={0} interactive>
+        <List.Item><Icon name='code' /> Edit</List.Item>
+        <List.Item><Icon name='remove_circle_outline' /> Remove</List.Item>
+        <List.Item><Icon name='cloud_download' /> Download</List.Item>
+      </List>
+    }
+    >
+      <Button size='small' kind='secondary'>
+        Actions <Icon name='unfold_more' />
+      </Button>
+    </Popup>
+
 </Playground>
 
 ## Tooltip
