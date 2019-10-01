@@ -7,16 +7,10 @@ const active = css`
 `
 
 const base = css`
+  display: inline-flex;
+  flex-direction: column;
   font-size: 1rem;
   line-height: 1.5em;
-
-  ul {
-    margin: 0;
-    padding: 0;
-
-    display: inline-block;
-    list-style-type: none;
-  }
 
   a {
     ${resetAnchor};
@@ -31,7 +25,9 @@ const item = css`
   word-wrap: break-word;
   word-break: break-all;
 
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  white-space: pre;
 
   padding: 0.65em 1em;
   cursor: pointer;
@@ -41,11 +37,7 @@ const interactive = css`
   display: flex;
   flex-direction: column;
 
-  li {
-    display: block;
-  }
-
-  li:hover {
+  > div:hover {
     background: ${colors.withWeight(concrete, 100)};
   }
 `
