@@ -6,6 +6,7 @@ menu: Components
 import { Playground, Props } from 'docz'
 import Button from '../button/Button'
 import Dropdown from './Dropdown'
+import Icon from '../icon/Icon'
 
 # Dropdown
 
@@ -317,6 +318,20 @@ import Dropdown from './Dropdown'
     ]}
   />
   </div>
+</Playground>
+
+## Custom items
+
+A dropdown with custom items
+
+<Playground>
+  <Dropdown
+      selectedItem={{ key: 1 }}
+      options={[
+        { key: 0, content: <span>Span item</span>, value: 'span item' },
+        { key: 1, content: <span>Correct option <Icon name='done' color='green' /></span>, value: 'short' }
+      ]}
+  />
 </Playground>
 
 ## Compact
