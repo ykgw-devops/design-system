@@ -9,7 +9,7 @@ const DropdownItem = (props) => {
   const { text, active, onClick, ...rest } = props
 
   return (
-    <div onClick={onClick} css={getStyles(props)} title={isString(text) && text} {...rest}>
+    <div onClick={onClick} css={getStyles(props)} title={isString(text) ? text : undefined} {...rest}>
       {text || props.children}
     </div>
   )
