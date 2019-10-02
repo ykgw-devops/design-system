@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import PropTypes from 'prop-types'
+import { isString } from 'lodash'
 
 import { item, disabled, activeItem } from './Dropdown.styles.jsx'
 
@@ -8,7 +9,7 @@ const DropdownItem = (props) => {
   const { text, active, onClick, ...rest } = props
 
   return (
-    <div onClick={onClick} css={getStyles(props)} title={text} {...rest}>
+    <div onClick={onClick} css={getStyles(props)} title={isString(text) && text} {...rest}>
       {text || props.children}
     </div>
   )
