@@ -106,8 +106,8 @@ const Option = ({ option, active, getItemProps, selectedItem, toggleMenu }) => {
 
 function itemToString (item) {
   if (!item) return ''
-  const { group, text } = item
-  return `${group}-${text}`
+  const { group, text, key } = item
+  return key || `${group}-${text}`
 }
 
 function getStyle (props) {
