@@ -1,6 +1,6 @@
 {
   "name": "@waylay/react-components",
-  "version": "2.5.4",
+  "version": "2.5.5",
   "main": "dist/components.js",
   "source": "src/index.js",
   "license": "MIT",
