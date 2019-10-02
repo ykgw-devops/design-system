@@ -8,7 +8,7 @@ const TightPopup = styled(Popup)`
   padding: 0;
 `
 
-const FilterableInput = ({ initialValue = '', onChange, input, popup }) => {
+const FilterableInput = ({ initialValue = '', onChange, onSelection, input, popup }) => {
   const inputElem = useRef(null)
   const [tooptip, setTooltip] = useState(null)
   const [filter, setFilter] = useState(initialValue)
@@ -24,11 +24,18 @@ const FilterableInput = ({ initialValue = '', onChange, input, popup }) => {
     }
   }
 
+  const onSelectionHandler = (value) => {
+    if (typeof onSelection === 'function') {
+      onSelection(value)
+    }
+  }
+
   const addFilter = (value) => {
     const search = searchString.parse(filter)
     search.addEntry(value, true)
 
-    onChangeHandler(search.toString())
+    onSelectionHandler(search.toString())
+    setFilter(value)
 
     inputElem.current.focus()
     tooptip.hide()
@@ -37,13 +44,15 @@ const FilterableInput = ({ initialValue = '', onChange, input, popup }) => {
   const updateInput = (value) => {
     inputElem.current.blur()
     tooptip.hide()
-    onChangeHandler(value)
+
+    setFilter(value)
+    onSelectionHandler(value)
   }
 
   const popupContent = popup({
     addFilter,
     setFilter: updateInput,
-    resetFilter: v => updateInput('')
+    resetFilter: () => updateInput('')
   })
 
   const inputElement = input({
