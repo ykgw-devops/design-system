@@ -12,7 +12,11 @@ const Group = styled.div`
 `
 
 const Item = styled(Button)`
-  display: inline-block;
+  display: inline-flex;
+  white-space: pre;
+  align-items: center;
+  line-height: 1.25em;
+
   border: none;
   border-radius: 2em;
   background: none;
