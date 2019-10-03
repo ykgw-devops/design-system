@@ -1,0 +1,28 @@
+---
+name: Copy To Clipboard
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import CopyToClipboard from './CopyToClipboard'
+import Button from '../button/Button'
+import Icon from '../icon/Icon'
+
+# Copy To Clipboard
+
+## Basic usage
+
+<Playground>
+  <CopyToClipboard
+    value='Hello, World!'
+    trigger={ref => (
+      <Button pill kind='secondary' size='small' ref={ref}>
+        <Icon name='file_copy' /> Copy
+      </Button>
+    )}
+  />
+</Playground>
+
+## Properties
+
+<Props of={CopyToClipboard}></Props>

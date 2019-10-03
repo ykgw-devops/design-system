@@ -42,6 +42,7 @@
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
     "@tippy.js/react": "^2.2.3",
+    "clipboard": "^2.0.4",
     "downshift": "^3.2.10",
     "immutability-helper": "^2.7.1",
     "lodash": "^4.17.10",
