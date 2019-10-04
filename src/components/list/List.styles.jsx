@@ -37,7 +37,8 @@ const interactive = css`
   display: flex;
   flex-direction: column;
 
-  > div:hover {
+  > *:hover {
+    color: ${clearSky};
     background: ${colors.withWeight(concrete, 100)};
   }
 `
