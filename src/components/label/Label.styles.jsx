@@ -1,4 +1,4 @@
-import { tint, shade } from 'polished'
+import { tint, shade, readableColor } from 'polished'
 
 import { css } from '@emotion/core'
 import colors, { clearSky, concrete, carbon } from '../../Colors'
@@ -12,13 +12,20 @@ const colorMap = {
 }
 
 function getColors (string) {
-  if (!colorMap[string]) {
+  if (!string) return colorMap.default
+
+  const colorFromString = colors.fromString(string)
+
+  if (colorFromString) {
     return {
-      color: colors.fromString(string),
+      color: colorFromString,
       font: 'white'
     }
   } else {
-    return colorMap[string || 'default']
+    return {
+      color: string,
+      font: readableColor(string)
+    }
   }
 }
 

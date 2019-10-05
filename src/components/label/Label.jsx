@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
 import Icon from '../icon/Icon'
-import { stringMap } from '../../Colors'
 import { base, close, colored, detail, focused, value, size } from './Label.styles.jsx'
 import withProps from 'recompose/withProps'
 
@@ -32,7 +31,7 @@ const Label = (props) => (
 )
 
 Label.propTypes = {
-  color: PropTypes.oneOf([...Object.keys(stringMap), 'default']),
+  color: PropTypes.string,
   size: PropTypes.oneOf(['tiny', 'small', 'medium', 'large']),
   outline: PropTypes.bool,
   removable: PropTypes.bool,
@@ -41,7 +40,7 @@ Label.propTypes = {
 }
 
 Label.defaultProps = {
-  color: 'default',
+  color: '',
   size: 'medium',
   outline: false,
   removable: false,
