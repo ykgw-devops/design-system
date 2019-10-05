@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import Clipboard from 'clipboard'
+import copy from 'copy-text-to-clipboard'
 import { Tooltip } from '../popup/Popup'
 import Icon from '../icon/Icon'
 
@@ -9,10 +9,8 @@ const CopyToClipboard = ({ value, trigger }) => {
 
   useEffect(() => {
     let timerRef
-    const clipboard = new Clipboard(triggerRef.current, {
-      text: () => value
-    })
-      .on('success', onSuccess)
+
+    triggerRef.current.addEventListener('click', doCopy)
 
     function onSuccess () {
       setCopied(true)
@@ -22,10 +20,15 @@ const CopyToClipboard = ({ value, trigger }) => {
       }, 800)
     }
 
-    // destroy clipboard on unmount
+    function doCopy () {
+      copy(value)
+      onSuccess()
+    }
+
+    // remove event listeners and timers
     return () => {
+      triggerRef.current.removeEventListener('click', doCopy)
       clearTimeout(timerRef)
-      clipboard.destroy()
     }
   }, [])
 
