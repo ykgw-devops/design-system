@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import colors, { concrete, clearSky } from '../../Colors'
+import colors, { carbon, concrete, clearSky } from '../../Colors'
 import { resetAnchor } from '../../Shared'
 
 const active = css`
@@ -14,10 +14,6 @@ const base = css`
 
   a {
     ${resetAnchor};
-  }
-
-  a:hover {
-    ${active};
   }
 `
 
@@ -38,9 +34,25 @@ const interactive = css`
   flex-direction: column;
 
   > *:hover {
-    color: ${clearSky};
+    color: ${colors.withWeight(carbon, 900)};
     background: ${colors.withWeight(concrete, 100)};
   }
 `
 
-export { base, item, active, interactive }
+const divider = css`
+  cursor: default;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  > hr {
+    width: 100%;
+    border: none;
+    border-top: solid 1px ${concrete};
+  }
+
+  &:hover {
+    background: inherit;
+  }
+`
+
+export { base, item, active, interactive, divider }
