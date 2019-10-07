@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { setDisplayName } from 'recompose'
 
-import { base, item, active as activeStyle, interactive, divider } from './List.styles.jsx'
+import { base, item, active as activeStyle, interactive, nonInteractive, divider } from './List.styles.jsx'
 
 const ListContainer = styled.div`
   ${base};
@@ -16,13 +16,11 @@ const List = (props) => (
 )
 
 const Item = styled.div(props => (
-  [item, props.active && activeStyle]
+  [item, props.active && activeStyle, props.nonInteractive && nonInteractive]
 ))
 
 const Divider = (props) => (
-  <Item {...props} css={divider}>
-    <hr />
-  </Item>
+  <Item {...props} nonInteractive css={divider} />
 )
 
 List.Item = setDisplayName('List.Item')(Item)

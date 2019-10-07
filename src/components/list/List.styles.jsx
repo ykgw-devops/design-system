@@ -18,6 +18,8 @@ const base = css`
 `
 
 const item = css`
+  user-select: none;
+
   word-wrap: break-word;
   word-break: break-all;
 
@@ -39,20 +41,22 @@ const interactive = css`
   }
 `
 
-const divider = css`
+const nonInteractive = css`
   cursor: default;
-  padding-top: 0;
-  padding-bottom: 0;
-
-  > hr {
-    width: 100%;
-    border: none;
-    border-top: solid 1px ${concrete};
-  }
+  user-select: auto;
 
   &:hover {
+    color: inherit;
     background: inherit;
   }
 `
 
-export { base, item, active, interactive, divider }
+const divider = css`
+  padding: 0;
+  height: 1px;
+  width: 100%;
+  border: none;
+  border-top: solid 1px ${concrete};
+`
+
+export { base, item, active, interactive, divider, nonInteractive }

@@ -67,3 +67,20 @@ import List from './List'
     </List>
   </Segment.Group>
 </Playground>
+
+## With Divider and nonInteractive items
+
+<Playground>
+  <List as={Segment} padding={0} interactive>
+    <List.Item nonInteractive>
+      Hello, <strong>Gilles</strong>
+    </List.Item>
+    <List.Divider />
+    <List.Item>
+      Your Account
+    </List.Item>
+    <List.Item>
+      Sign Out
+    </List.Item>
+  </List>
+</Playground>
