@@ -62,7 +62,7 @@ const FilterableInput = ({ initialValue = '', onChange, onSelection, input, popu
   })
 
   return (
-    <TightPopup a11y={false} trigger='focus' triggerTarget={inputElem.current} onCreate={onTooltipCreated} content={popupContent}>
+    <TightPopup a11y={false} onCreate={onTooltipCreated} content={popupContent}>
       {inputElement}
     </TightPopup>
   )
