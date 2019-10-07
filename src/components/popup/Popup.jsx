@@ -1,6 +1,6 @@
 import Tippy from '@tippy.js/react'
 import styled from '@emotion/styled'
-import { withProps } from 'recompose'
+import { defaultProps } from 'recompose'
 
 const ContentPopupStyle = styled(Tippy)`
   background: none;
@@ -14,7 +14,7 @@ const TooltipStyle = styled(Tippy)`
   padding: 0.6rem 0.75rem;
 `
 
-const Popup = withProps(props => ({
+const Popup = defaultProps({
   arrow: false,
   distance: 2,
   trigger: 'click',
@@ -22,11 +22,11 @@ const Popup = withProps(props => ({
   animateFill: false,
   interactive: true,
   duration: [0, 0]
-}))(ContentPopupStyle)
+})(ContentPopupStyle)
 
-const Tooltip = withProps(props => ({
+const Tooltip = defaultProps({
   arrow: true
-}))(TooltipStyle)
+})(TooltipStyle)
 
 export {
   Popup,
