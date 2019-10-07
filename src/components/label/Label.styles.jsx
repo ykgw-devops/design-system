@@ -35,6 +35,7 @@ const child = css`
   height: 100%;
   align-items: center;
   padding: 0 1em;
+  white-space: pre;
 `
 
 // this is the value item, after the named item
