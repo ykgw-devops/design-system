@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import React from 'react'
-import { map, groupBy } from 'lodash'
+import React from 'react' // eslint-disable-line
+import { map, groupBy, find } from 'lodash'
 import PropTypes from 'prop-types'
 import Downshift from 'downshift'
 import { setDisplayName } from 'recompose'
@@ -15,13 +15,14 @@ const Dropdown = ({ options, placeholder, content, compact, fluid, selectedItem 
       const { isOpen, toggleMenu, getItemProps } = props
       const groupedOptions = groupBy(options, 'group')
 
+      const selected = find(options, option => itemToString(selectedItem) === itemToString(option))
+
       return (
         <div {...rest}>
           <div css={getStyle({ compact, fluid })}>
             <SelectedItem
               placeholder={placeholder}
-              content={content}
-              text={selectedItem && selectedItem.text}
+              selectedItem={selected}
               toggleMenu={toggleMenu}
             />
             <div css={menuWrapper} style={{ display: isOpen ? 'block' : 'none' }}>
@@ -31,7 +32,7 @@ const Dropdown = ({ options, placeholder, content, compact, fluid, selectedItem 
                   options={options}
                   name={name}
                   getItemProps={getItemProps}
-                  selectedItem={selectedItem}
+                  selectedItem={selected}
                   toggleMenu={toggleMenu}
                 />
               ))}
@@ -43,14 +44,14 @@ const Dropdown = ({ options, placeholder, content, compact, fluid, selectedItem 
   </Downshift>
 )
 
-const SelectedItem = ({ content, text, placeholder, toggleMenu }) => {
-  return content
-    ? React.cloneElement(content, { onClick: toggleMenu })
-    : (
-      <div css={selectedItemStyle} onClick={toggleMenu}>
-        <div css={selectedStyle(text)}>{text || placeholder}</div>
-      </div>
-    )
+const SelectedItem = ({ placeholder, selectedItem = {}, toggleMenu }) => {
+  const { text, content } = selectedItem
+
+  return (
+    <div css={selectedItemStyle} onClick={toggleMenu}>
+      <div css={selectedStyle(content || text)}>{content || text || placeholder}</div>
+    </div>
+  )
 }
 
 const Group = ({ options, name, getItemProps, selectedItem, toggleMenu }) => {
@@ -73,7 +74,6 @@ const Group = ({ options, name, getItemProps, selectedItem, toggleMenu }) => {
                 active={isActive}
                 option={option}
                 getItemProps={getItemProps}
-                selectedItem={selectedItem}
                 toggleMenu={toggleMenu}
               />
             )
@@ -84,7 +84,7 @@ const Group = ({ options, name, getItemProps, selectedItem, toggleMenu }) => {
   )
 }
 
-const Option = ({ option, active, getItemProps, selectedItem, toggleMenu }) => {
+const Option = ({ option, active, getItemProps, toggleMenu }) => {
   const { key, text, content, group, onClick, disabled } = option
 
   const uniqueKey = `select_option_${key || text}_group_${group}`
