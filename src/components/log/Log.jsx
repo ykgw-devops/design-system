@@ -1,9 +1,9 @@
-import { useRef } from 'react'
 import { FixedSizeList as VirtualList } from 'react-window'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
-const Line = styled.div`
+const Line = css`
   font-family: monospace;
 
   white-space: nowrap;
@@ -19,13 +19,7 @@ const List = styled(VirtualList)`
   color: white;
 `
 
-const Log = ({ lines = [] }) => {
-  const Row = ({ index, style }) => (
-    <Line style={style}>
-      {lines[index]}
-    </Line>
-  )
-
+const Log = ({ lines = [], lineRenderer }) => {
   return (
     <AutoSizer>
       {({ width, height }) => (
@@ -35,7 +29,7 @@ const Log = ({ lines = [] }) => {
           itemCount={lines.length}
           itemSize={21}
         >
-          {Row}
+          {({ index, style }) => lineRenderer({ index, style, css: Line }, lines[index])}
         </List>
       )}
     </AutoSizer>
