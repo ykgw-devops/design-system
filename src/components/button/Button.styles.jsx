@@ -99,8 +99,11 @@ const disabled = ({ kind, outline }) => {
 }
 
 const size = ({ size }) => {
+  const sizeProp = math(sizes[size] + ' * 0.9rem')
+
   return css`
-    font-size: ${math(sizes[size] + ' * 0.9rem')};
+    font-size: ${sizeProp};
+    line-height: ${sizeProp};
   `
 }
 
