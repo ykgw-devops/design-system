@@ -17,6 +17,7 @@ const base = props => css`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    border-right-width: 0;
   }
 
   button:first-of-type, a:first-of-type {
@@ -27,6 +28,7 @@ const base = props => css`
   button:last-of-type, a:last-of-type {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+    border-right-width: 1px;
   }
 `
 

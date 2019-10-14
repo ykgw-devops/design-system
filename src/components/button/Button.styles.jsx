@@ -59,15 +59,19 @@ const pill = css`
 `
 
 const outline = ({ kind }) => {
-  const color = kind === 'secondary'
-    ? carbon
-    : colors.fromSemantics(kind)
+  const color = colors.fromSemantics(kind)
 
   return css`
-    border: solid 1px ${colors.withWeight(color, 400)};
+    border: solid 1px ${kind === 'secondary'
+      ? shade(0.1, color)
+      : colors.withWeight(color, 400)
+    };
     background: none;
     box-shadow: none;
-    color: ${color};
+    color: ${kind === 'secondary'
+      ? carbon
+      : color
+    };
 
     &[disabled]:hover {
       background: none;
