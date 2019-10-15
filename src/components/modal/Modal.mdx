@@ -1,0 +1,75 @@
+---
+name: Modal
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import Modal from './Modal'
+import Button from '../button/Button'
+import Segment from '../segment/Segment'
+import Icon from '../icon/Icon'
+import tou from './tou'
+
+# Modal
+
+## Basic usage
+
+<Playground>
+  <Modal.Wrapper>
+    {(props) => (
+      <Modal {...props} trigger={
+        <Button onClick={props.handleOpen}>Click Me!</Button>
+      }>
+        <Segment.Group>
+          <Segment.Header>
+            Danger!
+          </Segment.Header>
+          <Segment>
+            Are you really sure you wish to delete this resource?
+          </Segment>
+          <Modal.Actions>
+            <Button outline kind='secondary' onClick={props.handleClose}>
+              Cancel
+            </Button>
+            <Button kind='danger' onClick={props.handleClose}>
+              <Icon name='remove_circle_outline' />Delete
+            </Button>
+          </Modal.Actions>
+        </Segment.Group>
+      </Modal>
+    )}
+  </Modal.Wrapper>
+</Playground>
+
+## Scrolling Content
+
+<Playground>
+  <Modal.Wrapper>
+    {(props) => (
+      <Modal {...props} trigger={
+        <Button onClick={props.handleOpen}>Click Me!</Button>
+      }>
+        <Segment.Group>
+          <Segment.Header>
+            Terms of Use
+          </Segment.Header>
+          <Segment>
+            {tou}
+          </Segment>
+          <Modal.Actions>
+            <Button outline kind='secondary' onClick={props.handleClose}>
+              Decline
+            </Button>
+            <Button kind='success' onClick={props.handleClose}>
+              Agree
+            </Button>
+          </Modal.Actions>
+        </Segment.Group>
+      </Modal>
+    )}
+  </Modal.Wrapper>
+</Playground>
+
+## Properties
+
+See https://reactcommunity.org/react-modal/#usage for the available properties.
