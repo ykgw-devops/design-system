@@ -1,10 +1,10 @@
+import { forwardRef } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { withProps } from 'recompose'
 
 import { concrete, clearSky } from '../../Colors'
 
-const Checkbox = withProps({ type: 'checkbox' })(styled.input`
+const Checkbox = styled.input`
   z-index: -1;
 
   position: absolute;
@@ -13,7 +13,7 @@ const Checkbox = withProps({ type: 'checkbox' })(styled.input`
 
   opacity: 0;
   outline: 0;
-`)
+`
 
 const CheckedLabel = css`
   &:before { background: ${clearSky}; }
@@ -87,13 +87,13 @@ const ToggleWrapper = styled.div`
   backface-visibility: hidden;
 `
 
-const Toggle = (props) => {
+const Toggle = forwardRef((props, ref) => {
   return (
     <ToggleWrapper>
-      <Checkbox {...props} />
+      <Checkbox {...props} type='checkbox' ref={ref} />
       <Label checked={props.checked} css={props.checked && CheckedLabel} />
     </ToggleWrapper>
   )
-}
+})
 
 export default Toggle
