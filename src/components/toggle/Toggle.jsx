@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, useState } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
@@ -16,13 +16,19 @@ const Checkbox = styled.input`
 `
 
 const CheckedLabel = css`
-  &:before { background: ${clearSky}; }
-  &:after { left: 1.5rem; }
+  &:before {
+    background: ${clearSky};
+  }
+
+  &:after {
+    left: 1.5rem;
+  }
 `
 
 const Label = styled.label`
   position: relative;
   display: block;
+  width: 3rem;
 
   cursor: auto;
 
@@ -69,6 +75,8 @@ const Label = styled.label`
   &:before, &:after {
     left: 0;
   }
+
+  ${props => props.checked && CheckedLabel}
 `
 
 const ToggleWrapper = styled.div`
@@ -88,10 +96,17 @@ const ToggleWrapper = styled.div`
 `
 
 const Toggle = forwardRef((props, ref) => {
+  const [checked, setChecked] = useState(props.checked || props.defaultChecked)
+
+  const toggle = () => {
+    typeof props.onChange === 'function' && props.onChange(!checked)
+    setChecked(!checked)
+  }
+
   return (
-    <ToggleWrapper>
-      <Checkbox {...props} type='checkbox' ref={ref} />
-      <Label checked={props.checked} css={props.checked && CheckedLabel} />
+    <ToggleWrapper onClick={toggle}>
+      <Checkbox type='checkbox' {...props} ref={ref} checked={checked} />
+      <Label checked={checked} />
     </ToggleWrapper>
   )
 })
