@@ -13,5 +13,11 @@ import Toggle from './Toggle'
 <Playground>
   <Toggle checked={false} />
   <br />
-  <Toggle checked onChange={checked => alert(checked)} />
+  <Toggle checked onChange={event => alert(event.target.checked)} />
+</Playground>
+
+## Uncontrolled
+
+<Playground>
+  <Toggle />
 </Playground>

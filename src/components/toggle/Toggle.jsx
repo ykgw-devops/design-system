@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, useState } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
@@ -95,11 +95,30 @@ const ToggleWrapper = styled.div`
   backface-visibility: hidden;
 `
 
+/**
+ * This Toggle component can be both controlled and uncontrolled
+ *
+ * When the 'checked' property is set we assume the component is controlled and don't use local state.
+ *
+ * Use the 'defaultChecked' property to set initial checked state for uncontrolled components
+ */
 const Toggle = forwardRef((props, ref) => {
+  const [checked, setChecked] = useState(props.defaultChecked || false)
+
+  const handleChange = (event) => {
+    if (!('checked' in props)) {
+      setChecked(checked => !checked)
+    }
+
+    typeof props.onChange === 'function' && props.onChange(event)
+  }
+
+  const isChecked = props.checked || checked
+
   return (
     <ToggleWrapper>
-      <Label checked={props.checked}>
-        <Checkbox type='checkbox' {...props} ref={ref} />
+      <Label checked={isChecked}>
+        <Checkbox type='checkbox' {...props} onChange={handleChange} checked={isChecked} ref={ref} />
       </Label>
     </ToggleWrapper>
   )
