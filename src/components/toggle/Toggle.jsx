@@ -1,4 +1,4 @@
-import { forwardRef, useState } from 'react'
+import { forwardRef } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
@@ -96,17 +96,11 @@ const ToggleWrapper = styled.div`
 `
 
 const Toggle = forwardRef((props, ref) => {
-  const [checked, setChecked] = useState(props.checked || props.defaultChecked)
-
-  const toggle = () => {
-    typeof props.onChange === 'function' && props.onChange(!checked)
-    setChecked(!checked)
-  }
-
   return (
-    <ToggleWrapper onClick={toggle}>
-      <Checkbox type='checkbox' {...props} ref={ref} checked={checked} />
-      <Label checked={checked} />
+    <ToggleWrapper>
+      <Label checked={props.checked}>
+        <Checkbox type='checkbox' {...props} ref={ref} />
+      </Label>
     </ToggleWrapper>
   )
 })
