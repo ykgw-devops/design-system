@@ -1,8 +1,8 @@
-import { math, shade } from 'polished'
+import { math, shade, tint } from 'polished'
+import { css } from '@emotion/core'
 
 import colors, { carbon, clearSky } from '../../Colors'
 import { fontFamily } from '../../Typography'
-import { css } from '@emotion/core'
 import sizes from '../../sizes'
 
 const base = css`
@@ -85,9 +85,9 @@ const outline = ({ kind }) => {
 
 const disabled = ({ kind, outline }) => {
   const color = colors.fromSemantics(kind)
-  const bgColor = colors.withWeight(color, 100)
-  const fontColor = colors.withWeight(color, 200)
-  const borderColor = colors.withWeight(color, 300)
+  const bgColor = tint(0.9, color)
+  const fontColor = colors.withWeight(color, 300)
+  const borderColor = colors.withWeight(color, 200)
 
   return css`
     color: ${fontColor};
