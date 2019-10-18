@@ -29,6 +29,7 @@ const base = css`
 
   transition: background 80ms ease-in;
   vertical-align: middle;
+  appearance: none;
 
   &:hover {
     background-color: ${shade(0.1, clearSky)};
