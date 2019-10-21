@@ -1,3 +1,22 @@
+## [2.6.1](https://github.com/waylayio/design-system/compare/v2.6.0...v2.6.1) (2019-10-21)
+
+
+### Bug Fixes
+
+* pass ref for toggle ([ad5b720](https://github.com/waylayio/design-system/commit/ad5b720))
+* **button:** make buttons type button by default ([80969a0](https://github.com/waylayio/design-system/commit/80969a0))
+* **dropdown-item:** import react ([c61315d](https://github.com/waylayio/design-system/commit/c61315d))
+* **toggle:** controlled component ([b3b8e9f](https://github.com/waylayio/design-system/commit/b3b8e9f))
+
+
+### Features
+
+* adds Toggle component ([7216ff5](https://github.com/waylayio/design-system/commit/7216ff5))
+* **toggle:** make component controlled ([0a2d5b3](https://github.com/waylayio/design-system/commit/0a2d5b3))
+* **toggle:** make controlled or uncontrolled ([e89d833](https://github.com/waylayio/design-system/commit/e89d833))
+
+
+
 # [2.6.0](https://github.com/waylayio/design-system/compare/v2.5.5...v2.6.0) (2019-10-15)
 
 
