@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from 'react' // eslint-disable-line
 import { jsx } from '@emotion/core'
 import PropTypes from 'prop-types'
 import { isString } from 'lodash'
