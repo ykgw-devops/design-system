@@ -8,6 +8,7 @@ import sizes from '../../sizes'
 const base = css`
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 
   white-space: pre;
   text-align: center;
