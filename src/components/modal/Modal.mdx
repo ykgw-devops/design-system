@@ -12,6 +12,48 @@ import tou from './tou'
 
 # Modal
 
+We reccommend using the [react-modal-hook](https://github.com/mpontus/react-modal-hook) library to handle the Modal logic.
+
+Below is an example of how to combine the Modal with `react-modal-hook`.
+
+```javascript
+const ModalView = ({ action }) => {
+  const [showModal, hideModal] = useModal(() => (
+    <Modal isOpen onRequestClose={hideModal}>
+      <Segment.Group css={css`width: 600px;`}>
+        <Segment.Header>Remove setting</Segment.Header>
+        <Segment>
+          Deleting this alarm is permanent. Are you sure you wish to continue?
+            </Segment>
+        <Modal.Actions>
+          <Button outline kind='secondary' onClick={hideModal}>
+            Cancel
+          </Button>
+          <Button kind='danger' disabled={action.isLoading} onClick={() => action.run()}>
+            Remove Alarm
+          </Button>
+        </Modal.Actions>
+      </Segment.Group>
+    </Modal>
+  ), [action])
+
+  // we have to subscribe to the promise that gets created when we call `run`
+  useEffect(() => {
+    action.promise
+      .then(() => hideModal())
+      .catch(() => { })
+  }, [action.promise])
+
+  return (
+    <Button outline kind='danger' disabled={action.isLoading} onClick={showModal}>
+      <Icon name='remove_circle_outline' /> Remove
+    </Button>
+  )
+}
+
+export default ModalView
+```
+
 ## Basic usage
 
 <Playground>
