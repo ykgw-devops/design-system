@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Don't emit; allow Babel to transform files.
+    "noEmit": true,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    // use esnext so @babel/preset-env can transpile older syntax
+    "target": "esnext",
+    // Disallow features that require cross-file information for emit.
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "jsx": "react",
+    // allow dynamic imports for bundle splitting
+    "module": "esNext",
+    "types": [
+      "jest",
+      "node"
+    ]
+  },
+  "include": [
+    "src"
+  ]
+}

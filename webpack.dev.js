@@ -15,11 +15,11 @@ module.exports = {
     'react-dom'
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   module: {
     rules: [{
-      test: /.jsx?$/,
+      test: /\.(tsx?|jsx?)$/,
       exclude: /node_modules/,
       use: {
         loader: 'babel-loader',
