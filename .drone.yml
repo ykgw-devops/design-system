@@ -2,11 +2,15 @@ kind: pipeline
 name: Build
 
 steps:
-  - name: Build sources
+  - name: Run Tests
     image: node:10
     commands:
       - yarn install --offline --non-interactive --frozen-lockfile
       - yarn test
+  
+  - name: Build sources
+    image: node:10
+    commands:
       - yarn build
 
   - name: Docker image
