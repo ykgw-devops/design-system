@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button DOM 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  white-space: pre;
+  text-align: center;
+  background-color: #1E90FF;
+  border-radius: 0.333333rem;
+  border: solid 1px #1b81e5;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Fira Sans",system-ui,sans-serif;
+  font-weight: 400;
+  padding: 0.65em 1em;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background 80ms ease-in;
+  transition: background 80ms ease-in;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #1E90FF;
+  color: white;
+  border-color: #1b81e5;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+}
+
+.emotion-0:hover {
+  background-color: #1b81e5;
+}
+
+.emotion-0:hover {
+  background-color: #1b81e5;
+}
+
+<button
+    class="emotion-0 emotion-1"
+    kind="primary"
+    type="button"
+  >
+    Hello, World!
+  </button>
+</DocumentFragment>
+`;

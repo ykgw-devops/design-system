@@ -16,8 +16,7 @@
     // allow dynamic imports for bundle splitting
     "module": "esNext",
     "types": [
-      "jest",
-      "node"
+      "jest"
     ]
   },
   "include": [
