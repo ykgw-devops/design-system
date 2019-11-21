@@ -34,10 +34,10 @@ const FilterableInput = ({ initialValue = '', onChange, onSelection, input, popu
     const search = searchString.parse(filter)
     search.addEntry(value, true)
 
-    onSelectionHandler(search.toString())
     setFilter(value)
 
     inputElem.current.focus()
+
     tooptip.hide()
   }
 
