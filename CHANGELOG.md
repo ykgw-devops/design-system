@@ -1,3 +1,12 @@
+# [2.9.0](https://github.com/waylayio/design-system/compare/v2.8.0...v2.9.0) (2019-12-16)
+
+
+### Features
+
+* **button:** adds loading button ([12bfb39](https://github.com/waylayio/design-system/commit/12bfb39))
+
+
+
 # [2.8.0](https://github.com/waylayio/design-system/compare/v2.7.0...v2.8.0) (2019-12-12)
 
 
