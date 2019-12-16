@@ -42,18 +42,40 @@ const base = css`
   }
 `
 
-const kind = ({ kind = 'primary', outline }) => {
+const kind = ({ kind = 'primary' }) => {
   const color = colors.fromSemantics(kind)
 
   return css`
     background-color: ${color};
-    color: ${kind === 'secondary' ? carbon : 'white'};
+    color: ${colorFromProps({ kind })};
     border-color: ${shade(0.1, color)};
 
     &:hover {
       background-color: ${shade(0.1, color)};
     }
   `
+}
+
+const colorFromProps = ({ kind = 'primary', outline, disabled }) => {
+  const color = colors.fromSemantics(kind)
+
+  if (disabled) {
+    return colors.withWeight(color, 300)
+  }
+
+  if (outline) {
+    return kind === 'secondary'
+      ? carbon
+      : color
+  }
+
+  if (!outline) {
+    return kind === 'secondary'
+      ? carbon
+      : 'white'
+  }
+
+  return color
 }
 
 const pill = css`
@@ -70,10 +92,7 @@ const outline = ({ kind }) => {
     };
     background: none;
     box-shadow: none;
-    color: ${kind === 'secondary'
-      ? carbon
-      : color
-    };
+    color: ${colorFromProps({ kind, outline: true })};
 
     &[disabled]:hover {
       background: none;
@@ -88,11 +107,10 @@ const outline = ({ kind }) => {
 const disabled = ({ kind, outline }) => {
   const color = colors.fromSemantics(kind)
   const bgColor = tint(0.9, color)
-  const fontColor = colors.withWeight(color, 300)
   const borderColor = colors.withWeight(color, 200)
 
   return css`
-    color: ${fontColor};
+    color: ${colorFromProps({ kind, outline, disabled: true })};
     border-color: ${borderColor};
     background: ${outline ? 'none' : bgColor};
 
@@ -113,4 +131,4 @@ const size = ({ size }) => {
   `
 }
 
-export { base, kind, pill, outline, disabled, size }
+export { base, kind, pill, outline, disabled, size, colorFromProps }
