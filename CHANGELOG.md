@@ -1,3 +1,12 @@
+## [2.9.1](https://github.com/waylayio/design-system/compare/v2.9.0...v2.9.1) (2019-12-18)
+
+
+### Bug Fixes
+
+* **button:** correctly pass refs ([877f829](https://github.com/waylayio/design-system/commit/877f829))
+
+
+
 # [2.9.0](https://github.com/waylayio/design-system/compare/v2.8.0...v2.9.0) (2019-12-16)
 
 
