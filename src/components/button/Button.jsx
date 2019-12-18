@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
-import { branch, setDisplayName, withProps } from 'recompose'
+import { setDisplayName } from 'recompose'
 
 import Group from './Group'
 import Loader from '../loader/Loader'
@@ -16,25 +16,22 @@ const Button = styled.button`
   ${props => props.pill && pill};
   ${props => props.disabled && disabled(props)};
 `
-const spinnerWhileLoading = isLoading =>
-  branch(
-    isLoading,
-    withProps(props => ({
-      children: (
-        <>
-          <Loader
-            color={colorFromProps(props)}
-            size={14}
-            thickness={2}
-          /> {props.children}
-        </>
-      )
-    }))
-  )
 
-const EnhancedButton = spinnerWhileLoading(
-  props => props.loading
-)(Button)
+const EnhancedButton = React.forwardRef((props, ref) => (
+  <Button {...props} ref={ref}>
+    {props.loading && (
+      <>
+        <Loader
+          color={colorFromProps(props)}
+          size={14}
+          thickness={2}
+        />
+        &nbsp;
+      </>
+    )}
+    {props.children}
+  </Button>
+))
 
 EnhancedButton.Group = setDisplayName('Button.Group')(Group)
 
