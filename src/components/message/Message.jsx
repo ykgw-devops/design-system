@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { base, danger, info, warning, title as titleStyle } from './Messages.styles.jsx'
+import { base, danger, info, warning, title as titleStyle, basic, withIcon } from './Messages.styles.jsx'
 import PropTypes from 'prop-types'
 import { omit } from 'lodash'
 
@@ -18,8 +18,15 @@ const Message = props => {
   // since "outline" is already defined as a boolean prop
   const rest = omit(props, 'outline')
 
+  const styles = [
+    base(props),
+    kindStyle,
+    props.basic && basic,
+    props.icon && withIcon(props.icon)
+  ]
+
   return (
-    <div css={[base(props), kindStyle]} {...rest}>
+    <div css={styles} {...rest}>
       <div>
         {title && (
           <div css={titleStyle}>
@@ -35,7 +42,9 @@ const Message = props => {
 Message.propTypes = {
   kind: PropTypes.oneOf(['info', 'warning', 'danger']),
   title: PropTypes.string,
-  outline: PropTypes.bool
+  icon: PropTypes.string,
+  outline: PropTypes.bool,
+  basic: PropTypes.bool
 }
 
 Message.defaultProps = {

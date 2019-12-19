@@ -40,6 +40,11 @@ const base = props => {
   `
 }
 
+const basic = css`
+  border: none;
+  background: none;
+`
+
 const withIcon = (name) => css`
   &:before {
     font-family: 'Material Icons';
@@ -69,4 +74,4 @@ const title = css`
   margin-bottom: 5px;
 `
 
-export { base, danger, info, warning, title }
+export { base, basic, danger, info, warning, title, withIcon }
