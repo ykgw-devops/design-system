@@ -1,16 +1,60 @@
-import Select from 'react-select'
-import { defaultProps } from 'recompose'
+import React from 'react'
+import Select, { components } from 'react-select'
+import { css } from '@emotion/core'
+import { defaultProps, withProps } from 'recompose'
 
+import Icon from '../icon/Icon'
 import colors, { carbon, clearSky, concrete } from '../../Colors'
+
+const ClearIndicator = props => {
+  const { getStyles, innerProps: { ref, ...restInnerProps } } = props
+
+  return (
+    <div
+      {...restInnerProps}
+      ref={ref}
+      style={getStyles('clearIndicator', props)}
+    >
+      <Icon style={{ fontWeight: 'bold' }} name='clear' />
+    </div>
+  )
+}
+
+const MultiValueRemove = props => {
+  return (
+    <components.MultiValueRemove {...props}>
+      <Icon name='clear' style={{ fontSize: '0.8em' }} />
+    </components.MultiValueRemove>
+  )
+}
+
+const CustomSelect = withProps({
+  components: {
+    ClearIndicator,
+    MultiValueRemove
+  }
+})(Select)
 
 export default defaultProps({
   styles: {
-    singleValue: (provided, state) => ({
-      ...provided,
+    singleValue: (base, state) => ({
+      ...base,
       color: carbon
     }),
-    control: (provided, state) => ({
-      ...provided,
+    multiValue: (base, state) => ({
+      ...base,
+      color: carbon,
+      height: '1.5em',
+      lineHeight: '1em'
+    }),
+    multiValueRemove: (base) => ({
+      ...base,
+      ':hover': {
+        background: colors.withWeight(concrete, 600)
+      }
+    }),
+    control: (base, state) => ({
+      ...base,
       borderWidth: '1px',
       boxShadow: 'none',
       borderColor: state.isFocused
@@ -34,4 +78,4 @@ export default defaultProps({
         : provided.background
     })
   }
-})(Select)
+})(CustomSelect)
