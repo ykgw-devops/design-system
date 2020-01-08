@@ -1,3 +1,12 @@
+# [2.11.0](https://github.com/waylayio/design-system/compare/v2.10.0...v2.11.0) (2020-01-08)
+
+
+### Features
+
+* **select:** adds multiSelect styles ([78bbadc](https://github.com/waylayio/design-system/commit/78bbadc))
+
+
+
 # [2.10.0](https://github.com/waylayio/design-system/compare/v2.9.1...v2.10.0) (2019-12-19)
 
 
