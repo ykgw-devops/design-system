@@ -1,3 +1,12 @@
+## [2.11.1](https://github.com/waylayio/design-system/compare/v2.11.0...v2.11.1) (2020-01-15)
+
+
+### Bug Fixes
+
+* **label:** better close label center alignment ([6ffd64e](https://github.com/waylayio/design-system/commit/6ffd64e))
+
+
+
 # [2.11.0](https://github.com/waylayio/design-system/compare/v2.10.0...v2.11.0) (2020-01-08)
 
 
