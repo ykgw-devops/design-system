@@ -1,6 +1,5 @@
 import React from 'react'
 import Select, { components } from 'react-select'
-import { css } from '@emotion/core'
 import { defaultProps, withProps } from 'recompose'
 
 import Icon from '../icon/Icon'
@@ -53,8 +52,14 @@ export default defaultProps({
         background: colors.withWeight(concrete, 600)
       }
     }),
+    indicatorsContainer: (base) => ({
+      ...base,
+      height: '2.4rem'
+    }),
     control: (base, state) => ({
       ...base,
+      height: '2.4rem',
+      minHeight: 'auto',
       borderWidth: '1px',
       boxShadow: 'none',
       borderColor: state.isFocused
