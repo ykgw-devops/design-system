@@ -1,3 +1,12 @@
+## [2.11.2](https://github.com/waylayio/design-system/compare/v2.11.1...v2.11.2) (2020-01-15)
+
+
+### Bug Fixes
+
+* **select:** correct control size ([0c5d95a](https://github.com/waylayio/design-system/commit/0c5d95a))
+
+
+
 ## [2.11.1](https://github.com/waylayio/design-system/compare/v2.11.0...v2.11.1) (2020-01-15)
 
 
