@@ -110,12 +110,16 @@ const close = props => {
   const { color } = getColors(props.color)
 
   return css`
-    /* make hitbox a bit bigger for close icon */
-    padding: 0.2em;
+    line-height: 1.47em;
+    height: 1.47em;
+    width: 1.47em;
+    text-align: center;
+    font-family: monospace;
+
     font-size: 0.85em;
 
     margin-left: 0.5em;
-    margin-right: -0.25em;
+    margin-right: -0.5em;
     border-radius: 100%;
     cursor: pointer;
     user-select: none;

@@ -3,12 +3,13 @@ import { jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-import Icon from '../icon/Icon'
 import { base, close, colored, detail, focused, value, size } from './Label.styles.jsx'
 import withProps from 'recompose/withProps'
 
 // Icon with larger hitbox and cursor pointer
-const Close = withProps({ name: 'close' })(Icon)
+const Close = withProps({
+  children: '⛌'
+})(styled.div``)
 
 const Container = styled.div`
   ${props => base(props)};
