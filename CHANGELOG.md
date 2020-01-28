@@ -1,3 +1,12 @@
+# [2.12.0](https://github.com/waylayio/design-system/compare/v2.11.3...v2.12.0) (2020-01-28)
+
+
+### Features
+
+* **select:** add AsyncSelect from react-select ([#25](https://github.com/waylayio/design-system/issues/25)) ([eba5d5c](https://github.com/waylayio/design-system/commit/eba5d5c))
+
+
+
 ## [2.11.3](https://github.com/waylayio/design-system/compare/v2.11.2...v2.11.3) (2020-01-15)
 
 
