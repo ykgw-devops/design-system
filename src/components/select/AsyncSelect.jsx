@@ -1,14 +1,14 @@
-import Select from 'react-select'
+import AsyncSelect from 'react-select/async'
 import { defaultProps, withProps } from 'recompose'
 
 import { ClearIndicator, MultiValueRemove } from './Select.common'
 import styles from './Select.styles'
 
-const CustomSelect = withProps({
+const CustomAsyncSelect = withProps({
   components: {
     ClearIndicator,
     MultiValueRemove
   }
-})(Select)
+})(AsyncSelect)
 
-export default defaultProps({ styles })(CustomSelect)
+export default defaultProps({ styles })(CustomAsyncSelect)
