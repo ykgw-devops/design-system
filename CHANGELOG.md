@@ -1,3 +1,7 @@
+## [2.12.1](https://github.com/waylayio/design-system/compare/v2.12.0...v2.12.1) (2020-01-29)
+
+
+
 # [2.12.0](https://github.com/waylayio/design-system/compare/v2.11.3...v2.12.0) (2020-01-28)
 
 
