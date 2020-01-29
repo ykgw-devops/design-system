@@ -1,4 +1,4 @@
-# Design System
+![banner](https://user-images.githubusercontent.com/868844/73346078-8a80c580-4285-11ea-9cdd-21fc4ee0e455.png)
 
 The Waylay [design system](https://airbnb.design/building-a-visual-language/).
 
