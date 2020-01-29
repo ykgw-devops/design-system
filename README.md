@@ -1,4 +1,7 @@
-![banner](https://user-images.githubusercontent.com/868844/73346078-8a80c580-4285-11ea-9cdd-21fc4ee0e455.png)
+![design-system-banner](https://user-images.githubusercontent.com/868844/73349510-94a5c280-428b-11ea-9bc2-1ef80e646ec8.png)
+
+[![Build Status](http://drone.waylay.io/api/badges/waylayio/design-system/status.svg)](http://drone.waylay.io/waylayio/design-system)
+
 
 The Waylay [design system](https://airbnb.design/building-a-visual-language/).
 
