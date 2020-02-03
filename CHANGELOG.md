@@ -1,3 +1,12 @@
+# [2.13.0](https://github.com/waylayio/design-system/compare/v2.12.1...v2.13.0) (2020-02-03)
+
+
+### Features
+
+* adds Collapsible component ([e8134f9](https://github.com/waylayio/design-system/commit/e8134f9))
+
+
+
 ## [2.12.1](https://github.com/waylayio/design-system/compare/v2.12.0...v2.12.1) (2020-01-29)
 
 
