@@ -25,4 +25,5 @@ export { default as CopyToClipboard } from './components/copyToClipboard/CopyToC
 export { default as Toggle } from './components/toggle/Toggle'
 export { default as Select } from './components/select/Select'
 export { default as AsyncSelect } from './components/select/AsyncSelect'
+export { default as Collapsible } from './components/collapsible/Collapsible'
 export * from './components/popup/Popup'
