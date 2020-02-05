@@ -1,10 +1,13 @@
 import styled from '@emotion/styled'
+import isPropValid from '@emotion/is-prop-valid'
 import PropTypes from 'prop-types'
 
 import Group from './Group'
 import { input, fluid as fluidStyle, basic as basicStyle, adornments } from './Input.styles'
 
-const Input = styled.input`
+const Input = styled('input', {
+  shouldForwardProp: isPropValid
+})`
   ${input};
   ${props => props.fluid && fluidStyle};
   ${props => props.basic && basicStyle};

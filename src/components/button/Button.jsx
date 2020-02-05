@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import isPropValid from '@emotion/is-prop-valid'
 import PropTypes from 'prop-types'
 import { setDisplayName } from 'recompose'
 
@@ -8,7 +9,9 @@ import Loader from '../loader/Loader'
 
 import { base, kind, outline, pill, disabled, size, colorFromProps } from './Button.styles'
 
-const Button = styled.button`
+const Button = styled('button', {
+  shouldForwardProp: isPropValid
+})`
   ${base};
   ${props => kind(props)};
   ${props => size(props)};
@@ -17,21 +20,25 @@ const Button = styled.button`
   ${props => props.disabled && disabled(props)};
 `
 
-const EnhancedButton = React.forwardRef((props, ref) => (
-  <Button {...props} ref={ref}>
-    {props.loading && (
-      <>
-        <Loader
-          color={colorFromProps(props)}
-          size={14}
-          thickness={2}
-        />
-        &nbsp;
-      </>
-    )}
-    {props.children}
-  </Button>
-))
+const EnhancedButton = React.forwardRef((props, ref) => {
+  const { loading, children, ...rest } = props
+
+  return (
+    <Button {...rest} ref={ref}>
+      {loading && (
+        <>
+          <Loader
+            color={colorFromProps(props)}
+            size={14}
+            thickness={2}
+          />
+          &nbsp;
+        </>
+      )}
+      {children}
+    </Button>
+  )
+})
 
 EnhancedButton.Group = setDisplayName('Button.Group')(Group)
 

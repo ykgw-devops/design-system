@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+import styled from '@emotion/styled'
+import isPropValid from '@emotion/is-prop-valid'
 import { base, danger, info, warning, title as titleStyle, basic, withIcon } from './Messages.styles.jsx'
 import PropTypes from 'prop-types'
 import { omit } from 'lodash'
@@ -10,6 +10,10 @@ const kindMap = {
   warning: warning,
   [undefined]: ''
 }
+
+const MessageContainer = styled('div', {
+  shouldForwardProp: isPropValid
+})``
 
 const Message = props => {
   const { children, kind, title } = props
@@ -26,7 +30,7 @@ const Message = props => {
   ]
 
   return (
-    <div css={styles} {...rest}>
+    <MessageContainer css={styles} {...rest}>
       <div>
         {title && (
           <div css={titleStyle}>
@@ -35,7 +39,7 @@ const Message = props => {
         )}
         {children}
       </div>
-    </div>
+    </MessageContainer>
   )
 }
 

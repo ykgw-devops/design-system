@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
+    "@emotion/is-prop-valid": "^0.8.6",
     "@emotion/styled": "^10.0.27",
     "@tippy.js/react": "^2.2.3",
     "copy-text-to-clipboard": "^2.1.1",

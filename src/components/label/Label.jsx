@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
 import styled from '@emotion/styled'
+import isPropValid from '@emotion/is-prop-valid'
 import PropTypes from 'prop-types'
 
 import { base, close, colored, detail, focused, value, size } from './Label.styles.jsx'
@@ -11,25 +10,31 @@ const Close = withProps({
   children: '⛌'
 })(styled.div``)
 
-const Container = styled.div`
+const Container = styled('div', {
+  shouldForwardProp: isPropValid
+})`
   ${props => base(props)};
   ${props => colored(props)};
   ${props => focused(props)};
   ${props => size(props)};
 `
 
-const Label = (props) => (
-  <Container {...props}>
-    {props.name &&
-      <div css={detail(props)}>
-        {props.name}
-      </div>}
-    <div css={value(props)}>
-      {props.children}
-      {props.removable && <Close css={close(props)} onClick={props.onClose} />}
-    </div>
-  </Container>
-)
+const Label = (props) => {
+  const { name, children, removable, onClose, ...rest } = props
+
+  return (
+    <Container {...rest}>
+      {name &&
+        <div css={detail(props)}>
+          {name}
+        </div>}
+      <div css={value(props)}>
+        {children}
+        {removable && <Close css={close(props)} onClick={onClose} />}
+      </div>
+    </Container>
+  )
+}
 
 Label.propTypes = {
   color: PropTypes.string,
