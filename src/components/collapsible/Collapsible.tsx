@@ -12,18 +12,14 @@ const Collapsible = (props: ICollapsibleProps) => {
   const close = () => setIsOpen(false)
   const toggle = () => setIsOpen((open: boolean) => !open)
 
-  const ToggleBody = useCallback((props) => (
-    <div {...props} style={{ height: isOpen ? 'auto' : 0, overflow: 'hidden' }}>
-      {props.children}
-    </div>
-  ), [isOpen])
+  const style = { height: isOpen ? 'auto' : 0, overflow: 'hidden' }
 
   return props.children({
     toggle,
     open,
     close,
     isOpen,
-    ToggleBody
+    style
   })
 }
 
