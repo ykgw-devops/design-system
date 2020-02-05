@@ -1,3 +1,12 @@
+## [2.13.1](https://github.com/waylayio/design-system/compare/v2.13.0...v2.13.1) (2020-02-05)
+
+
+### Bug Fixes
+
+* only forward valid props ([3c5a7c8](https://github.com/waylayio/design-system/commit/3c5a7c8))
+
+
+
 # [2.13.0](https://github.com/waylayio/design-system/compare/v2.12.1...v2.13.0) (2020-02-03)
 
 
