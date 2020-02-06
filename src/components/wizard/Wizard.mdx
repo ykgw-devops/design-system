@@ -5,6 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz'
 import Wizard from './Wizard'
+import Steps from './Steps'
 
 # Wizard
 
@@ -12,14 +13,16 @@ import Wizard from './Wizard'
 
 <Playground>
   <Wizard>
-    <div>
-      <h3>Step 1</h3>
-    </div>
-    <div>
-      <h3>Step 2</h3>
-    </div>
-    <div>
-      <h3>Step 3</h3>
-    </div>
+    <Steps>
+      <div>
+        <h3>Step 1</h3>
+      </div>
+      <div>
+        <h3>Step 2</h3>
+      </div>
+      <div>
+        <h3>Step 3</h3>
+      </div>
+    </Steps>
   </Wizard>
 </Playground>
