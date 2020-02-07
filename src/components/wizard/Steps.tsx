@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { castArray, get } from 'lodash'
 
 const Steps = ({ children = [], wizard }) => {

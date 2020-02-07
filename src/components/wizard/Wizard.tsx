@@ -1,6 +1,7 @@
 import { useState, useMemo, useCallback } from 'react'
 import { castArray } from 'lodash'
 import Steps from './Steps'
+import Navigation from './Navigation'
 
 const Wizard = ({ children = [] }) => {
   const [steps, setSteps] = useState([])
@@ -28,7 +29,8 @@ const Wizard = ({ children = [] }) => {
     currentStep,
     setSteps,
     next,
-    previous
+    previous,
+    endIndex: stepsEndIndex
   }
 
   return castArray(children).map((child) => {
@@ -44,5 +46,6 @@ const Wizard = ({ children = [] }) => {
 }
 
 Wizard.Steps = Steps
+Wizard.Navigation = Navigation
 
 export default Wizard

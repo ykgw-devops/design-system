@@ -9,6 +9,20 @@ import Button from '../button/Button'
 
 # Wizard
 
+Allows you to create a wizard component.
+Every child is passed a wizard object that contains the following:
+
+* currentStep: integer
+* setSteps: function
+* next: function
+* previous: function
+* endIndex: integer
+
+The Steps component implements the basic functionality of only showing the currently selected step.
+The Navigation component implements 2 basic navigation buttons
+
+Children render props can be used or normal child elements.
+
 ## Basic usage
 
 <Playground>
@@ -24,13 +38,6 @@ import Button from '../button/Button'
         <h3>Step 3</h3>
       </div>
     </Wizard.Steps>
-    <div>
-      {wizard => (
-          <div>
-            <Button onClick={wizard.previous}>Previous</Button>
-            <Button style={{ marginLeft: '5px'}} onClick={wizard.next}>Next</Button>
-          </div>
-        )}
-    </div>
+    <Wizard.Navigation />
   </Wizard>
 </Playground>
