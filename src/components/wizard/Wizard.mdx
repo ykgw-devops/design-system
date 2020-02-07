@@ -5,7 +5,6 @@ menu: Components
 
 import { Playground, Props } from 'docz'
 import Wizard from './Wizard'
-import Steps from './Steps'
 import Button from '../button/Button'
 
 # Wizard
@@ -14,7 +13,7 @@ import Button from '../button/Button'
 
 <Playground>
   <Wizard>
-    <Steps>
+    <Wizard.Steps>
       <div>
         <h3>Step 1</h3>
       </div>
@@ -24,12 +23,12 @@ import Button from '../button/Button'
       <div>
         <h3>Step 3</h3>
       </div>
-    </Steps>
+    </Wizard.Steps>
     <div>
       {wizard => (
           <div>
             <Button onClick={wizard.previous}>Previous</Button>
-            <Button style={{'margin-left': '5px'}} onClick={wizard.next}>Next</Button>
+            <Button style={{ marginLeft: '5px'}} onClick={wizard.next}>Next</Button>
           </div>
         )}
     </div>

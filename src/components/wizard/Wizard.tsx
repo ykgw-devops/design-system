@@ -1,5 +1,6 @@
 import { useState, useMemo, useCallback } from 'react'
 import { castArray } from 'lodash'
+import Steps from './Steps'
 
 const Wizard = ({ children = [] }) => {
   const [steps, setSteps] = useState([])
@@ -30,7 +31,7 @@ const Wizard = ({ children = [] }) => {
     previous
   }
 
-  return castArray(children).map(child => {
+  return castArray(children).map((child) => {
     const { props } = child
     const { children } = props
 
@@ -41,5 +42,7 @@ const Wizard = ({ children = [] }) => {
     return ({ ...child, props: newProps })
   })
 }
+
+Wizard.Steps = Steps
 
 export default Wizard
