@@ -1,3 +1,5 @@
+import React from 'react'
+
 import styled from '@emotion/styled'
 import isPropValid from '@emotion/is-prop-valid'
 import { base, danger, info, warning, title as titleStyle, basic, withIcon } from './Messages.styles.jsx'
