@@ -1,26 +1,27 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { castArray } from 'lodash'
 
 const Wizard = ({ children = [] }) => {
   const [steps, setSteps] = useState([])
   const [currentStep, setCurrentStep] = useState(0)
-  const stepsEndIndex = steps.length - 1
 
-  const next = () => {
+  const stepsEndIndex = useMemo(() => steps.length - 1, [steps])
+
+  const next = useCallback(() => {
     const nextStep = currentStep + 1
 
     if (nextStep > stepsEndIndex) return
 
     setCurrentStep(nextStep)
-  }
+  }, [stepsEndIndex, currentStep])
 
-  const previous = () => {
+  const previous = useCallback(() => {
     const prevStep = currentStep - 1
 
-    if (stepsEndIndex < 0) return
+    if (prevStep < 0) return
 
     setCurrentStep(prevStep)
-  }
+  }, [stepsEndIndex, currentStep])
 
   const wizard = {
     currentStep,
@@ -29,9 +30,16 @@ const Wizard = ({ children = [] }) => {
     previous
   }
 
-  return useMemo(() => {
-    return castArray(children).map(child => ({ ...child, props: { ...child.props, wizard }}))
-  }, [currentStep])
+  return castArray(children).map(child => {
+    const { props } = child
+    const { children } = props
+
+    if (typeof children === 'function') return children(wizard)
+
+    const newProps = { ...props, wizard }
+
+    return ({ ...child, props: newProps })
+  })
 }
 
 export default Wizard
