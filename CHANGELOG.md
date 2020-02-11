@@ -1,3 +1,19 @@
+## [2.13.2](https://github.com/waylayio/design-system/compare/v2.13.1...v2.13.2) (2020-02-11)
+
+
+### Bug Fixes
+
+* **message:** flex grow message contents ([a08fd9d](https://github.com/waylayio/design-system/commit/a08fd9d))
+* message component ([2fb34a2](https://github.com/waylayio/design-system/commit/2fb34a2))
+* use JSX pragmas ([d40c104](https://github.com/waylayio/design-system/commit/d40c104))
+
+
+### Features
+
+* **collapsible:** use styles instead of component for collapsible state ([3aae3b6](https://github.com/waylayio/design-system/commit/3aae3b6))
+
+
+
 ## [2.13.1](https://github.com/waylayio/design-system/compare/v2.13.0...v2.13.1) (2020-02-05)
 
 
