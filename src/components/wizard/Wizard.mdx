@@ -3,23 +3,29 @@ name: Wizard
 menu: Components
 ---
 
+import { useEffect } from 'react'
 import { Playground, Props } from 'docz'
 import Wizard from './Wizard'
+import SingleComponent from './SingleComponent'
+
 import Button from '../button/Button'
+import Segment from '../segment/Segment'
 
 # Wizard
 
 Allows you to create a wizard component.
-Every child is passed a wizard object that contains the following:
+Every direct child of the Wizard component is passed a wizard object that contains the following:
 
-* currentStep: integer
-* setSteps: function
-* next: function
-* previous: function
-* endIndex: integer
+* currentStep
+* totalSteps: steps.length
+* setSteps
+* next
+* previous
+* isLast: currentStep === stepsEndIndex
+* isFirst: currentStep === 0
 
-The Steps component implements the basic functionality of only showing the currently selected step.
-The Navigation component implements 2 basic navigation buttons
+The basic Steps component implements the basic functionality of only showing the currently selected step by adding display: none to the others.
+The basic Navigation component implements 2 basic navigation buttons.
 
 Children render props can be used or normal child elements.
 
@@ -39,5 +45,172 @@ Children render props can be used or normal child elements.
       </div>
     </Wizard.Steps>
     <Wizard.Navigation />
+  </Wizard>
+</Playground>
+
+## Custom navigation
+
+<Playground>
+  <Wizard>
+    <Wizard.Steps>
+      <div>
+        <h3>Step 1</h3>
+      </div>
+      <div>
+        <h3>Step 2</h3>
+      </div>
+      <div>
+        <h3>Step 3</h3>
+      </div>
+    </Wizard.Steps>
+    <Segment.Group>
+      {
+        ({ currentStep, totalSteps, isFirst, isLast, next, previous }) => (
+          <>
+            <Button disabled={isFirst} kind='warning' onClick={() => previous()}>
+              Previous
+            </Button>
+            <Button disabled={isLast} kind='warning' style={{ marginLeft: '5px'}} onClick={() => next()}>
+              Next
+            </Button>
+          </>
+        )
+      }
+    </Segment.Group>
+  </Wizard>
+</Playground>
+
+This functionality can also be implemented through a component like so:
+```
+const Navigation = ({ wizard }) => {
+  const { previous, next, isLast, isFirst } = wizard
+
+  return (
+    <div>
+      <Button disabled={isFirst} onClick={previous}>Previous</Button>
+      <Button disabled={isLast} style={{ marginLeft: '5px'}} onClick={next}>Next</Button>
+    </div>
+  )
+}
+```
+
+## Advanced usage
+
+### All in a single component
+
+Since each component gets the wizard object injected we don't need to split up the steps and navigation, we can just as well put everything in one component.
+
+<Playground>
+  <Wizard>
+    <div>
+      {({setSteps, currentStep, totalSteps, isFirst, isLast, previous, next}) => {
+        const steps = [
+          <div key='1'>
+            <h3>Step 1</h3>
+          </div>,
+          <div key='2'>
+            <h3>Step 2</h3>
+          </div>,
+          <div key='3'>
+            <h3>Step 3</h3>
+          </div>
+        ]
+
+        useEffect(() => {
+          setSteps(steps)
+        }, [])
+
+        return (
+          <Segment.Group>
+            <Segment.Header>
+              Step {currentStep + 1} of {totalSteps}
+            </Segment.Header>
+            <Segment>
+              {
+                steps.map((child, index) => {
+                  return {
+                    ...child,
+                    props: {
+                      ...child.props,
+                      key: index,
+                      style: {
+                        display: index === currentStep ? 'block' : 'none'
+                      }
+                    }
+                  }
+                })
+              }
+            </Segment>
+            <Segment.Footer>
+              <Button disabled={isFirst} kind='secondary' onClick={() => previous()}>
+                Previous
+              </Button>
+              <Button disabled={isLast} kind='primary' onClick={() => next()}>
+                Next
+              </Button>
+            </Segment.Footer>
+          </Segment.Group>
+        )
+      }}
+    </div>
+  </Wizard>
+</Playground>
+
+Through render props this gets quite bulky so for this a custom component might be better like so.
+
+```
+const SingleComponent = ({ wizard, children }) => {
+  const { setSteps, currentStep, totalSteps, isFirst, isLast, previous, next } = wizard
+  useEffect(() => {
+    setSteps(children)
+  }, [])
+
+  return (
+    <Segment.Group>
+      <Segment.Header>
+        Step {currentStep + 1} of {totalSteps}
+      </Segment.Header>
+      <Segment>
+        {
+          children.map((child, index) => {
+            return {
+              ...child,
+              props: {
+                ...child.props,
+                key: index,
+                style: {
+                  display: index === currentStep ? 'block' : 'none'
+                }
+              }
+            }
+          })
+        }
+      </Segment>
+      <Segment.Footer>
+        <Button disabled={isFirst} kind='secondary' onClick={() => previous()}>
+          Previous
+        </Button>
+        <Button disabled={isLast} kind='primary' onClick={() => next()}>
+          Next
+        </Button>
+      </Segment.Footer>
+    </Segment.Group>
+  )
+}
+```
+
+<Playground>
+  <Wizard>
+    <SingleComponent>
+      <div>
+        <h3>Step 1</h3>
+      </div>
+      <div>
+        <h3>Step 2</h3>
+      </div>
+      <div>
+        <h3>Step 3</h3>
+      </div>
+    </SingleComponent>
   </Wizard>
 </Playground>

@@ -27,10 +27,12 @@ const Wizard = ({ children = [] }) => {
 
   const wizard = {
     currentStep,
+    totalSteps: steps.length,
     setSteps,
     next,
     previous,
-    endIndex: stepsEndIndex
+    isLast: currentStep === stepsEndIndex,
+    isFirst: currentStep === 0
   }
 
   return castArray(children).map((child) => {
