@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import styled from '@emotion/styled'
 
 import Button from '../button/Button'
+import Icon from '../icon/Icon'
 
 const ImageContainer = styled.div`
   display: flex;
@@ -45,11 +46,11 @@ const PreviewWizard = ({ images, wizard }) => {
         </ImageContainer>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-        <Button kind='success' onClick={() => isFirst ? goTo(endIndex) : previous()}>
-          Previous
-        </Button>
-        <Button kind='success' onClick={() => isLast ? goTo(0) : next()} style={{ marginLeft: '5px'}}>
-          Next
+        <Button kind='success' pill onClick={() => isFirst ? goTo(endIndex) : previous()}>
+          <Icon name='navigate_before' />
+          </Button>
+        <Button kind='success' pill onClick={() => isLast ? goTo(0) : next()} style={{ marginLeft: '5px'}}>
+          <Icon name='navigate_next' />
         </Button>
       </div>
     </div>
