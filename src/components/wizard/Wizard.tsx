@@ -1,38 +1,59 @@
-import { useState, useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback, useEffect } from 'react'
 import { castArray } from 'lodash'
 import Steps from './Steps'
 import Navigation from './Navigation'
 
 const Wizard = ({ children = [] }) => {
   const [steps, setSteps] = useState([])
-  const [currentStep, setCurrentStep] = useState(0)
+  const [currentStep, setCurrentStep] = useState((<></>))
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const stepsEndIndex = useMemo(() => steps.length - 1, [steps])
 
-  const next = useCallback(() => {
-    const nextStep = currentStep + 1
+  useEffect(() => {
+    goTo(0)
+  }, [steps])
 
-    if (nextStep > stepsEndIndex) return
+  const next = () => {
+    const newIndex = currentIndex + 1
+    const newStep = steps[newIndex]
 
-    setCurrentStep(nextStep)
-  }, [stepsEndIndex, currentStep])
+    if (!newStep) return
 
-  const previous = useCallback(() => {
-    const prevStep = currentStep - 1
+    setCurrentStep(newStep)
+    setCurrentIndex(newIndex)
+  }
 
-    if (prevStep < 0) return
+  const previous = () => {
+    const newIndex = currentIndex - 1
+    const newStep = steps[newIndex]
 
-    setCurrentStep(prevStep)
-  }, [stepsEndIndex, currentStep])
+    if (!newStep) return
+
+    setCurrentStep(newStep)
+    setCurrentIndex(newIndex)
+  }
+
+  const goTo = (newIndex) => {
+    const newStep = steps[newIndex]
+
+    if (!newStep) return
+
+    setCurrentStep(newStep)
+    setCurrentIndex(newIndex)
+  }
 
   const wizard = {
     currentStep,
+    currentIndex,
+    goTo,
+    steps,
     totalSteps: steps.length,
     setSteps,
     next,
     previous,
-    isLast: currentStep === stepsEndIndex,
-    isFirst: currentStep === 0
+    isLast: currentIndex === stepsEndIndex,
+    isFirst: currentIndex === 0
   }
 
   return castArray(children).map((child) => {
