@@ -78,6 +78,9 @@
     "react-dom": "^16.9.0"
   },
   "standard": {
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "env": [
+      "jest"
+    ]
   }
 }
