@@ -110,17 +110,13 @@ const close = props => {
   const { color } = getColors(props.color)
 
   return css`
-    line-height: 1.4em;
     height: 1.25em;
     width: 1.25em;
+
     text-align: center;
     font-family: monospace;
-
-    /**
-     * we're making this slightly smaller so we can trigger the resizing to make
-     * it more crisp
-     */
-    font-size: 0.99em;
+    font-size: 0.9em;
+    line-height: 1.4em;
 
     margin-left: 0.5em;
     margin-right: -0.5em;
