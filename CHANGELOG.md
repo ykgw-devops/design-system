@@ -1,3 +1,12 @@
+## [2.13.3](https://github.com/waylayio/design-system/compare/v2.13.2...v2.13.3) (2020-02-19)
+
+
+### Bug Fixes
+
+* **label:** use multiplication character ([43788fe](https://github.com/waylayio/design-system/commit/43788fe))
+
+
+
 ## [2.13.2](https://github.com/waylayio/design-system/compare/v2.13.1...v2.13.2) (2020-02-11)
 
 
