@@ -9,7 +9,7 @@ import withProps from 'recompose/withProps'
 
 // Icon with larger hitbox and cursor pointer
 const Close = withProps({
-  children: '⛌'
+  children: '\u00D7'
 })(styled.div``)
 
 const Container = styled('div', {
