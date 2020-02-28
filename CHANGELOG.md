@@ -1,3 +1,12 @@
+## [2.13.4](https://github.com/waylayio/design-system/compare/v2.13.3...v2.13.4) (2020-02-28)
+
+
+### Bug Fixes
+
+* **button:** button group styles ([09677b2](https://github.com/waylayio/design-system/commit/09677b2))
+
+
+
 ## [2.13.3](https://github.com/waylayio/design-system/compare/v2.13.2...v2.13.3) (2020-02-19)
 
 
