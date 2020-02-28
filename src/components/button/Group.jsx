@@ -1,12 +1,20 @@
 import React from 'react'
+import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import { base } from './Group.styles'
 
-const ButtonGroup = ({ children, fluid, compact, equalWidth, ...rest }) => (
-  <div {...rest} css={base({ fluid, compact, equalWidth })}>
-    {children}
-  </div>
-)
+const Wrapper = styled.div`
+  ${props => base(props)};
+`
+
+const ButtonGroup = (props) => {
+  const { children, fluid, compact, equalWidth, ...rest } = props
+  return (
+    <Wrapper {...rest}>
+      {children}
+    </Wrapper>
+  )
+}
 
 ButtonGroup.propTypes = {
   equalWidth: PropTypes.bool,
