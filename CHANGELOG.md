@@ -1,3 +1,12 @@
+# [2.14.0](https://github.com/waylayio/design-system/compare/v2.13.4...v2.14.0) (2020-03-11)
+
+
+### Features
+
+* **input:** add focus select ([#31](https://github.com/waylayio/design-system/issues/31)) ([a1ae58e](https://github.com/waylayio/design-system/commit/a1ae58e))
+
+
+
 ## [2.13.4](https://github.com/waylayio/design-system/compare/v2.13.3...v2.13.4) (2020-02-28)
 
 
