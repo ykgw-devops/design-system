@@ -1,3 +1,12 @@
+## [2.14.1](https://github.com/waylayio/design-system/compare/v2.14.0...v2.14.1) (2020-03-11)
+
+
+### Bug Fixes
+
+* **FilterableInput:** filterable input ref passing ([5f5958d](https://github.com/waylayio/design-system/commit/5f5958d))
+
+
+
 # [2.14.0](https://github.com/waylayio/design-system/compare/v2.13.4...v2.14.0) (2020-03-11)
 
 
