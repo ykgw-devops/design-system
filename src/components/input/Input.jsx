@@ -12,7 +12,9 @@ const ValidInput = styled('input', {
   shouldForwardProp: isPropValid
 })``
 
-const BaseInput = props => <ValidInput {...props} onFocus={props.focusSelect && handleFocus} />
+const BaseInput = React.forwardRef((props, ref) => (
+  <ValidInput {...props} onFocus={props.focusSelect && handleFocus} ref={ref} />
+))
 
 const Input = styled(BaseInput)`
   ${input};
