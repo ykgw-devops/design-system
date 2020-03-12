@@ -11,8 +11,13 @@ import Input from '../input/Input'
 import Label from '../label/Label'
 import List from '../list/List'
 import Segment from '../segment/Segment'
+import Message from '../message/Message'
 
 # Popup & Tooltip
+
+<Message kind="warning" title="Warning">
+  Add <code>boundary='viewport'</code> to allow the popup to overflow it's container
+</Message>
 
 ## Popup
 
@@ -67,5 +72,3 @@ import Segment from '../segment/Segment'
     <Button kind='primary'>Hover me!</Button>
   </Tooltip>
 </Playground>
-
-### Note: add boundary='viewport' to allow the popup to overflow it's container
