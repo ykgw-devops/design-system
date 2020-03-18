@@ -8,7 +8,8 @@ const Wrapper = styled.div`
 `
 
 const ButtonGroup = (props) => {
-  const { children, fluid, compact, equalWidth, ...rest } = props
+  const { children, ...rest } = props
+
   return (
     <Wrapper {...rest}>
       {children}
