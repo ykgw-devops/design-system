@@ -1,3 +1,12 @@
+## [2.14.4](https://github.com/waylayio/design-system/compare/v2.14.3...v2.14.4) (2020-03-24)
+
+
+### Bug Fixes
+
+* **filterable-input:** allow input value to be reset ([0daedfd](https://github.com/waylayio/design-system/commit/0daedfd))
+
+
+
 ## [2.14.3](https://github.com/waylayio/design-system/compare/v2.14.2...v2.14.3) (2020-03-24)
 
 
