@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import searchString from 'search-string'
 
@@ -8,10 +8,16 @@ const TightPopup = styled(Popup)`
   padding: 0;
 `
 
-const FilterableInput = ({ initialValue = '', onChange, onSelection, input, popup }) => {
+const FilterableInput = ({ initialValue = '', value, onChange, onSelection, input, popup }) => {
   const inputElem = useRef(null)
   const [tooptip, setTooltip] = useState(null)
-  const [filter, setFilter] = useState(initialValue)
+  const [filter, setFilter] = useState(initialValue || value)
+
+  useEffect(() => {
+    if (initialValue) {
+      setFilter(initialValue)
+    }
+  }, [initialValue])
 
   const onTooltipCreated = (popup) => {
     setTooltip(popup)
