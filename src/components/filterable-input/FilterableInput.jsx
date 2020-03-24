@@ -14,9 +14,7 @@ const FilterableInput = ({ initialValue = '', value, onChange, onSelection, inpu
   const [filter, setFilter] = useState(initialValue || value)
 
   useEffect(() => {
-    if (initialValue) {
-      setFilter(initialValue)
-    }
+    setFilter(initialValue)
   }, [initialValue])
 
   const onTooltipCreated = (popup) => {
