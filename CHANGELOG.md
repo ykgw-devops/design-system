@@ -1,3 +1,82 @@
+## [2.14.4](https://github.com/waylayio/design-system/compare/v2.14.3...v2.14.4) (2020-03-24)
+
+
+### Bug Fixes
+
+* **filterable-input:** allow input value to be reset ([0daedfd](https://github.com/waylayio/design-system/commit/0daedfd))
+
+
+
+## [2.14.3](https://github.com/waylayio/design-system/compare/v2.14.2...v2.14.3) (2020-03-24)
+
+
+### Bug Fixes
+
+* **filterable-input:** update input value if initial value updates ([54059c8](https://github.com/waylayio/design-system/commit/54059c8))
+
+
+
+## [2.14.2](https://github.com/waylayio/design-system/compare/v2.14.1...v2.14.2) (2020-03-18)
+
+
+### Bug Fixes
+
+* **button-group:** pass style props ([76a2eaa](https://github.com/waylayio/design-system/commit/76a2eaa))
+
+
+
+## [2.14.1](https://github.com/waylayio/design-system/compare/v2.14.0...v2.14.1) (2020-03-11)
+
+
+### Bug Fixes
+
+* **FilterableInput:** filterable input ref passing ([5f5958d](https://github.com/waylayio/design-system/commit/5f5958d))
+
+
+
+# [2.14.0](https://github.com/waylayio/design-system/compare/v2.13.4...v2.14.0) (2020-03-11)
+
+
+### Features
+
+* **input:** add focus select ([#31](https://github.com/waylayio/design-system/issues/31)) ([a1ae58e](https://github.com/waylayio/design-system/commit/a1ae58e))
+
+
+
+## [2.13.4](https://github.com/waylayio/design-system/compare/v2.13.3...v2.13.4) (2020-02-28)
+
+
+### Bug Fixes
+
+* **button:** button group styles ([09677b2](https://github.com/waylayio/design-system/commit/09677b2))
+
+
+
+## [2.13.3](https://github.com/waylayio/design-system/compare/v2.13.2...v2.13.3) (2020-02-19)
+
+
+### Bug Fixes
+
+* **label:** use multiplication character ([43788fe](https://github.com/waylayio/design-system/commit/43788fe))
+
+
+
+## [2.13.2](https://github.com/waylayio/design-system/compare/v2.13.1...v2.13.2) (2020-02-11)
+
+
+### Bug Fixes
+
+* **message:** flex grow message contents ([a08fd9d](https://github.com/waylayio/design-system/commit/a08fd9d))
+* message component ([2fb34a2](https://github.com/waylayio/design-system/commit/2fb34a2))
+* use JSX pragmas ([d40c104](https://github.com/waylayio/design-system/commit/d40c104))
+
+
+### Features
+
+* **collapsible:** use styles instead of component for collapsible state ([3aae3b6](https://github.com/waylayio/design-system/commit/3aae3b6))
+
+
+
 ## [2.13.1](https://github.com/waylayio/design-system/compare/v2.13.0...v2.13.1) (2020-02-05)
 
 

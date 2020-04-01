@@ -1,6 +1,6 @@
 {
   "name": "@waylay/react-components",
-  "version": "2.13.1",
+  "version": "2.14.4",
   "main": "dist/components.js",
   "source": "src/index.js",
   "license": "MIT",
@@ -78,6 +78,9 @@
     "react-dom": "^16.9.0"
   },
   "standard": {
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "env": [
+      "jest"
+    ]
   }
 }

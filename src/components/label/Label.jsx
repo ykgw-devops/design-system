@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 import isPropValid from '@emotion/is-prop-valid'
 import PropTypes from 'prop-types'
@@ -7,7 +9,7 @@ import withProps from 'recompose/withProps'
 
 // Icon with larger hitbox and cursor pointer
 const Close = withProps({
-  children: '⛌'
+  children: '\u00D7'
 })(styled.div``)
 
 const Container = styled('div', {

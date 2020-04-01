@@ -1,8 +1,10 @@
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+
 import styled from '@emotion/styled'
 import isPropValid from '@emotion/is-prop-valid'
 import { base, danger, info, warning, title as titleStyle, basic, withIcon } from './Messages.styles.jsx'
 import PropTypes from 'prop-types'
-import { omit } from 'lodash'
 
 const kindMap = {
   danger: danger,
@@ -19,9 +21,6 @@ const Message = props => {
   const { children, kind, title } = props
   const kindStyle = kindMap[kind]
 
-  // since "outline" is already defined as a boolean prop
-  const rest = omit(props, 'outline')
-
   const styles = [
     base(props),
     kindStyle,
@@ -30,8 +29,8 @@ const Message = props => {
   ]
 
   return (
-    <MessageContainer css={styles} {...rest}>
-      <div>
+    <MessageContainer css={styles} {...props}>
+      <div css={css`flex: 1;`}>
         {title && (
           <div css={titleStyle}>
             {title}
