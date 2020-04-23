@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+
 import AsyncSelect from 'react-select/async'
 import { defaultProps, withProps } from 'recompose'
 
