@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/core' // eslint-disable-line
 
 import AsyncSelect from 'react-select/async'
 import { defaultProps, withProps } from 'recompose'
