@@ -4,7 +4,8 @@ import colors, { concrete } from '../../Colors'
 const borderColor = colors.withWeight(concrete, 500)
 
 const Group = styled.div`
-  display: inline-block;
+  display: inline-flex;
+  vertical-align: middle;
 
   border-radius: 0.333333rem;
   background: white;
