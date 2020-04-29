@@ -1,0 +1,186 @@
+---
+name: Wizard
+menu: Components
+---
+
+import { useEffect } from 'react'
+import { Playground, Props } from 'docz'
+import styled from '@emotion/styled'
+
+import Wizard from './Wizard'
+import SingleComponent from './SingleComponent'
+import previewWizard from './PreviewWizard'
+
+import Button from '../button/Button'
+import Segment from '../segment/Segment'
+
+# Wizard
+
+You can use either a function as [render props](https://reactjs.org/docs/render-props.html) or child components that are passed a wizard object that contains the following properties:
+
+* currentStep
+* currentIndex
+* goTo
+* steps
+* totalSteps
+* next
+* previous
+* isLast
+* isFirst
+
+If render props are used the wizard object is passed as a parameter, see examples below.
+
+## Usage
+
+<Playground>
+  <Wizard steps={[
+    <div>
+      <h3>Step 1</h3>
+    </div>,
+    <div>
+      <h3>Step 2</h3>
+    </div>,
+    <div>
+      <h3>Step 3</h3>
+    </div>
+  ]}>
+    {({ currentStep, isFirst, isLast, previous, next }) => (
+      <>
+        {currentStep}
+        <Button disabled={isFirst} kind='warning' onClick={() => previous()}>
+          Previous
+        </Button>
+        <Button disabled={isLast} kind='warning' style={{ marginLeft: '5px'}} onClick={() => next()}>
+          Next
+        </Button>
+      </>
+    )}
+  </Wizard>
+</Playground>
+
+## Advanced Usage
+
+<Playground>
+  <Wizard steps={[
+    <div>
+      <h3>Step 1</h3>
+    </div>,
+    <div>
+      <h3>Step 2</h3>
+    </div>,
+    <div>
+      <h3>Step 3</h3>
+    </div>
+  ]}>
+    {({ currentIndex, currentStep, setSteps, totalSteps, next, previous, isFirst, isLast }) => (
+      <Segment.Group>
+        <Segment.Header>
+          Step {currentIndex + 1} of {totalSteps}
+        </Segment.Header>
+        <Segment>
+          {currentStep}
+        </Segment>
+        <Segment.Footer>
+          <Button disabled={isFirst} kind='success' onClick={() => previous()}>
+            Previous
+          </Button>
+          <Button disabled={isLast} kind='success' onClick={() => next()} style={{ marginLeft: '5px'}}>
+            Next
+          </Button>
+        </Segment.Footer>
+      </Segment.Group>
+    )}
+  </Wizard>
+</Playground>
+
+### Basic Carousel
+
+<Playground>
+  <Wizard steps={[
+    'https://images.unsplash.com/photo-1536998003793-b13c28fae74b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1531969179221-3946e6b5a5e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1536513953700-ba24c78a5f51?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'
+  ]}>
+    {({ currentStep, isFirst, isLast, next, previous }) => (
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          {<img src={currentStep} height='500' width='400' />}
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+          <Button disabled={isFirst} kind='success' onClick={() => previous()}>
+            Previous
+          </Button>
+          <Button disabled={isLast} kind='success' onClick={() => next()} style={{ marginLeft: '5px'}}>
+            Next
+          </Button>
+        </div>
+      </div>
+    )}
+  </Wizard>
+</Playground>
+
+### Infinite Carousel
+
+<Playground>
+  <Wizard steps={[
+    'https://images.unsplash.com/photo-1536998003793-b13c28fae74b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1531969179221-3946e6b5a5e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1536513953700-ba24c78a5f51?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'
+  ]}>
+    {previewWizard}
+  </Wizard>
+</Playground>
+
+PreviewWizard Component:
+```
+const ImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 5px;
+`
+
+const MainImage = styled.img`
+  width: 100%;
+  object-fit: cover;
+`
+
+const PreviewImage = styled(MainImage)`
+  height: 50%;
+`
+
+const previewWizard = ({ setSteps, currentStep, isFirst, isLast, next, previous, steps, currentIndex, totalSteps, goTo }) => {
+  const endIndex = totalSteps - 1
+  const prevImage = isFirst ? steps[endIndex] : steps[currentIndex - 1]
+  const nextImage = isLast ? steps[0] : steps[currentIndex + 1]
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: 'flex' }}>
+        <ImageContainer>
+          <PreviewImage src={prevImage} />
+        </ImageContainer>
+        <ImageContainer>
+          <MainImage src={currentStep} />
+        </ImageContainer>
+        <ImageContainer>
+          <PreviewImage src={nextImage} />
+        </ImageContainer>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+        <Button kind='success' onClick={() => isFirst ? goTo(endIndex) : previous()}>
+          Previous
+        </Button>
+        <Button kind='success' onClick={() => isLast ? goTo(0) : next()} style={{ marginLeft: '5px'}}>
+          Next
+        </Button>
+      </div>
+    </div>
+  )
+}
+```
