@@ -1,3 +1,12 @@
+# [2.15.0](https://github.com/waylayio/design-system/compare/v2.14.6...v2.15.0) (2020-04-29)
+
+
+### Bug Fixes
+
+* **input/group:** ensure correct layout for input groups with adornments ([c2fb372](https://github.com/waylayio/design-system/commit/c2fb372))
+
+
+
 ## [2.14.6](https://github.com/waylayio/design-system/compare/v2.14.5...v2.14.6) (2020-04-23)
 
 
@@ -81,6 +90,13 @@
 
 ### Features
 
+* add custom navigation and fix bugs ([ed14670](https://github.com/waylayio/design-system/commit/ed14670))
+* add docs and default navigation component ([117d7d1](https://github.com/waylayio/design-system/commit/117d7d1))
+* add infinite carousel example ([19ff93e](https://github.com/waylayio/design-system/commit/19ff93e))
+* add more examples ([bd7a01c](https://github.com/waylayio/design-system/commit/bd7a01c))
+* add more flexibility ([f4047b2](https://github.com/waylayio/design-system/commit/f4047b2))
+* basic wizard functionality ([6bd3c8b](https://github.com/waylayio/design-system/commit/6bd3c8b))
+* rework ([1ec84f6](https://github.com/waylayio/design-system/commit/1ec84f6))
 * **collapsible:** use styles instead of component for collapsible state ([3aae3b6](https://github.com/waylayio/design-system/commit/3aae3b6))
 
 
