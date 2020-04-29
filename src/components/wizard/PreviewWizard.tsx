@@ -19,15 +19,7 @@ const PreviewImage = styled(MainImage)`
   height: 50%;
 `
 
-const PreviewWizard = ({ images, wizard }) => {
-  const { setSteps, currentStep, isFirst, isLast, next, previous, steps, currentIndex, totalSteps, goTo } = wizard
-
-  useEffect(() => {
-    setSteps(images)
-  }, [])
-
-  // early return so we don't notice loading state
-  if (!currentStep) return
+const PreviewWizard = ({ currentStep, isFirst, isLast, next, previous, steps, currentIndex, totalSteps, goTo }) => {
   const endIndex = totalSteps - 1
   const prevImage = isFirst ? steps[endIndex] : steps[currentIndex - 1]
   const nextImage = isLast ? steps[0] : steps[currentIndex + 1]

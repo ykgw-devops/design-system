@@ -1,18 +1,17 @@
-import React, { useState, useMemo, useCallback, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import { castArray } from 'lodash'
 import Steps from './Steps'
 import Navigation from './Navigation'
 
-const Wizard = ({ children = [] }) => {
-  const [steps, setSteps] = useState([])
-  const [currentStep, setCurrentStep] = useState((<></>))
+interface IWizardProps {
+  children: React.ReactElement[] | Function
+  steps: any[]
+}
+
+const Wizard = ({ children = [], steps = [] }: IWizardProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const stepsEndIndex = useMemo(() => steps.length - 1, [steps])
-
-  useEffect(() => {
-    goTo(0)
-  }, [steps])
 
   const next = () => {
     const newIndex = currentIndex + 1
@@ -20,7 +19,6 @@ const Wizard = ({ children = [] }) => {
 
     if (!newStep) return
 
-    setCurrentStep(newStep)
     setCurrentIndex(newIndex)
   }
 
@@ -30,41 +28,34 @@ const Wizard = ({ children = [] }) => {
 
     if (!newStep) return
 
-    setCurrentStep(newStep)
     setCurrentIndex(newIndex)
   }
 
-  const goTo = (newIndex) => {
-    const newStep = steps[newIndex]
-
-    if (!newStep) return
-
-    setCurrentStep(newStep)
+  const goTo = (newIndex: number) => {
     setCurrentIndex(newIndex)
   }
 
   const wizard = {
-    currentStep,
+    currentStep: steps[currentIndex],
     currentIndex,
     goTo,
     steps,
     totalSteps: steps.length,
-    setSteps,
     next,
     previous,
     isLast: currentIndex === stepsEndIndex,
     isFirst: currentIndex === 0
   }
 
-  return castArray(children).map((child) => {
+  if (typeof children === 'function') {
+    return children(wizard)
+  }
+
+  return castArray(children).map((child, index) => {
     const { props } = child
-    const { children } = props
-
-    if (typeof children === 'function') return children(wizard)
-
     const newProps = { ...props, wizard }
 
-    return ({ ...child, props: newProps })
+    return ({ ...child, key: child.key || index, props: newProps })
   })
 }
 
