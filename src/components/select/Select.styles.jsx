@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'  // eslint-disable-line
 import colors, { carbon, clearSky, concrete } from '../../Colors'
 
 export default {

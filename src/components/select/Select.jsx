@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'  // eslint-disable-line
+
 import Select from 'react-select'
 import { defaultProps, withProps } from 'recompose'
 

@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'  // eslint-disable-line
 import { components } from 'react-select'
 
 import Icon from '../icon/Icon'
