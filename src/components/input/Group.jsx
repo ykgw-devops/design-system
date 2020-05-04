@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { fluid as fluidStyle } from './Input.styles'
 import colors, { concrete } from '../../Colors'
 
 const borderColor = colors.withWeight(concrete, 500)
@@ -9,6 +10,8 @@ const Group = styled.div`
 
   border-radius: 0.333333rem;
   background: white;
+
+  ${props => props.fluid && fluidStyle};
 
   > * {
     box-sizing: border-box;
@@ -24,6 +27,8 @@ const Group = styled.div`
   input {
     border: solid 1px ${borderColor};
     margin: 0;
+
+    ${props => props.fluid && fluidStyle};
   }
 
   input + button, button + button {
