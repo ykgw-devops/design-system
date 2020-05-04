@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { castArray } from 'lodash'
+import { castArray, clamp } from 'lodash'
 import Steps from './Steps'
 import Navigation from './Navigation'
 
@@ -13,26 +13,18 @@ const Wizard = ({ children = [], steps = [] }: IWizardProps) => {
 
   const stepsEndIndex = useMemo(() => steps.length - 1, [steps])
 
+  const outOfBounds = (index: number) => clamp(index, 0, steps.length - 1)
+
+  const goTo = (newIndex: number) => {
+    setCurrentIndex(outOfBounds(newIndex))
+  }
+
   const next = () => {
-    const newIndex = currentIndex + 1
-    const newStep = steps[newIndex]
-
-    if (!newStep) return
-
-    setCurrentIndex(newIndex)
+    goTo(currentIndex + 1)
   }
 
   const previous = () => {
-    const newIndex = currentIndex - 1
-    const newStep = steps[newIndex]
-
-    if (!newStep) return
-
-    setCurrentIndex(newIndex)
-  }
-
-  const goTo = (newIndex: number) => {
-    setCurrentIndex(newIndex)
+    goTo(currentIndex - 1)
   }
 
   const wizard = {
