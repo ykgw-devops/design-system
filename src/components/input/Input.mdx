@@ -35,6 +35,12 @@ import Label from '../label/Label'
     <Button><Icon name='search' /> Search</Button>
     <Input name='search' placeholder='filter...' />
   </Input.Group>
+
+  <Input.Group fluid style={{ width: 460 }}>
+    <Input name='email' placeholder='example@domain.com' type='email' />
+    <Button kind='secondary'>Filter <Icon name='tune' /></Button>
+    <Button kind='secondary'>More actions</Button>
+  </Input.Group>
 </Playground>
 
 ## Adornments
@@ -77,7 +83,6 @@ import Label from '../label/Label'
       basic
       name='name'
       value='John Dodo'
-      fluid
       focusSelect
     />
   </div>
