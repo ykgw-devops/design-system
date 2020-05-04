@@ -1,3 +1,12 @@
+## [2.15.2](https://github.com/waylayio/design-system/compare/v2.15.1...v2.15.2) (2020-05-04)
+
+
+### Bug Fixes
+
+* **input/group:** adds fluid to input group ([028b7d5](https://github.com/waylayio/design-system/commit/028b7d5))
+
+
+
 ## [2.15.1](https://github.com/waylayio/design-system/compare/v2.15.0...v2.15.1) (2020-05-04)
 
 
