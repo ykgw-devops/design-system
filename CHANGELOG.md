@@ -1,3 +1,12 @@
+## [2.15.1](https://github.com/waylayio/design-system/compare/v2.15.0...v2.15.1) (2020-05-04)
+
+
+### Bug Fixes
+
+* use clamping instead of falsy checks ([15c50c2](https://github.com/waylayio/design-system/commit/15c50c2))
+
+
+
 # [2.15.0](https://github.com/waylayio/design-system/compare/v2.14.6...v2.15.0) (2020-04-29)
 
 
