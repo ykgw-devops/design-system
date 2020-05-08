@@ -7,6 +7,8 @@ import { Playground, Props } from 'docz'
 import Button from './Button'
 import Group from './Group'
 import Icon from '../icon/Icon'
+import { Popup } from '../popup/Popup'
+import Segment from '../segment/Segment'
 
 # Button
 
@@ -113,6 +115,27 @@ import Icon from '../icon/Icon'
     <Button>
       <Icon name='filter_3' /> Option #3
     </Button>
+  </Button.Group>
+
+  <br />
+
+  Dropdown Button:
+  <Button.Group>
+    <Button>
+      <Icon name='filter_1' /> Option #1
+    </Button>
+    <Popup
+      placement='bottom-end'
+      content={
+        <Segment>
+          Some Dropdown Content Here
+        </Segment>
+      }
+    >
+      <Button>
+        <Icon name='keyboard_arrow_down' />
+      </Button>
+    </Popup>
   </Button.Group>
 
   <br />
