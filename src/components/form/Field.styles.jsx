@@ -10,8 +10,15 @@ const inline = css`
   align-items: center;
 
   label {
-    margin: 0 0.5rem;
     flex-shrink: 0;
+  }
+
+  label:first-child {
+    margin-right: 0.5rem;
+  }
+
+  label:last-child {
+    margin-left: 0.5rem;
   }
 
   label, input {
