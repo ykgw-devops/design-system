@@ -29,6 +29,25 @@ import Form from './Form'
   </Form>
 </Playground>
 
+## Inline Form
+
+<Playground>
+  <Form style={{ width: 250 }}>
+    <Form.Field inline>
+      <label>Email</label>
+      <Form.Input name='email' placeholder='example@domain.com' type='email' autoComplete='login-email' />
+    </Form.Field>
+    <Form.Field inline>
+      <label>Password</label>
+      <Form.Input name='password' placeholder='*****' type='password' autoComplete='login-password' />
+    </Form.Field>
+    <div>
+      <Button outline kind='secondary'>Cancel</Button>
+      <Button>Submit</Button>
+    </div>
+  </Form>
+</Playground>
+
 ## Properties
 
 <Props of={Form}></Props>
