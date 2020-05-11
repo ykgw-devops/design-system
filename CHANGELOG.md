@@ -1,3 +1,12 @@
+# [2.16.0](https://github.com/waylayio/design-system/compare/v2.15.2...v2.16.0) (2020-05-11)
+
+
+### Features
+
+* **form:** adds inline form field type ([13d0667](https://github.com/waylayio/design-system/commit/13d0667))
+
+
+
 ## [2.15.2](https://github.com/waylayio/design-system/compare/v2.15.1...v2.15.2) (2020-05-04)
 
 
