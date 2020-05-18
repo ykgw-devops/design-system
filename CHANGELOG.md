@@ -1,3 +1,12 @@
+## [2.16.1](https://github.com/waylayio/design-system/compare/v2.16.0...v2.16.1) (2020-05-18)
+
+
+### Bug Fixes
+
+* only propagate valid props ([c3078ad](https://github.com/waylayio/design-system/commit/c3078ad))
+
+
+
 # [2.16.0](https://github.com/waylayio/design-system/compare/v2.15.2...v2.16.0) (2020-05-11)
 
 
