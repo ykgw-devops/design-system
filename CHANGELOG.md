@@ -1,3 +1,12 @@
+# [2.17.0](https://github.com/waylayio/design-system/compare/v2.16.1...v2.17.0) (2020-05-25)
+
+
+### Features
+
+* upgrade to @tippyjs/react 4.x ([c09b04e](https://github.com/waylayio/design-system/commit/c09b04e)), closes [#35](https://github.com/waylayio/design-system/issues/35)
+
+
+
 ## [2.16.1](https://github.com/waylayio/design-system/compare/v2.16.0...v2.16.1) (2020-05-18)
 
 
