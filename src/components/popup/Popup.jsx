@@ -1,6 +1,9 @@
-import Tippy from '@tippy.js/react'
+import Tippy from '@tippyjs/react'
 import styled from '@emotion/styled'
-import { defaultProps } from 'recompose'
+import { compose, defaultProps, mapProps } from 'recompose'
+import { roundArrow } from 'tippy.js'
+
+import base from './tippy.styles'
 
 const ContentPopupStyle = styled(Tippy)`
   background: none;
@@ -11,22 +14,33 @@ const ContentPopupStyle = styled(Tippy)`
 `
 
 const TooltipStyle = styled(Tippy)`
+  ${base};
   padding: 0.6rem 0.75rem;
 `
 
 const Popup = defaultProps({
   arrow: false,
-  distance: 2,
+  offset: [0, 5],
   trigger: 'click',
   placement: 'bottom-start',
-  animateFill: false,
   interactive: true,
-  duration: [0, 0]
+  duration: 0
 })(ContentPopupStyle)
 
-const Tooltip = defaultProps({
-  arrow: true
-})(TooltipStyle)
+const Tooltip = compose(
+  defaultProps({
+    arrow: roundArrow,
+    duration: 60,
+    offset: [0, 5]
+  }),
+  mapProps(props => ({
+    ...props,
+    // backwards compatibility with @tippyjs/react v2.x
+    disabled: props.enabled != null
+      ? !props.enabled
+      : false
+  }))
+)(TooltipStyle)
 
 export {
   Popup,

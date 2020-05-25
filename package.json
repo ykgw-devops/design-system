@@ -52,7 +52,7 @@
     "@emotion/core": "^10.0.28",
     "@emotion/is-prop-valid": "^0.8.6",
     "@emotion/styled": "^10.0.27",
-    "@tippy.js/react": "^2.2.3",
+    "@tippyjs/react": "^4.0.2",
     "copy-text-to-clipboard": "^2.1.1",
     "downshift": "^3.2.10",
     "immutability-helper": "^2.7.1",
@@ -64,7 +64,8 @@
     "react-virtualized-auto-sizer": "^1.0.2",
     "react-window": "^1.8.5",
     "recompose": "^0.27.1",
-    "search-string": "^3.1.0"
+    "search-string": "^3.1.0",
+    "tippy.js": "^6.2.3"
   },
   "publishConfig": {
     "registry": "https://npm.waylay.io/"
