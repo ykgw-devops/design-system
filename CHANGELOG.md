@@ -1,3 +1,12 @@
+# [2.19.0](https://github.com/waylayio/design-system/compare/v2.18.0...v2.19.0) (2020-05-27)
+
+
+### Features
+
+* patchAccessibilityStyles ([713e986](https://github.com/waylayio/design-system/commit/713e986))
+
+
+
 # [2.18.0](https://github.com/waylayio/design-system/compare/v2.17.0...v2.18.0) (2020-05-27)
 
 
