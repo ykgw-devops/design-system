@@ -5,9 +5,10 @@ import PropTypes from 'prop-types'
 import { includes, times } from 'lodash'
 
 import style from './Pagination.styles.jsx'
+import colors, { carbon } from '../../Colors'
 
 function Pagination (props) {
-  const { initialIndex, count, onIndexChanged } = props
+  const { initialIndex, count, relative, onIndexChanged } = props
   const [activeIndex, setActiveIndex] = useState(initialIndex)
 
   function nextPage (e) {
@@ -28,7 +29,11 @@ function Pagination (props) {
   return (
     <div css={style.base}>
       {previous(activeIndex, previousPage)}
-      {renderPaginationItems(count, activeIndex, setIndex)}
+      {
+        relative
+          ? pageIndicator(activeIndex, activeIndex + 1)
+          : renderPaginationItems(count, activeIndex, setIndex)
+      }
       {next(count, activeIndex, nextPage)}
     </div>
   )
@@ -131,15 +136,23 @@ const next = (count, activeIndex, nextPage) => {
   )
 }
 
+const pageIndicator = (index, number) => (
+  <a key={index} css={[style.item, style.pageIndicator]} style={{ color: colors.withWeight(carbon, 400) }}>
+    Page {number}
+  </a>
+)
+
 Pagination.propTypes = {
   count: PropTypes.number,
   initialIndex: PropTypes.number,
+  relative: PropTypes.boolean,
   onIndexChanged: PropTypes.func
 }
 
 Pagination.defaultProps = {
   count: 0,
   initialIndex: 0,
+  relative: false,
   onIndexChanged: () => {}
 }
 

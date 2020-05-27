@@ -73,4 +73,13 @@ const disabled = css`
   cursor: default;
 `
 
-export default { activeItem, base, disabled, item, firstItem, lastItem }
+const pageIndicator = css`
+  min-width: 60px;
+  text-align: center;
+
+  &:hover {
+    background-color: initial;
+  }
+`
+
+export default { activeItem, base, disabled, item, firstItem, lastItem, pageIndicator }
