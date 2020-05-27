@@ -65,7 +65,8 @@
     "react-window": "^1.8.5",
     "recompose": "^0.27.1",
     "search-string": "^3.1.0",
-    "tippy.js": "^6.2.3"
+    "tippy.js": "^6.2.3",
+    "what-input": "^5.2.9"
   },
   "publishConfig": {
     "registry": "https://npm.waylay.io/"
