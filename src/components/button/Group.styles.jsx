@@ -20,12 +20,12 @@ const base = props => css`
     border-right-width: 0;
   }
 
-  button:first-of-type, a:first-of-type {
+  button:first-child, a:first-child {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
   }
 
-  button:last-of-type, a:last-of-type {
+  button:last-child, a:last-child {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border-right-width: 1px;
