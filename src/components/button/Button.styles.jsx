@@ -35,11 +35,6 @@ const base = css`
   &:hover {
     background-color: ${shade(0.1, clearSky)};
   }
-
-  &:focus {
-    /* outline: none; why did I disable this? */
-    /* I disabled this for the clicking state, it's rather annoying */
-  }
 `
 
 const kind = ({ kind = 'primary' }) => {
