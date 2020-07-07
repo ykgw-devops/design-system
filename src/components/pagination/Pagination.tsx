@@ -1,13 +1,19 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { useState } from 'react'
-import PropTypes from 'prop-types'
 import { includes, times } from 'lodash'
 
 import style from './Pagination.styles.jsx'
 import colors, { carbon } from '../../Colors'
 
-function Pagination (props) {
+interface IPaginationProps {
+  count: number;
+  initialIndex: number;
+  relative?: boolean;
+  onIndexChanged?: (index: number) => void;
+}
+
+function Pagination (props: IPaginationProps) {
   const { initialIndex, count, relative, onIndexChanged } = props
   const [activeIndex, setActiveIndex] = useState(initialIndex)
 
@@ -19,7 +25,7 @@ function Pagination (props) {
     setIndex(e, activeIndex - 1)
   }
 
-  function setIndex (e, index) {
+  function setIndex (e, index: number) {
     noop(e)
 
     onIndexChanged(index)
@@ -27,7 +33,7 @@ function Pagination (props) {
   }
 
   return (
-    <div css={style.base}>
+    <nav css={style.base} aria-label='pagination'>
       {previous(activeIndex, previousPage)}
       {
         relative
@@ -35,7 +41,7 @@ function Pagination (props) {
           : renderPaginationItems(count, activeIndex, setIndex)
       }
       {next(count, activeIndex, nextPage)}
-    </div>
+    </nav>
   )
 }
 
@@ -43,7 +49,7 @@ const noop = (e) => {
   e && e.preventDefault()
 }
 
-function renderPaginationItems (count, activeIndex, setIndex) {
+function renderPaginationItems (count: number, activeIndex: number, setIndex) {
   const { visible, ellipsis } = getPaginationType(activeIndex, count)
 
   const itemWithUpdateFn = item(setIndex)
@@ -70,21 +76,28 @@ function range (size, startAt = 0) {
 }
 
 const item = setIndex => {
-  return (index, number, options = { active: false, ellipsis: false }) => {
-    const disabled = options.ellipsis && style.disabled
-    const active = options.active && style.activeItem
+  return (index: number, number: number, options = { active: false, ellipsis: false }) => {
+    const disabled = options.ellipsis
+    const active = options.active
 
     const updateFn = disabled ? noop : setIndex
 
     return (
-      <a onClick={e => updateFn(e, index)} key={index} css={[style.item, active, disabled]}>
+      <a
+        onClick={e => updateFn(e, index)}
+        key={index}
+        css={[style.item, active && style.activeItem, disabled && style.disabled]}
+        aria-current={active ? 'page' : null}
+        aria-disabled={disabled ? 'true' : null}
+        role='button'
+      >
         {options.ellipsis ? '…' : number}
       </a>
     )
   }
 }
 
-function getPaginationType (activeIndex, count) {
+function getPaginationType (activeIndex: number, count: number) {
   const HEAD_TAIL_SIZE = 6
 
   const isHead = activeIndex < HEAD_TAIL_SIZE
@@ -114,40 +127,50 @@ function getPaginationType (activeIndex, count) {
   }
 }
 
-const previous = (activeIndex, previousPage) => {
-  const disabled = (activeIndex === 0) && style.disabled
+const previous = (activeIndex: number, previousPage) => {
+  const disabled = (activeIndex === 0)
   const updateFn = disabled ? noop : previousPage
 
   return (
-    <a role='button' aria-label='previous' onClick={updateFn} css={[style.firstItem, disabled]}>
+    <a
+      role='button'
+      aria-label='previous'
+      aria-disabled={disabled}
+      onClick={updateFn}
+      css={[style.firstItem, disabled && style.disabled]}
+    >
       Previous
     </a>
   )
 }
 
-const next = (count, activeIndex, nextPage) => {
-  const disabled = (activeIndex === (count - 1)) && style.disabled
+const next = (count : number, activeIndex: number, nextPage) => {
+  const disabled = (activeIndex === (count - 1))
   const updateFn = disabled ? noop : nextPage
 
   return (
-    <a role='button' aria-label='next' onClick={updateFn} css={[style.lastItem, disabled]}>
+    <a
+      role='button'
+      aria-label='next'
+      aria-disabled={disabled}
+      onClick={updateFn}
+      css={[style.lastItem, disabled && style.disabled]}
+    >
       Next
     </a>
   )
 }
 
-const pageIndicator = (index, number) => (
-  <a key={index} css={[style.item, style.pageIndicator]} style={{ color: colors.withWeight(carbon, 400) }}>
+const pageIndicator = (index: number, number: number) => (
+  <a
+    key={index}
+    role='button'
+    css={[style.item, style.pageIndicator]}
+    style={{ color: colors.withWeight(carbon, 400) }}
+  >
     Page {number}
   </a>
 )
-
-Pagination.propTypes = {
-  count: PropTypes.number,
-  initialIndex: PropTypes.number,
-  relative: PropTypes.bool,
-  onIndexChanged: PropTypes.func
-}
 
 Pagination.defaultProps = {
   count: 0,
