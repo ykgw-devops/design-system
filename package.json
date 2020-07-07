@@ -45,7 +45,7 @@
     "react-dom": "^16.9.0",
     "scheduler": "^0.15.0",
     "snazzy": "^8.0.0",
-    "standard": "^14.3.1",
+    "standard": "^14.3.4",
     "typescript": "^3.9.6",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7"
