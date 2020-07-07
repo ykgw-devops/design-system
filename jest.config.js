@@ -2,8 +2,8 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
-  browser: true,
+  name: '@waylay/react-components',
+  collectCoverage: true,
   coverageDirectory: 'coverage',
-  testEnvironment: 'jest-environment-jsdom',
-  testRunner: 'jest-circus/runner'
+  coverageReporters: ['lcov', 'text-summary']
 }
