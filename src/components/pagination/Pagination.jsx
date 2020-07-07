@@ -119,7 +119,7 @@ const previous = (activeIndex, previousPage) => {
   const updateFn = disabled ? noop : previousPage
 
   return (
-    <a onClick={updateFn} css={[style.firstItem, disabled]}>
+    <a role='button' aria-label='previous' onClick={updateFn} css={[style.firstItem, disabled]}>
       Previous
     </a>
   )
@@ -130,7 +130,7 @@ const next = (count, activeIndex, nextPage) => {
   const updateFn = disabled ? noop : nextPage
 
   return (
-    <a onClick={updateFn} css={[style.lastItem, disabled]}>
+    <a role='button' aria-label='next' onClick={updateFn} css={[style.lastItem, disabled]}>
       Next
     </a>
   )
@@ -145,7 +145,7 @@ const pageIndicator = (index, number) => (
 Pagination.propTypes = {
   count: PropTypes.number,
   initialIndex: PropTypes.number,
-  relative: PropTypes.boolean,
+  relative: PropTypes.bool,
   onIndexChanged: PropTypes.func
 }
 
