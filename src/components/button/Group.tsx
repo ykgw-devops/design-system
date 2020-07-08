@@ -1,13 +1,19 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import PropTypes from 'prop-types'
 import { base } from './Group.styles'
 
+export interface IButtonGroupProps {
+  equalWidth?: Boolean;
+  fluid?: boolean;
+  compact?: boolean;
+  children?: React.ReactNode;
+}
+
 const Wrapper = styled.div`
-  ${props => base(props)};
+  ${(props: IButtonGroupProps) => base(props)};
 `
 
-const ButtonGroup = (props) => {
+const ButtonGroup = (props: IButtonGroupProps) => {
   const { children, ...rest } = props
 
   return (
@@ -15,12 +21,6 @@ const ButtonGroup = (props) => {
       {children}
     </Wrapper>
   )
-}
-
-ButtonGroup.propTypes = {
-  equalWidth: PropTypes.bool,
-  fluid: PropTypes.bool,
-  compact: PropTypes.bool
 }
 
 export default ButtonGroup

@@ -1,6 +1,8 @@
 import { css } from '@emotion/core'
 
-const base = props => css`
+import { IButtonGroupProps } from './Group'
+
+const base = (props: IButtonGroupProps) => css`
   display: flex;
 
   button, a {

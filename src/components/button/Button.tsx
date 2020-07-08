@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import styled from '@emotion/styled'
 import isPropValid from '@emotion/is-prop-valid'
-import PropTypes from 'prop-types'
 import { setDisplayName } from 'recompose'
 
 import Group from './Group'
@@ -9,9 +8,21 @@ import Loader from '../loader/Loader'
 
 import { base, kind, outline, pill, disabled, size, colorFromProps } from './Button.styles'
 
-const Button = styled('button', {
-  shouldForwardProp: isPropValid
-})`
+type ButtonKind = 'primary' | 'secondary' | 'warning' | 'danger' | 'success'
+type ButtonSize = 'tiny' | 'small' | 'medium' | 'large'
+
+export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  outline?: boolean;
+  pill?: boolean;
+  disabled?: boolean;
+  loading?: boolean;
+  kind?: ButtonKind;
+  size?: ButtonSize;
+}
+
+const ValidButton = styled('button', { shouldForwardProp: isPropValid })
+
+const Button = ValidButton<IButtonProps>`
   ${base};
   ${props => kind(props)};
   ${props => size(props)};
@@ -20,7 +31,7 @@ const Button = styled('button', {
   ${props => props.disabled && disabled(props)};
 `
 
-const EnhancedButton = React.forwardRef((props, ref) => {
+const EnhancedButton = React.forwardRef((props: IButtonProps, ref: React.Ref<any>) => {
   const { loading, children, ...rest } = props
 
   return (
@@ -41,15 +52,6 @@ const EnhancedButton = React.forwardRef((props, ref) => {
 })
 
 EnhancedButton.Group = setDisplayName('Button.Group')(Group)
-
-EnhancedButton.propTypes = {
-  kind: PropTypes.oneOf(['primary', 'secondary', 'warning', 'danger', 'success']),
-  size: PropTypes.oneOf(['tiny', 'small', 'medium', 'large']),
-  pill: PropTypes.bool,
-  outline: PropTypes.bool,
-  disabled: PropTypes.bool,
-  loading: PropTypes.bool
-}
 
 EnhancedButton.defaultProps = {
   type: 'button',
