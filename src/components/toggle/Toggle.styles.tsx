@@ -1,10 +1,9 @@
-import React, { forwardRef, useState } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
 import { concrete, clearSky } from '../../Colors'
 
-const Checkbox = styled.input`
+export const Checkbox = styled.input`
   z-index: -1;
 
   position: absolute;
@@ -25,7 +24,11 @@ const CheckedLabel = css`
   }
 `
 
-const Label = styled.label`
+interface ILabelProps {
+  checked: boolean;
+}
+
+export const Label = styled.label<ILabelProps>`
   position: relative;
   display: block;
   width: 3rem;
@@ -79,7 +82,7 @@ const Label = styled.label`
   ${props => props.checked && CheckedLabel}
 `
 
-const ToggleWrapper = styled.div`
+export const ToggleWrapper = styled.div`
   display: inline-block;
   position: relative;
 
@@ -94,34 +97,3 @@ const ToggleWrapper = styled.div`
   vertical-align: baseline;
   backface-visibility: hidden;
 `
-
-/**
- * This Toggle component can be both controlled and uncontrolled
- *
- * When the 'checked' property is set we assume the component is controlled and don't use local state.
- *
- * Use the 'defaultChecked' property to set initial checked state for uncontrolled components
- */
-const Toggle = forwardRef((props, ref) => {
-  const [checked, setChecked] = useState(props.defaultChecked || false)
-
-  const handleChange = (event) => {
-    if (!('checked' in props)) {
-      setChecked(checked => !checked)
-    }
-
-    typeof props.onChange === 'function' && props.onChange(event)
-  }
-
-  const isChecked = props.checked || checked
-
-  return (
-    <ToggleWrapper>
-      <Label checked={isChecked}>
-        <Checkbox type='checkbox' {...props} onChange={handleChange} checked={isChecked} ref={ref} />
-      </Label>
-    </ToggleWrapper>
-  )
-})
-
-export default Toggle
