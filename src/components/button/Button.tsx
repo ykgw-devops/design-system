@@ -8,8 +8,7 @@ import Loader from '../loader/Loader'
 
 import { base, kind, outline, pill, disabled, size, colorFromProps } from './Button.styles'
 import { SemanticsString } from '../../Colors'
-
-type ButtonSize = 'tiny' | 'small' | 'medium' | 'large'
+import { SizeString } from '../../sizes'
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   outline?: boolean;
@@ -17,7 +16,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   loading?: boolean;
   kind?: SemanticsString;
-  size?: ButtonSize;
+  size?: SizeString;
 }
 
 const ValidButton = styled('button', { shouldForwardProp: isPropValid })
