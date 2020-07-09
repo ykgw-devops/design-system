@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 import { readableColor } from 'polished'
-import colors from '../../Colors'
+import colors, { Weight } from '../../Colors'
 
 const card = css`
   display: inline-block;
@@ -20,11 +20,11 @@ const base = css`
   width: 100%;
 `
 
-const title = color => css`
+const title = () => css`
   ${base};
 `
 
-const colorStrip = (name, weight) => {
+const colorStrip = (name: string, weight: Weight) => {
   const hexColor = colors.withWeight(name, weight)
   return css`
     border: none;
