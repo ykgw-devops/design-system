@@ -34,6 +34,8 @@ export type NameString = keyof typeof Colors
 export type SemanticsString = keyof typeof Semantics
 export type ColorString = keyof typeof Strings
 
+export type Weight = keyof typeof weightMap
+
 const concrete = Colors.concrete
 const carbon = Colors.carbon
 const clearSky = Colors.clearSky
@@ -58,7 +60,7 @@ const weightMap = {
 const fromString = (color: string) => Strings[color]
 const fromName = (color: string) => Colors[color]
 const fromSemantics = (color: string) => Semantics[color]
-const withWeight = (color: string, weight = 500) => weightMap[weight](color)
+const withWeight = (color: string, weight: Weight = 500) => weightMap[weight](color)
 
 export default {
   withWeight,
