@@ -5,6 +5,8 @@ import colors, { carbon, clearSky } from '../../Colors'
 import { fontFamily } from '../../Typography'
 import sizes from '../../sizes'
 
+import { IButtonProps } from './Button'
+
 const base = css`
   display: inline-flex;
   align-items: center;
@@ -37,7 +39,7 @@ const base = css`
   }
 `
 
-const kind = ({ kind = 'primary' }) => {
+const kind = ({ kind = 'primary' }: IButtonProps) => {
   const color = colors.fromSemantics(kind)
 
   return css`
@@ -51,7 +53,7 @@ const kind = ({ kind = 'primary' }) => {
   `
 }
 
-const colorFromProps = ({ kind = 'primary', outline, disabled }) => {
+const colorFromProps = ({ kind = 'primary', outline, disabled }: IButtonProps) => {
   const color = colors.fromSemantics(kind)
 
   if (disabled) {
@@ -77,7 +79,7 @@ const pill = css`
   border-radius: 2em;
 `
 
-const outline = ({ kind }) => {
+const outline = ({ kind }: IButtonProps) => {
   const color = colors.fromSemantics(kind)
 
   return css`
@@ -99,7 +101,7 @@ const outline = ({ kind }) => {
   `
 }
 
-const disabled = ({ kind, outline }) => {
+const disabled = ({ kind, outline }: IButtonProps) => {
   const color = colors.fromSemantics(kind)
   const bgColor = tint(0.9, color)
   const borderColor = colors.withWeight(color, 200)
@@ -117,7 +119,7 @@ const disabled = ({ kind, outline }) => {
   `
 }
 
-const size = ({ size }) => {
+const size = ({ size }: IButtonProps) => {
   const sizeProp = math(sizes[size] + ' * 0.9rem')
 
   return css`
