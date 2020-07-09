@@ -7,8 +7,8 @@ import Group from './Group'
 import Loader from '../loader/Loader'
 
 import { base, kind, outline, pill, disabled, size, colorFromProps } from './Button.styles'
+import { SemanticsString } from '../../Colors'
 
-type ButtonKind = 'primary' | 'secondary' | 'warning' | 'danger' | 'success'
 type ButtonSize = 'tiny' | 'small' | 'medium' | 'large'
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -16,7 +16,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   pill?: boolean;
   disabled?: boolean;
   loading?: boolean;
-  kind?: ButtonKind;
+  kind?: SemanticsString;
   size?: ButtonSize;
 }
 

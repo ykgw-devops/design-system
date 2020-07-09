@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import colors, { clearSky, concrete } from '../../Colors.jsx'
+import colors, { clearSky, concrete } from '../../Colors'
 
 const base = css`
   line-height: 1.5rem;
