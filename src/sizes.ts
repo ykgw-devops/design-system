@@ -8,7 +8,7 @@ export enum Size {
 export type SizeString = keyof typeof Size
 
 function fromString (size: string) {
-  return Size[size]
+  return size ? Size[size] : Size.medium
 }
 
 export default {

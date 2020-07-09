@@ -1,27 +1,40 @@
 /** @jsx jsx */
+import { HTMLAttributes } from 'react'
 import { jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 import isPropValid from '@emotion/is-prop-valid'
-import PropTypes from 'prop-types'
 
-import { base, close, colored, detail, focused, value, size } from './Label.styles.jsx'
-import withProps from 'recompose/withProps'
+import { base, close, colored, detail, focused, value, size } from './Label.styles'
+import { Size } from '../../sizes'
+import { withProps } from 'recompose'
+
+type DivElementAttrs = HTMLAttributes<HTMLDivElement>
+
+export interface ILabelProps extends DivElementAttrs {
+  name?: string;
+  color?: string;
+  size?: Size;
+  outline?: boolean;
+  removable?: boolean;
+  focused?: boolean;
+  onClose?: () => void
+}
 
 // Icon with larger hitbox and cursor pointer
-const Close = withProps({
+const Close = withProps<any, DivElementAttrs>({
   children: '\u00D7'
 })(styled.div``)
 
 const Container = styled('div', {
   shouldForwardProp: isPropValid
 })`
-  ${props => base(props)};
-  ${props => colored(props)};
-  ${props => focused(props)};
-  ${props => size(props)};
+  ${(props: ILabelProps) => base(props)};
+  ${(props: ILabelProps) => colored(props)};
+  ${(props: ILabelProps) => focused(props)};
+  ${(props: ILabelProps) => size(props)};
 `
 
-const Label = (props) => {
+const Label = (props: ILabelProps) => {
   const { name, children, removable, onClose, ...rest } = props
 
   return (
@@ -36,15 +49,6 @@ const Label = (props) => {
       </div>
     </Container>
   )
-}
-
-Label.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOf(['tiny', 'small', 'medium', 'large']),
-  outline: PropTypes.bool,
-  removable: PropTypes.bool,
-  focused: PropTypes.bool,
-  onClose: PropTypes.func
 }
 
 Label.defaultProps = {

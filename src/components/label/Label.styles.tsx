@@ -1,6 +1,7 @@
 import { tint, shade, readableColor } from 'polished'
 
 import { css } from '@emotion/core'
+import { ILabelProps } from './Label'
 import colors, { clearSky, concrete, carbon } from '../../Colors'
 import sizes from '../../sizes'
 
@@ -143,6 +144,6 @@ const close = props => {
   `
 }
 
-const size = ({ size }) => css`font-size: ${sizes.fromString(size)};`
+const size = ({ size }: ILabelProps) => css`font-size: ${sizes.fromString(size)};`
 
 export { base, close, colored, detail, focused, value, size }
