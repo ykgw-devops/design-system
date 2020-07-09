@@ -1,7 +1,7 @@
 import { math, shade, tint } from 'polished'
 import { css } from '@emotion/core'
 
-import colors, { carbon, clearSky, Semantics } from '../../Colors'
+import colors, { carbon, clearSky } from '../../Colors'
 import { fontFamily } from '../../Typography'
 import sizes from '../../sizes'
 
@@ -39,7 +39,7 @@ const base = css`
   }
 `
 
-const kind = ({ kind = Semantics.primary }: IButtonProps) => {
+const kind = ({ kind = 'primary' }: IButtonProps) => {
   const color = colors.fromSemantics(kind)
 
   return css`
@@ -53,7 +53,7 @@ const kind = ({ kind = Semantics.primary }: IButtonProps) => {
   `
 }
 
-const colorFromProps = ({ kind = Semantics.primary, outline, disabled }: IButtonProps) => {
+const colorFromProps = ({ kind = 'secondary', outline, disabled }: IButtonProps) => {
   const color = colors.fromSemantics(kind)
 
   if (disabled) {
@@ -61,13 +61,13 @@ const colorFromProps = ({ kind = Semantics.primary, outline, disabled }: IButton
   }
 
   if (outline) {
-    return kind === Semantics.secondary
+    return kind === 'secondary'
       ? carbon
       : color
   }
 
   if (!outline) {
-    return kind === Semantics.secondary
+    return kind === 'secondary'
       ? carbon
       : 'white'
   }
@@ -83,7 +83,7 @@ const outline = ({ kind }: IButtonProps) => {
   const color = colors.fromSemantics(kind)
 
   return css`
-    border: solid 1px ${kind === Semantics.secondary
+    border: solid 1px ${kind === 'secondary'
       ? shade(0.1, color)
       : colors.withWeight(color, 400)
     };
