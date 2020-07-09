@@ -22,7 +22,7 @@ This component uses [`render-props`](https://reactjs.org/docs/render-props.html)
   <Collapsible open>
     {({ isOpen, toggle, open, close, style }) => (
       <Segment.Group>
-        <Segment.Header onClick={() => toggle()}>
+        <Segment.Header aria-expanded={isOpen} onClick={() => toggle()}>
           Toggle
           <Icon name={isOpen ? 'keyboard_arrow_down' : 'keyboard_arrow_up'} />
         </Segment.Header>
