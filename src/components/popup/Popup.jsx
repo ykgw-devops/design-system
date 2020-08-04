@@ -20,6 +20,7 @@ const TooltipStyle = styled(Tippy)`
 
 const Popup = defaultProps({
   arrow: false,
+  ignoreAttributes: true,
   offset: [0, 5],
   trigger: 'click',
   placement: 'bottom-start',
