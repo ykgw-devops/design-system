@@ -1,3 +1,12 @@
+## [2.20.1](https://github.com/waylayio/design-system/compare/v2.20.0...v2.20.1) (2020-08-24)
+
+
+### Features
+
+* **select:** allow custom react-select components ([f15e5fb](https://github.com/waylayio/design-system/commit/f15e5fb))
+
+
+
 # [2.20.0](https://github.com/waylayio/design-system/compare/v2.19.1...v2.20.0) (2020-08-04)
 
 
