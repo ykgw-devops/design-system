@@ -301,6 +301,28 @@ See [react-select](https://react-select.com/props)
 
 See [react-select async](https://react-select.com/async)
 
+## With Custom Components
+
+<Playground>
+  <div>
+    <Select
+      options={[
+        { label: 'React', value: 'React' },
+        { label: 'Vue', value: 'Vue' },
+        { label: 'Svelte', value: 'Svelte' },
+        { label: 'Angular', value: 'Angular' }
+      ]}
+      components={{
+        Option: (props) => (
+          <div style={props.getStyles('option', props)} {...props.innerProps}>
+            {props.data.value}
+          </div>
+        )
+      }}
+    />
+  </div>
+</Playground>
+
 ## Properties
 
 See [react-select props](https://react-select.com/props)

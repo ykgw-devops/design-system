@@ -25,3 +25,5 @@ export const MultiValueRemove = props => {
     </components.MultiValueRemove>
   )
 }
+
+export const Option = props => <components.Option {...props} />

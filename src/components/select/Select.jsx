@@ -4,14 +4,16 @@ import { jsx } from '@emotion/core'  // eslint-disable-line
 import Select from 'react-select'
 import { defaultProps, withProps } from 'recompose'
 
-import { ClearIndicator, MultiValueRemove } from './Select.common'
+import { ClearIndicator, MultiValueRemove, Option } from './Select.common'
 import styles from './Select.styles'
 
-const CustomSelect = withProps({
+const CustomSelect = withProps(props => ({
   components: {
     ClearIndicator,
-    MultiValueRemove
+    MultiValueRemove,
+    Option,
+    ...props.components
   }
-})(Select)
+}))(Select)
 
 export default defaultProps({ styles })(CustomSelect)
