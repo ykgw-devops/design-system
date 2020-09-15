@@ -16,8 +16,6 @@ const base = css`
     color: red;
   }
 
-  [class*=-Group] button { margin-right: 0; }
-
   button {
     margin-right: 8px;
   }

@@ -39,6 +39,9 @@ const Group = styled.div`
     border-left: none;
   }
 
+  // since form defines a button with default margin 8px
+  form & button { margin-right: 0; }
+
   button {
     border-radius: 0;
     background: ${colors.withWeight(concrete, 200)};
