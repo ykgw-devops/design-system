@@ -12,8 +12,8 @@ const ValidInput = styled('input', {
 
 const BaseInput = React.forwardRef((props, ref) => {
   const handleFocus = e => {
-    e.target.select();
-    (props.onFocus || (() => {}))(e)
+    e.target.select()
+    ;(props.onFocus || (() => {}))(e)
   }
   return (
     <ValidInput {...props} onFocus={props.focusSelect && handleFocus} ref={ref} />
