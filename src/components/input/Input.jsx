@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 import Group from './Group'
 import { input, fluid as fluidStyle, basic as basicStyle, adornments } from './Input.styles'
+const noop = () => {}
 
 const ValidInput = styled('input', {
   shouldForwardProp: isPropValid
@@ -12,7 +13,7 @@ const ValidInput = styled('input', {
 
 const BaseInput = React.forwardRef((props, ref) => {
   const handleFocus = e => {
-    (props.onFocus || (() => {}))(e)
+    (props.onFocus || noop)(e)
     if (!props.focusSelect) return
     e.target.select()
   }
