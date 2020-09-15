@@ -19,10 +19,6 @@ exports[`button spacing in group 1`] = `
   color: red;
 }
 
-.emotion-4 [class*=-Group] button {
-  margin-right: 0;
-}
-
 .emotion-4 button {
   margin-right: 8px;
 }
@@ -59,6 +55,10 @@ exports[`button spacing in group 1`] = `
 
 .emotion-2 button + input {
   border-left: none;
+}
+
+form .emotion-2 button {
+  margin-right: 0;
 }
 
 .emotion-2 button {
