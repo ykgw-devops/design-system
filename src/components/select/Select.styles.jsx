@@ -21,12 +21,11 @@ export default {
   }),
   indicatorsContainer: (base) => ({
     ...base,
-    height: '2.4rem'
+    minHeight: '2.4rem'
   }),
   control: (base, state) => ({
     ...base,
-    height: '2.4rem',
-    minHeight: 'auto',
+    minHeight: '2.4rem',
     borderWidth: '1px',
     boxShadow: 'none',
     borderColor: state.isFocused
