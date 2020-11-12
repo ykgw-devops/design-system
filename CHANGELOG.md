@@ -1,3 +1,27 @@
+# [2.21.0](https://github.com/waylayio/design-system/compare/v2.20.1...v2.21.0) (2020-11-12)
+
+
+### Bug Fixes
+
+* **select:** fix fixed height ([#45](https://github.com/waylayio/design-system/issues/45)) ([e1997a8](https://github.com/waylayio/design-system/commit/e1997a8))
+* :lipstick: ([ca4a17f](https://github.com/waylayio/design-system/commit/ca4a17f))
+* add button-in-group-in-form example ([2eadc87](https://github.com/waylayio/design-system/commit/2eadc87))
+* applied code comment ([a74d501](https://github.com/waylayio/design-system/commit/a74d501))
+* button in group in form renders wrongly ([6dc1378](https://github.com/waylayio/design-system/commit/6dc1378))
+* button in group in form renders wrongly ([ed54632](https://github.com/waylayio/design-system/commit/ed54632))
+* button in group in form renders wrongly ([74d08c6](https://github.com/waylayio/design-system/commit/74d08c6))
+* get rid of useless test ([6940347](https://github.com/waylayio/design-system/commit/6940347))
+* Input does not forward onFocus ([10ce8b0](https://github.com/waylayio/design-system/commit/10ce8b0))
+* input onFocus passed even on focusSelect not set ([8dd6b4c](https://github.com/waylayio/design-system/commit/8dd6b4c))
+* removed obsolete test snapshot ([42ac210](https://github.com/waylayio/design-system/commit/42ac210))
+
+
+### Features
+
+* streamline icons ([#47](https://github.com/waylayio/design-system/issues/47)) ([64545c3](https://github.com/waylayio/design-system/commit/64545c3))
+
+
+
 ## [2.20.1](https://github.com/waylayio/design-system/compare/v2.20.0...v2.20.1) (2020-08-24)
 
 
