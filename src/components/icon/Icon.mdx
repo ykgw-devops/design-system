@@ -4,8 +4,12 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz'
+import { GeometricMenProfessions } from '@streamlinehq/streamline-bold/lib/avatars'
+import { DesignTools } from '@streamlinehq/streamline-bold/lib/design'
+import { DataFiles } from '@streamlinehq/streamline-bold/lib/business-products'
 import Icon from './Icon'
-import { concrete } from '../../Colors'
+import StreamlineIcon from './StreamlineIcon'
+import { concrete, clearSky, watermelon } from '../../Colors'
 
 # Icon
 
@@ -38,6 +42,23 @@ please refer to their documentation on [Using the icons in HTML](https://google.
   <Icon filled circular name='block' color='red' />
   <Icon filled circular name='done' color='green' />
   <Icon filled circular name='help_outline' color='blue' />
+</Playground>
+
+## Streamline Icons
+
+Firstly, install the Streamline icons iconData:
+
+`yarn add @streamlinehq/streamline-bold`
+
+See [Installation instructions](https://www.notion.so/Using-Streamline-Icons-with-React-4b72392c253e48b19808dfba210c8215)
+
+<Playground>
+  <StreamlineIcon name='data queries' iconData={DataFiles.DataFileSearch} />
+  <StreamlineIcon width={18} height={18} name='Astronaut' iconData={GeometricMenProfessions.ProfessionsManAstronaut} color={watermelon} />
+  <StreamlineIcon width={24} height={24} name='Feather' iconData={DesignTools.DesignToolQuill} color={clearSky} />
+  <span style={{ fontSize: 32, color: 'palegoldenrod' }}>
+    <StreamlineIcon name='Feather' iconData={DesignTools.DesignToolMagicWand} />
+  </span>
 </Playground>
 
 ## Properties
