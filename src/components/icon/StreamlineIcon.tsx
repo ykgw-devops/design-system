@@ -25,7 +25,6 @@ const StreamlineIcon = (props: IIconProps) => {
 
   const ref = useRef<HTMLElement>(null)
   const { name, className } = props
-  const [color, setColor] = useState(props.color)
   const [size, setSize] = useState(basePixelSize)
 
   // create the MutationObserver to detect changes to size or color
@@ -51,9 +50,7 @@ const StreamlineIcon = (props: IIconProps) => {
   const setComputedValues = useCallback((elem: HTMLElement) => {
     const computedStyles = window.getComputedStyle(elem)
     const computedSize = parseInt(computedStyles.getPropertyValue('font-size')) || basePixelSize
-    const computedColor = computedStyles.getPropertyValue('color')
 
-    setColor(computedColor)
     setSize(computedSize)
   }, [ref.current])
 
@@ -68,11 +65,11 @@ const StreamlineIcon = (props: IIconProps) => {
     <i
       ref={ref}
       className={className}
-      css={[base, color ? { color: props.color } : {}]}
+      css={base}
       role='img'
       aria-label={name}
     >
-      <Icon iconData={props.iconData} size={props.width ?? size} color={props.color ?? color} />
+      <Icon iconData={props.iconData} size={props.width ?? size} color={props.color} />
     </i>
   )
 }
@@ -97,7 +94,7 @@ function Icon ({ iconData, size, color }: { iconData: any, size: number, color: 
     const pathProps = {
       ...pathDefaults,
       ...mapKeys(configProps, camelCase),
-      fill: color ?? '#' + configProps.fill,
+      fill: color ?? 'currentcolor' ?? '#' + configProps.fill,
       key: Math.random().toString(),
       d: path
     }
