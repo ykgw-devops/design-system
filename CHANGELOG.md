@@ -1,3 +1,12 @@
+## [2.21.1](https://github.com/waylayio/design-system/compare/v2.21.0...v2.21.1) (2020-11-17)
+
+
+### Bug Fixes
+
+* **list:** hover style for active interative item ([c92d5f9](https://github.com/waylayio/design-system/commit/c92d5f9))
+
+
+
 # [2.21.0](https://github.com/waylayio/design-system/compare/v2.20.1...v2.21.0) (2020-11-12)
 
 
