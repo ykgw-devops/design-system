@@ -2,8 +2,10 @@ import { css } from '@emotion/core'
 import colors, { carbon, concrete, clearSky } from '../../Colors'
 import { resetAnchor } from '../../Shared'
 
+const ACTIVE_COLOR = clearSky
+
 const active = css`
-  color: ${clearSky};
+  color: ${ACTIVE_COLOR};
 `
 
 const base = css`
@@ -36,7 +38,9 @@ const interactive = css`
   flex-direction: column;
 
   > *:hover {
-    color: ${colors.withWeight(carbon, 900)};
+    color: ${props => (
+      props.active ? ACTIVE_COLOR : colors.withWeight(carbon, 900)
+    )};
     background: ${colors.withWeight(concrete, 100)};
   }
 `
