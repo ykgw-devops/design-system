@@ -93,7 +93,7 @@ function Icon ({ iconData, size, color }: { iconData: any, size: number, color: 
 
     const pathProps = {
       ...pathDefaults,
-      ...mapKeys(configProps, camelCase),
+      ...mapKeys(configProps, (_value, key) => camelCase(key)),
       fill: color ?? 'currentcolor' ?? '#' + configProps.fill,
       key: Math.random().toString(),
       d: path
