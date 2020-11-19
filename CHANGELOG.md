@@ -1,3 +1,12 @@
+## [2.21.2](https://github.com/waylayio/design-system/compare/v2.21.1...v2.21.2) (2020-11-19)
+
+
+### Bug Fixes
+
+* **streamline-icon:** incorrect prop keys ([557503a](https://github.com/waylayio/design-system/commit/557503a))
+
+
+
 ## [2.21.1](https://github.com/waylayio/design-system/compare/v2.21.0...v2.21.1) (2020-11-17)
 
 
