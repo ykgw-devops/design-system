@@ -1,3 +1,12 @@
+## [2.21.3](https://github.com/waylayio/design-system/compare/v2.21.2...v2.21.3) (2020-11-27)
+
+
+### Bug Fixes
+
+* **streamline:** no more jumping icons ([d09e279](https://github.com/waylayio/design-system/commit/d09e279))
+
+
+
 ## [2.21.2](https://github.com/waylayio/design-system/compare/v2.21.1...v2.21.2) (2020-11-19)
 
 
