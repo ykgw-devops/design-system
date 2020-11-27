@@ -1,4 +1,4 @@
-import React, { useRef, HTMLAttributes, createElement, useEffect, useState, useCallback } from 'react'
+import React, { useRef, HTMLAttributes, createElement, useLayoutEffect, useState, useCallback } from 'react'
 import { css } from '@emotion/core'
 import { camelCase, mapKeys } from 'lodash'
 
@@ -27,35 +27,16 @@ const StreamlineIcon = (props: IIconProps) => {
   const { name, className } = props
   const [size, setSize] = useState(basePixelSize)
 
-  // create the MutationObserver to detect changes to size or color
-  useEffect(() => {
-    if (!ref.current) return
-
-    const observer = new MutationObserver(() => {
-      setComputedValues(ref.current)
-    })
-
-    observer.observe(ref.current, {
-      attributes: false,
-      subtree: true,
-      childList: true
-    })
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [ref.current])
-
   // find computed size and color from DOM element
   const setComputedValues = useCallback((elem: HTMLElement) => {
     const computedStyles = window.getComputedStyle(elem)
     const computedSize = parseInt(computedStyles.getPropertyValue('font-size')) || basePixelSize
 
     setSize(computedSize)
-  }, [ref.current])
+  }, [])
 
   // apply computed styles to state
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (ref.current) {
       setComputedValues(ref.current)
     }
