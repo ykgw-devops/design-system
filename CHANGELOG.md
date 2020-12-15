@@ -1,3 +1,12 @@
+# [2.22.0](https://github.com/waylayio/design-system/compare/v2.21.3...v2.22.0) (2020-12-15)
+
+
+### Features
+
+* **progress:** adds progress indicator ([#48](https://github.com/waylayio/design-system/issues/48)) ([acd2509](https://github.com/waylayio/design-system/commit/acd2509))
+
+
+
 ## [2.21.3](https://github.com/waylayio/design-system/compare/v2.21.2...v2.21.3) (2020-11-27)
 
 
