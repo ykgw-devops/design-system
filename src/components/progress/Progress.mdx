@@ -1,0 +1,26 @@
+---
+name: Progress
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import Progress from './Progress'
+import { amethyst, tangerine, watermelon } from '../../Colors'
+
+# Tabs
+
+## Basic usage
+
+<Playground>
+  Default styles
+  <Progress percentage={69} />
+  <br />
+  Custom color
+  <Progress percentage={25} color={watermelon} />
+  <br />
+  Custom width
+  <Progress percentage={33} color={tangerine} width='450px' />
+  <br />
+  Custom width and height
+  <Progress percentage={85} color={amethyst} width='200px' height='10px' />
+</Playground>
