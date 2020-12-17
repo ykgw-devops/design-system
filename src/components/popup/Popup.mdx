@@ -66,6 +66,30 @@ For a list of available props, check https://atomiks.github.io/tippyjs/v6/all-pr
   </Popup>
 </Playground>
 
+### Nested
+
+<Playground>{
+  () => {
+    const SubMenu = () => (
+      <List as={Segment}>
+        <List.Item><label>Some input<Input /></label></List.Item>
+        <List.Item>Another submenu item</List.Item>
+      </List>)  
+      
+    const Menu = () => (
+      <List as={Segment}>
+      <Popup placement='right' content={<SubMenu />}>
+          <List.Item>Open submenu</List.Item>
+        </Popup>
+        <List.Item>Another menu item</List.Item>
+      </List>)  
+      
+    return (
+      <Popup content={<Menu />} placement='right'>
+        <Button kind='secondary'>Open menu</Button>
+      </Popup>) 
+    } 
+}</Playground>
 
 ### Miscelaneous
 
