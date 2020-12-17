@@ -21,14 +21,22 @@ For a list of available props, check https://atomiks.github.io/tippyjs/v6/all-pr
 
 ### Simple
 
-<Playground>
-  <Popup content={
-    <div>This is the popper element 🎉!</div>
-  }>
-    <Button kind='primary'>Click me!</Button>
-  </Popup>
-
-</Playground>
+<Playground>{
+  () => {
+    const Example = () => {
+      const [isPopupVisible, setPopupVisible] = React.useState(false)
+      return (
+        <Popup
+          content={<div>This is the popper element 🎉!</div>}
+          onHide={() => setPopupVisible(false)}
+          onShow={() => setPopupVisible(true)}
+        >
+          <Button kind="primary">{ isPopupVisible ? 'click to hide' : 'click to show'}</Button>
+        </Popup>)
+    }
+    return <Example/> 
+  }
+}</Playground>
 
 ### Interactive / non interactive
 
