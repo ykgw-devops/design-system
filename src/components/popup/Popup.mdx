@@ -19,6 +19,8 @@ For a list of available props, check https://atomiks.github.io/tippyjs/v6/all-pr
 
 ## Popup
 
+### Simple
+
 <Playground>
   <Popup content={
     <div>This is the popper element 🎉!</div>
@@ -26,6 +28,40 @@ For a list of available props, check https://atomiks.github.io/tippyjs/v6/all-pr
     <Button kind='primary'>Click me!</Button>
   </Popup>
 
+</Playground>
+
+### Interactive / non interactive
+
+<Playground>
+  <Popup content={
+    <List as={Segment} padding={0} interactive>
+      <List.Item>Stays open after click</List.Item>
+      <List.Item>Also stays open after click</List.Item>
+    </List>
+  }
+  >
+    <Button size='small' kind='secondary'>
+      Interactive
+    </Button>
+  </Popup>
+
+  <Popup interactive={false} content={
+    <List as={Segment} padding={0} interactive>
+      <List.Item>Closes after click</List.Item>
+      <List.Item>Also closes after click</List.Item>
+    </List>
+  }
+  >
+    <Button size='small' kind='secondary'>
+      Non interactive
+    </Button>
+  </Popup>
+</Playground>
+
+
+### Miscelaneous
+
+<Playground>
   <Popup content={
     <Segment.Group>
       <Segment.Header>
