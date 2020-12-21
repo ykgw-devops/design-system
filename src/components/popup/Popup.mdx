@@ -21,8 +21,8 @@ For a list of available props, check https://atomiks.github.io/tippyjs/v6/all-pr
 
 ### Simple
 
-<Playground>{
-  () => {
+<Playground>
+  {() => {
     const Example = () => {
       const [isPopupVisible, setPopupVisible] = React.useState(false)
       return (
@@ -33,10 +33,10 @@ For a list of available props, check https://atomiks.github.io/tippyjs/v6/all-pr
         >
           <Button kind="primary">{ isPopupVisible ? 'click to hide' : 'click to show'}</Button>
         </Popup>)
-    }
-    return <Example/> 
-  }
-}</Playground>
+      }
+    return <Example/>
+  }}
+</Playground>
 
 ### Interactive / non interactive
 
@@ -68,30 +68,31 @@ For a list of available props, check https://atomiks.github.io/tippyjs/v6/all-pr
 
 ### Nested
 
-<Playground>{
-  () => {
+<Playground>
+  {() => {
     /* Take care not to append popups to stuff outside the parent popup's content! */
 
     const SubMenu = () => (
-      <List as={Segment} interactive>
+      <List as={Segment} padding={0} interactive>
         <List.Item><label>Some input<Input /></label></List.Item>
         <List.Item>Another submenu item</List.Item>
-      </List>)  
-      
+      </List>)
+
     const Menu = () => (
-      <List as={Segment} interactive>
+      <List as={Segment} padding={0} interactive>
       <Popup placement='right' content={<SubMenu />}>
           <List.Item>Open submenu</List.Item>
         </Popup>
         <List.Item>Another menu item</List.Item>
-      </List>)  
-      
+      </List>)
+
     return (
       <Popup content={<Menu />} placement='right'>
         <Button kind='secondary'>Open menu</Button>
-      </Popup>) 
-    } 
-}</Playground>
+      </Popup>
+    )
+  }}
+</Playground>
 
 ### Miscelaneous
 
