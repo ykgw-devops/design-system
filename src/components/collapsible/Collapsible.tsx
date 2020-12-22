@@ -22,7 +22,7 @@ const Collapsible = (props: ICollapsibleProps) => {
 
   const style: CSSProperties = {
     height: isOpen ? 'auto' : 0,
-    overflow: 'hidden'
+    overflow: isOpen ? undefined : 'hidden'
   }
 
   const renderProps: IRenderProps = {
