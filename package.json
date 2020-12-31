@@ -10,7 +10,7 @@
     "clean": "rm -rf .cache .docz dist",
     "lint": "standard | snazzy",
     "test": "yarn lint && jest",
-    "build": "run-p build:*",
+    "build": "run-s build:*",
     "build:docs": "docz build",
     "build:changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 -p angular",
     "build:components": "webpack --config webpack.prod.js",
