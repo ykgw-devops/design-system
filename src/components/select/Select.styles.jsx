@@ -19,13 +19,21 @@ export default {
       background: colors.withWeight(concrete, 600)
     }
   }),
+  valueContainer: (base) => ({
+    ...base,
+    padding: '0 0.5rem'
+  }),
   indicatorsContainer: (base) => ({
     ...base,
-    minHeight: '2.4rem'
+    minHeight: '1.875rem'
+  }),
+  dropdownIndicator: (base) => ({
+    ...base,
+    padding: '5px'
   }),
   control: (base, state) => ({
     ...base,
-    minHeight: '2.4rem',
+    minHeight: '1.875rem',
     borderWidth: '1px',
     boxShadow: 'none',
     borderColor: state.isFocused
@@ -47,5 +55,9 @@ export default {
     background: state.isSelected
       ? clearSky
       : provided.background
+  }),
+  input: (base) => ({
+    ...base,
+    padding: 0
   })
 }
