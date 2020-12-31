@@ -1,3 +1,13 @@
+## [2.22.1](https://github.com/waylayio/design-system/compare/v2.22.0...v2.22.1) (2020-12-31)
+
+
+### Bug Fixes
+
+* **collapsible:** don't force hidden style ([01bcd6a](https://github.com/waylayio/design-system/commit/01bcd6a)), closes [#51](https://github.com/waylayio/design-system/issues/51)
+* syntax errors ([f0ab9b9](https://github.com/waylayio/design-system/commit/f0ab9b9))
+
+
+
 # [2.22.0](https://github.com/waylayio/design-system/compare/v2.21.3...v2.22.0) (2020-12-15)
 
 

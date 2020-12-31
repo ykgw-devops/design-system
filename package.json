@@ -1,6 +1,6 @@
 {
   "name": "@waylay/react-components",
-  "version": "2.22.0",
+  "version": "2.22.1",
   "main": "dist/components.js",
   "source": "src/index.js",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "build:docs": "docz build",
     "build:changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 -p angular",
     "build:components": "webpack --config webpack.prod.js",
-    "version": "npm run build && git add -A dist/ && npm run build:changelog && git add CHANGELOG.md"
+    "version": "npm run build && git add CHANGELOG.md"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
