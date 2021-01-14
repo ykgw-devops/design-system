@@ -2,7 +2,7 @@ import { tint, shade, readableColor } from 'polished'
 
 import { css } from '@emotion/core'
 import { ILabelProps } from './Label'
-import colors, { clearSky, concrete, carbon } from '../../Colors'
+import colors, { clearSky, concrete, carbon, Strings } from '../../Colors'
 import sizes from '../../sizes'
 
 const colorMap = {
@@ -20,7 +20,7 @@ function getColors (string) {
   if (colorFromString) {
     return {
       color: colorFromString,
-      font: 'white'
+      font: isDefaultColor(string) ? carbon : 'white'
     }
   } else {
     return {
@@ -59,15 +59,13 @@ const detail = (props) => {
     bgColor = color
   }
 
-  const isDefaultColor = props.color === 'default' || props.color === ''
-
   return css`
     ${child};
     padding: 0 1em;
     transition: all ease 0.2s;
 
     ${(props.focused || props.outline) && 'color: white;'}
-    ${(props.outline && isDefaultColor) && `color: ${font};`}
+    ${(props.outline && isDefaultColor(props.color)) && `color: ${font};`}
 
     background-color: ${bgColor};
   `
@@ -76,15 +74,13 @@ const detail = (props) => {
 const colored = (props) => {
   const { color, font } = getColors(props.color)
 
-  const isDefaultColor = props.color === 'default' || props.color === ''
-
   return css`
     background: ${props.outline ? tint(0.8, color) : color};
     color: ${font};
 
     ${props.outline && `
       box-shadow: inset 0 0 0 1px ${color};
-      color: ${isDefaultColor ? carbon : shade(0.1, color)};
+      color: ${isDefaultColor(props.color) ? carbon : shade(0.1, color)};
     `}
   `
 }
@@ -110,8 +106,6 @@ const base = props => css`
 const close = props => {
   const { color } = getColors(props.color)
 
-  const isDefaultColor = props.color === 'default' || props.color === ''
-
   return css`
     height: 1.25em;
     width: 1.25em;
@@ -132,7 +126,7 @@ const close = props => {
 
     background: ${shade(0.3, color)};
     ${props.outline && (
-      `background: ${isDefaultColor ? shade(0.2, color) : color};`
+      `background: ${isDefaultColor(props.color) ? shade(0.2, color) : color};`
     )}
 
     &:hover {
@@ -150,5 +144,8 @@ const close = props => {
 }
 
 const size = ({ size }: ILabelProps) => css`font-size: ${sizes.fromString(size)};`
+
+const DEFAULTS = ['default', '', 'grey']
+const isDefaultColor = (color) => DEFAULTS.includes(color)
 
 export { base, close, colored, detail, focused, value, size }
