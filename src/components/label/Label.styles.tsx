@@ -47,8 +47,8 @@ const value = props => css`
 `
 
 // this is the detaild child for named labels
-const detail = (props = {}) => {
-  const { color } = getColors(props.color)
+const detail = (props) => {
+  const { color, font } = getColors(props.color)
   let bgColor = shade(0.25, color)
 
   if (props.focused) {
@@ -59,14 +59,15 @@ const detail = (props = {}) => {
     bgColor = color
   }
 
+  const isDefaultColor = props.color === 'default' || props.color === ''
+
   return css`
     ${child};
     padding: 0 1em;
     transition: all ease 0.2s;
 
-    ${(props.focused || props.outline) && `
-      color: white;
-    `}
+    ${(props.focused || props.outline) && 'color: white;'}
+    ${(props.outline && isDefaultColor) && `color: ${font};`}
 
     background-color: ${bgColor};
   `
@@ -75,16 +76,15 @@ const detail = (props = {}) => {
 const colored = (props) => {
   const { color, font } = getColors(props.color)
 
+  const isDefaultColor = props.color === 'default' || props.color === ''
+
   return css`
     background: ${props.outline ? tint(0.8, color) : color};
     color: ${font};
 
     ${props.outline && `
       box-shadow: inset 0 0 0 1px ${color};
-      color: ${props.color === 'default'
-        ? carbon
-        : shade(0.1, color)
-      };
+      color: ${isDefaultColor ? carbon : shade(0.1, color)};
     `}
   `
 }
@@ -110,6 +110,8 @@ const base = props => css`
 const close = props => {
   const { color } = getColors(props.color)
 
+  const isDefaultColor = props.color === 'default' || props.color === ''
+
   return css`
     height: 1.25em;
     width: 1.25em;
@@ -128,7 +130,10 @@ const close = props => {
 
     transition: background ease 0.1s;
 
-    background: ${props.outline ? color : shade(0.3, color)};
+    background: ${shade(0.3, color)};
+    ${props.outline && (
+      `background: ${isDefaultColor ? shade(0.2, color) : color};`
+    )}
 
     &:hover {
       background: ${shade(0.2, color)};
