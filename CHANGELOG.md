@@ -1,3 +1,12 @@
+## [2.22.4](https://github.com/waylayio/design-system/compare/v2.22.3...v2.22.4) (2021-01-14)
+
+
+### Bug Fixes
+
+* **labels:** fix grey color contrast ([371719b](https://github.com/waylayio/design-system/commit/371719b))
+
+
+
 ## [2.22.3](https://github.com/waylayio/design-system/compare/v2.22.2...v2.22.3) (2021-01-14)
 
 
