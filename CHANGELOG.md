@@ -1,3 +1,12 @@
+## [2.22.3](https://github.com/waylayio/design-system/compare/v2.22.2...v2.22.3) (2021-01-14)
+
+
+### Bug Fixes
+
+* **labels:** fix colors outlined default label ([#52](https://github.com/waylayio/design-system/issues/52)) ([5102fc4](https://github.com/waylayio/design-system/commit/5102fc4))
+
+
+
 ## [2.22.2](https://github.com/waylayio/design-system/compare/v2.22.1...v2.22.2) (2021-01-04)
 
 
