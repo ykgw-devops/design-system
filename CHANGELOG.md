@@ -1,3 +1,12 @@
+## [2.22.5](https://github.com/waylayio/design-system/compare/v2.22.4...v2.22.5) (2021-01-19)
+
+
+### Bug Fixes
+
+* **button:** fix disabled secondary colors ([#53](https://github.com/waylayio/design-system/issues/53)) ([05445f0](https://github.com/waylayio/design-system/commit/05445f0))
+
+
+
 ## [2.22.4](https://github.com/waylayio/design-system/compare/v2.22.3...v2.22.4) (2021-01-14)
 
 
