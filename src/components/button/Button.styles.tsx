@@ -57,7 +57,9 @@ const colorFromProps = ({ kind = 'secondary', outline, disabled }: IButtonProps)
   const color = colors.fromSemantics(kind)
 
   if (disabled) {
-    return colors.withWeight(color, 300)
+    return kind === 'secondary'
+      ? colors.withWeight(color, 700)
+      : colors.withWeight(color, 300)
   }
 
   if (outline) {
@@ -104,7 +106,9 @@ const outline = ({ kind }: IButtonProps) => {
 const disabled = ({ kind, outline }: IButtonProps) => {
   const color = colors.fromSemantics(kind)
   const bgColor = tint(0.9, color)
-  const borderColor = colors.withWeight(color, 200)
+  const borderColor = kind === 'secondary'
+    ? colors.withWeight(color, 500)
+    : colors.withWeight(color, 200)
 
   return css`
     color: ${colorFromProps({ kind, outline, disabled: true })};
