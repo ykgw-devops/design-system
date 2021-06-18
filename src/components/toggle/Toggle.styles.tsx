@@ -96,4 +96,5 @@ export const ToggleWrapper = styled.div`
   outline: 0;
   vertical-align: baseline;
   backface-visibility: hidden;
+  z-index: 0;
 `
