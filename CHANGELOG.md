@@ -1,3 +1,12 @@
+# [2.23.0](https://github.com/waylayio/design-system/compare/v2.22.5...v2.23.0) (2021-06-18)
+
+
+### Features
+
+* set z index to 0 ([#54](https://github.com/waylayio/design-system/issues/54)) ([b4a260a](https://github.com/waylayio/design-system/commit/b4a260a))
+
+
+
 ## [2.22.5](https://github.com/waylayio/design-system/compare/v2.22.4...v2.22.5) (2021-01-19)
 
 
@@ -34,8 +43,8 @@
 
 ### Bug Fixes
 
-* **collapsible:** don't force hidden style ([01bcd6a](https://github.com/waylayio/design-system/commit/01bcd6a)), closes [#51](https://github.com/waylayio/design-system/issues/51)
 * syntax errors ([f0ab9b9](https://github.com/waylayio/design-system/commit/f0ab9b9))
+* **collapsible:** don't force hidden style ([01bcd6a](https://github.com/waylayio/design-system/commit/01bcd6a)), closes [#51](https://github.com/waylayio/design-system/issues/51)
 
 
 
@@ -80,16 +89,16 @@
 
 ### Bug Fixes
 
-* **select:** fix fixed height ([#45](https://github.com/waylayio/design-system/issues/45)) ([e1997a8](https://github.com/waylayio/design-system/commit/e1997a8))
 * :lipstick: ([ca4a17f](https://github.com/waylayio/design-system/commit/ca4a17f))
 * add button-in-group-in-form example ([2eadc87](https://github.com/waylayio/design-system/commit/2eadc87))
 * applied code comment ([a74d501](https://github.com/waylayio/design-system/commit/a74d501))
-* button in group in form renders wrongly ([6dc1378](https://github.com/waylayio/design-system/commit/6dc1378))
-* button in group in form renders wrongly ([ed54632](https://github.com/waylayio/design-system/commit/ed54632))
 * button in group in form renders wrongly ([74d08c6](https://github.com/waylayio/design-system/commit/74d08c6))
+* button in group in form renders wrongly ([ed54632](https://github.com/waylayio/design-system/commit/ed54632))
+* button in group in form renders wrongly ([6dc1378](https://github.com/waylayio/design-system/commit/6dc1378))
 * get rid of useless test ([6940347](https://github.com/waylayio/design-system/commit/6940347))
 * Input does not forward onFocus ([10ce8b0](https://github.com/waylayio/design-system/commit/10ce8b0))
 * input onFocus passed even on focusSelect not set ([8dd6b4c](https://github.com/waylayio/design-system/commit/8dd6b4c))
+* **select:** fix fixed height ([#45](https://github.com/waylayio/design-system/issues/45)) ([e1997a8](https://github.com/waylayio/design-system/commit/e1997a8))
 * removed obsolete test snapshot ([42ac210](https://github.com/waylayio/design-system/commit/42ac210))
 
 
@@ -275,13 +284,14 @@
 
 ### Bug Fixes
 
-* **message:** flex grow message contents ([a08fd9d](https://github.com/waylayio/design-system/commit/a08fd9d))
 * message component ([2fb34a2](https://github.com/waylayio/design-system/commit/2fb34a2))
 * use JSX pragmas ([d40c104](https://github.com/waylayio/design-system/commit/d40c104))
+* **message:** flex grow message contents ([a08fd9d](https://github.com/waylayio/design-system/commit/a08fd9d))
 
 
 ### Features
 
+* **collapsible:** use styles instead of component for collapsible state ([3aae3b6](https://github.com/waylayio/design-system/commit/3aae3b6))
 * add custom navigation and fix bugs ([ed14670](https://github.com/waylayio/design-system/commit/ed14670))
 * add docs and default navigation component ([117d7d1](https://github.com/waylayio/design-system/commit/117d7d1))
 * add infinite carousel example ([19ff93e](https://github.com/waylayio/design-system/commit/19ff93e))
@@ -289,7 +299,6 @@
 * add more flexibility ([f4047b2](https://github.com/waylayio/design-system/commit/f4047b2))
 * basic wizard functionality ([6bd3c8b](https://github.com/waylayio/design-system/commit/6bd3c8b))
 * rework ([1ec84f6](https://github.com/waylayio/design-system/commit/1ec84f6))
-* **collapsible:** use styles instead of component for collapsible state ([3aae3b6](https://github.com/waylayio/design-system/commit/3aae3b6))
 
 
 
@@ -394,9 +403,9 @@
 
 ### Features
 
-* **select:** adds Select component ([45a9230](https://github.com/waylayio/design-system/commit/45a9230))
 * adds testing framework ([773a27e](https://github.com/waylayio/design-system/commit/773a27e))
 * adds TypeScript support ([e28a4a7](https://github.com/waylayio/design-system/commit/e28a4a7))
+* **select:** adds Select component ([45a9230](https://github.com/waylayio/design-system/commit/45a9230))
 
 
 
@@ -419,17 +428,17 @@
 
 ### Bug Fixes
 
+* pass ref for toggle ([ad5b720](https://github.com/waylayio/design-system/commit/ad5b720))
 * **button:** make buttons type button by default ([80969a0](https://github.com/waylayio/design-system/commit/80969a0))
 * **dropdown-item:** import react ([c61315d](https://github.com/waylayio/design-system/commit/c61315d))
 * **toggle:** controlled component ([b3b8e9f](https://github.com/waylayio/design-system/commit/b3b8e9f))
-* pass ref for toggle ([ad5b720](https://github.com/waylayio/design-system/commit/ad5b720))
 
 
 ### Features
 
+* adds Toggle component ([7216ff5](https://github.com/waylayio/design-system/commit/7216ff5))
 * **toggle:** make component controlled ([0a2d5b3](https://github.com/waylayio/design-system/commit/0a2d5b3))
 * **toggle:** make controlled or uncontrolled ([e89d833](https://github.com/waylayio/design-system/commit/e89d833))
-* adds Toggle component ([7216ff5](https://github.com/waylayio/design-system/commit/7216ff5))
 
 
 
@@ -438,21 +447,21 @@
 
 ### Bug Fixes
 
-* button secondary outline ([89608dc](https://github.com/waylayio/design-system/commit/89608dc))
 * **Button:** fix line-height when Button is a ([2864647](https://github.com/waylayio/design-system/commit/2864647))
 * **dropdown:** allow jsx to be passed as children ([39aa3ce](https://github.com/waylayio/design-system/commit/39aa3ce))
 * **label:** preserve whitespace in label values ([09deaaa](https://github.com/waylayio/design-system/commit/09deaaa))
+* **tabs:** vertical align tab items ([998ce66](https://github.com/waylayio/design-system/commit/998ce66))
+* button secondary outline ([89608dc](https://github.com/waylayio/design-system/commit/89608dc))
 * correct hover styles for list item ([966e47a](https://github.com/waylayio/design-system/commit/966e47a))
 * remove bad trigger prop ([4982174](https://github.com/waylayio/design-system/commit/4982174))
-* **tabs:** vertical align tab items ([998ce66](https://github.com/waylayio/design-system/commit/998ce66))
 
 
 ### Features
 
-* add modal ([3b6ab53](https://github.com/waylayio/design-system/commit/3b6ab53))
-* adds initial log component ([c9fce5a](https://github.com/waylayio/design-system/commit/c9fce5a))
 * **list:** list divider and noninteractive ([c0a1504](https://github.com/waylayio/design-system/commit/c0a1504))
+* add modal ([3b6ab53](https://github.com/waylayio/design-system/commit/3b6ab53))
 * adds copyToClipboard ([27f9f64](https://github.com/waylayio/design-system/commit/27f9f64))
+* adds initial log component ([c9fce5a](https://github.com/waylayio/design-system/commit/c9fce5a))
 * adds list divider ([e034fce](https://github.com/waylayio/design-system/commit/e034fce))
 * allow custom colors for labels ([e6058cf](https://github.com/waylayio/design-system/commit/e6058cf))
 
@@ -506,17 +515,17 @@
 
 ### Bug Fixes
 
-* **input:** pass className and use text ellipsis ([b4f0da7](https://github.com/waylayio/design-system/commit/b4f0da7))
-* message background ([d498b79](https://github.com/waylayio/design-system/commit/d498b79))
 * **icon:** merge classNames ([748ee04](https://github.com/waylayio/design-system/commit/748ee04))
+* message background ([d498b79](https://github.com/waylayio/design-system/commit/d498b79))
+* **input:** pass className and use text ellipsis ([b4f0da7](https://github.com/waylayio/design-system/commit/b4f0da7))
 
 
 ### Features
 
+* **timeline:** adds timeline component ([e11416d](https://github.com/waylayio/design-system/commit/e11416d))
 * adds circular and filled icon props ([f625309](https://github.com/waylayio/design-system/commit/f625309))
 * adds header and footer for segment ([d9ed6af](https://github.com/waylayio/design-system/commit/d9ed6af))
 * adds Timeline.EntryGroup ([c0f1410](https://github.com/waylayio/design-system/commit/c0f1410))
-* **timeline:** adds timeline component ([e11416d](https://github.com/waylayio/design-system/commit/e11416d))
 
 
 
@@ -530,8 +539,8 @@
 
 ### Features
 
-* **menu:** allow active class on menu item ([d26d9ef](https://github.com/waylayio/design-system/commit/d26d9ef))
 * allow passing "as" prop to menu item ([d24a8e1](https://github.com/waylayio/design-system/commit/d24a8e1))
+* **menu:** allow active class on menu item ([d26d9ef](https://github.com/waylayio/design-system/commit/d26d9ef))
 
 
 
@@ -563,12 +572,12 @@
 
 ### Bug Fixes
 
+* select unique item from group ([c6f5c5d](https://github.com/waylayio/design-system/commit/c6f5c5d)), closes [#10](https://github.com/waylayio/design-system/issues/10)
 * **dropdown:** add rest spread ([3e25bf7](https://github.com/waylayio/design-system/commit/3e25bf7))
 * **dropdown:** allow passing styles ([ac76fd7](https://github.com/waylayio/design-system/commit/ac76fd7))
 * **dropdown:** fix fluid & compact attributes ([f0926f6](https://github.com/waylayio/design-system/commit/f0926f6))
 * **dropdown:** remove value in key ([4a7ac75](https://github.com/waylayio/design-system/commit/4a7ac75))
 * **dropdown:** use selectedItem from props ([da94ed2](https://github.com/waylayio/design-system/commit/da94ed2))
-* select unique item from group ([c6f5c5d](https://github.com/waylayio/design-system/commit/c6f5c5d)), closes [#10](https://github.com/waylayio/design-system/issues/10)
 
 
 ### Features
@@ -595,10 +604,10 @@
 
 ### Bug Fixes
 
+* **Accordion:** review Brent ([1908e67](https://github.com/waylayio/design-system/commit/1908e67))
 * open tree when child selected ([e632e61](https://github.com/waylayio/design-system/commit/e632e61))
 * properties + change menu ([#5](https://github.com/waylayio/design-system/issues/5)) ([cc421bc](https://github.com/waylayio/design-system/commit/cc421bc))
 * set click target on summary instead of details ([4e36872](https://github.com/waylayio/design-system/commit/4e36872))
-* **Accordion:** review Brent ([1908e67](https://github.com/waylayio/design-system/commit/1908e67))
 
 
 
@@ -723,8 +732,8 @@
 
 ### Features
 
-* **List.Item:** pass more props ([a957756](https://github.com/waylayio/design-system/commit/a957756))
 * spring loader animation ([d024351](https://github.com/waylayio/design-system/commit/d024351))
+* **List.Item:** pass more props ([a957756](https://github.com/waylayio/design-system/commit/a957756))
 
 
 
@@ -733,8 +742,8 @@
 
 ### Features
 
-* **dropdown:** pass option to onclick ([f51459d](https://github.com/waylayio/design-system/commit/f51459d))
 * deprecate menu for list component ([4142a77](https://github.com/waylayio/design-system/commit/4142a77))
+* **dropdown:** pass option to onclick ([f51459d](https://github.com/waylayio/design-system/commit/f51459d))
 
 
 
@@ -756,9 +765,9 @@
 
 ### Features
 
+* add loader ([022971a](https://github.com/waylayio/design-system/commit/022971a))
 * **menu:** pass props to item ([b3051ab](https://github.com/waylayio/design-system/commit/b3051ab))
 * **tree:** add functionality ([41e5e25](https://github.com/waylayio/design-system/commit/41e5e25))
-* add loader ([022971a](https://github.com/waylayio/design-system/commit/022971a))
 
 
 
@@ -776,17 +785,17 @@
 
 ### Bug Fixes
 
-* use correct color imports ([495ff7a](https://github.com/waylayio/design-system/commit/495ff7a))
 * **button:** allow styling buttons ([2ad2dd8](https://github.com/waylayio/design-system/commit/2ad2dd8))
 * **table:** 1rem font-size ([1fd7790](https://github.com/waylayio/design-system/commit/1fd7790))
+* use correct color imports ([495ff7a](https://github.com/waylayio/design-system/commit/495ff7a))
 
 
 ### Features
 
-* **tree:** make tree component work ([6e51d38](https://github.com/waylayio/design-system/commit/6e51d38))
 * adds click handlers for tree ([0c6f2a6](https://github.com/waylayio/design-system/commit/0c6f2a6))
 * initial tree view component ([8ca2799](https://github.com/waylayio/design-system/commit/8ca2799))
 * try react hooks ([09ed468](https://github.com/waylayio/design-system/commit/09ed468))
+* **tree:** make tree component work ([6e51d38](https://github.com/waylayio/design-system/commit/6e51d38))
 
 
 
@@ -823,13 +832,13 @@
 
 ### Bug Fixes
 
-* export Breadcrumb ([c5a488a](https://github.com/waylayio/design-system/commit/c5a488a))
 * **button:** enable default button focus outline ([b44d4ae](https://github.com/waylayio/design-system/commit/b44d4ae))
 * **filterable-input:** call onChange and allow prop overwriting ([f006775](https://github.com/waylayio/design-system/commit/f006775))
 * **filterable-input:** hardening ([0ddcc65](https://github.com/waylayio/design-system/commit/0ddcc65))
 * **input:** omit adornments from prop spreading ([3952eb7](https://github.com/waylayio/design-system/commit/3952eb7))
 * **label:** use box-shadow inset so the box size doesn't change ([7ccb6ac](https://github.com/waylayio/design-system/commit/7ccb6ac))
 * **pagination:** cursor typo fix ([0b187e5](https://github.com/waylayio/design-system/commit/0b187e5))
+* export Breadcrumb ([c5a488a](https://github.com/waylayio/design-system/commit/c5a488a))
 * use correct tag end for head links ([26c399c](https://github.com/waylayio/design-system/commit/26c399c))
 
 
@@ -884,10 +893,10 @@
 
 ### Bug Fixes
 
-* **input:** weird line-height caret bug ([ae9193e](https://github.com/waylayio/design-system/commit/ae9193e))
-* import all correct css depedencies ([fc88c3e](https://github.com/waylayio/design-system/commit/fc88c3e))
 * **dropdown:** allow content as alias for text ([b65fba4](https://github.com/waylayio/design-system/commit/b65fba4))
 * **dropdown:** reset anchor style for items ([3aea445](https://github.com/waylayio/design-system/commit/3aea445))
+* import all correct css depedencies ([fc88c3e](https://github.com/waylayio/design-system/commit/fc88c3e))
+* **input:** weird line-height caret bug ([ae9193e](https://github.com/waylayio/design-system/commit/ae9193e))
 * **menu:** set menu item height for items without text ([fd783ff](https://github.com/waylayio/design-system/commit/fd783ff))
 
 
@@ -942,9 +951,9 @@
 
 ### Bug Fixes
 
+* load global styles only once ([c984ab5](https://github.com/waylayio/design-system/commit/c984ab5))
 * **global:** fix conflicting styles, add "Fira Sans" and "normalize.css" ([ac5a81d](https://github.com/waylayio/design-system/commit/ac5a81d))
 * **input:** fix incorrect styling ([e1b2e84](https://github.com/waylayio/design-system/commit/e1b2e84))
-* load global styles only once ([c984ab5](https://github.com/waylayio/design-system/commit/c984ab5))
 
 
 
@@ -1023,27 +1032,27 @@
 
 ### Bug Fixes
 
-* **button:** support href buttons ([7eec6ab](https://github.com/waylayio/design-system/commit/7eec6ab))
-* adds npm publish config ([2cde7bb](https://github.com/waylayio/design-system/commit/2cde7bb))
-* **button:** secondary outline button fix + prop types ([ed8636e](https://github.com/waylayio/design-system/commit/ed8636e))
-* **dropdown:** adds activeItem style ([d7b22a1](https://github.com/waylayio/design-system/commit/d7b22a1))
-* **form, input:** fixed prop type warnings ([042cff8](https://github.com/waylayio/design-system/commit/042cff8))
-* **message:** fix outline prop warning ([5969b0d](https://github.com/waylayio/design-system/commit/5969b0d))
-* merge classnames for form field ([b612e32](https://github.com/waylayio/design-system/commit/b612e32))
-* **message:** pass arbitrary props to message ([a09d22f](https://github.com/waylayio/design-system/commit/a09d22f))
-* adds create-emotion-server ([74e15b9](https://github.com/waylayio/design-system/commit/74e15b9))
-* export colors with lowercase ([b581ffe](https://github.com/waylayio/design-system/commit/b581ffe))
-* reset anchor styles for multiple components ([ee7b9ff](https://github.com/waylayio/design-system/commit/ee7b9ff))
+* incorrect menu item wrapping ([194d704](https://github.com/waylayio/design-system/commit/194d704))
 * **breadcrumbs:** adds proptypes ([1719dc4](https://github.com/waylayio/design-system/commit/1719dc4))
 * **breadcrumbs:** minor color fix ([fc5dbf4](https://github.com/waylayio/design-system/commit/fc5dbf4))
+* **button:** secondary outline button fix + prop types ([ed8636e](https://github.com/waylayio/design-system/commit/ed8636e))
+* set nice display name for menu items ([4c5a609](https://github.com/waylayio/design-system/commit/4c5a609))
+* **button:** support href buttons ([7eec6ab](https://github.com/waylayio/design-system/commit/7eec6ab))
 * **buttons:** adds sizes ([3b5b2d2](https://github.com/waylayio/design-system/commit/3b5b2d2))
+* **dropdown:** adds activeItem style ([d7b22a1](https://github.com/waylayio/design-system/commit/d7b22a1))
 * **dropdown:** fixes dropdown losing scroll state ([ed64f51](https://github.com/waylayio/design-system/commit/ed64f51))
 * **dropdown:** pointer custor glitch ([7e7ce2f](https://github.com/waylayio/design-system/commit/7e7ce2f))
 * **dropdown:** stylistic changes ([8f59837](https://github.com/waylayio/design-system/commit/8f59837))
+* **form, input:** fixed prop type warnings ([042cff8](https://github.com/waylayio/design-system/commit/042cff8))
+* export colors with lowercase ([b581ffe](https://github.com/waylayio/design-system/commit/b581ffe))
+* **message:** fix outline prop warning ([5969b0d](https://github.com/waylayio/design-system/commit/5969b0d))
+* adds create-emotion-server ([74e15b9](https://github.com/waylayio/design-system/commit/74e15b9))
+* adds npm publish config ([2cde7bb](https://github.com/waylayio/design-system/commit/2cde7bb))
+* **message:** pass arbitrary props to message ([a09d22f](https://github.com/waylayio/design-system/commit/a09d22f))
 * dynamic pagination ([aae25e8](https://github.com/waylayio/design-system/commit/aae25e8))
-* incorrect menu item wrapping ([194d704](https://github.com/waylayio/design-system/commit/194d704))
+* merge classnames for form field ([b612e32](https://github.com/waylayio/design-system/commit/b612e32))
 * remove fieldset styles from form ([3d42299](https://github.com/waylayio/design-system/commit/3d42299))
-* set nice display name for menu items ([4c5a609](https://github.com/waylayio/design-system/commit/4c5a609))
+* reset anchor styles for multiple components ([ee7b9ff](https://github.com/waylayio/design-system/commit/ee7b9ff))
 * smaller medium buttons ([1b33cb4](https://github.com/waylayio/design-system/commit/1b33cb4))
 * tweak button shadow ([4400723](https://github.com/waylayio/design-system/commit/4400723))
 * use separate emotion instance to prevent collisions with other instances ([08d2357](https://github.com/waylayio/design-system/commit/08d2357))
@@ -1055,15 +1064,15 @@
 
 * **dropdown:** adds custom content for dropdown selection ([d67ee85](https://github.com/waylayio/design-system/commit/d67ee85))
 * **message:** adds message component ([31910b7](https://github.com/waylayio/design-system/commit/31910b7))
+* adds menu component ([6f27f52](https://github.com/waylayio/design-system/commit/6f27f52))
 * **message:** adds title prop and style tweaks ([47e640a](https://github.com/waylayio/design-system/commit/47e640a))
 * adds form and input atoms / molecules ([7a38664](https://github.com/waylayio/design-system/commit/7a38664))
-* adds form field ([dcfcf4f](https://github.com/waylayio/design-system/commit/dcfcf4f))
-* adds menu component ([6f27f52](https://github.com/waylayio/design-system/commit/6f27f52))
-* init dropdown ([7700ec1](https://github.com/waylayio/design-system/commit/7700ec1))
-* make parcel compile with linked module ([c4a0a0a](https://github.com/waylayio/design-system/commit/c4a0a0a))
 * **pagination:** adds initial pagination component ([ad37498](https://github.com/waylayio/design-system/commit/ad37498))
 * **segment:** adds segment ([e1a928b](https://github.com/waylayio/design-system/commit/e1a928b))
 * **table:** initial table ([063a12e](https://github.com/waylayio/design-system/commit/063a12e))
+* adds form field ([dcfcf4f](https://github.com/waylayio/design-system/commit/dcfcf4f))
+* init dropdown ([7700ec1](https://github.com/waylayio/design-system/commit/7700ec1))
+* make parcel compile with linked module ([c4a0a0a](https://github.com/waylayio/design-system/commit/c4a0a0a))
 
 
 
