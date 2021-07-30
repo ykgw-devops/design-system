@@ -6,6 +6,7 @@ import { ToggleWrapper, Label, Checkbox } from './Toggle.styles'
 interface IToggleProps {
   defaultChecked?: boolean;
   checked?: boolean;
+  size?: 'tiny' | 'regular';
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -33,7 +34,7 @@ const Toggle = forwardRef((props: IToggleProps, ref: React.Ref<any>) => {
 
   return (
     <ToggleWrapper role='switch' aria-checked={isChecked}>
-      <Label checked={isChecked}>
+      <Label checked={isChecked} size={props.size}>
         <Checkbox
           type='checkbox'
           onChange={handleChange}
@@ -45,5 +46,9 @@ const Toggle = forwardRef((props: IToggleProps, ref: React.Ref<any>) => {
     </ToggleWrapper>
   )
 })
+
+Toggle.defaultProps = {
+  size: 'regular'
+}
 
 export default Toggle

@@ -14,18 +14,39 @@ export const Checkbox = styled.input`
   outline: 0;
 `
 
-const CheckedLabel = css`
+const CheckedLabel = (tiny = false) => css`
   &:before {
     background: ${clearSky};
   }
 
   &:after {
-    left: 1.5rem;
+    ${tiny ? 'left: 1rem' : 'left: 1.5rem'};
+  }
+`
+
+const TinyToggle = css`
+  width: 2rem;
+  min-height: 1rem;
+
+  &:before {
+    width: 2rem;
+    height: 1rem;
+  }
+
+  &:after {
+    left: 1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &:before, &:after {
+    left: 0;
   }
 `
 
 interface ILabelProps {
   checked: boolean;
+  size: 'regular' | 'tiny';
 }
 
 export const Label = styled.label<ILabelProps>`
@@ -78,8 +99,8 @@ export const Label = styled.label<ILabelProps>`
   &:before, &:after {
     left: 0;
   }
-
-  ${props => props.checked && CheckedLabel}
+  ${props => props.size === 'tiny' && TinyToggle}
+  ${props => props.checked && CheckedLabel(props.size === 'tiny')}
 `
 
 export const ToggleWrapper = styled.div`
