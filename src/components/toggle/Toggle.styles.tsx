@@ -46,7 +46,7 @@ const TinyToggle = css`
 
 interface ILabelProps {
   checked: boolean;
-  size: 'regular' | 'tiny';
+  size: 'medium' | 'tiny';
 }
 
 export const Label = styled.label<ILabelProps>`
