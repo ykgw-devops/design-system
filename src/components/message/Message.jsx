@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import isPropValid from '@emotion/is-prop-valid'
 import { base, danger, info, warning, title as titleStyle, basic, withIcon } from './Messages.styles.jsx'
 import PropTypes from 'prop-types'
+import { omit } from 'lodash'
 
 const kindMap = {
   danger: danger,
@@ -28,8 +29,10 @@ const Message = props => {
     props.icon && withIcon(props.icon)
   ]
 
+  const rest = omit(props, ['title'])
+
   return (
-    <MessageContainer css={styles} {...props}>
+    <MessageContainer css={styles} {...rest}>
       <div css={css`flex: 1;`}>
         {title && (
           <div css={titleStyle}>
