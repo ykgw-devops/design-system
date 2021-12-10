@@ -1,3 +1,12 @@
+# [2.35.0](https://github.com/waylayio/design-system/compare/v2.24.0...v2.35.0) (2021-12-10)
+
+
+### Bug Fixes
+
+* **message:** dont pass title to container ([75875ea](https://github.com/waylayio/design-system/commit/75875ea))
+
+
+
 # [2.24.0](https://github.com/waylayio/design-system/compare/v2.23.0...v2.24.0) (2021-08-02)
 
 
